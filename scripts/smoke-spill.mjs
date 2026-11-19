@@ -167,7 +167,7 @@ await page.goto('http://localhost:4174/?fart=12&maal=1');
 await page.click('#start-klasse');
 await page.waitForTimeout(900);
 await shot('15-klasse');
-for (const okt of ['powerbreak', 'gange']) {
+for (const okt of ['powerbreak', 'matematikk-5-7-gange-6-9']) {
   await page.click(`[data-okt="${okt}"]`);
   await vent(() => window.__puls.tilstand().spill?.fase === 'start');
   await shot(`16-${okt}-start`);
@@ -197,6 +197,7 @@ for (const okt of ['powerbreak', 'gange']) {
   await shot(`18-${okt}-resultat`);
   const fliser = (await page.locator('#fliser').innerText()).replace(/\s+/g, ' ');
   console.log(`Klasseøkt ${okt}:`, fliser);
+  if (okt !== 'powerbreak' && !/12 spørsmål/.test(fliser)) errors.push(`Klasseøkta ${okt} fikk ikke spørsmål fra oppgavebanken: ${fliser}`);
   if (!/øvelser/.test(fliser) || !/i bevegelse/.test(fliser)) errors.push(`Klasseøkta ${okt} ga ikke resultat: ${fliser}`);
   if (okt === 'powerbreak') await page.click('#bytt');
 }

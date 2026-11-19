@@ -19,7 +19,9 @@ Læremodus med to spill og to temaer (gangetabellen og ordklasser):
 **Start med klassen** er lærerens vei inn: velg en ferdig økt (Powerbreak på 3 minutter, eller
 Gangetabellen og Ordklasser på 5 minutter) og vis den på storskjerm. Klassen gjør øvelsene
 figuren viser, og svarer på spørsmål med kroppen: hvert svar har sin bevegelse. Det trengs
-verken kamera eller innlogging. Mellomrom pauser, pil høyre hopper videre og Esc avslutter.
+verken kamera eller innlogging. Læreøktene hentes fra oppgavebanken i `innhold/`, filtrert på trinn og fag,
+og hvert sett lastes først når økta starter. Etter økta teller tiden i bevegelse mot klassemålet
+(10 meter per minutt mot Galdhøpiggen), som bare lagres på enheten. Mellomrom pauser, pil høyre hopper videre og Esc avslutter.
 
 I tillegg har **Powerbreak** spillet Intervall: fire korte øvelser på rad (hopp,
 sprellemann, knebøy og boksing i lufta). Bevegelsene telles, og sola vokser med

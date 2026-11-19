@@ -1,6 +1,7 @@
 // Ferdige økter til fellesmodus. En økt er en liste med steg: en øvelse alle gjør
 // sammen, eller en bolk spørsmål som klassen svarer på med kroppen.
-import { type Oppgave, type Tema, lagRunde } from './oppgaver';
+import type { Fag, Settoppforing } from './bank';
+import type { Oppgave } from './oppgaver';
 import type { Ovelsestype } from './ovelsesvisning';
 
 export interface Ovelse {
@@ -28,8 +29,9 @@ export interface Okt {
   minutter: number;
   tekst: string;
   merke: string;
-  farge: 'gul' | 'blaa' | 'rosa' | 'gronn' | 'oransje';
-  tema?: Tema;
+  farge: string;
+  /** Settet i oppgavebanken som spørsmålene hentes fra. */
+  sett?: Settoppforing;
   steg: Stegmal[];
 }
 
@@ -50,26 +52,6 @@ export const OKTER: Okt[] = [
       { ovelse: 'strekk', sek: 25 },
     ],
   },
-  {
-    id: 'gange',
-    navn: 'Gangetabellen',
-    minutter: 5,
-    tekst: 'Klassen svarer med kroppen: hvert svar har sin bevegelse. Tolv spørsmål og fire øvelser.',
-    merke: 'Matematikk',
-    farge: 'blaa',
-    tema: 'gange',
-    steg: [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }],
-  },
-  {
-    id: 'ordklasser',
-    navn: 'Ordklasser',
-    minutter: 5,
-    tekst: 'Verb, substantiv eller adjektiv? Klassen svarer med kroppen. Tolv spørsmål og fire øvelser.',
-    merke: 'Norsk',
-    farge: 'rosa',
-    tema: 'ordklasser',
-    steg: [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }],
-  },
 ];
 
 export type Steg = { ovelse: Ovelse; sek: number; oppgave: null } | { ovelse: null; sek: number; oppgave: Oppgave };
@@ -79,11 +61,33 @@ export const LES = 4;
 export const SVAR = 7;
 export const FASIT = 4;
 
-/** Gjør oppskriften om til stegene som skal spilles, med ferske spørsmål. */
-export function lagSteg(okt: Okt): Steg[] {
+export const FAGFARGE: Record<Fag, string> = {
+  matematikk: 'blaa', norsk: 'rosa', engelsk: 'gronn', naturfag: 'oransje', samfunnsfag: 'gul', krle: 'blaalys',
+};
+
+/** En læreøkt på fem minutter rundt et sett fra oppgavebanken: tolv spørsmål og fire øvelser. */
+export function laereokt(sett: Settoppforing, fagnavn: string): Okt {
+  return {
+    id: sett.id,
+    navn: sett.tittel,
+    minutter: 5,
+    tekst: sett.beskrivelse,
+    merke: fagnavn,
+    farge: FAGFARGE[sett.fag],
+    sett,
+    steg: [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }],
+  };
+}
+
+/** Hvor mange spørsmål økta trenger. */
+export function antallSporsmal(okt: Okt): number {
   let antall = 0;
   for (const s of okt.steg) if ('sporsmal' in s) antall += s.sporsmal;
-  const oppgaver = okt.tema ? lagRunde(okt.tema, antall) : [];
+  return antall;
+}
+
+/** Gjør oppskriften om til stegene som skal spilles. */
+export function lagSteg(okt: Okt, oppgaver: Oppgave[]): Steg[] {
   const steg: Steg[] = [];
   let nr = 0;
   for (const s of okt.steg) {

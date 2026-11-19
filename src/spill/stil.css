@@ -200,6 +200,26 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .oktkort p:last-of-type { margin-bottom: 10px; }
 .fotnote-klasse { margin-top: 26px; font-size: 15px; color: var(--dempet); }
 
+.mellomtittel { margin-top: 34px; font-size: 24px; }
+#trinnvalg { margin: 4px 0 24px; }
+#fagvalg { margin: 12px 0 22px; }
+.okter.sett { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 20px; }
+.okter.sett .oktkort { padding: 16px 18px 18px; gap: 6px; }
+.okter.sett h2 { font-size: 20px; }
+.okter.sett p { font-size: 14px; }
+.okter.sett .pille { min-height: 42px; font-size: 16px; }
+.blaalys { background: var(--blaa-lys); }
+#klasse { padding-bottom: max(30vh, 160px); }
+#okter { grid-template-columns: minmax(0, 420px); }
+body[data-skjerm='klasse'] .figur, body[data-skjerm='klasse'] .sol { display: none; }
+
+/* Klassemålet: en stripe som fylles mot toppen, med et merke ved delmålet. */
+#klassemaal { margin-top: 22px; font-size: 15px; }
+.fjell { position: relative; height: 18px; margin: 8px 0; border-radius: 999px; background: var(--linje); overflow: hidden; }
+.fjell i { position: absolute; inset: 0; background: var(--gronn); transform-origin: left; transform: scaleX(0); transition: transform 900ms var(--e-ut) 500ms; }
+.fjell b { position: absolute; top: 0; bottom: 0; left: 74.6%; width: 3px; background: var(--blekk); }
+#fjelltekst { color: var(--dempet); }
+
 /* ---------- Velg spill ---------- */
 .tema { border: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 28px; }
 .tema legend { float: left; margin-right: 6px; font-weight: 600; padding: 0; }
