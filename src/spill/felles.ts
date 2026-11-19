@@ -240,26 +240,25 @@ export class Konfetti {
         this.vr[i] = 0;
         this.liv[i] = 1.5;
       } else {
-        const fart = 130 + Math.random() * 210;
+        // Samme tall som konfettien i menyene: biten siger 60 til 150 px ut, snurrer høyst
+        // 150 grader og faller rolig. Den lever 1,7 til 2,2 sekunder.
+        const fart = (60 + Math.random() * 90) * 2.5;
         this.vx[i] = Math.cos(a) * fart;
-        this.vy[i] = Math.sin(a) * fart - 150;
-        this.vr[i] = (Math.random() - 0.5) * 9;
-        this.liv[i] = 1 + Math.random() * 0.4;
+        this.vy[i] = Math.sin(a) * fart - 100;
+        this.liv[i] = 1.7 + Math.random() * 0.5;
+        this.vr[i] = ((Math.random() - 0.5) * 5.2) / this.liv[i];
       }
     }
   }
 
   oppdater(dt: number) {
-    const brems = Math.exp(-3 * dt);
+    const brems = Math.exp(-(ROLIG ? 3 : 2.5) * dt);
     for (let i = 0; i < BITER; i++) {
       if (this.liv[i] <= 0) continue;
       this.liv[i] -= dt;
-      if (ROLIG) {
-        this.vx[i] *= brems;
-        this.vy[i] *= brems;
-      } else {
-        this.vy[i] += 420 * dt;
-      }
+      this.vx[i] *= brems;
+      this.vy[i] *= brems;
+      if (!ROLIG) this.vy[i] += 150 * dt;
       this.x[i] += this.vx[i] * dt;
       this.y[i] += this.vy[i] * dt;
       this.rot[i] += this.vr[i] * dt;
@@ -279,7 +278,7 @@ export class Konfetti {
         g.fill();
         continue;
       }
-      g.globalAlpha = Math.min(1, this.liv[i] / 0.3);
+      g.globalAlpha = Math.min(1, this.liv[i] / 0.7);
       // Et lite rektangel, rotert for hånd for å slippe save/restore per bit.
       const c = Math.cos(this.rot[i]);
       const s = Math.sin(this.rot[i]);

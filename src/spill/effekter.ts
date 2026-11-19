@@ -20,16 +20,16 @@ export function konfetti(x: number, y: number, antall = 24) {
     const r = 60 + Math.random() * 90;
     const dx = Math.cos(a) * r;
     const dy = Math.sin(a) * r - 40;
-    const rot = Math.random() * 540 - 270;
+    const rot = Math.random() * 300 - 150;
     const bit = lagBit(x, y, i, i % 3 ? 12 : 10, i % 3 ? 8 : 10);
     if (i % 3 === 0) bit.style.clipPath = 'polygon(50% 0,100% 100%,0 100%)';
     bit.animate(
       [
         { transform: 'translate(-50%,-50%)', opacity: 1 },
-        { transform: `translate(${dx * 0.7}px,${dy * 0.8}px) rotate(${rot * 0.6}deg)`, opacity: 1, offset: 0.45 },
-        { transform: `translate(${dx}px,${dy + 110}px) rotate(${rot}deg)`, opacity: 0 },
+        { transform: `translate(${dx * 0.7}px,${dy * 0.8}px) rotate(${rot * 0.6}deg)`, opacity: 1, offset: 0.4 },
+        { transform: `translate(${dx}px,${dy + 90}px) rotate(${rot}deg)`, opacity: 0 },
       ],
-      { duration: 1000 + Math.random() * 400, easing: 'cubic-bezier(.1,.7,.3,1)' },
+      { duration: 1700 + Math.random() * 500, easing: 'cubic-bezier(.15,.6,.3,1)' },
     ).onfinish = () => bit.remove();
   }
 }
