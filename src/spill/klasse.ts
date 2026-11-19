@@ -2,7 +2,7 @@
 // økta, og læreren styrer med mellomrom (pause) og pil høyre (neste).
 import type { Lyd } from './lyd';
 import type { Oppgave } from './oppgaver';
-import { type Klasseinnstillinger, type Okt, type Steg, TAKT, lagSteg } from './okter';
+import { type Klasseinnstillinger, type Okt, type Steg, ROLIGE, TAKT, lagSteg } from './okter';
 import { type Ovelsestype, tegnOvelsesfigur } from './ovelsesvisning';
 import { type Signaler, SCENE_B } from './signaler';
 import {
@@ -32,6 +32,16 @@ const KORT_Y = 196;
 const KORT_GAP = 20;
 const KLARTEKST = ['Reis dere opp', 'Skyv inn stolen', 'En armlengde plass'];
 const KLARFARGE = ['#c4d8ff', '#fccfed', '#b2e8d3'];
+
+// De yngste ser framdriften som stjerner, én for hvert steg.
+const STJERNE = new Path2D();
+for (let i = 0; i < 10; i++) {
+  const r = i % 2 ? 4.2 : 10;
+  const v = -Math.PI / 2 + (i * Math.PI) / 5;
+  if (i) STJERNE.lineTo(Math.cos(v) * r, Math.sin(v) * r);
+  else STJERNE.moveTo(Math.cos(v) * r, Math.sin(v) * r);
+}
+STJERNE.closePath();
 
 type Fase = 'start' | 'intro' | 'klar' | 'arbeid' | 'slutt';
 
@@ -65,6 +75,9 @@ export class Klasseokt implements Spill {
   private sekTekst = '';
   private sekVist = -1;
   private intro = 0;
+  private liten: boolean;
+  private voksen: boolean;
+  private figurfarge: string;
 
   constructor(
     private signaler: Signaler,
@@ -77,6 +90,9 @@ export class Klasseokt implements Spill {
     private fart = 1,
   ) {
     this.steg = lagSteg(okt, oppgaver, inn);
+    this.liten = inn.niva === 'liten';
+    this.voksen = inn.niva === 'voksen';
+    this.figurfarge = this.voksen ? FARGE.blekk : FARGE.korall;
     for (const s of this.steg) {
       if (s.ovelse) this.antallOvelser++;
       else this.antallSporsmal++;
@@ -109,7 +125,9 @@ export class Klasseokt implements Spill {
       this.pille = `${this.okt.navn} · øvelse ${this.ovelseNr} av ${this.antallOvelser}`;
     } else {
       this.sporsmalNr++;
-      this.pille = `${this.okt.navn} · spørsmål ${this.sporsmalNr} av ${this.antallSporsmal}`;
+      const hvor = `spørsmål ${this.sporsmalNr} av ${this.antallSporsmal}`;
+      // Lange navn får ikke plass i lappen sammen med tellingen.
+      this.pille = this.okt.navn.length > 16 ? hvor[0].toUpperCase() + hvor.slice(1) : `${this.okt.navn} · ${hvor}`;
       this.fasit = `Riktig svar: ${s.oppgave.svar[s.oppgave.riktig]}. Alle ${SVARVERB[s.oppgave.riktig]}!`;
     }
     const n = this.steg[nr + 1];
@@ -193,7 +211,7 @@ export class Klasseokt implements Spill {
       return;
     }
     if (steg.ovelse) {
-      this.lyd.takt(TAKT[steg.ovelse.type], steg.ovelse.type === 'strekk');
+      this.lyd.takt(TAKT[steg.ovelse.type], ROLIGE.includes(steg.ovelse.type));
       this.aktiv += dt;
       this.nedtelling(steg.sek - this.t);
     } else {
@@ -206,7 +224,7 @@ export class Klasseokt implements Spill {
           this.sidenFasit = 0;
           this.lyd.riktig(4);
           this.effekter.dunk();
-          this.konfetti.kast(this.kortX(steg.oppgave.riktig, steg.oppgave.svar.length) + KORT_B / 2, KORT_Y + 60, 16);
+          if (!this.voksen) this.konfetti.kast(this.kortX(steg.oppgave.riktig, steg.oppgave.svar.length) + KORT_B / 2, KORT_Y + 60, 16);
         }
       }
       this.lyd.takt(under === 1 ? 120 : 0);
@@ -238,14 +256,27 @@ export class Klasseokt implements Spill {
     this.konfetti.tegn(g);
     if (this.fase !== 'start') {
       // Hvor langt økta er kommet.
-      g.fillStyle = FARGE.hvit;
-      avrundet(g, 50, 512, 860, 10, 5);
-      g.fill();
-      const b = 860 * Math.min(1, this.gått / this.total);
-      if (b > 10) {
-        g.fillStyle = FARGE.blekk;
-        avrundet(g, 50, 512, b, 10, 5);
+      if (this.liten && this.steg.length <= 30) {
+        const antall = this.steg.length;
+        const gap = Math.min(40, 860 / antall);
+        const x0 = 480 - ((antall - 1) * gap) / 2;
+        for (let i = 0; i < antall; i++) {
+          g.save();
+          g.translate(x0 + i * gap, 517);
+          g.fillStyle = i < this.nr && this.fase !== 'intro' ? FARGE.gul : FARGE.hvit;
+          g.fill(STJERNE);
+          g.restore();
+        }
+      } else {
+        g.fillStyle = FARGE.hvit;
+        avrundet(g, 50, 512, 860, 10, 5);
         g.fill();
+        const b = 860 * Math.min(1, this.gått / this.total);
+        if (b > 10) {
+          g.fillStyle = FARGE.blekk;
+          avrundet(g, 50, 512, b, 10, 5);
+          g.fill();
+        }
       }
       tegnPille(g, 40, 20, 290, this.pille);
     }
@@ -253,9 +284,9 @@ export class Klasseokt implements Spill {
   }
 
   private tegnStart(g: CanvasRenderingContext2D) {
-    tegnÅs(g);
-    tegnOvelsesfigur(g, 120, 480, 'strekk', this.klokke, 1.7, FARGE.korall);
-    tegnOvelsesfigur(g, 840, 480, 'sprell', this.klokke, 1.7, FARGE.blaa);
+    if (!this.voksen) tegnÅs(g);
+    tegnOvelsesfigur(g, 120, 480, 'strekk', this.klokke, 1.7, this.figurfarge);
+    tegnOvelsesfigur(g, 840, 480, 'sprell', this.klokke, 1.7, this.voksen ? FARGE.dempet : FARGE.blaa);
     g.save();
     g.translate(480, 92);
     g.rotate(-0.02);
@@ -295,7 +326,7 @@ export class Klasseokt implements Spill {
 
   /** Forklarer regelen før første spørsmål: hvert svar har sin bevegelse. */
   private tegnIntro(g: CanvasRenderingContext2D) {
-    tegnÅs(g);
+    if (!this.voksen) tegnÅs(g);
     g.save();
     g.translate(430, 104);
     g.rotate(-0.012);
@@ -341,8 +372,8 @@ export class Klasseokt implements Spill {
     const klar = this.fase === 'klar';
     sirkel(g, 480, 345, 160, '#ffe9b2');
     sirkel(g, 480, 345, 112, FARGE.gul);
-    tegnÅs(g);
-    tegnOvelsesfigur(g, 480, 488, o.type, this.klokke, 2.3, FARGE.korall);
+    if (!this.voksen) tegnÅs(g);
+    tegnOvelsesfigur(g, 480, 488, o.type, this.klokke, 2.3, this.figurfarge);
 
     // Navnet skal kunne leses bakerst i klasserommet.
     if (!this.tittelSkrift) {
@@ -417,7 +448,7 @@ export class Klasseokt implements Spill {
       this.tittelSkrift = tilpassSkrift(g, lengst, 640, this.linje2 ? 32 : 40);
       for (let i = 0; i < o.svar.length; i++) this.svarSkrift[i] = tilpassSkrift(g, o.svar[i], KORT_B - 28, 56);
     }
-    tegnÅs(g);
+    if (!this.voksen) tegnÅs(g);
     g.save();
     g.translate(430, 104);
     g.rotate(-0.012);
@@ -434,12 +465,28 @@ export class Klasseokt implements Spill {
 
     // Tiden som er igjen av det klassen gjør akkurat nå.
     this.settSek(under === 0 ? this.inn.les - this.t : under === 1 ? this.inn.les + this.inn.svar - this.t : steg.sek - this.t);
-    papirsirkel(g, 874, 104, 42, under === 1 ? FARGE.gul : FARGE.hvit);
+    papirsirkel(g, 874, 104, 42, under === 1 && !this.liten ? FARGE.gul : FARGE.hvit);
+    if (this.liten) {
+      // De yngste får ingen tall som teller ned. En gul skive viser rolig hvor mye tid som er igjen.
+      const hel = under === 0 ? this.inn.les : under === 1 ? this.inn.svar : this.inn.fasit;
+      const brukt = under === 0 ? this.t : under === 1 ? this.t - this.inn.les : this.t - this.inn.les - this.inn.svar;
+      const igjen = Math.max(0, Math.min(1, 1 - brukt / hel));
+      g.fillStyle = FARGE.gul;
+      g.beginPath();
+      g.moveTo(874, 104);
+      g.arc(874, 104, 32, -Math.PI / 2, -Math.PI / 2 + igjen * Math.PI * 2);
+      g.closePath();
+      g.fill();
+    } else {
+      g.fillStyle = FARGE.blekk;
+      g.font = `600 40px ${SKRIFT}`;
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+      g.fillText(this.sekTekst, 874, 107);
+    }
     g.fillStyle = FARGE.blekk;
-    g.font = `600 40px ${SKRIFT}`;
     g.textAlign = 'center';
     g.textBaseline = 'middle';
-    g.fillText(this.sekTekst, 874, 107);
 
     g.font = `600 22px ${SKRIFT}`;
     g.fillText(under === 0 ? 'Tenk: hvilket svar er riktig?' : under === 1 ? 'Vis svaret med kroppen!' : this.fasit, 480, 170);
@@ -478,7 +525,7 @@ export class Klasseokt implements Spill {
     const fliser = [{ verdi: String(this.antallOvelser), tekst: 'øvelser' }];
     if (this.antallSporsmal) fliser.push({ verdi: String(this.antallSporsmal), tekst: 'spørsmål' });
     fliser.push({ verdi: `${min}:${sek}`, tekst: 'i bevegelse' });
-    return { stjerner: 3, fliser, øvMer: [], aktivSek: this.aktiv };
+    return { stjerner: 3, fliser, øvMer: [], aktivSek: this.aktiv, nokternt: this.voksen };
   }
 
   tilstand() {
@@ -489,6 +536,7 @@ export class Klasseokt implements Spill {
       nr: this.nr,
       antall: this.steg.length,
       pause: this.pause,
+      ovelse: this.fase === 'start' || this.fase === 'intro' ? null : (this.steg[this.nr]?.ovelse?.type ?? null),
       bobler: this.fase === 'start' ? [{ x: START_X, y: START_Y + 22 }] : [],
     };
   }

@@ -3,7 +3,7 @@
 import { ROLIG } from './felles';
 import { FARGE, avrundet, papirkort, sirkel } from './tegning';
 
-export type Ovelsestype = 'hopp' | 'sprell' | 'boy' | 'boks' | 'lop' | 'strekk';
+export type Ovelsestype = 'hopp' | 'sprell' | 'boy' | 'boks' | 'lop' | 'strekk' | 'sidehopp' | 'kne' | 'armsirkel' | 'taa';
 
 const B = 170;
 const H = 180;
@@ -25,6 +25,7 @@ let vx = 0;
 let vy = 0;
 let hx = 0;
 let hy = 0;
+let side = 0;
 
 function stilling(type: Ovelsestype, t: number) {
   luft = 0;
@@ -32,6 +33,7 @@ function stilling(type: Ovelsestype, t: number) {
   fot = 12;
   løftV = 0;
   løftH = 0;
+  side = 0;
   if (type === 'hopp') {
     const p = (t / 1.0) % 1;
     let bøy = 0;
@@ -78,6 +80,47 @@ function stilling(type: Ovelsestype, t: number) {
     vy = 14 + 16 * sving;
     hx = 7;
     hy = 14 - 16 * sving;
+  } else if (type === 'sidehopp') {
+    // Hopp fra side til side, som over en strek på gulvet.
+    const p = (t / 1.0) % 1;
+    const sving = Math.sin(p * TAU);
+    side = 20 * sving;
+    luft = 12 * Math.abs(Math.cos(p * TAU));
+    senk = 5 * Math.abs(sving);
+    fot = 9;
+    vx = -9;
+    vy = 20 + 6 * sving;
+    hx = 9;
+    hy = 20 - 6 * sving;
+  } else if (type === 'kne') {
+    // Kne mot albue: hendene ved hodet, og motsatt albue møter kneet.
+    const p = (t / 1.6) % 1;
+    const sving = Math.sin(p * TAU);
+    const v = Math.max(0, sving);
+    const h = Math.max(0, -sving);
+    løftV = v * 30;
+    løftH = h * 30;
+    fot = 10;
+    hx = 6 - 20 * v;
+    hy = -10 + 24 * v;
+    vx = -6 + 20 * h;
+    vy = -10 + 24 * h;
+  } else if (type === 'armsirkel') {
+    // Store sirkler med strake armer.
+    const v = ((t / 2.0) % 1) * TAU;
+    hx = 10 + 26 * Math.sin(v);
+    hy = -30 * Math.cos(v);
+    vx = -hx;
+    vy = hy;
+  } else if (type === 'taa') {
+    // Tåhev: rolig opp på tå og ned igjen, med hendene på hoftene.
+    const a = 0.5 - 0.5 * Math.cos(((t / 2.667) % 1) * TAU);
+    luft = 7 * a;
+    fot = 9;
+    vx = 7;
+    vy = 28;
+    hx = -7;
+    hy = 28;
   } else if (type === 'strekk') {
     // Strekk mot taket og lén rolig fra side til side.
     const sving = Math.sin(((t / 3.33) % 1) * TAU);
@@ -116,6 +159,7 @@ function lem(
 }
 
 function lag(g: CanvasRenderingContext2D, farge: string, dx: number, dy: number) {
+  dx += side;
   const hofteY = BAKKE - 45 + senk - luft + dy;
   const skulderY = hofteY - KROPP;
   const fotY = BAKKE - luft + dy;
@@ -156,7 +200,7 @@ export function tegnOvelse(g: CanvasRenderingContext2D, x: number, y: number, ty
   const k = 1 - luft / 60;
   g.fillStyle = FARGE.skygge;
   g.beginPath();
-  g.ellipse(0, BAKKE + 5, (fot + 14) * k, 4 * k, 0, 0, TAU);
+  g.ellipse(side, BAKKE + 5, (fot + 14) * k, 4 * k, 0, 0, TAU);
   g.fill();
   lag(g, FARGE.skygge, 4, 4);
   lag(g, FARGE.blaa, 0, 0);
@@ -179,7 +223,7 @@ export function tegnOvelsesfigur(
   const k = 1 - luft / 60;
   g.fillStyle = FARGE.skygge;
   g.beginPath();
-  g.ellipse(0, BAKKE + 4, (fot + 14) * k, 4 * k, 0, 0, TAU);
+  g.ellipse(side, BAKKE + 4, (fot + 14) * k, 4 * k, 0, 0, TAU);
   g.fill();
   lag(g, FARGE.skygge, 3, 3);
   lag(g, farge, 0, 0);
