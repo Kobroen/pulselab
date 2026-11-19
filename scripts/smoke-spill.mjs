@@ -109,7 +109,10 @@ if (!rekk.includes('2 av 3')) errors.push(`Rekk ga uventet resultat: ${rekk}`);
 await page.evaluate(() => clearInterval(window.__mating));
 await page.click('#ferdig');
 await page.click('#start-laere');
-await page.check('input[value="ordklasser"]', { force: true });
+// Sveip spilles med et sett fra oppgavebanken.
+await page.selectOption('#banktrinn', '5-7');
+await page.selectOption('#banksett', 'samfunnsfag-5-7-europas-hovedsteder');
+await page.waitForTimeout(400);
 await page.click('[data-spill="sveip"]');
 await page.click('#uten-kamera');
 const flate = await page.locator('#scene').boundingBox();
