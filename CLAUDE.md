@@ -20,6 +20,8 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
 - **Sporing på egen tråd:** all bildetolkning skjer i en arbeider. Hovedtråden
   tegner bare.
 - **Ingen minnetildeling i spilløkka** der det kan unngås.
+- **Universell utforming er et krav:** alt skal kunne brukes med tastatur, tekst skal ha kontrast
+  på minst 4,5:1, og «rolig bevegelse» følger systeminnstillingen (`ROLIG` i `felles.ts`).
 - **Kamerafri modus er likeverdig:** spill skal få abstrakte signaler, aldri
   snakke direkte med kameraet.
 - **Originalt uttrykk:** ikke kopier navn, figurer, grafikk eller baner fra

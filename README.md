@@ -27,6 +27,9 @@ verken kamera eller innlogging. Læreøktene hentes fra oppgavebanken i `innhold
 og hvert sett lastes først når økta starter. Etter økta teller tiden i bevegelse mot klassemålet
 (10 meter per minutt mot Galdhøpiggen), som bare lagres på enheten. Mellomrom pauser, pil høyre hopper videre og Esc avslutter.
 
+Holder ikke enheten bildeflyten, senkes oppløsningen på spillflaten automatisk i to trinn (`?kvalitet=lav`
+tvinger det fram). Mangler kameraet eller er det sperret, forklarer skjermen hvorfor og løfter fram «Spill uten kamera».
+
 Øvelsene trekkes fra ti ulike, så økta får ny blanding hver gang. Uttrykket følger trinnet:
 småskolen får tre svar, rolig tempo, stjerner for framdrift og ingen tall som teller ned, og voksne
 får et nøkternt uttrykk uten åser, konfetti og stjerner. Læreren kan velge et annet uttrykk under «Tilpass økta».

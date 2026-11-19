@@ -19,9 +19,17 @@ export interface Spill {
   resultat(): Resultat;
   /** Til røyktesten og måleskjermen. Kalles ikke i spilløkka. */
   tilstand(): Record<string, unknown>;
+  /** Det som skjer nå, i ord, til skjermleser. Endres bare når noe nytt skjer. */
+  kunngjoring?: string;
 }
 
-export const ROLIG = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Rolig bevegelse følger systeminnstillingen, også når den endres mens siden er åpen.
+const roligSpor = matchMedia('(prefers-reduced-motion: reduce)');
+export let ROLIG = roligSpor.matches;
+roligSpor.addEventListener('change', (e) => (ROLIG = e.matches));
+
+/** Settes når enheten ikke holder bildeflyten. Da tegnes det enklere. */
+export const ytelse = { lav: false };
 
 /** Det spillene ber omgivelsene om. Risting og dunk kan skrus av av spilleren. */
 export interface Effekter {
@@ -228,7 +236,7 @@ export class Konfetti {
 
   kast(x: number, y: number, antall: number) {
     // Rolig bevegelse gir «dryss»: færre, runde biter som siger ut og toner bort.
-    const n = ROLIG ? Math.min(Math.ceil(antall / 2), 12) : antall;
+    const n = ROLIG || ytelse.lav ? Math.min(Math.ceil(antall / 2), 12) : antall;
     for (let k = 0; k < n; k++) {
       const i = this.neste;
       this.neste = (this.neste + 1) % BITER;

@@ -7,7 +7,7 @@ import {
 export const FARGE = {
   bakgrunn: '#f7f1ec',
   blekk: '#1e1e1e',
-  dempet: '#6f6a66',
+  dempet: '#5f5a56',
   linje: '#ece4dc',
   hvit: '#ffffff',
   blaa: '#8ab2ff',

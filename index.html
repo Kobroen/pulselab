@@ -144,12 +144,27 @@
             <strong>Kameraet ser hvordan du beveger deg.</strong>
             Ingen andre ser bildet, og det lagres ikke. Alt skjer på denne enheten.
           </p>
+          <details class="personvernmer">
+            <summary>For læreren: slik behandles kamerabildet</summary>
+            <ul>
+              <li>Bildet tolkes på denne enheten og sendes aldri videre, verken til Learnlab eller andre.</li>
+              <li>Ingenting tas opp. Hvert bilde kastes straks det er tolket.</li>
+              <li>Spillet bruker bare punkter på kroppen, som hender, albuer og skuldre, mens spillet varer. De lagres ikke.</li>
+              <li>Ingen innlogging, ingen analyseverktøy og ingen skript fra andre.</li>
+              <li>På enheten lagres bare valg som trinn og lyd, klassemålet og egne spørsmål.</li>
+              <li>Kameraet slås av når du går tilbake til start eller skjuler fanen. Alt kan spilles uten kamera.</li>
+            </ul>
+          </details>
         </div>
         <div class="klarspeil">
           <p class="lapp" id="hint" role="status" aria-live="polite">Kameraet er av</p>
           <div class="kort speil">
-            <canvas id="speil" width="320" height="332" aria-label="Figur som viser hvordan kameraet ser deg"></canvas>
+            <canvas id="speil" width="320" height="332" role="img" aria-label="Figur som viser hvordan kameraet ser deg"></canvas>
             <button class="pille mork" id="kamera-paa" type="button">Slå på kameraet</button>
+          </div>
+          <div class="kort kamerahjelp" id="kamerahjelp" role="alert" hidden>
+            <strong id="kamerahjelp-tittel"></strong>
+            <p id="kamerahjelp-tekst"></p>
           </div>
           <div class="knapper">
             <button class="pille lys" id="uten-kamera" type="button">Spill uten kamera</button>
@@ -160,7 +175,7 @@
     </main>
 
     <main id="spill" class="spillskjerm" hidden>
-      <canvas id="scene" aria-label="Spillflate"></canvas>
+      <canvas id="scene" role="img" aria-label="Spillflate"></canvas>
       <div class="spillbar">
         <button class="pille lys" id="avslutt" type="button">Avslutt</button>
         <span class="snu">Snu skjermen for større spillflate</span>

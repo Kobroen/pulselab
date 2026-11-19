@@ -6,7 +6,7 @@
 :root {
   --bakgrunn: #f7f1ec;
   --blekk: #1e1e1e;
-  --dempet: #6f6a66;
+  --dempet: #5f5a56;
   --linje: #ece4dc;
   --blaa: #8ab2ff;
   --gronn: #66d3a8;
@@ -167,7 +167,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .rosa { background: var(--rosa); }
 .gronn { background: var(--gronn); }
 .oransje { background: var(--oransje); }
-.fotnote { position: absolute; left: 0; right: 0; bottom: 10px; font-size: 13px; color: var(--blekk); opacity: 0.7; }
+.fotnote { position: absolute; left: 0; right: 0; bottom: 10px; font-size: 13px; color: var(--blekk); }
 
 /* Lærerens vei inn: én stor knapp øverst. */
 .klasseknapp {
@@ -198,7 +198,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .oktkort .okttid { color: var(--blekk); font-weight: 600; font-size: 18px; }
 .oktkort .pille { margin-top: auto; min-height: 50px; min-width: 60%; font-size: 19px; }
 .oktkort p:last-of-type { margin-bottom: 10px; }
-.fotnote-klasse { margin-top: 26px; font-size: 15px; color: var(--dempet); }
+.fotnote-klasse { margin-top: 26px; font-size: 15px; color: var(--blekk); }
 
 .innstillinger { margin-top: 26px; }
 .innstillinger summary { cursor: pointer; font-weight: 600; width: fit-content; }
@@ -226,10 +226,10 @@ body[data-skjerm='klasse'] .figur, body[data-skjerm='klasse'] .sol { display: no
 /* ---------- Pugg og prøv ---------- */
 #pugg .ingress { max-width: 660px; font-size: 18px; }
 #egnetekst {
-  display: block; width: 100%; max-width: 760px; padding: 18px 20px; border: 0; resize: vertical;
+  display: block; width: 100%; max-width: 760px; padding: 18px 20px; border: 2px solid var(--blekk); resize: vertical;
   font: 400 17px/1.6 var(--skrift); color: var(--blekk); --rot: -0.4deg;
 }
-#egnetekst::placeholder { color: #a39c96; }
+#egnetekst::placeholder { color: var(--dempet); }
 #egnestatus { margin: 18px 0 16px; }
 .puggknapper .pille { min-height: 48px; }
 
@@ -281,6 +281,12 @@ body[data-skjerm='klasse'] .figur, body[data-skjerm='klasse'] .sol { display: no
 .speil canvas { width: 100%; height: auto; aspect-ratio: 320 / 332; border: 3px dashed var(--blekk); border-radius: 16px; display: block; }
 .speil .pille { position: absolute; }
 .klarspeil .knapper { margin-top: 24px; justify-content: center; }
+.kamerahjelp { --rot: 0.6deg; background: var(--gul); padding: 16px 20px; margin-top: 22px; max-width: 360px; font-size: 15px; }
+.kamerahjelp strong { display: block; font-weight: 600; font-size: 17px; margin-bottom: 4px; }
+.personvernmer { max-width: 360px; margin-top: 16px; font-size: 15px; }
+.personvernmer summary { cursor: pointer; font-weight: 600; width: fit-content; }
+.personvernmer ul { list-style: disc; padding-left: 20px; margin-top: 10px; display: grid; gap: 6px; }
+h1:focus { outline: none; }
 
 /* ---------- Spill ---------- */
 .spillskjerm { height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 6px; }
