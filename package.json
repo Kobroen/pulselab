@@ -8,9 +8,11 @@
     "dev": "npm run vendor && vite",
     "build": "npm run vendor && tsc --noEmit && vite build",
     "preview": "vite preview --port 4173",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke-spill.mjs",
+    "smoke:sporing": "node scripts/smoke.mjs"
   },
   "dependencies": {
+    "@fontsource/jost": "^5.3.0",
     "@mediapipe/tasks-vision": "1.2.3",
     "@tensorflow/tfjs-backend-wasm": "4.22.0",
     "@tensorflow/tfjs-backend-webgl": "4.22.0",

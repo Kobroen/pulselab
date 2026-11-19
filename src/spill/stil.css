@@ -1,0 +1,201 @@
+/* Papirklipp: flate former i Learnlab-fargene med en forskjøvet skygge. Mørk tekst på pastell. */
+:root {
+  --bakgrunn: #f7f1ec;
+  --blekk: #1e1e1e;
+  --dempet: #6f6a66;
+  --linje: #ece4dc;
+  --blaa: #8ab2ff;
+  --gronn: #66d3a8;
+  --gul: #ffd466;
+  --oransje: #ffa24b;
+  --korall: #fa6049;
+  --rosa: #fba0dc;
+  --blaa-lys: #c4d8ff;
+  --gronn-lys: #b2e8d3;
+  --rosa-lys: #fccfed;
+  --skygge: rgba(30, 30, 30, 0.13);
+  --skrift: Jost, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bakgrunn);
+  color: var(--blekk);
+  font: 400 17px/1.45 var(--skrift);
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, p, ul, fieldset { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1 { font-size: clamp(28px, 4vw, 36px); font-weight: 600; line-height: 1.15; }
+h2 { font-size: 26px; font-weight: 600; line-height: 1.15; }
+a { color: inherit; }
+
+.skjult {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.kameravideo { position: fixed; left: 0; top: 0; width: 2px; height: 2px; opacity: 0; pointer-events: none; }
+
+/* ---------- Byggeklosser ---------- */
+.kort {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 7px 7px 0 var(--skygge);
+  transform: rotate(var(--rot, 0deg));
+}
+.pille {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 8px 24px;
+  border: 2px solid var(--blekk); border-radius: 999px;
+  font: 600 16px/1 var(--skrift); color: var(--blekk); background: #fff;
+  cursor: pointer; white-space: nowrap;
+}
+.pille.mork { background: var(--blekk); color: #fff; }
+button.pille:hover:not(:disabled) { transform: translateY(-1px); }
+button.pille:active:not(:disabled) { transform: translateY(1px); }
+button.pille:disabled { opacity: 0.4; cursor: default; }
+:focus-visible { outline: 3px solid #2d5fd8; outline-offset: 3px; }
+.lapp {
+  display: inline-block; padding: 8px 20px; border-radius: 999px;
+  background: var(--gul); box-shadow: 5px 5px 0 var(--skygge);
+  font-weight: 600; font-size: 15px; transform: rotate(-2deg);
+}
+
+/* ---------- Landskapet bak skjermene ---------- */
+.landskap { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.sol {
+  position: absolute; top: 48px; right: max(5vw, 24px);
+  width: 100px; height: 100px; border-radius: 50%;
+  background: var(--gul); box-shadow: 8px 8px 0 var(--skygge);
+}
+.aaser { position: absolute; left: 0; bottom: 0; width: 100%; height: max(22vh, 110px); display: block; }
+.figur { position: absolute; right: max(4vw, 12px); bottom: 5vh; height: min(34vh, 300px); aspect-ratio: 280 / 400; }
+.figur svg { width: 100%; height: 100%; display: block; }
+body[data-skjerm='spill'] .landskap { display: none; }
+body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm='velg'] .figur { display: none; }
+
+/* ---------- Felles skjermoppsett ---------- */
+.skjerm {
+  max-width: 1000px; margin: 0 auto;
+  padding: 36px max(20px, env(safe-area-inset-right)) max(26vh, 130px) max(20px, env(safe-area-inset-left));
+}
+.tilbake { margin-bottom: 20px; min-height: 38px; padding: 6px 18px; font-size: 15px; }
+.knapper { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ---------- Start ---------- */
+.logo { width: min(330px, 78vw); margin: 0; font-family: var(--skrift); font-weight: 400; }
+.logo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.undertittel { margin: 14px 0 34px; font-size: 19px; color: var(--dempet); }
+.moduser { display: flex; flex-wrap: wrap; gap: 22px; }
+.moduskort {
+  width: 230px; min-height: 240px; padding: 22px 16px 20px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+}
+.moduskort p { font-size: 14px; color: var(--dempet); margin-top: 4px; }
+.moduskort .pille { margin-top: auto; }
+.moduskort.kommer .pille { border-color: var(--linje); color: var(--dempet); cursor: default; font-size: 14px; }
+.ikon { width: 80px; height: 80px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.ikon svg { width: 52px; height: 52px; }
+.blaa { background: var(--blaa); }
+.gul { background: var(--gul); }
+.rosa { background: var(--rosa); }
+.gronn { background: var(--gronn); }
+.oransje { background: var(--oransje); }
+.fotnote { margin-top: 34px; font-size: 14px; color: var(--dempet); }
+
+/* ---------- Velg spill ---------- */
+.tema { border: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 28px; }
+.tema legend { float: left; margin-right: 6px; font-weight: 600; padding: 0; }
+.tema label { position: relative; }
+.tema input { position: absolute; opacity: 0; inset: 0; }
+.tema span {
+  display: inline-flex; align-items: center; min-height: 42px; padding: 8px 22px;
+  border: 2px solid var(--blekk); border-radius: 999px; background: #fff; font-weight: 600; font-size: 16px; cursor: pointer;
+}
+.tema input:checked + span { background: var(--blekk); color: #fff; }
+.tema input:focus-visible + span { outline: 3px solid #2d5fd8; outline-offset: 3px; }
+.spillvalg { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 26px; max-width: 760px; }
+.spillkort { padding: 22px 24px 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.spillkort p { color: var(--dempet); font-size: 16px; }
+.spillkort .pille { margin-top: 8px; }
+.merke { padding: 4px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+
+/* ---------- Kamera og kalibrering ---------- */
+.klaroppsett { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: 36px 56px; align-items: start; }
+.ingress { color: var(--dempet); margin: 8px 0 22px; }
+.sjekkliste { padding: 18px 22px; display: grid; gap: 14px; max-width: 360px; }
+.sjekkliste li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.sjekkliste li::before {
+  content: ''; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--blekk); flex: none;
+  background: #fff center / 16px no-repeat;
+}
+.sjekkliste li.ok { font-weight: 400; }
+.sjekkliste li.ok::before {
+  border-color: var(--gronn); background-color: var(--gronn);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 4L13 4' fill='none' stroke='%231e1e1e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.personvern { --rot: -1deg; background: var(--blaa-lys); padding: 16px 22px; margin-top: 24px; max-width: 360px; font-size: 15px; }
+.personvern strong { display: block; font-weight: 600; }
+.klarspeil { display: grid; justify-items: center; gap: 0; }
+.klarspeil .lapp { position: relative; z-index: 1; margin-bottom: -18px; }
+.speil { border-radius: 24px; padding: 20px; width: 100%; max-width: 360px; position: relative; display: grid; place-items: center; }
+.speil canvas { width: 100%; height: auto; aspect-ratio: 320 / 332; border: 3px dashed var(--blekk); border-radius: 16px; display: block; }
+.speil .pille { position: absolute; }
+.klarspeil .knapper { margin-top: 24px; justify-content: center; }
+
+/* ---------- Spill ---------- */
+.spillskjerm { height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 6px; }
+#scene { display: block; touch-action: none; border-radius: 10px; cursor: none; }
+.spillbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; max-width: 960px; }
+.spillbar .pille { min-height: 36px; padding: 4px 18px; font-size: 14px; }
+.snu { display: none; font-size: 14px; color: var(--dempet); text-align: center; }
+@media (orientation: portrait) and (max-width: 700px) { .snu { display: block; } }
+
+/* ---------- Resultat ---------- */
+.resultatkort { --rot: -1deg; max-width: 540px; padding: 34px 38px 36px; border-radius: 18px; }
+.stjerner { display: flex; gap: 8px; margin: 14px 0 22px; }
+.stjerner svg { width: 44px; height: 44px; }
+.fliser { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.fliser li { border-radius: 12px; padding: 18px 6px 14px; text-align: center; font-size: 14px; }
+.fliser li:nth-child(1) { background: var(--gronn-lys); }
+.fliser li:nth-child(2) { background: var(--rosa-lys); }
+.fliser li:nth-child(3) { background: var(--blaa-lys); }
+.fliser b { display: block; font-size: clamp(24px, 5vw, 32px); font-weight: 600; line-height: 1.1; }
+#ovmer { margin-top: 22px; }
+#ovmer p { font-size: 15px; color: var(--dempet); margin-bottom: 8px; }
+#ovliste { display: flex; flex-wrap: wrap; gap: 8px; }
+#ovliste li { border: 2px solid var(--blekk); border-radius: 999px; padding: 4px 16px; font-weight: 600; font-size: 15px; }
+.resultatkort .knapper { margin-top: 28px; }
+
+/* ---------- Måleskjerm ---------- */
+.maal {
+  position: fixed; left: 8px; bottom: 8px; margin: 0; padding: 8px 12px; z-index: 5;
+  background: rgba(30, 30, 30, 0.86); color: #fff; border-radius: 8px; font: 13px/1.4 ui-monospace, Menlo, monospace;
+  pointer-events: none;
+}
+
+/* ---------- Smale skjermer: kortene stables som rader ---------- */
+@media (max-width: 760px) {
+  .skjerm { padding-top: 24px; }
+  .sol { width: 68px; height: 68px; top: auto; bottom: max(24vh, 120px); right: 28px; }
+  .figur { height: 150px; bottom: 3vh; }
+  .moduser { flex-direction: column; gap: 18px; }
+  .moduskort { width: 100%; min-height: 0; flex-direction: row; text-align: left; padding: 16px; gap: 16px; --rot: 0deg !important; }
+  .moduskort .ikon { width: 64px; height: 64px; }
+  .moduskort .ikon svg { width: 42px; height: 42px; }
+  .modustekst { flex: 1; min-width: 0; }
+  .moduskort .pille { margin: 0; padding-inline: 16px; }
+  .moduskort.kommer .pille { padding-inline: 10px; font-size: 13px; min-height: 34px; }
+  .moduskort h2 { font-size: 20px; }
+  .klaroppsett { grid-template-columns: 1fr; }
+  .klarspeil { grid-row: 1; }
+  .ingress { margin-bottom: 16px; }
+  .resultatkort { padding: 26px 22px 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.pille:hover:not(:disabled), button.pille:active:not(:disabled) { transform: none; }
+}

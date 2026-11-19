@@ -7,7 +7,8 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
 
 - `npm run build` – typesjekk og bygging. Skal alltid gå grønt før innsjekking.
 - `npm run preview` – serverer `dist/` på port 4173.
-- `npm run smoke` – røyktest med falskt kamera (krever Playwright og bygget `dist/`).
+- `npm run smoke` – røyktest av spillet med falskt kamera (krever Playwright og bygget `dist/`).
+- `npm run smoke:sporing` – røyktest av sporingstesten (`sporingstest.html`).
 
 ## Faste regler
 
@@ -33,3 +34,12 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
   endringsforespørsel.
 - Learnlabs øvrige apper er Angular 16 og .NET 8 i Azure DevOps. Spillmotoren
   holdes rammeverksfri slik at den kan legges inn i et Angular-skall senere.
+
+## Oppbygging
+
+- `index.html` og `src/spill/` er spillet. `sporingstest.html`, `src/main.ts` og
+  `src/worker.ts` er målesiden fra fase 0.
+- Spillene (`rekk.ts`, `sveip.ts`) leser bare `Signaler` fra `signaler.ts`.
+  Kildene er `kamerakilde.ts` og `pekerkilde.ts`.
+- Skriften Hurme Geometric Sans er lisensiert og ligger ikke i dette åpne
+  repoet. Jost brukes som stedfortreder.

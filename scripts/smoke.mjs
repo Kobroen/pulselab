@@ -24,7 +24,7 @@ page.on('pageerror', (e) => errors.push(String(e)));
 // MediaPipe skriver informasjonslinjer til feilkanalen. De er ikke feil.
 page.on('console', (m) => m.type() === 'error' && !m.text().startsWith('INFO:') && errors.push(m.text()));
 
-await page.goto('http://localhost:4173/?auto=1&dur=3');
+await page.goto('http://localhost:4173/sporingstest.html?auto=1&dur=3');
 await page.waitForFunction(() => window.__pulsResults?.length === 4, null, { timeout: 180_000 });
 const results = await page.evaluate(() => window.__pulsResults);
 console.log(await page.locator('#report').inputValue());
