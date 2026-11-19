@@ -213,7 +213,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .okter.sett .pille { min-height: 42px; font-size: 16px; }
 .blaalys { background: var(--blaa-lys); }
 #klasse { padding-bottom: max(30vh, 160px); }
-#okter { grid-template-columns: minmax(0, 420px); }
+#okter { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); max-width: 980px; }
 body[data-skjerm='klasse'] .figur, body[data-skjerm='klasse'] .sol { display: none; }
 
 /* Klassemålet: en stripe som fylles mot toppen, med et merke ved delmålet. */
