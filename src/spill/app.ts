@@ -9,7 +9,7 @@ import { Kamerakilde } from './kamerakilde';
 import { Klasseokt } from './klasse';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
-import { INDEKS, type Trinn, hentSett, trekk } from './bank';
+import { type BankOppgave, INDEKS, type Trinn, hentSett, trekk } from './bank';
 import { OKTER, type Okt, antallSporsmal, laereokt } from './okter';
 import { type Tema, lagRunde } from './oppgaver';
 import { Pekerkilde } from './pekerkilde';
@@ -206,13 +206,15 @@ function startSpill(kameraMed: boolean) {
   }
   peker?.stopp();
   peker = new Pekerkilde(scene, signaler, !kameraMed);
-  const tema = (document.querySelector('input[name="tema"]:checked') as HTMLInputElement).value as Tema;
+  // Temaet er enten et sett fra oppgavebanken eller en av de to regelbaserte rundene.
+  const tema = ((document.querySelector('input[name="tema"]:checked') as HTMLInputElement | null)?.value ?? 'gange') as Tema;
+  const runde = (antall: number) => (bankoppgaver ? trekk(bankoppgaver, antall) : lagRunde(tema, antall));
   spill =
     spilltype === 'intervall'
       ? new Intervall(signaler, lyd, kameraMed, effekter, Number(params.get('intervall')) || 15)
       : spilltype === 'rekk'
-      ? new Rekk(signaler, lagRunde(tema, Number(params.get('antall')) || 10), lyd, kameraMed, effekter)
-      : new Sveip(signaler, lagRunde(tema, 30), lyd, kameraMed, effekter, Number(params.get('varighet')) || 60);
+      ? new Rekk(signaler, runde(Number(params.get('antall')) || 10), lyd, kameraMed, effekter)
+      : new Sveip(signaler, runde(30), lyd, kameraMed, effekter, Number(params.get('varighet')) || 60);
   vis('spill');
   $('skjermleser').textContent = kameraMed
     ? 'Spillet er i gang. Styr med hendene foran kameraet.'
@@ -448,6 +450,56 @@ for (const t of INDEKS.trinn) {
   );
 }
 visSett();
+
+// Læremodus: flere temaer fra oppgavebanken. Settet hentes når det velges, så spillet kan starte med en gang.
+let bankoppgaver: BankOppgave[] | null = null;
+const banktrinn = $<HTMLSelectElement>('banktrinn');
+const banksett = $<HTMLSelectElement>('banksett');
+function fyllBanksett() {
+  banksett.textContent = '';
+  banksett.appendChild(new Option('Velg tema …', ''));
+  for (const f of INDEKS.fag) {
+    const sett = INDEKS.sett.filter((s) => s.trinn === banktrinn.value && s.fag === f.id);
+    if (!sett.length) continue;
+    const gruppe = document.createElement('optgroup');
+    gruppe.label = f.navn;
+    for (const s of sett) gruppe.appendChild(new Option(s.tittel, s.id));
+    banksett.appendChild(gruppe);
+  }
+  velgBanksett();
+}
+async function velgBanksett() {
+  const oppforing = INDEKS.sett.find((s) => s.id === banksett.value);
+  banksett.classList.toggle('valgt', !!oppforing);
+  bankoppgaver = null;
+  for (const inn of document.querySelectorAll<HTMLInputElement>('input[name="tema"]')) {
+    if (oppforing) inn.checked = false;
+    else if (inn.value === 'gange' && !document.querySelector('input[name="tema"]:checked')) inn.checked = true;
+  }
+  if (!oppforing) return;
+  try {
+    const oppgaver = await hentSett(oppforing);
+    if (banksett.value === oppforing.id) bankoppgaver = oppgaver;
+  } catch {
+    // Settet kunne ikke hentes. Da gjelder den regelbaserte runden.
+    banksett.value = '';
+    velgBanksett();
+  }
+}
+for (const t of INDEKS.trinn) banktrinn.appendChild(new Option(t.navn, t.id, false, t.id === trinn));
+banktrinn.addEventListener('change', () => {
+  lagre('puls-trinn', banktrinn.value);
+  fyllBanksett();
+});
+banksett.addEventListener('change', velgBanksett);
+for (const inn of document.querySelectorAll<HTMLInputElement>('input[name="tema"]')) {
+  inn.addEventListener('change', () => {
+    banksett.value = '';
+    banksett.classList.remove('valgt');
+    bankoppgaver = null;
+  });
+}
+fyllBanksett();
 $('start-power').addEventListener('click', () => {
   spilltype = 'intervall';
   åpneKlar();

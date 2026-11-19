@@ -4,7 +4,7 @@ import indeksfil from '../../innhold/nb/indeks.json';
 import type { BankOppgave, Fag, Indeks, Oppgavesett, Settoppforing, Trinn } from '../../innhold/typer';
 import type { Oppgave } from './oppgaver';
 
-export type { Fag, Settoppforing, Trinn };
+export type { BankOppgave, Fag, Settoppforing, Trinn };
 export const INDEKS = indeksfil as unknown as Indeks;
 
 const filer = import.meta.glob<Oppgavesett>('../../innhold/nb/*/*.json', { import: 'default' });
