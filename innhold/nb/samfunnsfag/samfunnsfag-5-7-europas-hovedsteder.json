@@ -1,0 +1,234 @@
+{
+  "id": "samfunnsfag-5-7-europas-hovedsteder",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "samfunnsfag",
+  "trinn": "5-7",
+  "tittel": "Europas hovedsteder",
+  "beskrivelse": "Koble land og hovedstad.",
+  "lk20": [
+    "SAF01-04, etter 7. trinn: geografiske hovedtrekk i Europa"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva heter hovedstaden i Sverige?",
+      "riktig": "Stockholm",
+      "gale": [
+        "Roma",
+        "Brussel",
+        "Paris"
+      ],
+      "nokkel": "Sverige – Stockholm"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva heter hovedstaden i Danmark?",
+      "riktig": "København",
+      "gale": [
+        "Lisboa",
+        "Praha",
+        "Dublin"
+      ],
+      "nokkel": "Danmark – København"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva heter hovedstaden i Finland?",
+      "riktig": "Helsingfors",
+      "gale": [
+        "Madrid",
+        "København",
+        "London"
+      ],
+      "nokkel": "Finland – Helsingfors"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva heter hovedstaden i Island?",
+      "riktig": "Reykjavik",
+      "gale": [
+        "Budapest",
+        "Paris",
+        "Warszawa"
+      ],
+      "nokkel": "Island – Reykjavik"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva heter hovedstaden i Tyskland?",
+      "riktig": "Berlin",
+      "gale": [
+        "Dublin",
+        "Wien",
+        "Kyiv"
+      ],
+      "nokkel": "Tyskland – Berlin"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva heter hovedstaden i Frankrike?",
+      "riktig": "Paris",
+      "gale": [
+        "Madrid",
+        "London",
+        "Kyiv"
+      ],
+      "nokkel": "Frankrike – Paris"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva heter hovedstaden i Spania?",
+      "riktig": "Madrid",
+      "gale": [
+        "Lisboa",
+        "Budapest",
+        "Helsingfors"
+      ],
+      "nokkel": "Spania – Madrid"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva heter hovedstaden i Italia?",
+      "riktig": "Roma",
+      "gale": [
+        "Madrid",
+        "Wien",
+        "Helsingfors"
+      ],
+      "nokkel": "Italia – Roma"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva heter hovedstaden i Storbritannia?",
+      "riktig": "London",
+      "gale": [
+        "Dublin",
+        "Roma",
+        "Lisboa"
+      ],
+      "nokkel": "Storbritannia – London"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva heter hovedstaden i Polen?",
+      "riktig": "Warszawa",
+      "gale": [
+        "Berlin",
+        "København",
+        "Madrid"
+      ],
+      "nokkel": "Polen – Warszawa"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva heter hovedstaden i Hellas?",
+      "riktig": "Aten",
+      "gale": [
+        "Wien",
+        "Roma",
+        "Praha"
+      ],
+      "nokkel": "Hellas – Aten"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva heter hovedstaden i Portugal?",
+      "riktig": "Lisboa",
+      "gale": [
+        "Paris",
+        "Reykjavik",
+        "København"
+      ],
+      "nokkel": "Portugal – Lisboa"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva heter hovedstaden i Nederland?",
+      "riktig": "Amsterdam",
+      "gale": [
+        "Roma",
+        "Dublin",
+        "Berlin"
+      ],
+      "nokkel": "Nederland – Amsterdam"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva heter hovedstaden i Østerrike?",
+      "riktig": "Wien",
+      "gale": [
+        "Paris",
+        "Budapest",
+        "Aten"
+      ],
+      "nokkel": "Østerrike – Wien"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter hovedstaden i Irland?",
+      "riktig": "Dublin",
+      "gale": [
+        "Paris",
+        "Praha",
+        "Berlin"
+      ],
+      "nokkel": "Irland – Dublin"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter hovedstaden i Belgia?",
+      "riktig": "Brussel",
+      "gale": [
+        "Stockholm",
+        "Reykjavik",
+        "Aten"
+      ],
+      "nokkel": "Belgia – Brussel"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva heter hovedstaden i Ukraina?",
+      "riktig": "Kyiv",
+      "gale": [
+        "Amsterdam",
+        "Madrid",
+        "Stockholm"
+      ],
+      "nokkel": "Ukraina – Kyiv"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva heter hovedstaden i Ungarn?",
+      "riktig": "Budapest",
+      "gale": [
+        "Brussel",
+        "Warszawa",
+        "Amsterdam"
+      ],
+      "nokkel": "Ungarn – Budapest"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva heter hovedstaden i Tsjekkia?",
+      "riktig": "Praha",
+      "gale": [
+        "Stockholm",
+        "Brussel",
+        "Lisboa"
+      ],
+      "nokkel": "Tsjekkia – Praha"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva heter hovedstaden i Sveits?",
+      "riktig": "Bern",
+      "gale": [
+        "Madrid",
+        "Stockholm",
+        "Wien"
+      ],
+      "nokkel": "Sveits – Bern"
+    }
+  ]
+}

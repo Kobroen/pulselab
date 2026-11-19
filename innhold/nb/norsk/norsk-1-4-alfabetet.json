@@ -1,0 +1,234 @@
+{
+  "id": "norsk-1-4-alfabetet",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "1-4",
+  "tittel": "Alfabetet og vokalene",
+  "beskrivelse": "Bokstavenes rekkefølge og hvilke som er vokaler.",
+  "lk20": [
+    "NOR01-06, etter 2. trinn: bokstaver, språklyder og alfabetet"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilken bokstav kommer etter C?",
+      "riktig": "D",
+      "gale": [
+        "B",
+        "E",
+        "G"
+      ],
+      "nokkel": "C – D"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilken bokstav kommer etter G?",
+      "riktig": "H",
+      "gale": [
+        "F",
+        "I",
+        "J"
+      ],
+      "nokkel": "G – H"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilken bokstav kommer etter O?",
+      "riktig": "P",
+      "gale": [
+        "N",
+        "Q",
+        "R"
+      ],
+      "nokkel": "O – P"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilken bokstav kommer etter S?",
+      "riktig": "T",
+      "gale": [
+        "R",
+        "U",
+        "V"
+      ],
+      "nokkel": "S – T"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilken bokstav kommer etter V?",
+      "riktig": "W",
+      "gale": [
+        "U",
+        "X",
+        "Y"
+      ],
+      "nokkel": "V – W"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilken bokstav kommer etter X?",
+      "riktig": "Y",
+      "gale": [
+        "W",
+        "Z",
+        "Æ"
+      ],
+      "nokkel": "X – Y"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilken bokstav kommer etter Z?",
+      "riktig": "Æ",
+      "gale": [
+        "Ø",
+        "Å",
+        "Y"
+      ],
+      "nokkel": "Z – Æ"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilken bokstav kommer etter Æ?",
+      "riktig": "Ø",
+      "gale": [
+        "Å",
+        "Z",
+        "A"
+      ],
+      "nokkel": "Æ – Ø"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilken bokstav kommer etter Ø?",
+      "riktig": "Å",
+      "gale": [
+        "Æ",
+        "Z",
+        "A"
+      ],
+      "nokkel": "Ø – Å"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilken bokstav kommer før E?",
+      "riktig": "D",
+      "gale": [
+        "F",
+        "C",
+        "B"
+      ],
+      "nokkel": "E – D"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilken bokstav kommer før J?",
+      "riktig": "I",
+      "gale": [
+        "K",
+        "H",
+        "G"
+      ],
+      "nokkel": "J – I"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilken bokstav kommer før N?",
+      "riktig": "M",
+      "gale": [
+        "O",
+        "L",
+        "K"
+      ],
+      "nokkel": "N – M"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilken bokstav kommer før R?",
+      "riktig": "Q",
+      "gale": [
+        "S",
+        "P",
+        "O"
+      ],
+      "nokkel": "R – Q"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken bokstav kommer før U?",
+      "riktig": "T",
+      "gale": [
+        "V",
+        "S",
+        "W"
+      ],
+      "nokkel": "U – T"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilken bokstav er en vokal?",
+      "riktig": "E",
+      "gale": [
+        "K",
+        "M",
+        "S"
+      ],
+      "nokkel": "E"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilken bokstav er en vokal?",
+      "riktig": "Y",
+      "gale": [
+        "J",
+        "V",
+        "W"
+      ],
+      "nokkel": "Y"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilken bokstav er en vokal?",
+      "riktig": "Å",
+      "gale": [
+        "G",
+        "H",
+        "R"
+      ],
+      "nokkel": "Å"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilken bokstav er en vokal?",
+      "riktig": "I",
+      "gale": [
+        "L",
+        "T",
+        "D"
+      ],
+      "nokkel": "I"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilken bokstav er en vokal?",
+      "riktig": "U",
+      "gale": [
+        "N",
+        "B",
+        "F"
+      ],
+      "nokkel": "U"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvilken bokstav er en vokal?",
+      "riktig": "Ø",
+      "gale": [
+        "P",
+        "C",
+        "Z"
+      ],
+      "nokkel": "Ø"
+    }
+  ]
+}

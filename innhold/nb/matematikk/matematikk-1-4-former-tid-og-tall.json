@@ -1,0 +1,311 @@
+{
+  "id": "matematikk-1-4-former-tid-og-tall",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "1-4",
+  "tittel": "Former, tid og tall",
+  "beskrivelse": "Blandede oppgaver om former, klokke, penger og tallrekka.",
+  "lk20": [
+    "MAT01-05, 1.–4. trinn: geometriske figurer, tid, penger og tallforståelse"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvor mange kanter har en trekant?",
+      "riktig": "3",
+      "gale": [
+        "4",
+        "5",
+        "6"
+      ],
+      "nokkel": "Hvor mange kanter har en trekant? 3"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvor mange kanter har en firkant?",
+      "riktig": "4",
+      "gale": [
+        "3",
+        "5",
+        "6"
+      ],
+      "nokkel": "Hvor mange kanter har en firkant? 4"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvor mange kanter har en femkant?",
+      "riktig": "5",
+      "gale": [
+        "4",
+        "6",
+        "8"
+      ],
+      "nokkel": "Hvor mange kanter har en femkant? 5"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvor mange kanter har en sekskant?",
+      "riktig": "6",
+      "gale": [
+        "5",
+        "7",
+        "8"
+      ],
+      "nokkel": "Hvor mange kanter har en sekskant? 6"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilken form har ingen hjørner?",
+      "riktig": "sirkel",
+      "gale": [
+        "trekant",
+        "kvadrat",
+        "rektangel"
+      ],
+      "nokkel": "Hvilken form har ingen hjørner? sirkel"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilken form har en ball?",
+      "riktig": "kule",
+      "gale": [
+        "kube",
+        "sylinder",
+        "kjegle"
+      ],
+      "nokkel": "Hvilken form har en ball? kule"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilken form har en terning?",
+      "riktig": "kube",
+      "gale": [
+        "kule",
+        "sylinder",
+        "pyramide"
+      ],
+      "nokkel": "Hvilken form har en terning? kube"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilken form har en hermetikkboks?",
+      "riktig": "sylinder",
+      "gale": [
+        "kule",
+        "kube",
+        "kjegle"
+      ],
+      "nokkel": "Hvilken form har en hermetikkboks? sylinder"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilken form har en bursdagshatt?",
+      "riktig": "kjegle",
+      "gale": [
+        "kule",
+        "kube",
+        "sylinder"
+      ],
+      "nokkel": "Hvilken form har en bursdagshatt? kjegle"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvor mange flater har en terning?",
+      "riktig": "6",
+      "gale": [
+        "4",
+        "8",
+        "12"
+      ],
+      "nokkel": "Hvor mange flater har en terning? 6"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvor mange hjørner har en terning?",
+      "riktig": "8",
+      "gale": [
+        "6",
+        "4",
+        "12"
+      ],
+      "nokkel": "Hvor mange hjørner har en terning? 8"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvor mange minutter er en halv time?",
+      "riktig": "30",
+      "gale": [
+        "15",
+        "60",
+        "50"
+      ],
+      "nokkel": "Hvor mange minutter er en halv time? 30"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvor mange minutter er et kvarter?",
+      "riktig": "15",
+      "gale": [
+        "30",
+        "25",
+        "45"
+      ],
+      "nokkel": "Hvor mange minutter er et kvarter? 15"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvor mange dager har en uke?",
+      "riktig": "7",
+      "gale": [
+        "5",
+        "6",
+        "10"
+      ],
+      "nokkel": "Hvor mange dager har en uke? 7"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvor mange måneder har et år?",
+      "riktig": "12",
+      "gale": [
+        "10",
+        "7",
+        "24"
+      ],
+      "nokkel": "Hvor mange måneder har et år? 12"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvor mange timer har et døgn?",
+      "riktig": "24",
+      "gale": [
+        "12",
+        "60",
+        "10"
+      ],
+      "nokkel": "Hvor mange timer har et døgn? 24"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvor mange kroner er to tiere og en femmer?",
+      "riktig": "25",
+      "gale": [
+        "15",
+        "30",
+        "21"
+      ],
+      "nokkel": "Hvor mange kroner er to tiere og en femmer? 25"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvor mange kroner er tre tjuekroner?",
+      "riktig": "60",
+      "gale": [
+        "23",
+        "32",
+        "50"
+      ],
+      "nokkel": "Hvor mange kroner er tre tjuekroner? 60"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilket tall er et partall?",
+      "riktig": "8",
+      "gale": [
+        "5",
+        "7",
+        "9"
+      ],
+      "nokkel": "Hvilket tall er et partall? 8"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvilket tall er et partall?",
+      "riktig": "14",
+      "gale": [
+        "11",
+        "13",
+        "15"
+      ],
+      "nokkel": "Hvilket tall er et partall? 14"
+    },
+    {
+      "id": "21",
+      "tekst": "Hvilket tall er et oddetall?",
+      "riktig": "7",
+      "gale": [
+        "4",
+        "6",
+        "8"
+      ],
+      "nokkel": "Hvilket tall er et oddetall? 7"
+    },
+    {
+      "id": "22",
+      "tekst": "Hvilket tall er et oddetall?",
+      "riktig": "13",
+      "gale": [
+        "10",
+        "12",
+        "16"
+      ],
+      "nokkel": "Hvilket tall er et oddetall? 13"
+    },
+    {
+      "id": "23",
+      "tekst": "Hvilket tall er størst?",
+      "riktig": "91",
+      "gale": [
+        "19",
+        "89",
+        "79"
+      ],
+      "nokkel": "Hvilket tall er størst? 91"
+    },
+    {
+      "id": "24",
+      "tekst": "Hvilket tall er minst?",
+      "riktig": "17",
+      "gale": [
+        "71",
+        "27",
+        "70"
+      ],
+      "nokkel": "Hvilket tall er minst? 17"
+    },
+    {
+      "id": "25",
+      "tekst": "Hvilket tall kommer rett etter 39?",
+      "riktig": "40",
+      "gale": [
+        "38",
+        "49",
+        "30"
+      ],
+      "nokkel": "Hvilket tall kommer rett etter 39? 40"
+    },
+    {
+      "id": "26",
+      "tekst": "Hvilket tall kommer rett etter 99?",
+      "riktig": "100",
+      "gale": [
+        "98",
+        "109",
+        "90"
+      ],
+      "nokkel": "Hvilket tall kommer rett etter 99? 100"
+    },
+    {
+      "id": "27",
+      "tekst": "Hvilket tall kommer rett før 60?",
+      "riktig": "59",
+      "gale": [
+        "61",
+        "50",
+        "69"
+      ],
+      "nokkel": "Hvilket tall kommer rett før 60? 59"
+    }
+  ]
+}

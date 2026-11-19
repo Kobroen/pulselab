@@ -1,0 +1,223 @@
+{
+  "id": "engelsk-8-10-synonymer",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "8-10",
+  "tittel": "Synonyms",
+  "beskrivelse": "Finn ordet som betyr omtrent det samme.",
+  "lk20": [
+    "ENG01-04, etter 10. trinn: bruke variert ordforråd"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Synonym for «big»?",
+      "riktig": "large",
+      "gale": [
+        "rapid",
+        "select",
+        "start"
+      ],
+      "nokkel": "big – large"
+    },
+    {
+      "id": "02",
+      "tekst": "Synonym for «begin»?",
+      "riktig": "start",
+      "gale": [
+        "purchase",
+        "afraid",
+        "require"
+      ],
+      "nokkel": "begin – start"
+    },
+    {
+      "id": "03",
+      "tekst": "Synonym for «smart»?",
+      "riktig": "clever",
+      "gale": [
+        "display",
+        "finish",
+        "odd"
+      ],
+      "nokkel": "smart – clever"
+    },
+    {
+      "id": "04",
+      "tekst": "Synonym for «quick»?",
+      "riktig": "rapid",
+      "gale": [
+        "select",
+        "cheerful",
+        "odd"
+      ],
+      "nokkel": "quick – rapid"
+    },
+    {
+      "id": "05",
+      "tekst": "Synonym for «hard»?",
+      "riktig": "difficult",
+      "gale": [
+        "cheerful",
+        "wealthy",
+        "clever"
+      ],
+      "nokkel": "hard – difficult"
+    },
+    {
+      "id": "06",
+      "tekst": "Synonym for «buy»?",
+      "riktig": "purchase",
+      "gale": [
+        "large",
+        "wealthy",
+        "select"
+      ],
+      "nokkel": "buy – purchase"
+    },
+    {
+      "id": "07",
+      "tekst": "Synonym for «help»?",
+      "riktig": "assist",
+      "gale": [
+        "cheerful",
+        "start",
+        "afraid"
+      ],
+      "nokkel": "help – assist"
+    },
+    {
+      "id": "08",
+      "tekst": "Synonym for «end»?",
+      "riktig": "finish",
+      "gale": [
+        "cheerful",
+        "clever",
+        "select"
+      ],
+      "nokkel": "end – finish"
+    },
+    {
+      "id": "09",
+      "tekst": "Synonym for «choose»?",
+      "riktig": "select",
+      "gale": [
+        "reply",
+        "clever",
+        "difficult"
+      ],
+      "nokkel": "choose – select"
+    },
+    {
+      "id": "10",
+      "tekst": "Synonym for «answer»?",
+      "riktig": "reply",
+      "gale": [
+        "furious",
+        "exhausted",
+        "wealthy"
+      ],
+      "nokkel": "answer – reply"
+    },
+    {
+      "id": "11",
+      "tekst": "Synonym for «allow»?",
+      "riktig": "permit",
+      "gale": [
+        "rapid",
+        "cheerful",
+        "clever"
+      ],
+      "nokkel": "allow – permit"
+    },
+    {
+      "id": "12",
+      "tekst": "Synonym for «show»?",
+      "riktig": "display",
+      "gale": [
+        "exhausted",
+        "require",
+        "permit"
+      ],
+      "nokkel": "show – display"
+    },
+    {
+      "id": "13",
+      "tekst": "Synonym for «need»?",
+      "riktig": "require",
+      "gale": [
+        "assist",
+        "furious",
+        "purchase"
+      ],
+      "nokkel": "need – require"
+    },
+    {
+      "id": "14",
+      "tekst": "Synonym for «tired»?",
+      "riktig": "exhausted",
+      "gale": [
+        "large",
+        "finish",
+        "select"
+      ],
+      "nokkel": "tired – exhausted"
+    },
+    {
+      "id": "15",
+      "tekst": "Synonym for «scared»?",
+      "riktig": "afraid",
+      "gale": [
+        "wealthy",
+        "purchase",
+        "difficult"
+      ],
+      "nokkel": "scared – afraid"
+    },
+    {
+      "id": "16",
+      "tekst": "Synonym for «happy»?",
+      "riktig": "cheerful",
+      "gale": [
+        "clever",
+        "furious",
+        "require"
+      ],
+      "nokkel": "happy – cheerful"
+    },
+    {
+      "id": "17",
+      "tekst": "Synonym for «rich»?",
+      "riktig": "wealthy",
+      "gale": [
+        "display",
+        "permit",
+        "select"
+      ],
+      "nokkel": "rich – wealthy"
+    },
+    {
+      "id": "18",
+      "tekst": "Synonym for «strange»?",
+      "riktig": "odd",
+      "gale": [
+        "finish",
+        "require",
+        "start"
+      ],
+      "nokkel": "strange – odd"
+    },
+    {
+      "id": "19",
+      "tekst": "Synonym for «angry»?",
+      "riktig": "furious",
+      "gale": [
+        "wealthy",
+        "large",
+        "require"
+      ],
+      "nokkel": "angry – furious"
+    }
+  ]
+}

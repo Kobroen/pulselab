@@ -1,0 +1,256 @@
+{
+  "id": "engelsk-1-4-hjemme-og-pa-skolen",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "1-4",
+  "tittel": "At home and at school",
+  "beskrivelse": "Hverdagsord fra hjem, mat og skole.",
+  "lk20": [
+    "ENG01-04, etter 2.–4. trinn: lytte til, lese og bruke vanlige ord og fraser"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva heter «eple» på engelsk?",
+      "riktig": "apple",
+      "gale": [
+        "bread",
+        "cheese",
+        "butter"
+      ],
+      "nokkel": "eple – apple"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva heter «brød» på engelsk?",
+      "riktig": "bread",
+      "gale": [
+        "milk",
+        "chicken",
+        "apple"
+      ],
+      "nokkel": "brød – bread"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva heter «melk» på engelsk?",
+      "riktig": "milk",
+      "gale": [
+        "butter",
+        "water",
+        "apple"
+      ],
+      "nokkel": "melk – milk"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva heter «vann» på engelsk?",
+      "riktig": "water",
+      "gale": [
+        "milk",
+        "bread",
+        "apple"
+      ],
+      "nokkel": "vann – water"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva heter «ost» på engelsk?",
+      "riktig": "cheese",
+      "gale": [
+        "butter",
+        "chicken",
+        "bread"
+      ],
+      "nokkel": "ost – cheese"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva heter «smør» på engelsk?",
+      "riktig": "butter",
+      "gale": [
+        "chicken",
+        "milk",
+        "water"
+      ],
+      "nokkel": "smør – butter"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva heter «kylling» på engelsk?",
+      "riktig": "chicken",
+      "gale": [
+        "apple",
+        "butter",
+        "bread"
+      ],
+      "nokkel": "kylling – chicken"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva heter «skole» på engelsk?",
+      "riktig": "school",
+      "gale": [
+        "car",
+        "pencil",
+        "book"
+      ],
+      "nokkel": "skole – school"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva heter «bok» på engelsk?",
+      "riktig": "book",
+      "gale": [
+        "school",
+        "pencil",
+        "window"
+      ],
+      "nokkel": "bok – book"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva heter «stol» på engelsk?",
+      "riktig": "chair",
+      "gale": [
+        "door",
+        "book",
+        "house"
+      ],
+      "nokkel": "stol – chair"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva heter «bord» på engelsk?",
+      "riktig": "table",
+      "gale": [
+        "school",
+        "chair",
+        "pencil"
+      ],
+      "nokkel": "bord – table"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva heter «vindu» på engelsk?",
+      "riktig": "window",
+      "gale": [
+        "school",
+        "car",
+        "book"
+      ],
+      "nokkel": "vindu – window"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva heter «dør» på engelsk?",
+      "riktig": "door",
+      "gale": [
+        "table",
+        "school",
+        "house"
+      ],
+      "nokkel": "dør – door"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva heter «hus» på engelsk?",
+      "riktig": "house",
+      "gale": [
+        "book",
+        "car",
+        "window"
+      ],
+      "nokkel": "hus – house"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter «bil» på engelsk?",
+      "riktig": "car",
+      "gale": [
+        "pencil",
+        "chair",
+        "book"
+      ],
+      "nokkel": "bil – car"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter «blyant» på engelsk?",
+      "riktig": "pencil",
+      "gale": [
+        "book",
+        "table",
+        "car"
+      ],
+      "nokkel": "blyant – pencil"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva heter «venn» på engelsk?",
+      "riktig": "friend",
+      "gale": [
+        "family",
+        "mother",
+        "brother"
+      ],
+      "nokkel": "venn – friend"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva heter «familie» på engelsk?",
+      "riktig": "family",
+      "gale": [
+        "sister",
+        "friend",
+        "mother"
+      ],
+      "nokkel": "familie – family"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva heter «mor» på engelsk?",
+      "riktig": "mother",
+      "gale": [
+        "sister",
+        "father",
+        "friend"
+      ],
+      "nokkel": "mor – mother"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva heter «bror» på engelsk?",
+      "riktig": "brother",
+      "gale": [
+        "friend",
+        "sister",
+        "father"
+      ],
+      "nokkel": "bror – brother"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva heter «søster» på engelsk?",
+      "riktig": "sister",
+      "gale": [
+        "family",
+        "father",
+        "brother"
+      ],
+      "nokkel": "søster – sister"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva heter «far» på engelsk?",
+      "riktig": "father",
+      "gale": [
+        "mother",
+        "brother",
+        "family"
+      ],
+      "nokkel": "far – father"
+    }
+  ]
+}

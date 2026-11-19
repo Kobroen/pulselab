@@ -1,0 +1,234 @@
+{
+  "id": "naturfag-8-10-energi-og-elektrisitet",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "8-10",
+  "tittel": "Energi, elektrisitet og enheter",
+  "beskrivelse": "Størrelser, enheter, partikler og pH.",
+  "lk20": [
+    "NAT01-04, etter 10. trinn: energi, elektrisitet, atomer og kjemiske reaksjoner"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva måles i volt?",
+      "riktig": "spenning",
+      "gale": [
+        "strøm",
+        "motstand",
+        "effekt"
+      ],
+      "nokkel": "Hva måles i volt? spenning"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva måles i ampere?",
+      "riktig": "strøm",
+      "gale": [
+        "spenning",
+        "motstand",
+        "effekt"
+      ],
+      "nokkel": "Hva måles i ampere? strøm"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva måles i ohm?",
+      "riktig": "motstand",
+      "gale": [
+        "strøm",
+        "spenning",
+        "effekt"
+      ],
+      "nokkel": "Hva måles i ohm? motstand"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva måles i watt?",
+      "riktig": "effekt",
+      "gale": [
+        "spenning",
+        "motstand",
+        "kraft"
+      ],
+      "nokkel": "Hva måles i watt? effekt"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva måles i joule?",
+      "riktig": "energi",
+      "gale": [
+        "kraft",
+        "effekt",
+        "trykk"
+      ],
+      "nokkel": "Hva måles i joule? energi"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva måles i newton?",
+      "riktig": "kraft",
+      "gale": [
+        "energi",
+        "masse",
+        "fart"
+      ],
+      "nokkel": "Hva måles i newton? kraft"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva måles i hertz?",
+      "riktig": "frekvens",
+      "gale": [
+        "fart",
+        "trykk",
+        "lydstyrke"
+      ],
+      "nokkel": "Hva måles i hertz? frekvens"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva måles i pascal?",
+      "riktig": "trykk",
+      "gale": [
+        "kraft",
+        "energi",
+        "effekt"
+      ],
+      "nokkel": "Hva måles i pascal? trykk"
+    },
+    {
+      "id": "09",
+      "tekst": "Ohms lov: U = ?",
+      "riktig": "R · I",
+      "gale": [
+        "R / I",
+        "I / R",
+        "R + I"
+      ],
+      "nokkel": "Ohms lov: U = ? R · I"
+    },
+    {
+      "id": "10",
+      "tekst": "Fart = ?",
+      "riktig": "vei / tid",
+      "gale": [
+        "vei · tid",
+        "tid / vei",
+        "vei + tid"
+      ],
+      "nokkel": "Fart = ? vei / tid"
+    },
+    {
+      "id": "11",
+      "tekst": "Tyngdeakselerasjonen på jorda er omtrent ...",
+      "riktig": "9,8 m/s²",
+      "gale": [
+        "1,6 m/s²",
+        "98 m/s²",
+        "3,7 m/s²"
+      ],
+      "nokkel": "Tyngdeakselerasjonen på jorda er omtrent ... 9,8 m/s²"
+    },
+    {
+      "id": "12",
+      "tekst": "Lysfarten er omtrent ...",
+      "riktig": "300 000 km/s",
+      "gale": [
+        "300 km/s",
+        "3000 km/s",
+        "340 m/s"
+      ],
+      "nokkel": "Lysfarten er omtrent ... 300 000 km/s"
+    },
+    {
+      "id": "13",
+      "tekst": "Lydfarten i luft er omtrent ...",
+      "riktig": "340 m/s",
+      "gale": [
+        "34 m/s",
+        "3400 m/s",
+        "300 000 km/s"
+      ],
+      "nokkel": "Lydfarten i luft er omtrent ... 340 m/s"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken partikkel har negativ ladning?",
+      "riktig": "elektron",
+      "gale": [
+        "proton",
+        "nøytron",
+        "foton"
+      ],
+      "nokkel": "Hvilken partikkel har negativ ladning? elektron"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilken partikkel har positiv ladning?",
+      "riktig": "proton",
+      "gale": [
+        "elektron",
+        "nøytron",
+        "foton"
+      ],
+      "nokkel": "Hvilken partikkel har positiv ladning? proton"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilken partikkel i kjernen er uten ladning?",
+      "riktig": "nøytron",
+      "gale": [
+        "proton",
+        "elektron",
+        "ion"
+      ],
+      "nokkel": "Hvilken partikkel i kjernen er uten ladning? nøytron"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er pH i en nøytral løsning?",
+      "riktig": "7",
+      "gale": [
+        "0",
+        "1",
+        "14"
+      ],
+      "nokkel": "Hva er pH i en nøytral løsning? 7"
+    },
+    {
+      "id": "18",
+      "tekst": "En løsning med pH 2 er ...",
+      "riktig": "sur",
+      "gale": [
+        "basisk",
+        "nøytral",
+        "salt"
+      ],
+      "nokkel": "En løsning med pH 2 er ... sur"
+    },
+    {
+      "id": "19",
+      "tekst": "En løsning med pH 12 er ...",
+      "riktig": "basisk",
+      "gale": [
+        "sur",
+        "nøytral",
+        "salt"
+      ],
+      "nokkel": "En løsning med pH 12 er ... basisk"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er formelen for bordsalt?",
+      "riktig": "NaCl",
+      "gale": [
+        "H₂O",
+        "CO₂",
+        "NaOH"
+      ],
+      "nokkel": "Hva er formelen for bordsalt? NaCl"
+    }
+  ]
+}

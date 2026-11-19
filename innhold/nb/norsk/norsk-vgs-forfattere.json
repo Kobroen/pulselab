@@ -1,0 +1,256 @@
+{
+  "id": "norsk-vgs-forfattere",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "vgs",
+  "tittel": "Norske forfattere og verk",
+  "beskrivelse": "Hvem skrev verket?",
+  "lk20": [
+    "NOR01-06, vg2–vg3: sentrale verk i norsk litteraturhistorie"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvem skrev «Et dukkehjem»?",
+      "riktig": "Ibsen",
+      "gale": [
+        "Bjørnson",
+        "Kielland",
+        "Lie"
+      ],
+      "nokkel": "Et dukkehjem – Ibsen"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvem skrev «Sult»?",
+      "riktig": "Hamsun",
+      "gale": [
+        "Ibsen",
+        "Garborg",
+        "Undset"
+      ],
+      "nokkel": "Sult – Hamsun"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvem skrev «Peer Gynt»?",
+      "riktig": "Ibsen",
+      "gale": [
+        "Wergeland",
+        "Bjørnson",
+        "Hamsun"
+      ],
+      "nokkel": "Peer Gynt – Ibsen"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvem skrev «Synnøve Solbakken»?",
+      "riktig": "Bjørnson",
+      "gale": [
+        "Ibsen",
+        "Lie",
+        "Garborg"
+      ],
+      "nokkel": "Synnøve Solbakken – Bjørnson"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvem skrev «Kristin Lavransdatter»?",
+      "riktig": "Undset",
+      "gale": [
+        "Skram",
+        "Collett",
+        "Sandel"
+      ],
+      "nokkel": "Kristin Lavransdatter – Undset"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvem skrev «Markens grøde»?",
+      "riktig": "Hamsun",
+      "gale": [
+        "Bojer",
+        "Duun",
+        "Vesaas"
+      ],
+      "nokkel": "Markens grøde – Hamsun"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvem skrev «Vildanden»?",
+      "riktig": "Ibsen",
+      "gale": [
+        "Bjørnson",
+        "Kielland",
+        "Holberg"
+      ],
+      "nokkel": "Vildanden – Ibsen"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvem skrev «Amtmandens Døtre»?",
+      "riktig": "Collett",
+      "gale": [
+        "Skram",
+        "Undset",
+        "Welhaven"
+      ],
+      "nokkel": "Amtmandens Døtre – Collett"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvem skrev «Karens jul»?",
+      "riktig": "Skram",
+      "gale": [
+        "Collett",
+        "Kielland",
+        "Undset"
+      ],
+      "nokkel": "Karens jul – Skram"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvem skrev «Haugtussa»?",
+      "riktig": "Garborg",
+      "gale": [
+        "Vinje",
+        "Aasen",
+        "Vesaas"
+      ],
+      "nokkel": "Haugtussa – Garborg"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvem skrev «Terje Vigen»?",
+      "riktig": "Ibsen",
+      "gale": [
+        "Bjørnson",
+        "Wergeland",
+        "Welhaven"
+      ],
+      "nokkel": "Terje Vigen – Ibsen"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvem skrev «Ja, vi elsker»?",
+      "riktig": "Bjørnson",
+      "gale": [
+        "Wergeland",
+        "Ibsen",
+        "Nordraak"
+      ],
+      "nokkel": "Ja, vi elsker – Bjørnson"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvem skrev «Albertine»?",
+      "riktig": "Krohg",
+      "gale": [
+        "Jæger",
+        "Skram",
+        "Garborg"
+      ],
+      "nokkel": "Albertine – Krohg"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvem skrev «Gift»?",
+      "riktig": "Kielland",
+      "gale": [
+        "Lie",
+        "Ibsen",
+        "Hamsun"
+      ],
+      "nokkel": "Gift – Kielland"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvem skrev «Naiv. Super.»?",
+      "riktig": "Loe",
+      "gale": [
+        "Fosse",
+        "Petterson",
+        "Knausgård"
+      ],
+      "nokkel": "Naiv. Super. – Loe"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvem skrev «Min kamp»?",
+      "riktig": "Knausgård",
+      "gale": [
+        "Loe",
+        "Fosse",
+        "Jacobsen"
+      ],
+      "nokkel": "Min kamp – Knausgård"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvem skrev «Sofies verden»?",
+      "riktig": "Gaarder",
+      "gale": [
+        "Loe",
+        "Fosse",
+        "Ambjørnsen"
+      ],
+      "nokkel": "Sofies verden – Gaarder"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvem skrev «Fuglane»?",
+      "riktig": "Vesaas",
+      "gale": [
+        "Duun",
+        "Hauge",
+        "Garborg"
+      ],
+      "nokkel": "Fuglane – Vesaas"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvem skrev «Is-slottet»?",
+      "riktig": "Vesaas",
+      "gale": [
+        "Sandel",
+        "Undset",
+        "Hamsun"
+      ],
+      "nokkel": "Is-slottet – Vesaas"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvem skrev «Jeppe på Bjerget»?",
+      "riktig": "Holberg",
+      "gale": [
+        "Wessel",
+        "Ibsen",
+        "Dass"
+      ],
+      "nokkel": "Jeppe på Bjerget – Holberg"
+    },
+    {
+      "id": "21",
+      "tekst": "Hvem skrev «Jeg ser»?",
+      "riktig": "Obstfelder",
+      "gale": [
+        "Hamsun",
+        "Bjørnson",
+        "Øverland"
+      ],
+      "nokkel": "Jeg ser – Obstfelder"
+    },
+    {
+      "id": "22",
+      "tekst": "Hvem skrev «Pan»?",
+      "riktig": "Hamsun",
+      "gale": [
+        "Ibsen",
+        "Lie",
+        "Kinck"
+      ],
+      "nokkel": "Pan – Hamsun"
+    }
+  ]
+}

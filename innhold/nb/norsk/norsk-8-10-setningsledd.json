@@ -1,0 +1,212 @@
+{
+  "id": "norsk-8-10-setningsledd",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "8-10",
+  "tittel": "Setningsledd",
+  "beskrivelse": "Finn subjekt, verbal, objekt og adverbial.",
+  "lk20": [
+    "NOR01-06, etter 10. trinn: bruke fagspråk om setningsoppbygging"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Subjektet i «Kari spiser eple nå»?",
+      "riktig": "Kari",
+      "gale": [
+        "spiser",
+        "eple",
+        "nå"
+      ],
+      "nokkel": "Subjektet i «Kari spiser eple nå»? Kari"
+    },
+    {
+      "id": "02",
+      "tekst": "Verbalet i «Hunden bjeffer høyt ute»?",
+      "riktig": "bjeffer",
+      "gale": [
+        "Hunden",
+        "høyt",
+        "ute"
+      ],
+      "nokkel": "Verbalet i «Hunden bjeffer høyt ute»? bjeffer"
+    },
+    {
+      "id": "03",
+      "tekst": "Objektet i «Ola leser boka hjemme»?",
+      "riktig": "boka",
+      "gale": [
+        "Ola",
+        "leser",
+        "hjemme"
+      ],
+      "nokkel": "Objektet i «Ola leser boka hjemme»? boka"
+    },
+    {
+      "id": "04",
+      "tekst": "Subjektet i «I dag regner det mye»?",
+      "riktig": "det",
+      "gale": [
+        "I dag",
+        "regner",
+        "mye"
+      ],
+      "nokkel": "Subjektet i «I dag regner det mye»? det"
+    },
+    {
+      "id": "05",
+      "tekst": "Objektet i «Hun kjøpte en bil i går»?",
+      "riktig": "en bil",
+      "gale": [
+        "Hun",
+        "kjøpte",
+        "i går"
+      ],
+      "nokkel": "Objektet i «Hun kjøpte en bil i går»? en bil"
+    },
+    {
+      "id": "06",
+      "tekst": "Tidsadverbialet i «Vi drar hjem i morgen»?",
+      "riktig": "i morgen",
+      "gale": [
+        "Vi",
+        "drar",
+        "hjem"
+      ],
+      "nokkel": "Tidsadverbialet i «Vi drar hjem i morgen»? i morgen"
+    },
+    {
+      "id": "07",
+      "tekst": "Subjektet i «Nå kommer bussen snart»?",
+      "riktig": "bussen",
+      "gale": [
+        "Nå",
+        "kommer",
+        "snart"
+      ],
+      "nokkel": "Subjektet i «Nå kommer bussen snart»? bussen"
+    },
+    {
+      "id": "08",
+      "tekst": "Stedsadverbialet i «Han bor i Bergen nå»?",
+      "riktig": "i Bergen",
+      "gale": [
+        "Han",
+        "bor",
+        "nå"
+      ],
+      "nokkel": "Stedsadverbialet i «Han bor i Bergen nå»? i Bergen"
+    },
+    {
+      "id": "09",
+      "tekst": "Objektet i «Katten fanget musa ute»?",
+      "riktig": "musa",
+      "gale": [
+        "Katten",
+        "fanget",
+        "ute"
+      ],
+      "nokkel": "Objektet i «Katten fanget musa ute»? musa"
+    },
+    {
+      "id": "10",
+      "tekst": "Subjektet i «Boka leste jeg i går»?",
+      "riktig": "jeg",
+      "gale": [
+        "Boka",
+        "i går",
+        "leste"
+      ],
+      "nokkel": "Subjektet i «Boka leste jeg i går»? jeg"
+    },
+    {
+      "id": "11",
+      "tekst": "Objektet i «Boka leste jeg i går»?",
+      "riktig": "Boka",
+      "gale": [
+        "jeg",
+        "i går",
+        "leste"
+      ],
+      "nokkel": "Objektet i «Boka leste jeg i går»? Boka"
+    },
+    {
+      "id": "12",
+      "tekst": "Indirekte objekt i «Jeg ga ham boka»?",
+      "riktig": "ham",
+      "gale": [
+        "boka",
+        "Jeg",
+        "ga"
+      ],
+      "nokkel": "Indirekte objekt i «Jeg ga ham boka»? ham"
+    },
+    {
+      "id": "13",
+      "tekst": "Direkte objekt i «Jeg ga ham boka»?",
+      "riktig": "boka",
+      "gale": [
+        "ham",
+        "Jeg",
+        "ga"
+      ],
+      "nokkel": "Direkte objekt i «Jeg ga ham boka»? boka"
+    },
+    {
+      "id": "14",
+      "tekst": "Predikativet i «Hun er lærer nå»?",
+      "riktig": "lærer",
+      "gale": [
+        "Hun",
+        "er",
+        "nå"
+      ],
+      "nokkel": "Predikativet i «Hun er lærer nå»? lærer"
+    },
+    {
+      "id": "15",
+      "tekst": "Predikativet i «Suppa ble kald i går»?",
+      "riktig": "kald",
+      "gale": [
+        "Suppa",
+        "ble",
+        "i går"
+      ],
+      "nokkel": "Predikativet i «Suppa ble kald i går»? kald"
+    },
+    {
+      "id": "16",
+      "tekst": "Verbalet i «Vi har spist middag ute»?",
+      "riktig": "har spist",
+      "gale": [
+        "Vi",
+        "middag",
+        "ute"
+      ],
+      "nokkel": "Verbalet i «Vi har spist middag ute»? har spist"
+    },
+    {
+      "id": "17",
+      "tekst": "Subjektet i «Spiser du fisk ofte»?",
+      "riktig": "du",
+      "gale": [
+        "Spiser",
+        "fisk",
+        "ofte"
+      ],
+      "nokkel": "Subjektet i «Spiser du fisk ofte»? du"
+    },
+    {
+      "id": "18",
+      "tekst": "Verbalet i «I går sov jeg lenge»?",
+      "riktig": "sov",
+      "gale": [
+        "I går",
+        "jeg",
+        "lenge"
+      ],
+      "nokkel": "Verbalet i «I går sov jeg lenge»? sov"
+    }
+  ]
+}

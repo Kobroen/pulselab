@@ -1,0 +1,234 @@
+{
+  "id": "engelsk-5-7-motsetninger",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "5-7",
+  "tittel": "Opposites",
+  "beskrivelse": "Finn det motsatte ordet på engelsk.",
+  "lk20": [
+    "ENG01-04, etter 7. trinn: utvide ordforrådet og bruke det i ulike sammenhenger"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Opposite of «big»?",
+      "riktig": "small",
+      "gale": [
+        "cold",
+        "sad",
+        "slow"
+      ],
+      "nokkel": "big – small"
+    },
+    {
+      "id": "02",
+      "tekst": "Opposite of «hot»?",
+      "riktig": "cold",
+      "gale": [
+        "small",
+        "sad",
+        "weak"
+      ],
+      "nokkel": "hot – cold"
+    },
+    {
+      "id": "03",
+      "tekst": "Opposite of «happy»?",
+      "riktig": "sad",
+      "gale": [
+        "slow",
+        "cold",
+        "poor"
+      ],
+      "nokkel": "happy – sad"
+    },
+    {
+      "id": "04",
+      "tekst": "Opposite of «fast»?",
+      "riktig": "slow",
+      "gale": [
+        "sad",
+        "weak",
+        "dry"
+      ],
+      "nokkel": "fast – slow"
+    },
+    {
+      "id": "05",
+      "tekst": "Opposite of «old»?",
+      "riktig": "young",
+      "gale": [
+        "late",
+        "empty",
+        "weak"
+      ],
+      "nokkel": "old – young"
+    },
+    {
+      "id": "06",
+      "tekst": "Opposite of «early»?",
+      "riktig": "late",
+      "gale": [
+        "young",
+        "slow",
+        "closed"
+      ],
+      "nokkel": "early – late"
+    },
+    {
+      "id": "07",
+      "tekst": "Opposite of «open»?",
+      "riktig": "closed",
+      "gale": [
+        "empty",
+        "late",
+        "quiet"
+      ],
+      "nokkel": "open – closed"
+    },
+    {
+      "id": "08",
+      "tekst": "Opposite of «full»?",
+      "riktig": "empty",
+      "gale": [
+        "closed",
+        "poor",
+        "dry"
+      ],
+      "nokkel": "full – empty"
+    },
+    {
+      "id": "09",
+      "tekst": "Opposite of «strong»?",
+      "riktig": "weak",
+      "gale": [
+        "slow",
+        "sad",
+        "poor"
+      ],
+      "nokkel": "strong – weak"
+    },
+    {
+      "id": "10",
+      "tekst": "Opposite of «easy»?",
+      "riktig": "difficult",
+      "gale": [
+        "expensive",
+        "dangerous",
+        "dirty"
+      ],
+      "nokkel": "easy – difficult"
+    },
+    {
+      "id": "11",
+      "tekst": "Opposite of «cheap»?",
+      "riktig": "expensive",
+      "gale": [
+        "difficult",
+        "dirty",
+        "empty"
+      ],
+      "nokkel": "cheap – expensive"
+    },
+    {
+      "id": "12",
+      "tekst": "Opposite of «clean»?",
+      "riktig": "dirty",
+      "gale": [
+        "wet",
+        "poor",
+        "closed"
+      ],
+      "nokkel": "clean – dirty"
+    },
+    {
+      "id": "13",
+      "tekst": "Opposite of «wet»?",
+      "riktig": "dry",
+      "gale": [
+        "cold",
+        "dirty",
+        "empty"
+      ],
+      "nokkel": "wet – dry"
+    },
+    {
+      "id": "14",
+      "tekst": "Opposite of «long»?",
+      "riktig": "short",
+      "gale": [
+        "slow",
+        "weak",
+        "young"
+      ],
+      "nokkel": "long – short"
+    },
+    {
+      "id": "15",
+      "tekst": "Opposite of «rich»?",
+      "riktig": "poor",
+      "gale": [
+        "sad",
+        "weak",
+        "empty"
+      ],
+      "nokkel": "rich – poor"
+    },
+    {
+      "id": "16",
+      "tekst": "Opposite of «loud»?",
+      "riktig": "quiet",
+      "gale": [
+        "slow",
+        "closed",
+        "sad"
+      ],
+      "nokkel": "loud – quiet"
+    },
+    {
+      "id": "17",
+      "tekst": "Opposite of «safe»?",
+      "riktig": "dangerous",
+      "gale": [
+        "difficult",
+        "dirty",
+        "expensive"
+      ],
+      "nokkel": "safe – dangerous"
+    },
+    {
+      "id": "18",
+      "tekst": "Opposite of «right»?",
+      "riktig": "wrong",
+      "gale": [
+        "late",
+        "weak",
+        "closed"
+      ],
+      "nokkel": "right – wrong"
+    },
+    {
+      "id": "19",
+      "tekst": "Opposite of «always»?",
+      "riktig": "never",
+      "gale": [
+        "late",
+        "often",
+        "soon"
+      ],
+      "nokkel": "always – never"
+    },
+    {
+      "id": "20",
+      "tekst": "Opposite of «dark»?",
+      "riktig": "bright",
+      "gale": [
+        "quiet",
+        "dry",
+        "wrong"
+      ],
+      "nokkel": "dark – bright"
+    }
+  ]
+}

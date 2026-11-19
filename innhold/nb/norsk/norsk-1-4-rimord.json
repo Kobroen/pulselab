@@ -1,0 +1,256 @@
+{
+  "id": "norsk-1-4-rimord",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "1-4",
+  "tittel": "Rimord",
+  "beskrivelse": "Finn ordet som rimer.",
+  "lk20": [
+    "NOR01-06, etter 2. trinn: leke med rim, rytme og språklyder"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva rimer på «hus»?",
+      "riktig": "mus",
+      "gale": [
+        "hest",
+        "sol",
+        "bil"
+      ],
+      "nokkel": "hus – mus"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva rimer på «katt»?",
+      "riktig": "hatt",
+      "gale": [
+        "hund",
+        "kopp",
+        "ku"
+      ],
+      "nokkel": "katt – hatt"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva rimer på «sol»?",
+      "riktig": "stol",
+      "gale": [
+        "sal",
+        "sil",
+        "måne"
+      ],
+      "nokkel": "sol – stol"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva rimer på «bil»?",
+      "riktig": "pil",
+      "gale": [
+        "ball",
+        "bok",
+        "båt"
+      ],
+      "nokkel": "bil – pil"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva rimer på «ball»?",
+      "riktig": "hall",
+      "gale": [
+        "bil",
+        "bål",
+        "bok"
+      ],
+      "nokkel": "ball – hall"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva rimer på «fisk»?",
+      "riktig": "disk",
+      "gale": [
+        "fot",
+        "fest",
+        "fugl"
+      ],
+      "nokkel": "fisk – disk"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva rimer på «bok»?",
+      "riktig": "krok",
+      "gale": [
+        "bak",
+        "båt",
+        "blokk"
+      ],
+      "nokkel": "bok – krok"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva rimer på «hund»?",
+      "riktig": "rund",
+      "gale": [
+        "hånd",
+        "hest",
+        "hatt"
+      ],
+      "nokkel": "hund – rund"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva rimer på «sko»?",
+      "riktig": "bro",
+      "gale": [
+        "ski",
+        "sky",
+        "so"
+      ],
+      "nokkel": "sko – bro"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva rimer på «tre»?",
+      "riktig": "kne",
+      "gale": [
+        "tro",
+        "tak",
+        "tå"
+      ],
+      "nokkel": "tre – kne"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva rimer på «hår»?",
+      "riktig": "får",
+      "gale": [
+        "her",
+        "hus",
+        "hør"
+      ],
+      "nokkel": "hår – får"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva rimer på «natt»?",
+      "riktig": "katt",
+      "gale": [
+        "not",
+        "nett",
+        "dag"
+      ],
+      "nokkel": "natt – katt"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva rimer på «ring»?",
+      "riktig": "ting",
+      "gale": [
+        "rang",
+        "seng",
+        "rund"
+      ],
+      "nokkel": "ring – ting"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva rimer på «mann»?",
+      "riktig": "vann",
+      "gale": [
+        "menn",
+        "mat",
+        "vin"
+      ],
+      "nokkel": "mann – vann"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva rimer på «seng»?",
+      "riktig": "eng",
+      "gale": [
+        "sang",
+        "ring",
+        "sand"
+      ],
+      "nokkel": "seng – eng"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva rimer på «bål»?",
+      "riktig": "mål",
+      "gale": [
+        "ball",
+        "bil",
+        "bok"
+      ],
+      "nokkel": "bål – mål"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva rimer på «stein»?",
+      "riktig": "bein",
+      "gale": [
+        "stol",
+        "sti",
+        "stor"
+      ],
+      "nokkel": "stein – bein"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva rimer på «kake»?",
+      "riktig": "rake",
+      "gale": [
+        "kopp",
+        "kule",
+        "katt"
+      ],
+      "nokkel": "kake – rake"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva rimer på «nese»?",
+      "riktig": "lese",
+      "gale": [
+        "nisse",
+        "nøtt",
+        "lue"
+      ],
+      "nokkel": "nese – lese"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva rimer på «hest»?",
+      "riktig": "vest",
+      "gale": [
+        "hatt",
+        "hus",
+        "fisk"
+      ],
+      "nokkel": "hest – vest"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva rimer på «gris»?",
+      "riktig": "is",
+      "gale": [
+        "gress",
+        "gul",
+        "gås"
+      ],
+      "nokkel": "gris – is"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva rimer på «jakke»?",
+      "riktig": "bakke",
+      "gale": [
+        "jente",
+        "lue",
+        "bukse"
+      ],
+      "nokkel": "jakke – bakke"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-1-4-minus-til-20",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "1-4",
+  "tittel": "Minus opp til 20",
+  "beskrivelse": "Subtraksjon med tall opp til 20.",
+  "lk20": [
+    "MAT01-05, 1.–2. trinn: addisjon og subtraksjon opp til 20"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 13 − 8?",
+      "riktig": "5",
+      "gale": [
+        "7",
+        "6",
+        "4"
+      ],
+      "nokkel": "13 − 8"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 14 − 4?",
+      "riktig": "10",
+      "gale": [
+        "11",
+        "12",
+        "8"
+      ],
+      "nokkel": "14 − 4"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 11 − 8?",
+      "riktig": "3",
+      "gale": [
+        "5",
+        "4",
+        "1"
+      ],
+      "nokkel": "11 − 8"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 10 − 4?",
+      "riktig": "6",
+      "gale": [
+        "8",
+        "4",
+        "5"
+      ],
+      "nokkel": "10 − 4"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 13 − 7?",
+      "riktig": "6",
+      "gale": [
+        "5",
+        "8",
+        "4"
+      ],
+      "nokkel": "13 − 7"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 16 − 2?",
+      "riktig": "14",
+      "gale": [
+        "12",
+        "15",
+        "16"
+      ],
+      "nokkel": "16 − 2"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 20 − 7?",
+      "riktig": "13",
+      "gale": [
+        "14",
+        "12",
+        "15"
+      ],
+      "nokkel": "20 − 7"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 18 − 2?",
+      "riktig": "16",
+      "gale": [
+        "15",
+        "18",
+        "17"
+      ],
+      "nokkel": "18 − 2"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 15 − 7?",
+      "riktig": "8",
+      "gale": [
+        "9",
+        "7",
+        "6"
+      ],
+      "nokkel": "15 − 7"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 16 − 6?",
+      "riktig": "10",
+      "gale": [
+        "12",
+        "8",
+        "9"
+      ],
+      "nokkel": "16 − 6"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er 15 − 9?",
+      "riktig": "6",
+      "gale": [
+        "7",
+        "4",
+        "5"
+      ],
+      "nokkel": "15 − 9"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er 15 − 6?",
+      "riktig": "9",
+      "gale": [
+        "7",
+        "10",
+        "8"
+      ],
+      "nokkel": "15 − 6"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er 20 − 5?",
+      "riktig": "15",
+      "gale": [
+        "14",
+        "13",
+        "17"
+      ],
+      "nokkel": "20 − 5"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 20 − 2?",
+      "riktig": "18",
+      "gale": [
+        "16",
+        "17",
+        "19"
+      ],
+      "nokkel": "20 − 2"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 12 − 4?",
+      "riktig": "8",
+      "gale": [
+        "10",
+        "7",
+        "6"
+      ],
+      "nokkel": "12 − 4"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er 18 − 8?",
+      "riktig": "10",
+      "gale": [
+        "11",
+        "9",
+        "8"
+      ],
+      "nokkel": "18 − 8"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 19 − 7?",
+      "riktig": "12",
+      "gale": [
+        "10",
+        "11",
+        "14"
+      ],
+      "nokkel": "19 − 7"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 18 − 7?",
+      "riktig": "11",
+      "gale": [
+        "13",
+        "10",
+        "9"
+      ],
+      "nokkel": "18 − 7"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er 10 − 8?",
+      "riktig": "2",
+      "gale": [
+        "3",
+        "1",
+        "4"
+      ],
+      "nokkel": "10 − 8"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er 13 − 9?",
+      "riktig": "4",
+      "gale": [
+        "3",
+        "6",
+        "2"
+      ],
+      "nokkel": "13 − 9"
+    }
+  ]
+}

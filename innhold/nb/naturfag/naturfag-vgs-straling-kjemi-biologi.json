@@ -1,0 +1,223 @@
+{
+  "id": "naturfag-vgs-straling-kjemi-biologi",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "vgs",
+  "tittel": "Naturfag vgs: stråling, kjemi og biologi",
+  "beskrivelse": "Blandede oppgaver fra naturfag og realfagene på vgs.",
+  "lk20": [
+    "NAT01-04, vg1, og programfagene fysikk, kjemi og biologi"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilken stråling har kortest bølgelengde?",
+      "riktig": "gamma",
+      "gale": [
+        "røntgen",
+        "UV",
+        "radio"
+      ],
+      "nokkel": "Hvilken stråling har kortest bølgelengde? gamma"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilken stråling har lengst bølgelengde?",
+      "riktig": "radio",
+      "gale": [
+        "mikrobølger",
+        "infrarød",
+        "gamma"
+      ],
+      "nokkel": "Hvilken stråling har lengst bølgelengde? radio"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er en alfapartikkel?",
+      "riktig": "heliumkjerne",
+      "gale": [
+        "elektron",
+        "foton",
+        "nøytron"
+      ],
+      "nokkel": "Hva er en alfapartikkel? heliumkjerne"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva består betastråling (β⁻) av?",
+      "riktig": "elektroner",
+      "gale": [
+        "protoner",
+        "fotoner",
+        "nøytroner"
+      ],
+      "nokkel": "Hva består betastråling (β⁻) av? elektroner"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvor mye er igjen etter to halveringstider?",
+      "riktig": "25 %",
+      "gale": [
+        "50 %",
+        "12,5 %",
+        "0 %"
+      ],
+      "nokkel": "Hvor mye er igjen etter to halveringstider? 25 %"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvor mye er igjen etter tre halveringstider?",
+      "riktig": "12,5 %",
+      "gale": [
+        "25 %",
+        "33 %",
+        "0 %"
+      ],
+      "nokkel": "Hvor mye er igjen etter tre halveringstider? 12,5 %"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva øker reaksjonsfarten uten å brukes opp?",
+      "riktig": "katalysator",
+      "gale": [
+        "reaktant",
+        "produkt",
+        "løsemiddel"
+      ],
+      "nokkel": "Hva øker reaksjonsfarten uten å brukes opp? katalysator"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva avgir et stoff når det oksideres?",
+      "riktig": "elektroner",
+      "gale": [
+        "protoner",
+        "nøytroner",
+        "fotoner"
+      ],
+      "nokkel": "Hva avgir et stoff når det oksideres? elektroner"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilken type binding har NaCl?",
+      "riktig": "ionebinding",
+      "gale": [
+        "kovalent",
+        "metallbinding",
+        "peptidbinding"
+      ],
+      "nokkel": "Hvilken type binding har NaCl? ionebinding"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilket hormon senker blodsukkeret?",
+      "riktig": "insulin",
+      "gale": [
+        "glukagon",
+        "adrenalin",
+        "østrogen"
+      ],
+      "nokkel": "Hvilket hormon senker blodsukkeret? insulin"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilket hormon øker blodsukkeret?",
+      "riktig": "glukagon",
+      "gale": [
+        "insulin",
+        "melatonin",
+        "tyroksin"
+      ],
+      "nokkel": "Hvilket hormon øker blodsukkeret? glukagon"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilke baser finnes i DNA?",
+      "riktig": "A, T, C, G",
+      "gale": [
+        "A, U, C, G",
+        "A, B, C, D",
+        "X, Y, Z, W"
+      ],
+      "nokkel": "Hvilke baser finnes i DNA? A, T, C, G"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilken base pares med A i DNA?",
+      "riktig": "T",
+      "gale": [
+        "C",
+        "G",
+        "U"
+      ],
+      "nokkel": "Hvilken base pares med A i DNA? T"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken base pares med C i DNA?",
+      "riktig": "G",
+      "gale": [
+        "A",
+        "T",
+        "U"
+      ],
+      "nokkel": "Hvilken base pares med C i DNA? G"
+    },
+    {
+      "id": "15",
+      "tekst": "Enheten for radioaktivitet er ...",
+      "riktig": "becquerel",
+      "gale": [
+        "sievert",
+        "joule",
+        "newton"
+      ],
+      "nokkel": "Enheten for radioaktivitet er ... becquerel"
+    },
+    {
+      "id": "16",
+      "tekst": "Enheten for stråledose til mennesker er ...",
+      "riktig": "sievert",
+      "gale": [
+        "becquerel",
+        "watt",
+        "hertz"
+      ],
+      "nokkel": "Enheten for stråledose til mennesker er ... sievert"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva kalles atomer med ulikt nøytrontall?",
+      "riktig": "isotoper",
+      "gale": [
+        "ioner",
+        "isomerer",
+        "molekyler"
+      ],
+      "nokkel": "Hva kalles atomer med ulikt nøytrontall? isotoper"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilken gass er det mest av i atmosfæren?",
+      "riktig": "nitrogen",
+      "gale": [
+        "oksygen",
+        "CO₂",
+        "argon"
+      ],
+      "nokkel": "Hvilken gass er det mest av i atmosfæren? nitrogen"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva absorberer ozonlaget?",
+      "riktig": "UV-stråling",
+      "gale": [
+        "radiobølger",
+        "synlig lys",
+        "lyd"
+      ],
+      "nokkel": "Hva absorberer ozonlaget? UV-stråling"
+    }
+  ]
+}

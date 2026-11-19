@@ -1,0 +1,256 @@
+{
+  "id": "samfunnsfag-1-4-norge-og-verden",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "samfunnsfag",
+  "trinn": "1-4",
+  "tittel": "Norge og verden",
+  "beskrivelse": "Norge, kart, verdensdeler og samfunnet rundt oss.",
+  "lk20": [
+    "SAF01-04, etter 2.–4. trinn: kart, steder i Norge og verden, og hvordan vi bestemmer sammen"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva heter hovedstaden i Norge?",
+      "riktig": "Oslo",
+      "gale": [
+        "Bergen",
+        "Trondheim",
+        "Tromsø"
+      ],
+      "nokkel": "Hva heter hovedstaden i Norge? Oslo"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilken dato er Norges nasjonaldag?",
+      "riktig": "17. mai",
+      "gale": [
+        "1. mai",
+        "7. juni",
+        "1. januar"
+      ],
+      "nokkel": "Hvilken dato er Norges nasjonaldag? 17. mai"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilken farge er IKKE i det norske flagget?",
+      "riktig": "gul",
+      "gale": [
+        "rød",
+        "hvit",
+        "blå"
+      ],
+      "nokkel": "Hvilken farge er IKKE i det norske flagget? gul"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva heter Norges lengste elv?",
+      "riktig": "Glomma",
+      "gale": [
+        "Tana",
+        "Akerselva",
+        "Nidelva"
+      ],
+      "nokkel": "Hva heter Norges lengste elv? Glomma"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva heter Norges høyeste fjell?",
+      "riktig": "Galdhøpiggen",
+      "gale": [
+        "Glittertind",
+        "Snøhetta",
+        "Gaustatoppen"
+      ],
+      "nokkel": "Hva heter Norges høyeste fjell? Galdhøpiggen"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva heter Norges største innsjø?",
+      "riktig": "Mjøsa",
+      "gale": [
+        "Femunden",
+        "Tyrifjorden",
+        "Røssvatnet"
+      ],
+      "nokkel": "Hva heter Norges største innsjø? Mjøsa"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilket land grenser IKKE til Norge?",
+      "riktig": "Danmark",
+      "gale": [
+        "Sverige",
+        "Finland",
+        "Russland"
+      ],
+      "nokkel": "Hvilket land grenser IKKE til Norge? Danmark"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva kalles urfolket i Norge?",
+      "riktig": "samer",
+      "gale": [
+        "vikinger",
+        "inuitter",
+        "romere"
+      ],
+      "nokkel": "Hva kalles urfolket i Norge? samer"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilken dato er samenes nasjonaldag?",
+      "riktig": "6. februar",
+      "gale": [
+        "17. mai",
+        "8. mars",
+        "1. mai"
+      ],
+      "nokkel": "Hvilken dato er samenes nasjonaldag? 6. februar"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva heter Norges nordligste fylke?",
+      "riktig": "Finnmark",
+      "gale": [
+        "Troms",
+        "Nordland",
+        "Trøndelag"
+      ],
+      "nokkel": "Hva heter Norges nordligste fylke? Finnmark"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilken by kalles «byen mellom de sju fjell»?",
+      "riktig": "Bergen",
+      "gale": [
+        "Oslo",
+        "Tromsø",
+        "Stavanger"
+      ],
+      "nokkel": "Hvilken by kalles «byen mellom de sju fjell»? Bergen"
+    },
+    {
+      "id": "12",
+      "tekst": "I hvilken by ligger Nidarosdomen?",
+      "riktig": "Trondheim",
+      "gale": [
+        "Bergen",
+        "Oslo",
+        "Stavanger"
+      ],
+      "nokkel": "I hvilken by ligger Nidarosdomen? Trondheim"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvor mange verdensdeler regner vi med?",
+      "riktig": "7",
+      "gale": [
+        "5",
+        "6",
+        "8"
+      ],
+      "nokkel": "Hvor mange verdensdeler regner vi med? 7"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken verdensdel ligger Norge i?",
+      "riktig": "Europa",
+      "gale": [
+        "Asia",
+        "Afrika",
+        "Oseania"
+      ],
+      "nokkel": "Hvilken verdensdel ligger Norge i? Europa"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilken verdensdel er størst?",
+      "riktig": "Asia",
+      "gale": [
+        "Afrika",
+        "Europa",
+        "Oseania"
+      ],
+      "nokkel": "Hvilken verdensdel er størst? Asia"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter verdens største hav?",
+      "riktig": "Stillehavet",
+      "gale": [
+        "Atlanterhavet",
+        "Nordsjøen",
+        "Middelhavet"
+      ],
+      "nokkel": "Hva heter verdens største hav? Stillehavet"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilken himmelretning er opp på de fleste kart?",
+      "riktig": "nord",
+      "gale": [
+        "sør",
+        "øst",
+        "vest"
+      ],
+      "nokkel": "Hvilken himmelretning er opp på de fleste kart? nord"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvor står sola opp?",
+      "riktig": "i øst",
+      "gale": [
+        "i vest",
+        "i nord",
+        "i sør"
+      ],
+      "nokkel": "Hvor står sola opp? i øst"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvor går sola ned?",
+      "riktig": "i vest",
+      "gale": [
+        "i øst",
+        "i nord",
+        "i sør"
+      ],
+      "nokkel": "Hvor går sola ned? i vest"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva betyr rødt lys i trafikken?",
+      "riktig": "stopp",
+      "gale": [
+        "kjør",
+        "løp",
+        "sving"
+      ],
+      "nokkel": "Hva betyr rødt lys i trafikken? stopp"
+    },
+    {
+      "id": "21",
+      "tekst": "Hvem vedtar lovene i Norge?",
+      "riktig": "Stortinget",
+      "gale": [
+        "kongen",
+        "politiet",
+        "skolen"
+      ],
+      "nokkel": "Hvem vedtar lovene i Norge? Stortinget"
+    },
+    {
+      "id": "22",
+      "tekst": "Hvor gammel må du være for å stemme?",
+      "riktig": "18 år",
+      "gale": [
+        "16 år",
+        "20 år",
+        "21 år"
+      ],
+      "nokkel": "Hvor gammel må du være for å stemme? 18 år"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "id": "engelsk-vgs-akademiske-ord",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "vgs",
+  "tittel": "Academic vocabulary",
+  "beskrivelse": "Ord du trenger i fagtekster og drøfting.",
+  "lk20": [
+    "ENG01-04, vg1: bruke fagterminologi og et bredt ordforråd"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva betyr «assess»?",
+      "riktig": "vurdere",
+      "gale": [
+        "påstå",
+        "sammenligne",
+        "påvirke"
+      ],
+      "nokkel": "assess – vurdere"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva betyr «claim»?",
+      "riktig": "påstå",
+      "gale": [
+        "øke",
+        "minke",
+        "kreve"
+      ],
+      "nokkel": "claim – påstå"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva betyr «increase»?",
+      "riktig": "øke",
+      "gale": [
+        "kreve",
+        "påstå",
+        "minke"
+      ],
+      "nokkel": "increase – øke"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva betyr «decrease»?",
+      "riktig": "minke",
+      "gale": [
+        "øke",
+        "vurdere",
+        "sammenligne"
+      ],
+      "nokkel": "decrease – minke"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva betyr «require»?",
+      "riktig": "kreve",
+      "gale": [
+        "påstå",
+        "minke",
+        "påvirke"
+      ],
+      "nokkel": "require – kreve"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva betyr «influence»?",
+      "riktig": "påvirke",
+      "gale": [
+        "sammenligne",
+        "kreve",
+        "påstå"
+      ],
+      "nokkel": "influence – påvirke"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva betyr «compare»?",
+      "riktig": "sammenligne",
+      "gale": [
+        "kreve",
+        "øke",
+        "påvirke"
+      ],
+      "nokkel": "compare – sammenligne"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva betyr «cause»?",
+      "riktig": "årsak",
+      "gale": [
+        "utfordring",
+        "bevis",
+        "kilde"
+      ],
+      "nokkel": "cause – årsak"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva betyr «evidence»?",
+      "riktig": "bevis",
+      "gale": [
+        "utfordring",
+        "borger",
+        "regjering"
+      ],
+      "nokkel": "evidence – bevis"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva betyr «source»?",
+      "riktig": "kilde",
+      "gale": [
+        "bevis",
+        "regjering",
+        "årsak"
+      ],
+      "nokkel": "source – kilde"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva betyr «environment»?",
+      "riktig": "miljø",
+      "gale": [
+        "ulikhet",
+        "mulighet",
+        "bevis"
+      ],
+      "nokkel": "environment – miljø"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva betyr «society»?",
+      "riktig": "samfunn",
+      "gale": [
+        "kilde",
+        "årsak",
+        "miljø"
+      ],
+      "nokkel": "society – samfunn"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva betyr «opportunity»?",
+      "riktig": "mulighet",
+      "gale": [
+        "ulikhet",
+        "borger",
+        "utfordring"
+      ],
+      "nokkel": "opportunity – mulighet"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva betyr «challenge»?",
+      "riktig": "utfordring",
+      "gale": [
+        "regjering",
+        "ulikhet",
+        "årsak"
+      ],
+      "nokkel": "challenge – utfordring"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva betyr «inequality»?",
+      "riktig": "ulikhet",
+      "gale": [
+        "utfordring",
+        "mulighet",
+        "miljø"
+      ],
+      "nokkel": "inequality – ulikhet"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva betyr «citizen»?",
+      "riktig": "borger",
+      "gale": [
+        "årsak",
+        "ulikhet",
+        "samfunn"
+      ],
+      "nokkel": "citizen – borger"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva betyr «government»?",
+      "riktig": "regjering",
+      "gale": [
+        "kilde",
+        "samfunn",
+        "utfordring"
+      ],
+      "nokkel": "government – regjering"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva betyr «although»?",
+      "riktig": "selv om",
+      "gale": [
+        "mens",
+        "derfor",
+        "likevel"
+      ],
+      "nokkel": "although – selv om"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva betyr «however»?",
+      "riktig": "likevel",
+      "gale": [
+        "selv om",
+        "mens",
+        "derfor"
+      ],
+      "nokkel": "however – likevel"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva betyr «therefore»?",
+      "riktig": "derfor",
+      "gale": [
+        "mens",
+        "likevel",
+        "selv om"
+      ],
+      "nokkel": "therefore – derfor"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva betyr «whereas»?",
+      "riktig": "mens",
+      "gale": [
+        "derfor",
+        "likevel",
+        "selv om"
+      ],
+      "nokkel": "whereas – mens"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva betyr «significant»?",
+      "riktig": "betydelig",
+      "gale": [
+        "nøyaktig",
+        "tilgjengelig",
+        "bærekraftig"
+      ],
+      "nokkel": "significant – betydelig"
+    },
+    {
+      "id": "23",
+      "tekst": "Hva betyr «sustainable»?",
+      "riktig": "bærekraftig",
+      "gale": [
+        "pålitelig",
+        "nøyaktig",
+        "tilgjengelig"
+      ],
+      "nokkel": "sustainable – bærekraftig"
+    },
+    {
+      "id": "24",
+      "tekst": "Hva betyr «reliable»?",
+      "riktig": "pålitelig",
+      "gale": [
+        "betydelig",
+        "bærekraftig",
+        "nøyaktig"
+      ],
+      "nokkel": "reliable – pålitelig"
+    },
+    {
+      "id": "25",
+      "tekst": "Hva betyr «accurate»?",
+      "riktig": "nøyaktig",
+      "gale": [
+        "pålitelig",
+        "bærekraftig",
+        "tilgjengelig"
+      ],
+      "nokkel": "accurate – nøyaktig"
+    },
+    {
+      "id": "26",
+      "tekst": "Hva betyr «available»?",
+      "riktig": "tilgjengelig",
+      "gale": [
+        "nøyaktig",
+        "bærekraftig",
+        "pålitelig"
+      ],
+      "nokkel": "available – tilgjengelig"
+    }
+  ]
+}

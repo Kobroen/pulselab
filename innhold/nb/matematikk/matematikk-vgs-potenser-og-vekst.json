@@ -1,0 +1,245 @@
+{
+  "id": "matematikk-vgs-potenser-og-vekst",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "vgs",
+  "tittel": "Potenser, logaritmer og vekstfaktor",
+  "beskrivelse": "Potensregler, standardform, logaritmer og vekstfaktor.",
+  "lk20": [
+    "Matematikk vg1 (1P og 1T): potenser, standardform og prosentvis vekst. Logaritmer hører til S og R."
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 2³ · 2⁴?",
+      "riktig": "2⁷",
+      "gale": [
+        "2¹²",
+        "4⁷",
+        "4¹²"
+      ],
+      "nokkel": "Hva er 2³ · 2⁴? 2⁷"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 5⁶ : 5²?",
+      "riktig": "5⁴",
+      "gale": [
+        "5³",
+        "5⁸",
+        "1⁴"
+      ],
+      "nokkel": "Hva er 5⁶ : 5²? 5⁴"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er (3²)³?",
+      "riktig": "3⁶",
+      "gale": [
+        "3⁵",
+        "9⁵",
+        "3⁸"
+      ],
+      "nokkel": "Hva er (3²)³? 3⁶"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 7⁰?",
+      "riktig": "1",
+      "gale": [
+        "0",
+        "7",
+        "70"
+      ],
+      "nokkel": "Hva er 7⁰? 1"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 2⁻¹?",
+      "riktig": "1/2",
+      "gale": [
+        "−2",
+        "−1/2",
+        "2"
+      ],
+      "nokkel": "Hva er 2⁻¹? 1/2"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 10⁻²?",
+      "riktig": "0,01",
+      "gale": [
+        "0,1",
+        "−100",
+        "−20"
+      ],
+      "nokkel": "Hva er 10⁻²? 0,01"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 9^(1/2)?",
+      "riktig": "3",
+      "gale": [
+        "4,5",
+        "18",
+        "81"
+      ],
+      "nokkel": "Hva er 9^(1/2)? 3"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er lg 100?",
+      "riktig": "2",
+      "gale": [
+        "10",
+        "100",
+        "1"
+      ],
+      "nokkel": "Hva er lg 100? 2"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er lg 1000?",
+      "riktig": "3",
+      "gale": [
+        "100",
+        "30",
+        "10"
+      ],
+      "nokkel": "Hva er lg 1000? 3"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er lg 1?",
+      "riktig": "0",
+      "gale": [
+        "1",
+        "10",
+        "−1"
+      ],
+      "nokkel": "Hva er lg 1? 0"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er lg 0,1?",
+      "riktig": "−1",
+      "gale": [
+        "0",
+        "1",
+        "0,1"
+      ],
+      "nokkel": "Hva er lg 0,1? −1"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er ln e?",
+      "riktig": "1",
+      "gale": [
+        "0",
+        "e",
+        "2,72"
+      ],
+      "nokkel": "Hva er ln e? 1"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er ln 1?",
+      "riktig": "0",
+      "gale": [
+        "1",
+        "e",
+        "−1"
+      ],
+      "nokkel": "Hva er ln 1? 0"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 3,2 · 10³?",
+      "riktig": "3200",
+      "gale": [
+        "320",
+        "32 000",
+        "0,0032"
+      ],
+      "nokkel": "Hva er 3,2 · 10³? 3200"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 5 · 10⁻²?",
+      "riktig": "0,05",
+      "gale": [
+        "0,5",
+        "500",
+        "−500"
+      ],
+      "nokkel": "Hva er 5 · 10⁻²? 0,05"
+    },
+    {
+      "id": "16",
+      "tekst": "Skriv 45 000 på standardform",
+      "riktig": "4,5 · 10⁴",
+      "gale": [
+        "45 · 10³",
+        "4,5 · 10³",
+        "0,45 · 10⁵"
+      ],
+      "nokkel": "Skriv 45 000 på standardform 4,5 · 10⁴"
+    },
+    {
+      "id": "17",
+      "tekst": "Skriv 0,003 på standardform",
+      "riktig": "3 · 10⁻³",
+      "gale": [
+        "3 · 10³",
+        "0,3 · 10⁻²",
+        "3 · 10⁻²"
+      ],
+      "nokkel": "Skriv 0,003 på standardform 3 · 10⁻³"
+    },
+    {
+      "id": "18",
+      "tekst": "Vekstfaktor ved 25 % økning?",
+      "riktig": "1,25",
+      "gale": [
+        "0,25",
+        "25",
+        "0,75"
+      ],
+      "nokkel": "Vekstfaktor ved 25 % økning? 1,25"
+    },
+    {
+      "id": "19",
+      "tekst": "Vekstfaktor ved 10 % nedgang?",
+      "riktig": "0,90",
+      "gale": [
+        "1,10",
+        "0,10",
+        "−0,10"
+      ],
+      "nokkel": "Vekstfaktor ved 10 % nedgang? 0,90"
+    },
+    {
+      "id": "20",
+      "tekst": "Vekstfaktor ved 3 % økning?",
+      "riktig": "1,03",
+      "gale": [
+        "1,3",
+        "0,03",
+        "3"
+      ],
+      "nokkel": "Vekstfaktor ved 3 % økning? 1,03"
+    },
+    {
+      "id": "21",
+      "tekst": "Vekstfaktoren 0,85 betyr ...",
+      "riktig": "15 % nedgang",
+      "gale": [
+        "85 % nedgang",
+        "15 % økning",
+        "85 % økning"
+      ],
+      "nokkel": "Vekstfaktoren 0,85 betyr ... 15 % nedgang"
+    }
+  ]
+}

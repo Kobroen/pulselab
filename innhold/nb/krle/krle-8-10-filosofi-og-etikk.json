@@ -1,0 +1,201 @@
+{
+  "id": "krle-8-10-filosofi-og-etikk",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "krle",
+  "trinn": "8-10",
+  "tittel": "Filosofi, etikk og religion",
+  "beskrivelse": "Filosofer, etiske modeller og religionskunnskap.",
+  "lk20": [
+    "RLE01-03, etter 10. trinn: filosofer, etiske modeller og religioner og livssyn"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvem var læreren til Platon?",
+      "riktig": "Sokrates",
+      "gale": [
+        "Aristoteles",
+        "Kant",
+        "Descartes"
+      ],
+      "nokkel": "Hvem var læreren til Platon? Sokrates"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvem var eleven til Platon?",
+      "riktig": "Aristoteles",
+      "gale": [
+        "Sokrates",
+        "Kant",
+        "Descartes"
+      ],
+      "nokkel": "Hvem var eleven til Platon? Aristoteles"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvem sa «Jeg tenker, altså er jeg»?",
+      "riktig": "Descartes",
+      "gale": [
+        "Kant",
+        "Platon",
+        "Nietzsche"
+      ],
+      "nokkel": "Hvem sa «Jeg tenker, altså er jeg»? Descartes"
+    },
+    {
+      "id": "04",
+      "tekst": "Etikk som følger regler og plikter, kalles ...",
+      "riktig": "pliktetikk",
+      "gale": [
+        "nytteetikk",
+        "dydsetikk",
+        "sinnelagsetikk"
+      ],
+      "nokkel": "Etikk som følger regler og plikter, kalles ... pliktetikk"
+    },
+    {
+      "id": "05",
+      "tekst": "«Mest mulig lykke for flest» hører til ...",
+      "riktig": "nytteetikk",
+      "gale": [
+        "pliktetikk",
+        "dydsetikk",
+        "sinnelagsetikk"
+      ],
+      "nokkel": "«Mest mulig lykke for flest» hører til ... nytteetikk"
+    },
+    {
+      "id": "06",
+      "tekst": "Etikk om gode karaktertrekk kalles ...",
+      "riktig": "dydsetikk",
+      "gale": [
+        "pliktetikk",
+        "nytteetikk",
+        "sinnelagsetikk"
+      ],
+      "nokkel": "Etikk om gode karaktertrekk kalles ... dydsetikk"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvem forbindes med pliktetikk?",
+      "riktig": "Kant",
+      "gale": [
+        "Bentham",
+        "Aristoteles",
+        "Sokrates"
+      ],
+      "nokkel": "Hvem forbindes med pliktetikk? Kant"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvem forbindes med dydsetikk?",
+      "riktig": "Aristoteles",
+      "gale": [
+        "Kant",
+        "Bentham",
+        "Mill"
+      ],
+      "nokkel": "Hvem forbindes med dydsetikk? Aristoteles"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvem forbindes med nytteetikk?",
+      "riktig": "Bentham",
+      "gale": [
+        "Kant",
+        "Platon",
+        "Aristoteles"
+      ],
+      "nokkel": "Hvem forbindes med nytteetikk? Bentham"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva kalles en som ikke tror på noen gud?",
+      "riktig": "ateist",
+      "gale": [
+        "agnostiker",
+        "monoteist",
+        "profet"
+      ],
+      "nokkel": "Hva kalles en som ikke tror på noen gud? ateist"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva kalles en som mener vi ikke kan vite om Gud finnes?",
+      "riktig": "agnostiker",
+      "gale": [
+        "ateist",
+        "monoteist",
+        "humanist"
+      ],
+      "nokkel": "Hva kalles en som mener vi ikke kan vite om Gud finnes? agnostiker"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilken religion har den åttedelte veien?",
+      "riktig": "buddhisme",
+      "gale": [
+        "hinduisme",
+        "islam",
+        "jødedom"
+      ],
+      "nokkel": "Hvilken religion har den åttedelte veien? buddhisme"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilken religion har læren om treenigheten?",
+      "riktig": "kristendom",
+      "gale": [
+        "islam",
+        "jødedom",
+        "buddhisme"
+      ],
+      "nokkel": "Hvilken religion har læren om treenigheten? kristendom"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken religion har de fem søylene?",
+      "riktig": "islam",
+      "gale": [
+        "kristendom",
+        "jødedom",
+        "buddhisme"
+      ],
+      "nokkel": "Hvilken religion har de fem søylene? islam"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvem regnes som islams siste profet?",
+      "riktig": "Muhammed",
+      "gale": [
+        "Moses",
+        "Abraham",
+        "Buddha"
+      ],
+      "nokkel": "Hvem regnes som islams siste profet? Muhammed"
+    },
+    {
+      "id": "16",
+      "tekst": "Paven leder den ... kirke",
+      "riktig": "katolske",
+      "gale": [
+        "lutherske",
+        "ortodokse",
+        "anglikanske"
+      ],
+      "nokkel": "Paven leder den ... kirke katolske"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvem startet reformasjonen i 1517?",
+      "riktig": "Luther",
+      "gale": [
+        "Calvin",
+        "paven",
+        "Erasmus"
+      ],
+      "nokkel": "Hvem startet reformasjonen i 1517? Luther"
+    }
+  ]
+}

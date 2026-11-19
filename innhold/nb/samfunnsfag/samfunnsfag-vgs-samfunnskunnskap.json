@@ -1,0 +1,223 @@
+{
+  "id": "samfunnsfag-vgs-samfunnskunnskap",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "samfunnsfag",
+  "trinn": "vgs",
+  "tittel": "Samfunnskunnskap: økonomi, politikk og sosiologi",
+  "beskrivelse": "Sentrale begreper fra samfunnskunnskap.",
+  "lk20": [
+    "Samfunnskunnskap, vg1/vg2: sosialisering, politikk, økonomi og internasjonale forhold"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva måler BNP?",
+      "riktig": "verdiskaping",
+      "gale": [
+        "folketall",
+        "prisvekst",
+        "eksport"
+      ],
+      "nokkel": "Hva måler BNP? verdiskaping"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva kalles generell prisvekst?",
+      "riktig": "inflasjon",
+      "gale": [
+        "deflasjon",
+        "devaluering",
+        "resesjon"
+      ],
+      "nokkel": "Hva kalles generell prisvekst? inflasjon"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvem setter styringsrenta i Norge?",
+      "riktig": "Norges Bank",
+      "gale": [
+        "Stortinget",
+        "regjeringen",
+        "Finanstilsynet"
+      ],
+      "nokkel": "Hvem setter styringsrenta i Norge? Norges Bank"
+    },
+    {
+      "id": "04",
+      "tekst": "Styring av økonomien via statsbudsjettet er ...",
+      "riktig": "finanspolitikk",
+      "gale": [
+        "pengepolitikk",
+        "kulturpolitikk",
+        "skolepolitikk"
+      ],
+      "nokkel": "Styring av økonomien via statsbudsjettet er ... finanspolitikk"
+    },
+    {
+      "id": "05",
+      "tekst": "Styring av økonomien via renta er ...",
+      "riktig": "pengepolitikk",
+      "gale": [
+        "finanspolitikk",
+        "kulturpolitikk",
+        "skolepolitikk"
+      ],
+      "nokkel": "Styring av økonomien via renta er ... pengepolitikk"
+    },
+    {
+      "id": "06",
+      "tekst": "Når ble parlamentarismen innført i Norge?",
+      "riktig": "1884",
+      "gale": [
+        "1814",
+        "1905",
+        "1913"
+      ],
+      "nokkel": "Når ble parlamentarismen innført i Norge? 1884"
+    },
+    {
+      "id": "07",
+      "tekst": "Å lære samfunnets normer kalles ...",
+      "riktig": "sosialisering",
+      "gale": [
+        "integrering",
+        "globalisering",
+        "urbanisering"
+      ],
+      "nokkel": "Å lære samfunnets normer kalles ... sosialisering"
+    },
+    {
+      "id": "08",
+      "tekst": "Flytting fra land til by kalles ...",
+      "riktig": "urbanisering",
+      "gale": [
+        "globalisering",
+        "sosialisering",
+        "integrering"
+      ],
+      "nokkel": "Flytting fra land til by kalles ... urbanisering"
+    },
+    {
+      "id": "09",
+      "tekst": "Uskrevne regler for oppførsel kalles ...",
+      "riktig": "normer",
+      "gale": [
+        "lover",
+        "roller",
+        "sanksjoner"
+      ],
+      "nokkel": "Uskrevne regler for oppførsel kalles ... normer"
+    },
+    {
+      "id": "10",
+      "tekst": "Forventninger til en posisjon kalles ...",
+      "riktig": "rolle",
+      "gale": [
+        "norm",
+        "verdi",
+        "sanksjon"
+      ],
+      "nokkel": "Forventninger til en posisjon kalles ... rolle"
+    },
+    {
+      "id": "11",
+      "tekst": "Reaksjoner på normbrudd kalles ...",
+      "riktig": "sanksjoner",
+      "gale": [
+        "roller",
+        "verdier",
+        "lover"
+      ],
+      "nokkel": "Reaksjoner på normbrudd kalles ... sanksjoner"
+    },
+    {
+      "id": "12",
+      "tekst": "Ideologi som vektlegger individets frihet?",
+      "riktig": "liberalisme",
+      "gale": [
+        "sosialisme",
+        "konservatisme",
+        "fascisme"
+      ],
+      "nokkel": "Ideologi som vektlegger individets frihet? liberalisme"
+    },
+    {
+      "id": "13",
+      "tekst": "Ideologi som vil bevare tradisjoner?",
+      "riktig": "konservatisme",
+      "gale": [
+        "liberalisme",
+        "sosialisme",
+        "anarkisme"
+      ],
+      "nokkel": "Ideologi som vil bevare tradisjoner? konservatisme"
+    },
+    {
+      "id": "14",
+      "tekst": "Ideologi som vektlegger utjevning og fellesskap?",
+      "riktig": "sosialisme",
+      "gale": [
+        "liberalisme",
+        "konservatisme",
+        "fascisme"
+      ],
+      "nokkel": "Ideologi som vektlegger utjevning og fellesskap? sosialisme"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvor mange land sitter i FNs sikkerhetsråd?",
+      "riktig": "15",
+      "gale": [
+        "5",
+        "10",
+        "193"
+      ],
+      "nokkel": "Hvor mange land sitter i FNs sikkerhetsråd? 15"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvor mange faste medlemmer har Sikkerhetsrådet?",
+      "riktig": "5",
+      "gale": [
+        "15",
+        "7",
+        "10"
+      ],
+      "nokkel": "Hvor mange faste medlemmer har Sikkerhetsrådet? 5"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvor mange medlemsland har FN?",
+      "riktig": "193",
+      "gale": [
+        "150",
+        "206",
+        "93"
+      ],
+      "nokkel": "Hvor mange medlemsland har FN? 193"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvor mange bærekraftsmål har FN?",
+      "riktig": "17",
+      "gale": [
+        "10",
+        "15",
+        "21"
+      ],
+      "nokkel": "Hvor mange bærekraftsmål har FN? 17"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilken grunnlovsparagraf verner ytringsfrihet?",
+      "riktig": "§ 100",
+      "gale": [
+        "§ 1",
+        "§ 112",
+        "§ 2"
+      ],
+      "nokkel": "Hvilken grunnlovsparagraf verner ytringsfrihet? § 100"
+    }
+  ]
+}

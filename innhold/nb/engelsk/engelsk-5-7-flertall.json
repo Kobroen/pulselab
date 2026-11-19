@@ -1,0 +1,234 @@
+{
+  "id": "engelsk-5-7-flertall",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "5-7",
+  "tittel": "Plurals",
+  "beskrivelse": "Flertall av engelske substantiv.",
+  "lk20": [
+    "ENG01-04, etter 7. trinn: bruke kunnskap om ordklasser og setningsstruktur"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Plural of «child»?",
+      "riktig": "children",
+      "gale": [
+        "childs",
+        "childrens",
+        "childes"
+      ],
+      "nokkel": "child – children"
+    },
+    {
+      "id": "02",
+      "tekst": "Plural of «man»?",
+      "riktig": "men",
+      "gale": [
+        "mans",
+        "mens",
+        "manes"
+      ],
+      "nokkel": "man – men"
+    },
+    {
+      "id": "03",
+      "tekst": "Plural of «woman»?",
+      "riktig": "women",
+      "gale": [
+        "womans",
+        "womens",
+        "womanes"
+      ],
+      "nokkel": "woman – women"
+    },
+    {
+      "id": "04",
+      "tekst": "Plural of «foot»?",
+      "riktig": "feet",
+      "gale": [
+        "foots",
+        "feets",
+        "footes"
+      ],
+      "nokkel": "foot – feet"
+    },
+    {
+      "id": "05",
+      "tekst": "Plural of «tooth»?",
+      "riktig": "teeth",
+      "gale": [
+        "tooths",
+        "teeths",
+        "toothes"
+      ],
+      "nokkel": "tooth – teeth"
+    },
+    {
+      "id": "06",
+      "tekst": "Plural of «mouse»?",
+      "riktig": "mice",
+      "gale": [
+        "mouses",
+        "mices",
+        "mouse"
+      ],
+      "nokkel": "mouse – mice"
+    },
+    {
+      "id": "07",
+      "tekst": "Plural of «sheep»?",
+      "riktig": "sheep",
+      "gale": [
+        "sheeps",
+        "sheepes",
+        "shoop"
+      ],
+      "nokkel": "sheep – sheep"
+    },
+    {
+      "id": "08",
+      "tekst": "Plural of «knife»?",
+      "riktig": "knives",
+      "gale": [
+        "knifes",
+        "knifs",
+        "knivs"
+      ],
+      "nokkel": "knife – knives"
+    },
+    {
+      "id": "09",
+      "tekst": "Plural of «leaf»?",
+      "riktig": "leaves",
+      "gale": [
+        "leafs",
+        "leafes",
+        "leavs"
+      ],
+      "nokkel": "leaf – leaves"
+    },
+    {
+      "id": "10",
+      "tekst": "Plural of «baby»?",
+      "riktig": "babies",
+      "gale": [
+        "babys",
+        "babyes",
+        "babis"
+      ],
+      "nokkel": "baby – babies"
+    },
+    {
+      "id": "11",
+      "tekst": "Plural of «box»?",
+      "riktig": "boxes",
+      "gale": [
+        "boxs",
+        "boxies",
+        "boxen"
+      ],
+      "nokkel": "box – boxes"
+    },
+    {
+      "id": "12",
+      "tekst": "Plural of «city»?",
+      "riktig": "cities",
+      "gale": [
+        "citys",
+        "cityes",
+        "citis"
+      ],
+      "nokkel": "city – cities"
+    },
+    {
+      "id": "13",
+      "tekst": "Plural of «goose»?",
+      "riktig": "geese",
+      "gale": [
+        "gooses",
+        "geeses",
+        "goose"
+      ],
+      "nokkel": "goose – geese"
+    },
+    {
+      "id": "14",
+      "tekst": "Plural of «wolf»?",
+      "riktig": "wolves",
+      "gale": [
+        "wolfs",
+        "wolfes",
+        "wolvs"
+      ],
+      "nokkel": "wolf – wolves"
+    },
+    {
+      "id": "15",
+      "tekst": "Plural of «tomato»?",
+      "riktig": "tomatoes",
+      "gale": [
+        "tomatos",
+        "tomatoss",
+        "tomaties"
+      ],
+      "nokkel": "tomato – tomatoes"
+    },
+    {
+      "id": "16",
+      "tekst": "Plural of «life»?",
+      "riktig": "lives",
+      "gale": [
+        "lifes",
+        "livs",
+        "lifs"
+      ],
+      "nokkel": "life – lives"
+    },
+    {
+      "id": "17",
+      "tekst": "Plural of «story»?",
+      "riktig": "stories",
+      "gale": [
+        "storys",
+        "storyes",
+        "storis"
+      ],
+      "nokkel": "story – stories"
+    },
+    {
+      "id": "18",
+      "tekst": "Plural of «bus»?",
+      "riktig": "buses",
+      "gale": [
+        "buss",
+        "busies",
+        "bus"
+      ],
+      "nokkel": "bus – buses"
+    },
+    {
+      "id": "19",
+      "tekst": "Plural of «potato»?",
+      "riktig": "potatoes",
+      "gale": [
+        "potatos",
+        "potatose",
+        "potaties"
+      ],
+      "nokkel": "potato – potatoes"
+    },
+    {
+      "id": "20",
+      "tekst": "Plural of «deer»?",
+      "riktig": "deer",
+      "gale": [
+        "deers",
+        "deeres",
+        "deeries"
+      ],
+      "nokkel": "deer – deer"
+    }
+  ]
+}

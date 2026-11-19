@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-8-10-algebra",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "8-10",
+  "tittel": "Algebra: forenkle og sette inn",
+  "beskrivelse": "Trekk sammen uttrykk og regn ut verdien når x er kjent.",
+  "lk20": [
+    "MAT01-05, 8. trinn: bokstavuttrykk, variabler og formler"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Forenkle: 2x + 3x",
+      "riktig": "5x",
+      "gale": [
+        "6x",
+        "5x²",
+        "x"
+      ],
+      "nokkel": "Forenkle: 2x + 3x 5x"
+    },
+    {
+      "id": "02",
+      "tekst": "Forenkle: 5a − 2a",
+      "riktig": "3a",
+      "gale": [
+        "7a",
+        "3",
+        "10a"
+      ],
+      "nokkel": "Forenkle: 5a − 2a 3a"
+    },
+    {
+      "id": "03",
+      "tekst": "Forenkle: x · x",
+      "riktig": "x²",
+      "gale": [
+        "2x",
+        "x",
+        "2"
+      ],
+      "nokkel": "Forenkle: x · x x²"
+    },
+    {
+      "id": "04",
+      "tekst": "Forenkle: 3 · 2x",
+      "riktig": "6x",
+      "gale": [
+        "5x",
+        "6",
+        "32x"
+      ],
+      "nokkel": "Forenkle: 3 · 2x 6x"
+    },
+    {
+      "id": "05",
+      "tekst": "Forenkle: 2x + 3 + 4x",
+      "riktig": "6x + 3",
+      "gale": [
+        "9x",
+        "6x",
+        "24x"
+      ],
+      "nokkel": "Forenkle: 2x + 3 + 4x 6x + 3"
+    },
+    {
+      "id": "06",
+      "tekst": "Forenkle: a + a + a",
+      "riktig": "3a",
+      "gale": [
+        "a³",
+        "3",
+        "a + 3"
+      ],
+      "nokkel": "Forenkle: a + a + a 3a"
+    },
+    {
+      "id": "07",
+      "tekst": "Forenkle: 2(x + 3)",
+      "riktig": "2x + 6",
+      "gale": [
+        "2x + 3",
+        "x + 6",
+        "5x"
+      ],
+      "nokkel": "Forenkle: 2(x + 3) 2x + 6"
+    },
+    {
+      "id": "08",
+      "tekst": "Forenkle: 3(a − 2)",
+      "riktig": "3a − 6",
+      "gale": [
+        "3a − 2",
+        "a − 6",
+        "3a + 6"
+      ],
+      "nokkel": "Forenkle: 3(a − 2) 3a − 6"
+    },
+    {
+      "id": "09",
+      "tekst": "Forenkle: x² · x",
+      "riktig": "x³",
+      "gale": [
+        "x²",
+        "2x²",
+        "3x"
+      ],
+      "nokkel": "Forenkle: x² · x x³"
+    },
+    {
+      "id": "10",
+      "tekst": "Forenkle: 6x : 2",
+      "riktig": "3x",
+      "gale": [
+        "4x",
+        "3",
+        "12x"
+      ],
+      "nokkel": "Forenkle: 6x : 2 3x"
+    },
+    {
+      "id": "11",
+      "tekst": "Forenkle: 4y − y",
+      "riktig": "3y",
+      "gale": [
+        "4",
+        "5y",
+        "3"
+      ],
+      "nokkel": "Forenkle: 4y − y 3y"
+    },
+    {
+      "id": "12",
+      "tekst": "Forenkle: 2a · 3a",
+      "riktig": "6a²",
+      "gale": [
+        "6a",
+        "5a",
+        "5a²"
+      ],
+      "nokkel": "Forenkle: 2a · 3a 6a²"
+    },
+    {
+      "id": "13",
+      "tekst": "Forenkle: −(x − 4)",
+      "riktig": "−x + 4",
+      "gale": [
+        "−x − 4",
+        "x − 4",
+        "x + 4"
+      ],
+      "nokkel": "Forenkle: −(x − 4) −x + 4"
+    },
+    {
+      "id": "14",
+      "tekst": "Forenkle: x + 2x + 3x",
+      "riktig": "6x",
+      "gale": [
+        "5x",
+        "6x³",
+        "123x"
+      ],
+      "nokkel": "Forenkle: x + 2x + 3x 6x"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 3x når x = 4?",
+      "riktig": "12",
+      "gale": [
+        "7",
+        "34",
+        "1"
+      ],
+      "nokkel": "Hva er 3x når x = 4? 12"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er x² når x = 5?",
+      "riktig": "25",
+      "gale": [
+        "10",
+        "52",
+        "7"
+      ],
+      "nokkel": "Hva er x² når x = 5? 25"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 2x + 1 når x = 3?",
+      "riktig": "7",
+      "gale": [
+        "6",
+        "24",
+        "9"
+      ],
+      "nokkel": "Hva er 2x + 1 når x = 3? 7"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 10 − x når x = 7?",
+      "riktig": "3",
+      "gale": [
+        "17",
+        "−3",
+        "70"
+      ],
+      "nokkel": "Hva er 10 − x når x = 7? 3"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er x/2 når x = 18?",
+      "riktig": "9",
+      "gale": [
+        "36",
+        "16",
+        "20"
+      ],
+      "nokkel": "Hva er x/2 når x = 18? 9"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er x² når x = −3?",
+      "riktig": "9",
+      "gale": [
+        "−9",
+        "6",
+        "−6"
+      ],
+      "nokkel": "Hva er x² når x = −3? 9"
+    }
+  ]
+}

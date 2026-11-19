@@ -1,0 +1,245 @@
+{
+  "id": "norsk-5-7-ordklasser-2",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "5-7",
+  "tittel": "Ordklasser: pronomen, preposisjoner og flere",
+  "beskrivelse": "Finn ordet som hører til ordklassen.",
+  "lk20": [
+    "NOR01-06, etter 7. trinn: bruke fagspråk om ordklasser og setningsoppbygging"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilket ord er et pronomen?",
+      "riktig": "han",
+      "gale": [
+        "men",
+        "gjennom",
+        "på"
+      ],
+      "nokkel": "han (pronomen)"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilket ord er et pronomen?",
+      "riktig": "hun",
+      "gale": [
+        "aldri",
+        "ikke",
+        "og"
+      ],
+      "nokkel": "hun (pronomen)"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket ord er et pronomen?",
+      "riktig": "vi",
+      "gale": [
+        "snart",
+        "og",
+        "under"
+      ],
+      "nokkel": "vi (pronomen)"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket ord er et pronomen?",
+      "riktig": "dere",
+      "gale": [
+        "hos",
+        "fra",
+        "eller"
+      ],
+      "nokkel": "dere (pronomen)"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket ord er et pronomen?",
+      "riktig": "meg",
+      "gale": [
+        "ofte",
+        "aldri",
+        "ikke"
+      ],
+      "nokkel": "meg (pronomen)"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket ord er et pronomen?",
+      "riktig": "oss",
+      "gale": [
+        "under",
+        "kanskje",
+        "men"
+      ],
+      "nokkel": "oss (pronomen)"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilket ord er en preposisjon?",
+      "riktig": "på",
+      "gale": [
+        "alltid",
+        "oss",
+        "snart"
+      ],
+      "nokkel": "på (preposisjon)"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilket ord er en preposisjon?",
+      "riktig": "under",
+      "gale": [
+        "og",
+        "men",
+        "alltid"
+      ],
+      "nokkel": "under (preposisjon)"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilket ord er en preposisjon?",
+      "riktig": "mellom",
+      "gale": [
+        "aldri",
+        "ofte",
+        "men"
+      ],
+      "nokkel": "mellom (preposisjon)"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilket ord er en preposisjon?",
+      "riktig": "hos",
+      "gale": [
+        "hun",
+        "han",
+        "vi"
+      ],
+      "nokkel": "hos (preposisjon)"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilket ord er en preposisjon?",
+      "riktig": "gjennom",
+      "gale": [
+        "meg",
+        "men",
+        "alltid"
+      ],
+      "nokkel": "gjennom (preposisjon)"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilket ord er en preposisjon?",
+      "riktig": "fra",
+      "gale": [
+        "alltid",
+        "aldri",
+        "han"
+      ],
+      "nokkel": "fra (preposisjon)"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket ord er et adverb?",
+      "riktig": "aldri",
+      "gale": [
+        "på",
+        "vi",
+        "eller"
+      ],
+      "nokkel": "aldri (adverb)"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilket ord er et adverb?",
+      "riktig": "ofte",
+      "gale": [
+        "gjennom",
+        "hun",
+        "på"
+      ],
+      "nokkel": "ofte (adverb)"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilket ord er et adverb?",
+      "riktig": "alltid",
+      "gale": [
+        "og",
+        "under",
+        "men"
+      ],
+      "nokkel": "alltid (adverb)"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilket ord er et adverb?",
+      "riktig": "ikke",
+      "gale": [
+        "vi",
+        "dere",
+        "fra"
+      ],
+      "nokkel": "ikke (adverb)"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilket ord er et adverb?",
+      "riktig": "kanskje",
+      "gale": [
+        "mellom",
+        "gjennom",
+        "han"
+      ],
+      "nokkel": "kanskje (adverb)"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilket ord er et adverb?",
+      "riktig": "snart",
+      "gale": [
+        "eller",
+        "på",
+        "hun"
+      ],
+      "nokkel": "snart (adverb)"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilket ord er en konjunksjon?",
+      "riktig": "og",
+      "gale": [
+        "under",
+        "mellom",
+        "gjennom"
+      ],
+      "nokkel": "og (konjunksjon)"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvilket ord er en konjunksjon?",
+      "riktig": "men",
+      "gale": [
+        "kanskje",
+        "ikke",
+        "ofte"
+      ],
+      "nokkel": "men (konjunksjon)"
+    },
+    {
+      "id": "21",
+      "tekst": "Hvilket ord er en konjunksjon?",
+      "riktig": "eller",
+      "gale": [
+        "mellom",
+        "på",
+        "ikke"
+      ],
+      "nokkel": "eller (konjunksjon)"
+    }
+  ]
+}

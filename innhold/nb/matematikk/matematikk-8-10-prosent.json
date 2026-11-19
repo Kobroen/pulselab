@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-8-10-prosent",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "8-10",
+  "tittel": "Prosent av et tall",
+  "beskrivelse": "Finn prosentdelen i hodet.",
+  "lk20": [
+    "MAT01-05, 8. trinn: prosent, prosentpoeng og vekst"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 60 % av 340?",
+      "riktig": "204",
+      "gale": [
+        "2040",
+        "136",
+        "408"
+      ],
+      "nokkel": "60 % av 340"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 15 % av 440?",
+      "riktig": "66",
+      "gale": [
+        "132",
+        "76",
+        "660"
+      ],
+      "nokkel": "15 % av 440"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 60 % av 500?",
+      "riktig": "300",
+      "gale": [
+        "600",
+        "30",
+        "310"
+      ],
+      "nokkel": "60 % av 500"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 60 % av 540?",
+      "riktig": "324",
+      "gale": [
+        "384",
+        "3240",
+        "334"
+      ],
+      "nokkel": "60 % av 540"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 40 % av 280?",
+      "riktig": "112",
+      "gale": [
+        "224",
+        "168",
+        "122"
+      ],
+      "nokkel": "40 % av 280"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 60 % av 120?",
+      "riktig": "72",
+      "gale": [
+        "720",
+        "48",
+        "144"
+      ],
+      "nokkel": "60 % av 120"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 20 % av 460?",
+      "riktig": "92",
+      "gale": [
+        "112",
+        "184",
+        "102"
+      ],
+      "nokkel": "20 % av 460"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 60 % av 280?",
+      "riktig": "168",
+      "gale": [
+        "228",
+        "336",
+        "178"
+      ],
+      "nokkel": "60 % av 280"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 75 % av 500?",
+      "riktig": "375",
+      "gale": [
+        "385",
+        "3750",
+        "750"
+      ],
+      "nokkel": "75 % av 500"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 5 % av 480?",
+      "riktig": "24",
+      "gale": [
+        "456",
+        "48",
+        "29"
+      ],
+      "nokkel": "5 % av 480"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er 20 % av 300?",
+      "riktig": "60",
+      "gale": [
+        "120",
+        "240",
+        "70"
+      ],
+      "nokkel": "20 % av 300"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er 5 % av 280?",
+      "riktig": "14",
+      "gale": [
+        "19",
+        "140",
+        "24"
+      ],
+      "nokkel": "5 % av 280"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er 5 % av 400?",
+      "riktig": "20",
+      "gale": [
+        "40",
+        "2",
+        "30"
+      ],
+      "nokkel": "5 % av 400"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 30 % av 340?",
+      "riktig": "102",
+      "gale": [
+        "132",
+        "204",
+        "238"
+      ],
+      "nokkel": "30 % av 340"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 5 % av 180?",
+      "riktig": "9",
+      "gale": [
+        "19",
+        "14",
+        "90"
+      ],
+      "nokkel": "5 % av 180"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er 20 % av 80?",
+      "riktig": "16",
+      "gale": [
+        "64",
+        "36",
+        "26"
+      ],
+      "nokkel": "20 % av 80"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 40 % av 60?",
+      "riktig": "24",
+      "gale": [
+        "36",
+        "64",
+        "240"
+      ],
+      "nokkel": "40 % av 60"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 40 % av 540?",
+      "riktig": "216",
+      "gale": [
+        "256",
+        "432",
+        "226"
+      ],
+      "nokkel": "40 % av 540"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er 20 % av 500?",
+      "riktig": "100",
+      "gale": [
+        "10",
+        "200",
+        "400"
+      ],
+      "nokkel": "20 % av 500"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er 25 % av 560?",
+      "riktig": "140",
+      "gale": [
+        "420",
+        "14",
+        "1400"
+      ],
+      "nokkel": "25 % av 560"
+    }
+  ]
+}

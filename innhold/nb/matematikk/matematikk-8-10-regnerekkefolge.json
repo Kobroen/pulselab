@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-8-10-regnerekkefolge",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "8-10",
+  "tittel": "Regnerekkefølge",
+  "beskrivelse": "Gange og dele før pluss og minus. Parenteser først.",
+  "lk20": [
+    "MAT01-05, 7.–8. trinn: regnerekkefølge og parenteser"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 3 + 4 × 4?",
+      "riktig": "19",
+      "gale": [
+        "28",
+        "20",
+        "18"
+      ],
+      "nokkel": "3 + 4 × 4"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 9 + 5 × 2?",
+      "riktig": "19",
+      "gale": [
+        "28",
+        "20",
+        "18"
+      ],
+      "nokkel": "9 + 5 × 2"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 2 + 3 × 4?",
+      "riktig": "14",
+      "gale": [
+        "20",
+        "15",
+        "13"
+      ],
+      "nokkel": "2 + 3 × 4"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 4 + 2 × 2?",
+      "riktig": "8",
+      "gale": [
+        "12",
+        "9",
+        "7"
+      ],
+      "nokkel": "4 + 2 × 2"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 5 + 6 × 5?",
+      "riktig": "35",
+      "gale": [
+        "55",
+        "36",
+        "34"
+      ],
+      "nokkel": "5 + 6 × 5"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 20 − 4 × 2?",
+      "riktig": "12",
+      "gale": [
+        "32",
+        "13",
+        "14"
+      ],
+      "nokkel": "20 − 4 × 2"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 16 − 4 × 2?",
+      "riktig": "8",
+      "gale": [
+        "24",
+        "9",
+        "10"
+      ],
+      "nokkel": "16 − 4 × 2"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 14 − 3 × 3?",
+      "riktig": "5",
+      "gale": [
+        "33",
+        "6",
+        "7"
+      ],
+      "nokkel": "14 − 3 × 3"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 15 − 2 × 4?",
+      "riktig": "7",
+      "gale": [
+        "52",
+        "8",
+        "9"
+      ],
+      "nokkel": "15 − 2 × 4"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 21 − 2 × 4?",
+      "riktig": "13",
+      "gale": [
+        "76",
+        "14",
+        "15"
+      ],
+      "nokkel": "21 − 2 × 4"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er (5 + 2) × 2?",
+      "riktig": "14",
+      "gale": [
+        "9",
+        "16",
+        "12"
+      ],
+      "nokkel": "(5 + 2) × 2"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er (3 + 6) × 2?",
+      "riktig": "18",
+      "gale": [
+        "15",
+        "20",
+        "16"
+      ],
+      "nokkel": "(3 + 6) × 2"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er (2 + 4) × 5?",
+      "riktig": "30",
+      "gale": [
+        "22",
+        "35",
+        "25"
+      ],
+      "nokkel": "(2 + 4) × 5"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er (6 + 4) × 5?",
+      "riktig": "50",
+      "gale": [
+        "26",
+        "55",
+        "45"
+      ],
+      "nokkel": "(6 + 4) × 5"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er (3 + 2) × 4?",
+      "riktig": "20",
+      "gale": [
+        "11",
+        "24",
+        "16"
+      ],
+      "nokkel": "(3 + 2) × 4"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er 18 : 3 + 4?",
+      "riktig": "10",
+      "gale": [
+        "11",
+        "9",
+        "24"
+      ],
+      "nokkel": "18 : 3 + 4"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 6 : 3 + 5?",
+      "riktig": "7",
+      "gale": [
+        "8",
+        "6",
+        "10"
+      ],
+      "nokkel": "6 : 3 + 5"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 6 : 2 + 9?",
+      "riktig": "12",
+      "gale": [
+        "13",
+        "11",
+        "27"
+      ],
+      "nokkel": "6 : 2 + 9"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er 12 : 4 + 5?",
+      "riktig": "8",
+      "gale": [
+        "9",
+        "7",
+        "15"
+      ],
+      "nokkel": "12 : 4 + 5"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er 24 : 4 + 9?",
+      "riktig": "15",
+      "gale": [
+        "16",
+        "14",
+        "54"
+      ],
+      "nokkel": "24 : 4 + 9"
+    }
+  ]
+}

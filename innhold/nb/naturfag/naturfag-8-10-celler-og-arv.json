@@ -1,0 +1,212 @@
+{
+  "id": "naturfag-8-10-celler-og-arv",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "8-10",
+  "tittel": "Celler, arv og evolusjon",
+  "beskrivelse": "Cellens deler, DNA, arv og evolusjon.",
+  "lk20": [
+    "NAT01-04, etter 10. trinn: celler, arv, genetisk variasjon og evolusjon"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvor ligger arvestoffet i cella?",
+      "riktig": "cellekjernen",
+      "gale": [
+        "celleveggen",
+        "ribosomet",
+        "vakuolen"
+      ],
+      "nokkel": "Hvor ligger arvestoffet i cella? cellekjernen"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva heter arvestoffet?",
+      "riktig": "DNA",
+      "gale": [
+        "ATP",
+        "CO₂",
+        "H₂O"
+      ],
+      "nokkel": "Hva heter arvestoffet? DNA"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvor mange kromosomer har mennesket?",
+      "riktig": "46",
+      "gale": [
+        "23",
+        "48",
+        "44"
+      ],
+      "nokkel": "Hvor mange kromosomer har mennesket? 46"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvor mange kromosomer har en kjønnscelle?",
+      "riktig": "23",
+      "gale": [
+        "46",
+        "22",
+        "2"
+      ],
+      "nokkel": "Hvor mange kromosomer har en kjønnscelle? 23"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilke kjønnskromosomer har gutter vanligvis?",
+      "riktig": "XY",
+      "gale": [
+        "XX",
+        "YY",
+        "X"
+      ],
+      "nokkel": "Hvilke kjønnskromosomer har gutter vanligvis? XY"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er cellas «kraftverk»?",
+      "riktig": "mitokondrier",
+      "gale": [
+        "cellekjernen",
+        "ribosomer",
+        "vakuoler"
+      ],
+      "nokkel": "Hva er cellas «kraftverk»? mitokondrier"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvor skjer fotosyntesen?",
+      "riktig": "kloroplaster",
+      "gale": [
+        "mitokondrier",
+        "cellekjernen",
+        "ribosomer"
+      ],
+      "nokkel": "Hvor skjer fotosyntesen? kloroplaster"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva har planteceller som dyreceller mangler?",
+      "riktig": "cellevegg",
+      "gale": [
+        "cellekjerne",
+        "cellemembran",
+        "DNA"
+      ],
+      "nokkel": "Hva har planteceller som dyreceller mangler? cellevegg"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvem regnes som evolusjonsteoriens far?",
+      "riktig": "Darwin",
+      "gale": [
+        "Mendel",
+        "Newton",
+        "Pasteur"
+      ],
+      "nokkel": "Hvem regnes som evolusjonsteoriens far? Darwin"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvem oppdaget arvelovene med erteplanter?",
+      "riktig": "Mendel",
+      "gale": [
+        "Darwin",
+        "Curie",
+        "Einstein"
+      ],
+      "nokkel": "Hvem oppdaget arvelovene med erteplanter? Mendel"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva kalles en variant av et gen?",
+      "riktig": "allel",
+      "gale": [
+        "kromosom",
+        "protein",
+        "enzym"
+      ],
+      "nokkel": "Hva kalles en variant av et gen? allel"
+    },
+    {
+      "id": "12",
+      "tekst": "Et gen som alltid kommer til uttrykk, er ...",
+      "riktig": "dominant",
+      "gale": [
+        "recessivt",
+        "mutert",
+        "nøytralt"
+      ],
+      "nokkel": "Et gen som alltid kommer til uttrykk, er ... dominant"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva kalles en endring i DNA?",
+      "riktig": "mutasjon",
+      "gale": [
+        "mitose",
+        "meiose",
+        "osmose"
+      ],
+      "nokkel": "Hva kalles en endring i DNA? mutasjon"
+    },
+    {
+      "id": "14",
+      "tekst": "Vanlig celledeling kalles ...",
+      "riktig": "mitose",
+      "gale": [
+        "meiose",
+        "mutasjon",
+        "osmose"
+      ],
+      "nokkel": "Vanlig celledeling kalles ... mitose"
+    },
+    {
+      "id": "15",
+      "tekst": "Celledeling som lager kjønnsceller, kalles ...",
+      "riktig": "meiose",
+      "gale": [
+        "mitose",
+        "mutasjon",
+        "osmose"
+      ],
+      "nokkel": "Celledeling som lager kjønnsceller, kalles ... meiose"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva lager proteiner i cella?",
+      "riktig": "ribosomer",
+      "gale": [
+        "vakuoler",
+        "cellevegger",
+        "kromosomer"
+      ],
+      "nokkel": "Hva lager proteiner i cella? ribosomer"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilken gass slippes ut når vi brenner olje?",
+      "riktig": "CO₂",
+      "gale": [
+        "O₂",
+        "H₂",
+        "He"
+      ],
+      "nokkel": "Hvilken gass slippes ut når vi brenner olje? CO₂"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva mangler bakterier?",
+      "riktig": "cellekjerne",
+      "gale": [
+        "arvestoff",
+        "cellemembran",
+        "ribosomer"
+      ],
+      "nokkel": "Hva mangler bakterier? cellekjerne"
+    }
+  ]
+}

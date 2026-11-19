@@ -1,0 +1,278 @@
+{
+  "id": "norsk-8-10-nynorske-ord",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "8-10",
+  "tittel": "Nynorske ord",
+  "beskrivelse": "Hva heter det nynorske ordet på bokmål?",
+  "lk20": [
+    "NOR01-06, etter 10. trinn: lese og forstå tekster på bokmål og nynorsk"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er «ikkje» på bokmål?",
+      "riktig": "ikke",
+      "gale": [
+        "aldri",
+        "ingen",
+        "inne"
+      ],
+      "nokkel": "ikkje – ikke"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er «eg» på bokmål?",
+      "riktig": "jeg",
+      "gale": [
+        "en",
+        "og",
+        "et"
+      ],
+      "nokkel": "eg – jeg"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er «kva» på bokmål?",
+      "riktig": "hva",
+      "gale": [
+        "hvor",
+        "hvem",
+        "når"
+      ],
+      "nokkel": "kva – hva"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er «korleis» på bokmål?",
+      "riktig": "hvordan",
+      "gale": [
+        "hvorfor",
+        "hvor",
+        "hvilken"
+      ],
+      "nokkel": "korleis – hvordan"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er «kvifor» på bokmål?",
+      "riktig": "hvorfor",
+      "gale": [
+        "hvordan",
+        "hvem",
+        "hva"
+      ],
+      "nokkel": "kvifor – hvorfor"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er «kven» på bokmål?",
+      "riktig": "hvem",
+      "gale": [
+        "hva",
+        "hvor",
+        "hvilken"
+      ],
+      "nokkel": "kven – hvem"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er «berre» på bokmål?",
+      "riktig": "bare",
+      "gale": [
+        "bære",
+        "bedre",
+        "bær"
+      ],
+      "nokkel": "berre – bare"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er «mykje» på bokmål?",
+      "riktig": "mye",
+      "gale": [
+        "myk",
+        "mygg",
+        "mange"
+      ],
+      "nokkel": "mykje – mye"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er «noko» på bokmål?",
+      "riktig": "noe",
+      "gale": [
+        "noen",
+        "nok",
+        "nå"
+      ],
+      "nokkel": "noko – noe"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er «nokon» på bokmål?",
+      "riktig": "noen",
+      "gale": [
+        "noe",
+        "nok",
+        "ingen"
+      ],
+      "nokkel": "nokon – noen"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er «saman» på bokmål?",
+      "riktig": "sammen",
+      "gale": [
+        "samme",
+        "samle",
+        "sånn"
+      ],
+      "nokkel": "saman – sammen"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er «heim» på bokmål?",
+      "riktig": "hjem",
+      "gale": [
+        "hjelm",
+        "heis",
+        "himmel"
+      ],
+      "nokkel": "heim – hjem"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er «veke» på bokmål?",
+      "riktig": "uke",
+      "gale": [
+        "vei",
+        "vekt",
+        "vik"
+      ],
+      "nokkel": "veke – uke"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er «skule» på bokmål?",
+      "riktig": "skole",
+      "gale": [
+        "skulle",
+        "skål",
+        "skyld"
+      ],
+      "nokkel": "skule – skole"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er «kjærleik» på bokmål?",
+      "riktig": "kjærlighet",
+      "gale": [
+        "kjæreste",
+        "lek",
+        "kjerne"
+      ],
+      "nokkel": "kjærleik – kjærlighet"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er «skilnad» på bokmål?",
+      "riktig": "forskjell",
+      "gale": [
+        "skilsmisse",
+        "skilt",
+        "likhet"
+      ],
+      "nokkel": "skilnad – forskjell"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er «byrje» på bokmål?",
+      "riktig": "begynne",
+      "gale": [
+        "bære",
+        "bygge",
+        "bytte"
+      ],
+      "nokkel": "byrje – begynne"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er «fridom» på bokmål?",
+      "riktig": "frihet",
+      "gale": [
+        "fritid",
+        "fred",
+        "ferie"
+      ],
+      "nokkel": "fridom – frihet"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er «røyndom» på bokmål?",
+      "riktig": "virkelighet",
+      "gale": [
+        "drøm",
+        "røyk",
+        "rikdom"
+      ],
+      "nokkel": "røyndom – virkelighet"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er «ho» på bokmål?",
+      "riktig": "hun",
+      "gale": [
+        "han",
+        "hvem",
+        "de"
+      ],
+      "nokkel": "ho – hun"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva er «dei» på bokmål?",
+      "riktig": "de",
+      "gale": [
+        "det",
+        "deg",
+        "dere"
+      ],
+      "nokkel": "dei – de"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva er «auge» på bokmål?",
+      "riktig": "øye",
+      "gale": [
+        "øre",
+        "auke",
+        "egg"
+      ],
+      "nokkel": "auge – øye"
+    },
+    {
+      "id": "23",
+      "tekst": "Hva er «vatn» på bokmål?",
+      "riktig": "vann",
+      "gale": [
+        "vott",
+        "vant",
+        "vår"
+      ],
+      "nokkel": "vatn – vann"
+    },
+    {
+      "id": "24",
+      "tekst": "Hva er «mjølk» på bokmål?",
+      "riktig": "melk",
+      "gale": [
+        "mel",
+        "mygg",
+        "møll"
+      ],
+      "nokkel": "mjølk – melk"
+    }
+  ]
+}

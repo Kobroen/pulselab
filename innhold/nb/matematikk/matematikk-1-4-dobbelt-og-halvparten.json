@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-1-4-dobbelt-og-halvparten",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "1-4",
+  "tittel": "Dobbelt og halvparten",
+  "beskrivelse": "Doble og halvere tall.",
+  "lk20": [
+    "MAT01-05, 2.–3. trinn: dobling og halvering"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er det dobbelte av 6?",
+      "riktig": "12",
+      "gale": [
+        "22",
+        "13",
+        "8"
+      ],
+      "nokkel": "dobbelt av 6"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er det dobbelte av 4?",
+      "riktig": "8",
+      "gale": [
+        "9",
+        "6",
+        "10"
+      ],
+      "nokkel": "dobbelt av 4"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er det dobbelte av 15?",
+      "riktig": "30",
+      "gale": [
+        "17",
+        "40",
+        "31"
+      ],
+      "nokkel": "dobbelt av 15"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er det dobbelte av 12?",
+      "riktig": "24",
+      "gale": [
+        "34",
+        "26",
+        "25"
+      ],
+      "nokkel": "dobbelt av 12"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er det dobbelte av 25?",
+      "riktig": "50",
+      "gale": [
+        "27",
+        "60",
+        "48"
+      ],
+      "nokkel": "dobbelt av 25"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er det dobbelte av 7?",
+      "riktig": "14",
+      "gale": [
+        "9",
+        "12",
+        "16"
+      ],
+      "nokkel": "dobbelt av 7"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er det dobbelte av 3?",
+      "riktig": "6",
+      "gale": [
+        "5",
+        "7",
+        "16"
+      ],
+      "nokkel": "dobbelt av 3"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er det dobbelte av 20?",
+      "riktig": "40",
+      "gale": [
+        "22",
+        "41",
+        "50"
+      ],
+      "nokkel": "dobbelt av 20"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er det dobbelte av 5?",
+      "riktig": "10",
+      "gale": [
+        "12",
+        "8",
+        "11"
+      ],
+      "nokkel": "dobbelt av 5"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er det dobbelte av 9?",
+      "riktig": "18",
+      "gale": [
+        "11",
+        "19",
+        "16"
+      ],
+      "nokkel": "dobbelt av 9"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er halvparten av 6?",
+      "riktig": "3",
+      "gale": [
+        "2",
+        "4",
+        "12"
+      ],
+      "nokkel": "halvparten av 6"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er halvparten av 16?",
+      "riktig": "8",
+      "gale": [
+        "7",
+        "10",
+        "32"
+      ],
+      "nokkel": "halvparten av 16"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er halvparten av 100?",
+      "riktig": "50",
+      "gale": [
+        "49",
+        "98",
+        "200"
+      ],
+      "nokkel": "halvparten av 100"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er halvparten av 12?",
+      "riktig": "6",
+      "gale": [
+        "5",
+        "24",
+        "7"
+      ],
+      "nokkel": "halvparten av 12"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er halvparten av 8?",
+      "riktig": "4",
+      "gale": [
+        "6",
+        "5",
+        "3"
+      ],
+      "nokkel": "halvparten av 8"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er halvparten av 14?",
+      "riktig": "7",
+      "gale": [
+        "9",
+        "12",
+        "6"
+      ],
+      "nokkel": "halvparten av 14"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er halvparten av 50?",
+      "riktig": "25",
+      "gale": [
+        "27",
+        "26",
+        "48"
+      ],
+      "nokkel": "halvparten av 50"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er halvparten av 30?",
+      "riktig": "15",
+      "gale": [
+        "16",
+        "60",
+        "28"
+      ],
+      "nokkel": "halvparten av 30"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er halvparten av 24?",
+      "riktig": "12",
+      "gale": [
+        "11",
+        "48",
+        "14"
+      ],
+      "nokkel": "halvparten av 24"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er halvparten av 18?",
+      "riktig": "9",
+      "gale": [
+        "36",
+        "11",
+        "10"
+      ],
+      "nokkel": "halvparten av 18"
+    }
+  ]
+}

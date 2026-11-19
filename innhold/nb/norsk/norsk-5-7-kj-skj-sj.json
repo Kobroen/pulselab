@@ -1,0 +1,212 @@
+{
+  "id": "norsk-5-7-kj-skj-sj",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "5-7",
+  "tittel": "Kj-, skj- og sj-lyd",
+  "beskrivelse": "Finn ordet som er skrevet riktig.",
+  "lk20": [
+    "NOR01-06, etter 7. trinn: mestre sentrale regler for rettskriving"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kjøtt",
+      "gale": [
+        "kjødt",
+        "sjøtt",
+        "tjøtt"
+      ],
+      "nokkel": "kjøtt"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "skjorte",
+      "gale": [
+        "sjorte",
+        "kjorte",
+        "sjårte"
+      ],
+      "nokkel": "skjorte"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kino",
+      "gale": [
+        "kjino",
+        "skino",
+        "tjino"
+      ],
+      "nokkel": "kino"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kylling",
+      "gale": [
+        "kjylling",
+        "tjylling",
+        "sjylling"
+      ],
+      "nokkel": "kylling"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kjeks",
+      "gale": [
+        "skjeks",
+        "sjeks",
+        "tjeks"
+      ],
+      "nokkel": "kjeks"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "ski",
+      "gale": [
+        "sji",
+        "skji",
+        "schi"
+      ],
+      "nokkel": "ski"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "skjerf",
+      "gale": [
+        "sjerf",
+        "kjerf",
+        "skerf"
+      ],
+      "nokkel": "skjerf"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "sjiraff",
+      "gale": [
+        "skjiraff",
+        "kjiraff",
+        "shiraff"
+      ],
+      "nokkel": "sjiraff"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kjøkken",
+      "gale": [
+        "skjøkken",
+        "sjøkken",
+        "kjøken"
+      ],
+      "nokkel": "kjøkken"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kjole",
+      "gale": [
+        "sjole",
+        "skjole",
+        "tjole"
+      ],
+      "nokkel": "kjole"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "tjern",
+      "gale": [
+        "kjern",
+        "sjern",
+        "tjærn"
+      ],
+      "nokkel": "tjern"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kirke",
+      "gale": [
+        "kjirke",
+        "sjirke",
+        "skirke"
+      ],
+      "nokkel": "kirke"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "maskin",
+      "gale": [
+        "masjin",
+        "maskjin",
+        "mashin"
+      ],
+      "nokkel": "maskin"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "stasjon",
+      "gale": [
+        "staskjon",
+        "stasjån",
+        "stason"
+      ],
+      "nokkel": "stasjon"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "dusj",
+      "gale": [
+        "dush",
+        "duskj",
+        "dusch"
+      ],
+      "nokkel": "dusj"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kjempe",
+      "gale": [
+        "sjempe",
+        "skjempe",
+        "tjempe"
+      ],
+      "nokkel": "kjempe"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "skygge",
+      "gale": [
+        "sjygge",
+        "skjygge",
+        "kjygge"
+      ],
+      "nokkel": "skygge"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "nasjon",
+      "gale": [
+        "naskjon",
+        "nasjån",
+        "nasion"
+      ],
+      "nokkel": "nasjon"
+    }
+  ]
+}
