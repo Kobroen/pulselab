@@ -56,10 +56,22 @@ export const OKTER: Okt[] = [
 
 export type Steg = { ovelse: Ovelse; sek: number; oppgave: null } | { ovelse: null; sek: number; oppgave: Oppgave };
 
-/** Sekunder per spørsmål: lese, svare med kroppen, og se fasit. */
-export const LES = 4;
-export const SVAR = 7;
-export const FASIT = 4;
+/** Det læreren kan justere: tempoet i spørsmålene og hvor mange svar som vises. */
+export interface Klasseinnstillinger {
+  /** Sekunder til å lese, til å svare med kroppen, og til å se fasit. */
+  les: number;
+  svar: number;
+  fasit: number;
+  antallSvar: number;
+}
+export const TEMPO: Record<string, { navn: string; les: number; svar: number; fasit: number }> = {
+  rolig: { navn: 'Rolig', les: 6, svar: 10, fasit: 5 },
+  vanlig: { navn: 'Vanlig', les: 4, svar: 7, fasit: 4 },
+  rask: { navn: 'Raskt', les: 3, svar: 5, fasit: 3 },
+};
+
+/** Takten for hver øvelse, i slag per minutt. Figurens bevegelse går i samme tempo. */
+export const TAKT: Record<Ovelsestype, number> = { lop: 150, hopp: 120, sprell: 120, boks: 150, boy: 109, strekk: 72 };
 
 export const FAGFARGE: Record<Fag, string> = {
   matematikk: 'blaa', norsk: 'rosa', engelsk: 'gronn', naturfag: 'oransje', samfunnsfag: 'gul', krle: 'blaalys',
@@ -87,12 +99,21 @@ export function antallSporsmal(okt: Okt): number {
 }
 
 /** Gjør oppskriften om til stegene som skal spilles. */
-export function lagSteg(okt: Okt, oppgaver: Oppgave[]): Steg[] {
+export function lagSteg(okt: Okt, oppgaver: Oppgave[], inn: Klasseinnstillinger): Steg[] {
   const steg: Steg[] = [];
   let nr = 0;
   for (const s of okt.steg) {
     if ('ovelse' in s) steg.push({ ovelse: OVELSER[s.ovelse], sek: s.sek, oppgave: null });
-    else for (let i = 0; i < s.sporsmal && nr < oppgaver.length; i++) steg.push({ ovelse: null, sek: LES + SVAR + FASIT, oppgave: oppgaver[nr++] });
+    else for (let i = 0; i < s.sporsmal && nr < oppgaver.length; i++) steg.push({ ovelse: null, sek: inn.les + inn.svar + inn.fasit, oppgave: medFærreSvar(oppgaver[nr++], inn.antallSvar) });
   }
   return steg;
+}
+
+/** Beholder det riktige svaret og så mange gale som det er plass til. */
+function medFærreSvar(o: Oppgave, antall: number): Oppgave {
+  if (o.svar.length <= antall) return o;
+  const riktig = o.svar[o.riktig];
+  const svar = o.svar.filter((_, i) => i !== o.riktig).slice(0, antall - 1);
+  svar.splice(Math.floor(Math.random() * (svar.length + 1)), 0, riktig);
+  return { ...o, svar, riktig: svar.indexOf(riktig) };
 }

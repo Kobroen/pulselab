@@ -10,7 +10,7 @@ import { Klasseokt } from './klasse';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
 import { type BankOppgave, INDEKS, type Trinn, hentSett, trekk } from './bank';
-import { OKTER, type Okt, antallSporsmal, laereokt } from './okter';
+import { OKTER, type Okt, TEMPO, antallSporsmal, laereokt } from './okter';
 import { type Tema, lagRunde } from './oppgaver';
 import { Pekerkilde } from './pekerkilde';
 import { Rekk } from './rekk';
@@ -223,6 +223,10 @@ function startSpill(kameraMed: boolean) {
       : 'Spillet er i gang. Pek, trykk eller bruk tastene 1 til 4 for å velge svar.';
 }
 
+// Tempo og antall svar kan læreren justere. Valgene huskes på enheten.
+let tempo = lagret('puls-tempo') ?? 'vanlig';
+let antallSvar = Math.min(4, Math.max(2, Number(lagret('puls-svar')) || 4));
+
 /** Fellesmodus: ingen kamera og ingen kalibrering, rett til økta. */
 let starter = 0;
 async function startKlasse(valgt: Okt) {
@@ -244,7 +248,9 @@ async function startKlasse(valgt: Okt) {
   signaler = nyeSignaler();
   peker?.stopp();
   peker = new Pekerkilde(scene, signaler, false);
-  spill = new Klasseokt(signaler, okt, oppgaver, lyd, effekter, Number(params.get('fart')) || 1);
+  const t = TEMPO[tempo] ?? TEMPO.vanlig;
+  const inn = { les: t.les, svar: t.svar, fasit: t.fasit, antallSvar };
+  spill = new Klasseokt(signaler, okt, oppgaver, lyd, effekter, inn, Number(params.get('fart')) || 1);
   vis('spill');
   $('skjermleser').textContent = `${okt.navn} for klassen. Trykk mellomrom for å starte og for å pause. Pil høyre hopper til neste steg.`;
 }
@@ -450,6 +456,22 @@ for (const t of INDEKS.trinn) {
   );
 }
 visSett();
+for (const [id, t] of Object.entries(TEMPO)) {
+  $('tempovalg').appendChild(
+    valgknapp('tempo', id, t.navn, id === tempo, () => {
+      tempo = id;
+      lagre('puls-tempo', id);
+    }),
+  );
+}
+for (const n of [2, 3, 4]) {
+  $('svarvalg').appendChild(
+    valgknapp('antallsvar', String(n), String(n), n === antallSvar, () => {
+      antallSvar = n;
+      lagre('puls-svar', String(n));
+    }),
+  );
+}
 
 // Læremodus: flere temaer fra oppgavebanken. Settet hentes når det velges, så spillet kan starte med en gang.
 let bankoppgaver: BankOppgave[] | null = null;
