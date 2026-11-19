@@ -9,7 +9,8 @@ import { Kamerakilde } from './kamerakilde';
 import { Klasseokt } from './klasse';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
-import { OKTER, type Okt } from './okter';
+import { INDEKS, type Trinn, hentSett, trekk } from './bank';
+import { OKTER, type Okt, antallSporsmal, laereokt } from './okter';
 import { type Tema, lagRunde } from './oppgaver';
 import { Pekerkilde } from './pekerkilde';
 import { Rekk } from './rekk';
@@ -221,8 +222,19 @@ function startSpill(kameraMed: boolean) {
 }
 
 /** Fellesmodus: ingen kamera og ingen kalibrering, rett til økta. */
-function startKlasse(valgt: Okt) {
+let starter = 0;
+async function startKlasse(valgt: Okt) {
   lyd.vekk();
+  const denne = ++starter;
+  let oppgaver: ReturnType<typeof trekk> = [];
+  if (valgt.sett) {
+    try {
+      oppgaver = trekk(await hentSett(valgt.sett), antallSporsmal(valgt));
+    } catch {
+      // Uten nett kan settet mangle. Da går økta med bare øvelsene.
+    }
+    if (denne !== starter) return;
+  }
   okt = valgt;
   spilltype = 'klasse';
   medKamera = false;
@@ -230,9 +242,32 @@ function startKlasse(valgt: Okt) {
   signaler = nyeSignaler();
   peker?.stopp();
   peker = new Pekerkilde(scene, signaler, false);
-  spill = new Klasseokt(signaler, okt, lyd, effekter, Number(params.get('fart')) || 1);
+  spill = new Klasseokt(signaler, okt, oppgaver, lyd, effekter, Number(params.get('fart')) || 1);
   vis('spill');
   $('skjermleser').textContent = `${okt.navn} for klassen. Trykk mellomrom for å starte og for å pause. Pil høyre hopper til neste steg.`;
+}
+
+// Klassemålet: hvert minutt i bevegelse gir 10 meter mot Galdhøpiggen. Summen ligger bare på denne enheten.
+const TOPP = 2469;
+const DELMÅL = 1841;
+function visKlassemål(aktivSek: number | undefined) {
+  const boks = $('klassemaal');
+  boks.hidden = aktivSek === undefined;
+  if (aktivSek === undefined) return;
+  const før = Number(lagret('puls-klassemeter')) || 0;
+  const nye = Math.round(aktivSek / 6);
+  const nå = før + nye;
+  lagre('puls-klassemeter', String(nå));
+  // Når toppen er nådd, starter en ny tur.
+  const tur = nå % TOPP;
+  const fyll = $('fjellfyll');
+  fyll.style.transform = `scaleX(${Math.min(1, (før % TOPP) / TOPP)})`;
+  requestAnimationFrame(() => requestAnimationFrame(() => (fyll.style.transform = `scaleX(${tur / TOPP})`)));
+  $('fjelltekst').textContent =
+    Math.floor(nå / TOPP) > Math.floor(før / TOPP)
+      ? `Dere nådde toppen, ${TOPP.toLocaleString('nb')} meter! Neste tur er i gang.`
+      : `+${nye} meter i denne økta. Klassen er på ${tur.toLocaleString('nb')} av ${TOPP.toLocaleString('nb')} meter` +
+        (tur < DELMÅL ? `, og det er ${(DELMÅL - tur).toLocaleString('nb')} meter til Juvasshytta.` : ', forbi Juvasshytta.');
 }
 
 const STJERNE = (fylt: boolean) =>
@@ -292,7 +327,11 @@ function visResultat() {
     liste.appendChild(li);
   }
   $('bytt').hidden = spilltype === 'intervall';
-  $('bytt').textContent = spilltype === 'klasse' ? 'Bytt økt' : 'Bytt spill';
+  const klasse = spilltype === 'klasse';
+  $('bytt').textContent = klasse ? 'Kjør en til' : 'Bytt spill';
+  $('igjen').textContent = klasse ? 'Samme økt igjen' : 'Spill igjen';
+  $('resultattittel').textContent = klasse ? 'Økta er ferdig. Bra jobba!' : 'Bra jobba!';
+  visKlassemål(klasse ? r.aktivSek : undefined);
   vis('resultat');
   $('igjen').focus();
 }
@@ -340,10 +379,10 @@ function løkke(nå: number) {
 
 $('start-laere').addEventListener('click', () => vis('velg'));
 $('start-klasse').addEventListener('click', () => vis('klasse'));
-// Øktene tegnes fra lista, så nye økter bare er data.
-for (const o of OKTER) {
+// Øktene tegnes fra data: Powerbreak fra lista, og læreøktene fra oppgavebanken for valgt trinn og fag.
+function oktkort(o: Okt): HTMLLIElement {
   const li = document.createElement('li');
-  li.className = 'kort oktkort inn';
+  li.className = 'kort oktkort';
   const merke = document.createElement('span');
   merke.className = `merke ${o.farge}`;
   merke.textContent = o.merke;
@@ -361,8 +400,54 @@ for (const o of OKTER) {
   knapp.textContent = 'Start';
   knapp.addEventListener('click', () => startKlasse(o));
   li.append(merke, tittel, tid, tekst, knapp);
-  $('okter').appendChild(li);
+  return li;
 }
+for (const o of OKTER) $('okter').appendChild(oktkort(o));
+
+function valgknapp(gruppe: string, verdi: string, navn: string, valgt: boolean, ved: () => void): HTMLLabelElement {
+  const label = document.createElement('label');
+  const inn = document.createElement('input');
+  inn.type = 'radio';
+  inn.name = gruppe;
+  inn.value = verdi;
+  inn.checked = valgt;
+  inn.addEventListener('change', ved);
+  const span = document.createElement('span');
+  span.textContent = navn;
+  label.append(inn, span);
+  return label;
+}
+
+// Trinnet huskes på enheten, så læreren slipper å velge det hver gang.
+let trinn = (INDEKS.trinn.find((t) => t.id === lagret('puls-trinn'))?.id ?? '5-7') as Trinn;
+let fag = '';
+function visSett() {
+  const iTrinn = INDEKS.sett.filter((s) => s.trinn === trinn);
+  if (fag && !iTrinn.some((s) => s.fag === fag)) fag = '';
+  const fagvalg = $('fagvalg');
+  fagvalg.querySelectorAll('label').forEach((el) => el.remove());
+  fagvalg.appendChild(valgknapp('fag', '', 'Alle fag', fag === '', () => ((fag = ''), visSett())));
+  for (const f of INDEKS.fag) {
+    if (iTrinn.some((s) => s.fag === f.id)) fagvalg.appendChild(valgknapp('fag', f.id, f.navn, fag === f.id, () => ((fag = f.id), visSett())));
+  }
+  $('laeretittel').textContent = `Læreøkter for ${INDEKS.trinn.find((t) => t.id === trinn)?.navn ?? ''}`;
+  const liste = $('settliste');
+  liste.textContent = '';
+  for (const s of iTrinn) {
+    if (fag && s.fag !== fag) continue;
+    liste.appendChild(oktkort(laereokt(s, INDEKS.fag.find((f) => f.id === s.fag)?.navn ?? '')));
+  }
+}
+for (const t of INDEKS.trinn) {
+  $('trinnvalg').appendChild(
+    valgknapp('trinn', t.id, t.navn, t.id === trinn, () => {
+      trinn = t.id;
+      lagre('puls-trinn', trinn);
+      visSett();
+    }),
+  );
+}
+visSett();
 $('start-power').addEventListener('click', () => {
   spilltype = 'intervall';
   åpneKlar();

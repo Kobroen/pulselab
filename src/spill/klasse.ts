@@ -1,6 +1,7 @@
 // Fellesmodus: hele klassen foran én storskjerm, uten kamera. Skjermen leder
 // økta, og læreren styrer med mellomrom (pause) og pil høyre (neste).
 import type { Lyd } from './lyd';
+import type { Oppgave } from './oppgaver';
 import { LES, type Okt, type Steg, SVAR, lagSteg } from './okter';
 import { type Ovelsestype, tegnOvelsesfigur } from './ovelsesvisning';
 import { type Signaler, SCENE_B } from './signaler';
@@ -55,6 +56,8 @@ export class Klasseokt implements Spill {
   private neste = '';
   private tittelSkrift = '';
   private tittelBredde = 0;
+  private linje1 = '';
+  private linje2 = '';
   private svarSkrift: string[] = ['', '', '', ''];
   private fasit = '';
   private sekTekst = '';
@@ -63,12 +66,13 @@ export class Klasseokt implements Spill {
   constructor(
     private signaler: Signaler,
     private okt: Okt,
+    oppgaver: Oppgave[],
     private lyd: Lyd,
     private effekter: Effekter,
     /** Tidsfaktor. Bare røyktesten bruker noe annet enn 1. */
     private fart = 1,
   ) {
-    this.steg = lagSteg(okt);
+    this.steg = lagSteg(okt, oppgaver);
     for (const s of this.steg) {
       if (s.ovelse) this.antallOvelser++;
       else this.antallSporsmal++;
@@ -323,19 +327,37 @@ export class Klasseokt implements Spill {
     const o = steg.oppgave!;
     const under = this.t < LES ? 0 : this.t < LES + SVAR ? 1 : 2;
     if (!this.tittelSkrift) {
-      this.tittelSkrift = tilpassSkrift(g, o.tekst, 540, 40);
+      // Lange spørsmål deles på to linjer, så skriften kan være stor nok til å leses på avstand.
+      this.linje1 = o.tekst;
+      this.linje2 = '';
+      g.font = `600 34px ${SKRIFT}`;
+      if (g.measureText(o.tekst).width > 640) {
+        let best = -1;
+        for (let i = o.tekst.indexOf(' '); i >= 0; i = o.tekst.indexOf(' ', i + 1)) {
+          if (best < 0 || Math.abs(i - o.tekst.length / 2) < Math.abs(best - o.tekst.length / 2)) best = i;
+        }
+        if (best > 0) {
+          this.linje1 = o.tekst.slice(0, best);
+          this.linje2 = o.tekst.slice(best + 1);
+        }
+      }
+      const lengst = this.linje1.length >= this.linje2.length ? this.linje1 : this.linje2;
+      this.tittelSkrift = tilpassSkrift(g, lengst, 640, this.linje2 ? 32 : 40);
       for (let i = 0; i < o.svar.length; i++) this.svarSkrift[i] = tilpassSkrift(g, o.svar[i], KORT_B - 28, 56);
     }
     tegnÅs(g);
     g.save();
-    g.translate(480, 104);
+    g.translate(430, 104);
     g.rotate(-0.012);
-    papirkort(g, -300, -42, 600, 84, 14, FARGE.hvit);
+    papirkort(g, -350, -46, 700, 92, 14, FARGE.hvit);
     g.fillStyle = FARGE.blekk;
     g.font = this.tittelSkrift;
     g.textAlign = 'center';
     g.textBaseline = 'middle';
-    g.fillText(o.tekst, 0, 3);
+    if (this.linje2) {
+      g.fillText(this.linje1, 0, -17);
+      g.fillText(this.linje2, 0, 21);
+    } else g.fillText(this.linje1, 0, 3);
     g.restore();
 
     // Tiden som er igjen av det klassen gjør akkurat nå.
@@ -384,7 +406,7 @@ export class Klasseokt implements Spill {
     const fliser = [{ verdi: String(this.antallOvelser), tekst: 'øvelser' }];
     if (this.antallSporsmal) fliser.push({ verdi: String(this.antallSporsmal), tekst: 'spørsmål' });
     fliser.push({ verdi: `${min}:${sek}`, tekst: 'i bevegelse' });
-    return { stjerner: 3, fliser, øvMer: [] };
+    return { stjerner: 3, fliser, øvMer: [], aktivSek: this.aktiv };
   }
 
   tilstand() {

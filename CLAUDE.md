@@ -43,5 +43,7 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
   Kildene er `kamerakilde.ts` og `pekerkilde.ts`.
 - Fellesmodus for klassen (`klasse.ts`) kjører ferdige økter fra `okter.ts` på storskjerm, uten kamera.
   Nye økter er bare data. `?fart=12` spoler økta i røyktesten.
+- Oppgavebanken ligger i `innhold/` og eies av en egen arbeidsstrøm. Spillet leser den
+  gjennom `src/spill/bank.ts` og endrer ikke filene der.
 - Skriften er Hurme Geometric Sans 3 (`src/spill/skrift/`). Learnlab har
   bruksrett. Filene er lisensiert og skal ikke gjenbrukes utenfor Learnlab.

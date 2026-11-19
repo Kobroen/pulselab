@@ -6,6 +6,8 @@ export interface Resultat {
   stjerner: number;
   fliser: { verdi: string; tekst: string }[];
   øvMer: string[];
+  /** Fellesmodus: sekunder klassen var i bevegelse. Teller mot klassemålet. */
+  aktivSek?: number;
 }
 
 export interface Spill {
