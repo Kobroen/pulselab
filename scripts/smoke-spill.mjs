@@ -87,7 +87,7 @@ for (let nr = 0; nr < 3; nr++) {
     const s = window.__puls.tilstand().spill;
     return s && s.nr === nr && s.fase === 'aktiv';
   }, nr);
-  await page.waitForTimeout(500);
+  await page.waitForTimeout(650);
   const s = (await tilstand()).spill;
   const valg = nr === 1 ? (s.riktig + 1) % 4 : s.riktig;
   await hold(s.bobler[valg]);
@@ -99,6 +99,7 @@ for (let nr = 0; nr < 3; nr++) {
   if (nr === 1) await shot('8-rekk-feil');
 }
 await page.waitForSelector('#resultat:not([hidden])', { timeout: 20_000 });
+await page.waitForTimeout(1700); // stjerner og opptelling
 await shot('9-resultat-rekk');
 const rekk = await page.locator('#fliser').innerText();
 console.log('Rekk:', rekk.replace(/\s+/g, ' '));
@@ -129,6 +130,7 @@ for (;;) {
   await page.waitForTimeout(30);
 }
 await page.waitForSelector('#resultat:not([hidden])');
+await page.waitForTimeout(1700);
 await shot('11-resultat-sveip');
 const sveip = await page.locator('#fliser').innerText();
 console.log('Sveip:', sveip.replace(/\s+/g, ' '));

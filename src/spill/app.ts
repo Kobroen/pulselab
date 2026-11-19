@@ -3,7 +3,8 @@
 import '@fontsource/jost/latin-400.css';
 import '@fontsource/jost/latin-600.css';
 import './stil.css';
-import type { Spill } from './felles';
+import { konfetti, spillAv, tellOpp } from './effekter';
+import type { Effekter, Spill } from './felles';
 import { figurSvg } from './figur';
 import { Kamerakilde } from './kamerakilde';
 import { logoSvg } from './logo';
@@ -40,12 +41,42 @@ let peker: Pekerkilde | null = null;
 let spill: Spill | null = null;
 let skala = 1;
 
+// Risting og dunk kan skrus av. Valget huskes på enheten.
+const lagret = (navn: string) => {
+  try {
+    return localStorage.getItem(navn);
+  } catch {
+    return null;
+  }
+};
+const lagre = (navn: string, verdi: string) => {
+  try {
+    localStorage.setItem(navn, verdi);
+  } catch {
+    // Lagring er ikke tilgjengelig. Valget gjelder da bare denne økta.
+  }
+};
+const effekter: Effekter = {
+  risting: lagret('puls-risting') !== 'av',
+  dunk() {
+    if (this.risting) spillAv(scene, 'dunk');
+  },
+};
+lyd.av = lagret('puls-lyd') === 'av';
+
 $('logo').innerHTML = logoSvg();
 $('pyntefigur').innerHTML = figurSvg('vink');
 
 // ---------- Skjermbytte ----------
 
+const REKKEFØLGE: Skjerm[] = ['start', 'velg', 'klar', 'spill', 'resultat'];
+let førsteVisning = true;
+
 function vis(ny: Skjerm) {
+  const tilbake = REKKEFØLGE.indexOf(ny) < REKKEFØLGE.indexOf(skjerm);
+  if (!førsteVisning) lyd.overgang();
+  if (ny !== 'spill') spillAv($(ny), !førsteVisning && tilbake ? 'ark-inn-tilbake' : 'ark-inn');
+  førsteVisning = false;
   skjerm = ny;
   for (const id of ['start', 'velg', 'klar', 'spill', 'resultat']) $(id).hidden = id !== ny;
   document.body.dataset.skjerm = ny;
@@ -77,6 +108,7 @@ function settHint(tekst: string) {
   if (tekst === forrigeHint) return;
   forrigeHint = tekst;
   hint.textContent = tekst;
+  spillAv(hint, 'lapp-inn');
 }
 
 function åpneKlar() {
@@ -173,8 +205,8 @@ function startSpill(kameraMed: boolean) {
   const tema = (document.querySelector('input[name="tema"]:checked') as HTMLInputElement).value as Tema;
   spill =
     spilltype === 'rekk'
-      ? new Rekk(signaler, lagRunde(tema, Number(params.get('antall')) || 10), lyd, kameraMed)
-      : new Sveip(signaler, lagRunde(tema, 30), lyd, kameraMed, Number(params.get('varighet')) || 60);
+      ? new Rekk(signaler, lagRunde(tema, Number(params.get('antall')) || 10), lyd, kameraMed, effekter)
+      : new Sveip(signaler, lagRunde(tema, 30), lyd, kameraMed, effekter, Number(params.get('varighet')) || 60);
   vis('spill');
   $('skjermleser').textContent = kameraMed
     ? 'Spillet er i gang. Styr med hendene foran kameraet.'
@@ -191,6 +223,8 @@ const STJERNE = (fylt: boolean) =>
     },
   ).join(' ')}"/></svg>`;
 
+let resultatrunde = 0;
+
 function visResultat() {
   if (!spill) return;
   const r = spill.resultat();
@@ -200,12 +234,30 @@ function visResultat() {
   const stjerner = $('stjerner');
   stjerner.innerHTML = [0, 1, 2].map((i) => STJERNE(i < r.stjerner)).join('');
   stjerner.setAttribute('aria-label', `${r.stjerner} av 3 stjerner`);
+  // Stjernene lander én etter én med hver sin tone. Til slutt kommer fanfare og konfetti.
+  const runde = ++resultatrunde;
+  [...stjerner.children].forEach((el, i) =>
+    setTimeout(() => {
+      if (runde !== resultatrunde || skjerm !== 'resultat') return;
+      el.classList.add('stjerne-inn');
+      if (i < r.stjerner) lyd.stjerne(i);
+    }, 400 + i * 260),
+  );
+  setTimeout(() => {
+    if (runde !== resultatrunde || skjerm !== 'resultat') return;
+    lyd.fanfare();
+    const flate = stjerner.getBoundingClientRect();
+    konfetti(flate.left + flate.width / 2, flate.top + flate.height / 2, 24);
+  }, 1300);
   const fliser = $('fliser');
   fliser.textContent = '';
   for (const f of r.fliser) {
     const li = document.createElement('li');
     const b = document.createElement('b');
-    b.textContent = f.verdi;
+    // Rene tall telles opp. Resten, som «9 av 10» og tid, vises med en gang.
+    const tall = /^(×?)(\d+)$/.exec(f.verdi);
+    if (tall) tellOpp(b, Number(tall[2]), tall[1]);
+    else b.textContent = f.verdi;
     li.append(b, f.tekst);
     fliser.appendChild(li);
   }
@@ -288,10 +340,32 @@ $('bytt').addEventListener('click', () => {
 });
 $('ferdig').addEventListener('click', tilStart);
 const lydknapp = $('lydknapp');
-lydknapp.addEventListener('click', () => {
-  lyd.av = !lyd.av;
+const ristknapp = $('ristknapp');
+function visBrytere() {
   lydknapp.setAttribute('aria-pressed', String(!lyd.av));
   lydknapp.textContent = lyd.av ? 'Lyd av' : 'Lyd på';
+  ristknapp.setAttribute('aria-pressed', String(effekter.risting));
+  ristknapp.textContent = effekter.risting ? 'Risting på' : 'Risting av';
+}
+visBrytere();
+lydknapp.addEventListener('click', () => {
+  lyd.av = !lyd.av;
+  lagre('puls-lyd', lyd.av ? 'av' : 'på');
+  lyd.bryter(!lyd.av);
+  visBrytere();
+});
+ristknapp.addEventListener('click', () => {
+  effekter.risting = !effekter.risting;
+  lagre('puls-risting', effekter.risting ? 'på' : 'av');
+  lyd.bryter(effekter.risting);
+  visBrytere();
+});
+// Trykk gir lyd i samme øyeblikk som fingeren treffer, ikke når den slippes.
+document.addEventListener('pointerdown', (e) => {
+  if ((e.target as HTMLElement).closest?.('button:not(:disabled), .tema label')) {
+    lyd.vekk();
+    lyd.trykk();
+  }
 });
 window.addEventListener('keydown', (e) => {
   if (e.key === 'm' && !e.ctrlKey && !e.metaKey) {

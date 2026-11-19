@@ -15,6 +15,16 @@
   --rosa-lys: #fccfed;
   --skygge: rgba(30, 30, 30, 0.13);
   --skrift: Jost, 'Helvetica Neue', Arial, sans-serif;
+  /* Bevegelse: varigheter, kurver og avstander fra designets spesifikasjon. Bare transform og opacity animeres. */
+  --t-straks: 100ms;
+  --t-rask: 180ms;
+  --t-vanlig: 300ms;
+  --t-rolig: 560ms;
+  --e-ut: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --e-inn: cubic-bezier(0.5, 0, 0.9, 0.4);
+  --e-sprett: cubic-bezier(0.3, 1.5, 0.5, 1);
+  --loft: 3px;
+  --trykk: 4px;
 }
 
 * { box-sizing: border-box; }
@@ -54,8 +64,19 @@ a { color: inherit; }
   cursor: pointer; white-space: nowrap;
 }
 .pille.mork { background: var(--blekk); color: #fff; }
-button.pille:hover:not(:disabled) { transform: translateY(-1px); }
-button.pille:active:not(:disabled) { transform: translateY(1px); }
+/* Papir løfter seg ved hover og presses ned ved trykk. */
+button.pille, .tema span {
+  transition: translate var(--t-rask) var(--e-ut);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+@media (hover: hover) {
+  button.pille:hover:not(:disabled), .tema label:hover span { translate: calc(var(--loft) * -1) calc(var(--loft) * -1); }
+}
+button.pille:active:not(:disabled), .tema label:active span {
+  translate: var(--trykk) var(--trykk);
+  transition-duration: var(--t-straks);
+}
 button.pille:disabled { opacity: 0.4; cursor: default; }
 :focus-visible { outline: 3px solid #2d5fd8; outline-offset: 3px; }
 .lapp {
@@ -151,6 +172,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 #scene { display: block; touch-action: none; border-radius: 10px; cursor: none; }
 .spillbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; max-width: 960px; }
 .spillbar .pille { min-height: 36px; padding: 4px 18px; font-size: 14px; }
+.brytere { display: flex; gap: 8px; }
 .snu { display: none; font-size: 14px; color: var(--dempet); text-align: center; }
 @media (orientation: portrait) and (max-width: 700px) { .snu { display: block; } }
 
@@ -183,7 +205,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
   .sol { width: 68px; height: 68px; top: auto; bottom: max(24vh, 120px); right: 28px; }
   .figur { height: 150px; bottom: 3vh; }
   .moduser { flex-direction: column; gap: 18px; }
-  .moduskort { width: 100%; min-height: 0; flex-direction: row; text-align: left; padding: 16px; gap: 16px; --rot: 0deg !important; }
+  .moduskort { width: 100%; min-height: 0; flex-direction: row; text-align: left; padding: 16px; gap: 16px; }
   .moduskort .ikon { width: 64px; height: 64px; }
   .moduskort .ikon svg { width: 42px; height: 42px; }
   .modustekst { flex: 1; min-width: 0; }
@@ -196,6 +218,32 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
   .resultatkort { padding: 26px 22px 28px; }
 }
 
+/* ---------- Engangsanimasjoner ---------- */
+.ark-inn { animation: ark-inn var(--t-rolig) var(--e-ut) both; }
+.ark-inn-tilbake { animation: ark-inn-tilbake var(--t-rolig) var(--e-ut) both; }
+.ark-inn .inn, .ark-inn-tilbake .inn { animation: inn var(--t-vanlig) var(--e-sprett) both; animation-delay: calc(200ms + var(--nr, 0) * 70ms); }
+.inn:nth-child(2) { --nr: 1; }
+.inn:nth-child(3) { --nr: 2; }
+.lapp-inn { animation: lapp-inn 420ms var(--e-sprett) both; }
+.stjerne-inn { animation: stjerne-inn 540ms var(--e-sprett) both; }
+.dunk { animation: dunk 220ms var(--e-ut); }
+.stjerner svg { opacity: 0; }
+.stjerner svg.stjerne-inn { opacity: 1; }
+
+@keyframes ark-inn { from { opacity: 0; translate: 60px 0; rotate: 2deg; } }
+@keyframes ark-inn-tilbake { from { opacity: 0; translate: -60px 0; rotate: -2deg; } }
+@keyframes inn { from { opacity: 0; translate: 0 16px; rotate: -3deg; } }
+@keyframes lapp-inn { from { opacity: 0; translate: 0 -40px; rotate: -6deg; } }
+@keyframes stjerne-inn { from { opacity: 0; scale: 0; rotate: -40deg; } }
+@keyframes dunk { 0%, 100% { translate: 0; } 40% { translate: 0 5px; } }
+
+/* Rolig bevegelse skal være roligere, ikke tom: vipping og lange forflytninger byttes mot toninger.
+   Hover og trykk beholdes. */
 @media (prefers-reduced-motion: reduce) {
-  button.pille:hover:not(:disabled), button.pille:active:not(:disabled) { transform: none; }
+  .ark-inn, .ark-inn-tilbake, .lapp-inn { animation: ton-inn 360ms ease-out both; }
+  .ark-inn .inn, .ark-inn-tilbake .inn { animation: ton-inn 360ms ease-out both; animation-delay: calc(var(--nr, 0) * 70ms); }
+  .stjerne-inn { animation: stjerne-rolig 520ms ease-out both; }
+  .dunk { animation: none; }
 }
+@keyframes ton-inn { from { opacity: 0; scale: 0.97; } }
+@keyframes stjerne-rolig { from { opacity: 0; scale: 0.7; } }
