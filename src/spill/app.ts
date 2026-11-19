@@ -11,6 +11,7 @@ import { Klasseokt } from './klasse';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
 import { type BankOppgave, INDEKS, type Trinn, hentSett, trekk } from './bank';
+import { NIVAER, type Niva, nivaForTrinn } from './niva';
 import { OKTER, type Okt, TEMPO, antallSporsmal, egenokt, laereokt } from './okter';
 import { type Tema, lagRunde } from './oppgaver';
 import { Pekerkilde } from './pekerkilde';
@@ -216,7 +217,7 @@ function startSpill(kameraMed: boolean) {
     spilltype === 'intervall'
       ? new Intervall(signaler, lyd, kameraMed, effekter, Number(params.get('intervall')) || 15)
       : spilltype === 'rekk'
-      ? new Rekk(signaler, runde(Number(params.get('antall')) || 10), lyd, kameraMed, effekter)
+      ? new Rekk(signaler, runde(Number(params.get('antall')) || 10), lyd, kameraMed, effekter, NIVAER[niva].holdetid)
       : new Sveip(signaler, runde(30), lyd, kameraMed, effekter, Number(params.get('varighet')) || 60);
   vis('spill');
   $('skjermleser').textContent = kameraMed
@@ -253,7 +254,7 @@ async function startKlasse(valgt: Okt) {
   peker?.stopp();
   peker = new Pekerkilde(scene, signaler, false);
   const t = TEMPO[tempo] ?? TEMPO.vanlig;
-  const inn = { les: t.les, svar: t.svar, fasit: t.fasit, antallSvar };
+  const inn = { les: t.les, svar: t.svar, fasit: t.fasit, antallSvar, niva };
   // Knappen som startet økta skal ikke sitte igjen med fokus, ellers går mellomrom til den.
   (document.activeElement as HTMLElement | null)?.blur?.();
   spill = new Klasseokt(signaler, okt, oppgaver, lyd, effekter, inn, Number(params.get('fart')) || 1);
@@ -305,17 +306,19 @@ function visResultat() {
   const stjerner = $('stjerner');
   stjerner.innerHTML = [0, 1, 2].map((i) => STJERNE(i < r.stjerner)).join('');
   stjerner.setAttribute('aria-label', `${r.stjerner} av 3 stjerner`);
+  stjerner.hidden = !!r.nokternt;
   // Stjernene lander én etter én med hver sin tone. Til slutt kommer fanfare og konfetti.
   const runde = ++resultatrunde;
   [...stjerner.children].forEach((el, i) =>
     setTimeout(() => {
       if (runde !== resultatrunde || skjerm !== 'resultat') return;
       el.classList.add('stjerne-inn');
-      if (i < r.stjerner) lyd.stjerne(i);
+      if (i < r.stjerner && !r.nokternt) lyd.stjerne(i);
     }, 400 + i * 260),
   );
   setTimeout(() => {
     if (runde !== resultatrunde || skjerm !== 'resultat') return;
+    if (r.nokternt) return;
     lyd.fanfare();
     const flate = stjerner.getBoundingClientRect();
     konfetti(flate.left + flate.width / 2, flate.top + flate.height / 2, 24);
@@ -344,7 +347,7 @@ function visResultat() {
   const klasse = spilltype === 'klasse';
   $('bytt').textContent = klasse ? 'Kjør en til' : 'Bytt spill';
   $('igjen').textContent = klasse ? 'Samme økt igjen' : 'Spill igjen';
-  $('resultattittel').textContent = klasse ? 'Økta er ferdig. Bra jobba!' : 'Bra jobba!';
+  $('resultattittel').textContent = r.nokternt ? 'Økta er ferdig.' : klasse ? 'Økta er ferdig. Bra jobba!' : 'Bra jobba!';
   visKlassemål(klasse ? r.aktivSek : undefined);
   vis('resultat');
   $('igjen').focus();
@@ -462,6 +465,11 @@ function valgknapp(gruppe: string, verdi: string, navn: string, valgt: boolean, 
 // Trinnet huskes på enheten, så læreren slipper å velge det hver gang.
 let trinn = (INDEKS.trinn.find((t) => t.id === lagret('puls-trinn'))?.id ?? '5-7') as Trinn;
 let fag = '';
+// Nivået følger trinnet. Læreren kan velge et annet uttrykk under «Tilpass».
+let niva: Niva = (['liten', 'mellom', 'voksen'] as Niva[]).find((n) => n === lagret('puls-niva')) ?? nivaForTrinn(trinn);
+function merk(gruppe: string, verdi: string) {
+  for (const inn of document.querySelectorAll<HTMLInputElement>(`input[name="${gruppe}"]`)) inn.checked = inn.value === verdi;
+}
 function visSett() {
   const iTrinn = INDEKS.sett.filter((s) => s.trinn === trinn);
   if (fag && !iTrinn.some((s) => s.fag === fag)) fag = '';
@@ -491,6 +499,16 @@ for (const t of INDEKS.trinn) {
     valgknapp('trinn', t.id, t.navn, t.id === trinn, () => {
       trinn = t.id;
       lagre('puls-trinn', trinn);
+      // Nytt trinn gir nivåets vanlige valg. Læreren kan justere dem etterpå.
+      niva = nivaForTrinn(trinn);
+      antallSvar = NIVAER[niva].svar;
+      tempo = NIVAER[niva].tempo;
+      lagre('puls-niva', niva);
+      lagre('puls-svar', String(antallSvar));
+      lagre('puls-tempo', tempo);
+      merk('niva', niva);
+      merk('antallsvar', String(antallSvar));
+      merk('tempo', tempo);
       visSett();
     }),
   );
@@ -501,6 +519,14 @@ for (const [id, t] of Object.entries(TEMPO)) {
     valgknapp('tempo', id, t.navn, id === tempo, () => {
       tempo = id;
       lagre('puls-tempo', id);
+    }),
+  );
+}
+for (const n of ['liten', 'mellom', 'voksen'] as Niva[]) {
+  $('nivavalg').appendChild(
+    valgknapp('niva', n, NIVAER[n].navn, n === niva, () => {
+      niva = n;
+      lagre('puls-niva', n);
     }),
   );
 }
@@ -551,6 +577,9 @@ async function velgBanksett() {
 for (const t of INDEKS.trinn) banktrinn.appendChild(new Option(t.navn, t.id, false, t.id === trinn));
 banktrinn.addEventListener('change', () => {
   lagre('puls-trinn', banktrinn.value);
+  niva = nivaForTrinn(banktrinn.value);
+  lagre('puls-niva', niva);
+  merk('niva', niva);
   fyllBanksett();
 });
 banksett.addEventListener('change', velgBanksett);

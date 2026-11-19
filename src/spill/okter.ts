@@ -2,6 +2,7 @@
 // sammen, eller en bolk spørsmål som klassen svarer på med kroppen.
 import type { BankOppgave, Fag, Settoppforing } from './bank';
 import type { Oppgave } from './oppgaver';
+import type { Niva } from './niva';
 import type { Ovelsestype } from './ovelsesvisning';
 
 export interface Ovelse {
@@ -18,10 +19,15 @@ export const OVELSER: Record<Ovelsestype, Ovelse> = {
   boy: { type: 'boy', navn: 'Knebøy', tekst: 'Ned i knærne og opp' },
   boks: { type: 'boks', navn: 'Boks i lufta', tekst: 'Raske slag med begge hender' },
   strekk: { type: 'strekk', navn: 'Strekk deg', tekst: 'Mot taket, og rolig til siden' },
+  sidehopp: { type: 'sidehopp', navn: 'Hopp sidelengs', tekst: 'Fra side til side' },
+  kne: { type: 'kne', navn: 'Kne mot albue', tekst: 'Annethvert kne, høyt opp' },
+  armsirkel: { type: 'armsirkel', navn: 'Armsirkler', tekst: 'Store sirkler med strake armer' },
+  taa: { type: 'taa', navn: 'Tåhev', tekst: 'Opp på tå, og rolig ned' },
 };
 
 /** Oppskriften på et steg: en øvelse i et antall sekunder, eller et antall spørsmål. */
-type Stegmal = { ovelse: Ovelsestype; sek: number } | { sporsmal: number };
+// Med `velg` trekkes én av øvelsene hver gang økta startes, så den ikke blir lik hver gang.
+type Stegmal = { ovelse: Ovelsestype; sek: number } | { velg: Ovelsestype[]; sek: number } | { sporsmal: number };
 
 export interface Okt {
   id: string;
@@ -42,15 +48,16 @@ export const OKTER: Okt[] = [
     id: 'powerbreak',
     navn: 'Powerbreak',
     minutter: 3,
-    tekst: 'Seks øvelser på rad. Alle står ved pulten og gjør det figuren gjør.',
+    tekst: 'Seks øvelser på rad, med ny blanding hver gang. Alle står ved pulten og gjør det figuren gjør.',
     merke: 'Bare bevegelse',
     farge: 'gul',
     steg: [
-      { ovelse: 'lop', sek: 25 },
-      { ovelse: 'hopp', sek: 20 },
-      { ovelse: 'sprell', sek: 25 },
-      { ovelse: 'boks', sek: 25 },
-      { ovelse: 'boy', sek: 20 },
+      // Først opp med pulsen, så hardest i midten, og rolig til slutt.
+      { velg: ['lop', 'sidehopp'], sek: 25 },
+      { velg: ['hopp', 'kne'], sek: 20 },
+      { velg: ['sprell', 'armsirkel'], sek: 25 },
+      { velg: ['boks', 'lop', 'sidehopp'], sek: 25 },
+      { velg: ['boy', 'taa'], sek: 20 },
       { ovelse: 'strekk', sek: 25 },
     ],
   },
@@ -65,6 +72,7 @@ export interface Klasseinnstillinger {
   svar: number;
   fasit: number;
   antallSvar: number;
+  niva: Niva;
 }
 export const TEMPO: Record<string, { navn: string; les: number; svar: number; fasit: number }> = {
   rolig: { navn: 'Rolig', les: 6, svar: 10, fasit: 5 },
@@ -73,11 +81,24 @@ export const TEMPO: Record<string, { navn: string; les: number; svar: number; fa
 };
 
 /** Takten for hver øvelse, i slag per minutt. Figurens bevegelse går i samme tempo. */
-export const TAKT: Record<Ovelsestype, number> = { lop: 150, hopp: 120, sprell: 120, boks: 150, boy: 109, strekk: 72 };
+export const TAKT: Record<Ovelsestype, number> = {
+  lop: 150, hopp: 120, sprell: 120, boks: 150, boy: 109, strekk: 72, sidehopp: 120, kne: 150, armsirkel: 120, taa: 90,
+};
+/** Øvelsene som får rolig takt uten tromme. */
+export const ROLIGE: Ovelsestype[] = ['strekk', 'taa'];
 
 export const FAGFARGE: Record<Fag, string> = {
   matematikk: 'blaa', norsk: 'rosa', engelsk: 'gronn', naturfag: 'oransje', samfunnsfag: 'gul', krle: 'blaalys',
 };
+
+const LAERESTEG: Stegmal[] = [
+  { velg: ['lop', 'sidehopp', 'kne'], sek: 20 },
+  { sporsmal: 6 },
+  { velg: ['sprell', 'armsirkel', 'hopp'], sek: 20 },
+  { sporsmal: 6 },
+  { velg: ['boks', 'boy'], sek: 20 },
+  { velg: ['strekk', 'taa'], sek: 20 },
+];
 
 /** En læreøkt på fem minutter rundt et sett fra oppgavebanken: tolv spørsmål og fire øvelser. */
 export function laereokt(sett: Settoppforing, fagnavn: string): Okt {
@@ -89,11 +110,9 @@ export function laereokt(sett: Settoppforing, fagnavn: string): Okt {
     merke: fagnavn,
     farge: FAGFARGE[sett.fag],
     sett,
-    steg: [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }],
+    steg: LAERESTEG,
   };
 }
-
-const LAERESTEG: Stegmal[] = [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }];
 
 /** En læreøkt med lærerens egne spørsmål. */
 export function egenokt(oppgaver: BankOppgave[]): Okt {
@@ -113,7 +132,12 @@ export function lagSteg(okt: Okt, oppgaver: Oppgave[], inn: Klasseinnstillinger)
   let nr = 0;
   for (const s of okt.steg) {
     if ('ovelse' in s) steg.push({ ovelse: OVELSER[s.ovelse], sek: s.sek, oppgave: null });
-    else for (let i = 0; i < s.sporsmal && nr < oppgaver.length; i++) steg.push({ ovelse: null, sek: inn.les + inn.svar + inn.fasit, oppgave: medFærreSvar(oppgaver[nr++], inn.antallSvar) });
+    else if ('velg' in s) {
+      // Samme øvelse skal ikke komme to ganger i én økt hvis det kan unngås.
+      const ledige = s.velg.filter((v) => !steg.some((f) => f.ovelse?.type === v));
+      const fra = ledige.length ? ledige : s.velg;
+      steg.push({ ovelse: OVELSER[fra[Math.floor(Math.random() * fra.length)]], sek: s.sek, oppgave: null });
+    } else for (let i = 0; i < s.sporsmal && nr < oppgaver.length; i++) steg.push({ ovelse: null, sek: inn.les + inn.svar + inn.fasit, oppgave: medFærreSvar(oppgaver[nr++], inn.antallSvar) });
   }
   return steg;
 }

@@ -43,6 +43,9 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
   Kildene er `kamerakilde.ts` og `pekerkilde.ts`.
 - Fellesmodus for klassen (`klasse.ts`) kjører ferdige økter fra `okter.ts` på storskjerm, uten kamera.
   Nye økter er bare data. `?fart=12` spoler økta i røyktesten.
+  Et steg med `velg` trekker én av flere øvelser hver gang økta startes.
+- Aldersnivåene (`niva.ts`: småskole, mellomtrinn og ungdom, voksen) følger valgt trinn og styrer
+  uttrykk, tekst og tall, ikke spillereglene.
 - Oppgavebanken ligger i `innhold/` og eies av en egen arbeidsstrøm. Spillet leser den
   gjennom `src/spill/bank.ts` og endrer ikke filene der.
 - Skriften er Hurme Geometric Sans 3 (`src/spill/skrift/`). Learnlab har

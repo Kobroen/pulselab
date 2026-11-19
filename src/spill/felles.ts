@@ -7,6 +7,8 @@ export interface Resultat {
   fliser: { verdi: string; tekst: string }[];
   øvMer: string[];
   /** Fellesmodus: sekunder klassen var i bevegelse. Teller mot klassemålet. */
+  /** Voksne får en nøktern avslutning uten stjerner og konfetti. */
+  nokternt?: boolean;
   aktivSek?: number;
 }
 

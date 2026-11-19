@@ -65,6 +65,8 @@ export class Rekk implements Spill {
     private lyd: Lyd,
     private medKamera: boolean,
     private effekter: Effekter,
+    /** Sekunder hånda må holdes i svaret. De yngste får litt lengre tid. */
+    private holdetid = HOLDETID,
   ) {}
 
   private holder = -1;
@@ -74,7 +76,7 @@ export class Rekk implements Spill {
   private settHolder(i: number) {
     if (i === this.holder) return;
     this.holder = i;
-    if (i >= 0) this.lyd.holdStart(HOLDETID);
+    if (i >= 0) this.lyd.holdStart(this.holdetid);
     else this.lyd.holdStopp();
   }
 
@@ -166,7 +168,7 @@ export class Rekk implements Spill {
         if (!b.armert) {
           if (!inne && this.t > 0.45) b.armert = true;
         } else {
-          b.holdt = Math.max(0, Math.min(1, b.holdt + (inne ? dt / HOLDETID : -dt / SLIPPTID)));
+          b.holdt = Math.max(0, Math.min(1, b.holdt + (inne ? dt / this.holdetid : -dt / SLIPPTID)));
           if (b.holdt >= 1) valgt = i;
           if (inne) holder = i;
         }
