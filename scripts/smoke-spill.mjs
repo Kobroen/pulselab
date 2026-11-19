@@ -99,6 +99,7 @@ for (let nr = 0; nr < 3; nr++) {
   if (nr === 1) await shot('8-rekk-feil');
 }
 await page.waitForSelector('#resultat:not([hidden])', { timeout: 20_000 });
+await page.waitForTimeout(1300); // stjerner og opptelling
 await shot('9-resultat-rekk');
 const rekk = await page.locator('#fliser').innerText();
 console.log('Rekk:', rekk.replace(/\s+/g, ' '));
@@ -129,6 +130,7 @@ for (;;) {
   await page.waitForTimeout(30);
 }
 await page.waitForSelector('#resultat:not([hidden])');
+await page.waitForTimeout(1300);
 await shot('11-resultat-sveip');
 const sveip = await page.locator('#fliser').innerText();
 console.log('Sveip:', sveip.replace(/\s+/g, ' '));

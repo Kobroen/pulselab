@@ -4,8 +4,8 @@ import type { Lyd } from './lyd';
 import type { Oppgave } from './oppgaver';
 import type { Signaler } from './signaler';
 import {
-  type Resultat, type Spill,
-  Konfetti, Toppkort, avstandTilLinje, tegnBakgrunn, tegnHender, tegnHint, tegnLapp, tegnPille, tegnStartboble, tegnÅs, tilpassSkrift,
+  type Effekter, type Resultat, type Spill,
+  Konfetti, Toppkort, avstandTilLinje, tallsprett, tegnBakgrunn, tegnHender, tegnHint, tegnLapp, tegnPille, tegnStartboble, tegnÅs, tilpassSkrift,
 } from './felles';
 import { FARGE, avrundet, papirsirkel, tegnFigur } from './tegning';
 
@@ -62,6 +62,7 @@ export class Sveip implements Spill {
   private poeng = 0;
   private riktige = 0;
   private kombo = 0;
+  private komboTid = 9;
   private besteKombo = 0;
   private bom: string[] = [];
   private borteTid = 0;
@@ -74,6 +75,7 @@ export class Sveip implements Spill {
     private oppgaver: Oppgave[],
     private lyd: Lyd,
     private medKamera: boolean,
+    private effekter: Effekter,
     private varighet = 60,
   ) {
     this.tidIgjen = varighet;
@@ -138,7 +140,9 @@ export class Sveip implements Spill {
       f.status = TRUFFET;
       f.t = 0;
       this.konfetti.kast(f.x, f.y, 16);
-      this.lyd.riktig();
+      this.lyd.riktig(this.kombo - 1);
+      this.effekter.dunk();
+      this.komboTid = 0;
       this.nesteOppgave();
     } else {
       this.kombo = 0;
@@ -157,6 +161,7 @@ export class Sveip implements Spill {
   oppdater(dt: number) {
     const s = this.signaler;
     this.t += dt;
+    this.komboTid += dt;
     this.konfetti.oppdater(dt);
     this.borteTid = s.kropp.synlig ? 0 : this.borteTid + dt;
 
@@ -210,7 +215,6 @@ export class Sveip implements Spill {
         this.tidIgjen = 0;
         this.fase = 'slutt';
         this.t = 0;
-        this.lyd.ferdig();
       }
     } else if (this.t > 0.8) {
       this.ferdig = true;
@@ -247,7 +251,7 @@ export class Sveip implements Spill {
       this.kort.sett(g, o.tekst);
       this.kort.tegn(g);
       tegnPille(g, 40, 42, 124, this.poengTekst);
-      if (this.komboTekst) tegnLapp(g, 786, 36, 134, this.komboTekst);
+      if (this.komboTekst) tegnLapp(g, 786, 36, 134, this.komboTekst, tallsprett(this.komboTid));
 
       for (const f of this.flygere) {
         if (f.status === LEDIG) continue;
@@ -258,13 +262,13 @@ export class Sveip implements Spill {
           r *= 1 + f.t * 1.2;
           g.globalAlpha = Math.max(0, 1 - f.t / 0.3);
         } else if (f.status === BOMMET) {
-          farge = FARGE.linje;
+          farge = FARGE.korallLys;
           g.globalAlpha = Math.max(0, 1 - f.t / 0.9);
         } else if (f.status === UTGÅTT) {
           g.globalAlpha = Math.max(0, 1 - f.t / 0.3);
         }
         papirsirkel(g, f.x, f.y, r, farge);
-        g.fillStyle = f.status === BOMMET ? FARGE.dempet : FARGE.blekk;
+        g.fillStyle = FARGE.blekk;
         g.font = f.skrift || this.skrifter[0];
         g.textAlign = 'center';
         g.textBaseline = 'middle';

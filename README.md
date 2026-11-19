@@ -24,6 +24,8 @@ Nyttig under testing:
 
 - Tasten `M` (eller `?maal=1` i adressen) viser en måleskjerm med bilder per
   sekund, sporinger per sekund og forsinkelse.
+- Under spillet kan lyd og risting skrus av hver for seg. Rolig bevegelse følger
+  innstillingen i operativsystemet.
 - `?antall=3` gir kortere runder i Rekk, og `?varighet=20` kortere runder i Sveip.
 
 ### Slik virker styringen
@@ -92,6 +94,7 @@ src/spill/pekerkilde.ts    mus, finger og tastatur gjort om til de samme signale
 src/spill/sporing.worker.ts  sporingsarbeider: laster modellen og tolker bilder
 src/spill/rekk.ts, sveip.ts  de to spillene
 src/spill/felles.ts, tegning.ts  papirklipp-tegning, figur, konfetti
+src/spill/lyd.ts, effekter.ts  lyd (Web Audio, ingen lydfiler) og småeffekter i menyene
 src/spill/oppgaver.ts      regelbaserte oppgaver
 src/main.ts, worker.ts, types.ts  sporingstesten
 public/models              modellfiler, se README der for kilde og lisens

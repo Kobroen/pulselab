@@ -19,6 +19,52 @@ export interface Spill {
 
 export const ROLIG = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/** Det spillene ber omgivelsene om. Risting og dunk kan skrus av av spilleren. */
+export interface Effekter {
+  risting: boolean;
+  /** Scenen dunker 5 px ned og tilbake ved treff. */
+  dunk(): void;
+}
+
+// Bevegelsene under følger designets spesifikasjon. Alle tar tid i sekunder siden hendelsen.
+
+/** Riktig svar: sprett 1 → 1,18 → 0,96 → 1 på 320 ms. */
+export function sprett(t: number): number {
+  if (ROLIG) return 1;
+  const p = t / 0.32;
+  if (p >= 1 || p <= 0) return 1;
+  if (p < 0.35) return 1 + 0.18 * (p / 0.35);
+  if (p < 0.65) return 1.18 - 0.22 * ((p - 0.35) / 0.3);
+  return 0.96 + 0.04 * ((p - 0.65) / 0.35);
+}
+
+/** Feil svar: risting ±8 px som avtar over 320 ms. */
+export function rist(t: number, på: boolean): number {
+  if (!på || ROLIG || t >= 0.32) return 0;
+  return Math.sin((t / 0.32) * Math.PI * 4.5) * -8 * (1 - t / 0.32);
+}
+
+/** Riktig svar pulserer to ganger (600 ms) etter at spilleren har svart feil. */
+export function puls(t: number): number {
+  if (ROLIG || t <= 0 || t >= 0.6) return 1;
+  return 1 + 0.1 * Math.abs(Math.sin((t / 0.6) * Math.PI * 2));
+}
+
+/** Kombotallet spretter 1 → 1,3 → 1 på 180 ms. */
+export function tallsprett(t: number): number {
+  if (ROLIG || t >= 0.18) return 1;
+  return 1 + 0.3 * Math.sin((t / 0.18) * Math.PI);
+}
+
+/** Element som lander: 0 → 1 på 220 ms med lite oversving. */
+export function land(t: number): number {
+  if (t >= 0.22) return 1;
+  if (t <= 0) return 0;
+  if (ROLIG) return 1;
+  const p = t / 0.22 - 1;
+  return 1 + 2.2 * p * p * p + 1.2 * p * p;
+}
+
 const ÅS = new Path2D('M0 505Q240 465 480 500T960 485V540H0Z');
 
 export function tegnBakgrunn(g: CanvasRenderingContext2D) {
@@ -97,10 +143,11 @@ export function tegnPille(g: CanvasRenderingContext2D, x: number, y: number, b: 
 }
 
 /** Gul papirlapp på skrå, til rekke og kombo. */
-export function tegnLapp(g: CanvasRenderingContext2D, x: number, y: number, b: number, tekst: string) {
+export function tegnLapp(g: CanvasRenderingContext2D, x: number, y: number, b: number, tekst: string, skala = 1) {
   g.save();
   g.translate(x + b / 2, y + 23);
   g.rotate(0.05);
+  g.scale(skala, skala);
   papirkort(g, -b / 2, -23, b, 46, 23, FARGE.gul);
   g.fillStyle = FARGE.blekk;
   g.font = `600 18px ${SKRIFT}`;
@@ -146,7 +193,8 @@ export function tegnRing(g: CanvasRenderingContext2D, x: number, y: number, r: n
 
 // ---------- Konfetti ----------
 
-const BITER = 40;
+// Maks 24 biter om gangen, som i spesifikasjonen.
+const BITER = 24;
 const KONFETTIFARGER = [FARGE.blaa, FARGE.rosa, FARGE.gul, FARGE.oransje, FARGE.korall, FARGE.gronn];
 
 export class Konfetti {

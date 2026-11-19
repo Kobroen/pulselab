@@ -15,6 +15,7 @@ export const FARGE = {
   gul: '#ffd466',
   oransje: '#ffa24b',
   korall: '#fa6049',
+  korallLys: '#fcafa3',
   rosa: '#fba0dc',
   skygge: 'rgba(30,30,30,0.13)',
 } as const;
