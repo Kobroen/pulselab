@@ -4,6 +4,13 @@
 
 const PENTA = [0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24];
 const semi = (f: number, n: number) => f * Math.pow(2, n / 12);
+// Takten: grunntone per takt (C, C, A, G), bassrytme per takt og en pentaton melodi. -1 er pause.
+const TAKTROT = [0, 0, -3, -5];
+const TAKTBASS = [1, 0, 0, 1, 0, 1, 0, 0];
+const TAKTMELODI = [
+  0, -1, 4, -1, 7, -1, 4, -1, 9, -1, 7, -1, 4, -1, 2, -1,
+  0, -1, 4, -1, 7, -1, 9, -1, 12, -1, 9, 7, 4, -1, 2, -1,
+];
 
 interface Tone {
   f: number;
@@ -30,6 +37,9 @@ export class Lyd {
   private støy: AudioBuffer | null = null;
   private holdOsc: OscillatorNode | null = null;
   private holdGain: GainNode | null = null;
+  private taktBpm = 0;
+  private taktNeste = 0;
+  private taktSteg = 0;
 
   /** Må kalles fra et trykk første gang, ellers får ikke nettleseren lov til å spille lyd. */
   vekk() {
@@ -140,6 +150,44 @@ export class Lyd {
   bryter(på: boolean) {
     this.tone({ f: på ? 440 : 660, d: 0.06, type: 'triangle', g: 0.1 });
     this.tone({ f: på ? 660 : 440, t: 0.06, d: 0.08, type: 'triangle', g: 0.1 });
+  }
+
+  /**
+   * Takt til øvelsene i fellesmodus. Kalles hvert bilde mens takten skal gå, og med 0 for å stoppe.
+   * Slagene legges i lydklokka litt fram i tid, så takten holder seg jevn selv om bildene hakker.
+   */
+  takt(bpm: number, rolig = false) {
+    const c = this.ctx;
+    if (!c || this.av || !bpm) {
+      this.taktBpm = 0;
+      return;
+    }
+    if (bpm !== this.taktBpm || this.taktNeste < c.currentTime - 0.5) {
+      this.taktBpm = bpm;
+      this.taktSteg = 0;
+      this.taktNeste = c.currentTime + 0.05;
+    }
+    const åttedel = 30 / bpm;
+    while (this.taktNeste < c.currentTime + 0.15) {
+      this.taktslag(this.taktSteg, Math.max(0, this.taktNeste - c.currentTime), rolig);
+      this.taktSteg = (this.taktSteg + 1) % 32;
+      this.taktNeste += åttedel;
+    }
+  }
+
+  /** Ett steg i takten: åttedeler over fire takter. Stortromme, skarp, hi-hat, bass og en liten marimbamelodi. */
+  private taktslag(steg: number, t: number, rolig: boolean) {
+    const rot = TAKTROT[steg >> 3];
+    if (rolig) {
+      if (steg % 4 === 0) this.tone({ f: semi(130.8, rot), t, d: 0.5, g: 0.1 });
+      if (TAKTMELODI[steg] >= 0 && steg % 4 === 0) this.klang(semi(523.25, TAKTMELODI[steg]), t, 0.5, 0.05);
+      return;
+    }
+    if (steg % 2 === 0) this.tone({ f: 120, f2: 45, t, d: 0.16, g: 0.24 });
+    else this.sus({ f: 7000, t, d: 0.03, g: 0.022, type: 'highpass' });
+    if (steg % 8 === 2 || steg % 8 === 6) this.sus({ f: 1800, t, d: 0.09, g: 0.06, q: 0.7 });
+    if (TAKTBASS[steg % 8]) this.tone({ f: semi(65.4, rot), t, d: 0.14, type: 'triangle', g: 0.14 });
+    if (TAKTMELODI[steg] >= 0) this.klang(semi(523.25, TAKTMELODI[steg]), t, 0.16, 0.05);
   }
 
   /** Stigende tone mens spilleren holder hånda i en svarsirkel. */

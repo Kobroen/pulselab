@@ -48,7 +48,7 @@ function stilling(type: Ovelsestype, t: number) {
     hx = -vx;
     hy = vy;
   } else if (type === 'sprell') {
-    const p = (t / 1.1) % 1;
+    const p = (t / 1.0) % 1;
     const a = 0.5 - 0.5 * Math.cos(p * TAU);
     const v = 1.3 - 2.55 * a;
     luft = 5 * Math.abs(Math.sin(p * TAU));
@@ -58,7 +58,7 @@ function stilling(type: Ovelsestype, t: number) {
     vx = -hx;
     vy = hy;
   } else if (type === 'boy') {
-    const p = (t / 1.8) % 1;
+    const p = (t / 2.2) % 1;
     const a = 0.5 - 0.5 * Math.cos(p * TAU);
     senk = 25 * a;
     fot = 15;
@@ -68,7 +68,7 @@ function stilling(type: Ovelsestype, t: number) {
     vy = hy;
   } else if (type === 'lop') {
     // Løping på stedet: knærne løftes annenhver gang, og armene pendler imot.
-    const p = (t / 0.7) % 1;
+    const p = (t / 0.8) % 1;
     const sving = Math.sin(p * TAU);
     løftV = Math.max(0, sving) * 22;
     løftH = Math.max(0, -sving) * 22;
@@ -80,13 +80,13 @@ function stilling(type: Ovelsestype, t: number) {
     hy = 14 - 16 * sving;
   } else if (type === 'strekk') {
     // Strekk mot taket og lén rolig fra side til side.
-    const sving = Math.sin(((t / 3.2) % 1) * TAU);
+    const sving = Math.sin(((t / 3.33) % 1) * TAU);
     vx = -5 + 13 * sving;
     vy = -35;
     hx = 5 + 13 * sving;
     hy = -35;
   } else {
-    const p = (t / 0.6) % 1;
+    const p = (t / 0.8) % 1;
     const venstre = p < 0.5 ? Math.sin((p / 0.5) * Math.PI) : 0;
     const høyre = p >= 0.5 ? Math.sin(((p - 0.5) / 0.5) * Math.PI) : 0;
     vx = 3 - 25 * venstre;

@@ -200,6 +200,9 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .oktkort p:last-of-type { margin-bottom: 10px; }
 .fotnote-klasse { margin-top: 26px; font-size: 15px; color: var(--dempet); }
 
+.innstillinger { margin-top: 26px; }
+.innstillinger summary { cursor: pointer; font-weight: 600; width: fit-content; }
+.innstillinger .tema { margin: 14px 0 0; }
 .mellomtittel { margin-top: 34px; font-size: 24px; }
 #trinnvalg { margin: 4px 0 24px; }
 #fagvalg { margin: 12px 0 22px; }

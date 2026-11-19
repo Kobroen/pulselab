@@ -2,7 +2,7 @@
 // økta, og læreren styrer med mellomrom (pause) og pil høyre (neste).
 import type { Lyd } from './lyd';
 import type { Oppgave } from './oppgaver';
-import { LES, type Okt, type Steg, SVAR, lagSteg } from './okter';
+import { type Klasseinnstillinger, type Okt, type Steg, TAKT, lagSteg } from './okter';
 import { type Ovelsestype, tegnOvelsesfigur } from './ovelsesvisning';
 import { type Signaler, SCENE_B } from './signaler';
 import {
@@ -69,10 +69,11 @@ export class Klasseokt implements Spill {
     oppgaver: Oppgave[],
     private lyd: Lyd,
     private effekter: Effekter,
+    private inn: Klasseinnstillinger,
     /** Tidsfaktor. Bare røyktesten bruker noe annet enn 1. */
     private fart = 1,
   ) {
-    this.steg = lagSteg(okt, oppgaver);
+    this.steg = lagSteg(okt, oppgaver, inn);
     for (const s of this.steg) {
       if (s.ovelse) this.antallOvelser++;
       else this.antallSporsmal++;
@@ -129,11 +130,13 @@ export class Klasseokt implements Spill {
     this.konfetti.oppdater(dt);
 
     if (this.fase === 'start') {
+      this.lyd.takt(0);
       this.klokke += dt;
       if (trykk || hopp) this.begynn(0);
       return;
     }
     if (this.fase === 'slutt') {
+      this.lyd.takt(0);
       this.t += dt;
       if (this.t > 0.8) this.ferdig = true;
       return;
@@ -147,7 +150,10 @@ export class Klasseokt implements Spill {
       this.pause = !this.pause;
       this.lyd.bryter(!this.pause);
     }
-    if (this.pause) return;
+    if (this.pause) {
+      this.lyd.takt(0);
+      return;
+    }
 
     dt *= this.fart;
     this.t += dt;
@@ -156,20 +162,24 @@ export class Klasseokt implements Spill {
     this.sidenFasit += dt;
     const steg = this.steg[this.nr];
     if (this.fase === 'klar') {
+      this.lyd.takt(0);
       this.nedtelling(KLAR - this.t);
       if (this.t >= KLAR) {
         this.fase = 'arbeid';
         this.t = 0;
+        // Figuren og takten starter samtidig, så de går i lag.
+        this.klokke = 0;
         this.tikk = -1;
         this.lyd.start();
       }
       return;
     }
     if (steg.ovelse) {
+      this.lyd.takt(TAKT[steg.ovelse.type], steg.ovelse.type === 'strekk');
       this.aktiv += dt;
       this.nedtelling(steg.sek - this.t);
     } else {
-      const under = this.t < LES ? 0 : this.t < LES + SVAR ? 1 : 2;
+      const under = this.t < this.inn.les ? 0 : this.t < this.inn.les + this.inn.svar ? 1 : 2;
       if (under !== this.underfase) {
         this.underfase = under;
         this.tikk = -1;
@@ -181,8 +191,9 @@ export class Klasseokt implements Spill {
           this.konfetti.kast(this.kortX(steg.oppgave.riktig, steg.oppgave.svar.length) + KORT_B / 2, KORT_Y + 60, 16);
         }
       }
+      this.lyd.takt(under === 1 ? 120 : 0);
       if (under >= 1) this.aktiv += dt;
-      if (under === 1) this.nedtelling(LES + SVAR - this.t);
+      if (under === 1) this.nedtelling(this.inn.les + this.inn.svar - this.t);
     }
     if (this.t >= steg.sek) this.begynn(this.nr + 1);
   }
@@ -325,7 +336,7 @@ export class Klasseokt implements Spill {
   private tegnSporsmal(g: CanvasRenderingContext2D) {
     const steg = this.steg[this.nr];
     const o = steg.oppgave!;
-    const under = this.t < LES ? 0 : this.t < LES + SVAR ? 1 : 2;
+    const under = this.t < this.inn.les ? 0 : this.t < this.inn.les + this.inn.svar ? 1 : 2;
     if (!this.tittelSkrift) {
       // Lange spørsmål deles på to linjer, så skriften kan være stor nok til å leses på avstand.
       this.linje1 = o.tekst;
@@ -361,7 +372,7 @@ export class Klasseokt implements Spill {
     g.restore();
 
     // Tiden som er igjen av det klassen gjør akkurat nå.
-    this.settSek(under === 0 ? LES - this.t : under === 1 ? LES + SVAR - this.t : steg.sek - this.t);
+    this.settSek(under === 0 ? this.inn.les - this.t : under === 1 ? this.inn.les + this.inn.svar - this.t : steg.sek - this.t);
     papirsirkel(g, 874, 104, 42, under === 1 ? FARGE.gul : FARGE.hvit);
     g.fillStyle = FARGE.blekk;
     g.font = `600 40px ${SKRIFT}`;
