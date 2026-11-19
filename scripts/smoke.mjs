@@ -24,8 +24,8 @@ page.on('pageerror', (e) => errors.push(String(e)));
 // MediaPipe skriver informasjonslinjer til feilkanalen. De er ikke feil.
 page.on('console', (m) => m.type() === 'error' && !m.text().startsWith('INFO:') && errors.push(m.text()));
 
-await page.goto('http://localhost:4173/?auto=1&dur=3');
-await page.waitForFunction(() => window.__pulsResults?.length === 4, null, { timeout: 180_000 });
+await page.goto('http://localhost:4173/?auto=1&dur=2');
+await page.waitForFunction(() => window.__pulsResults?.length === 12, null, { timeout: 300_000 });
 const results = await page.evaluate(() => window.__pulsResults);
 console.log(await page.locator('#report').inputValue());
 if (process.env.SHOT) await page.screenshot({ path: process.env.SHOT, fullPage: true });
@@ -35,7 +35,7 @@ await server.close();
 const failed = results.filter((r) => r.error || !(r.trackHz > 0));
 if (errors.length) console.error('Feil i konsollen:\n' + errors.join('\n'));
 if (failed.length || errors.length) {
-  console.error(`Røyktesten feilet for: ${failed.map((r) => r.config.id).join(', ') || 'konsollfeil'}`);
+  console.error(`Røyktesten feilet for: ${failed.map((r) => `${r.config.id}/${r.path}`).join(', ') || 'konsollfeil'}`);
   process.exit(1);
 }
-console.log('\nRøyktesten er bestått: alle fire oppsett ga måletall.');
+console.log('\nRøyktesten er bestått: alle tolv kombinasjoner ga måletall.');

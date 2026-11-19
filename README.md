@@ -11,7 +11,7 @@ hvor godt kroppssporing går på en gitt enhet, særlig billige skole-Chromebook
 
 Publiseres til GitHub Pages fra `main`: https://kobroen.github.io/pulselab/
 
-Siden kjører fire oppsett etter tur og viser tallene i en tabell:
+Siden måler fire oppsett og viser tallene i en tabell:
 
 | Oppsett | Modell | Kjøres på |
 |---|---|---|
@@ -20,13 +20,22 @@ Siden kjører fire oppsett etter tur og viser tallene i en tabell:
 | `mediapipe-gpu` | MediaPipe Pose Landmarker lite | grafikkort |
 | `mediapipe-cpu` | MediaPipe Pose Landmarker lite | prosessor |
 
-For hvert oppsett måles lastetid, tid per bilde, forsinkelse, sporinger per
-sekund, bildeflyt på skjermen mens sporingen går, og hvor ofte kroppen ble
-funnet. Etterpå kan hvert oppsett prøves fritt med «Prøv», og rapporten kan
-kopieres som tekst.
+Hvert oppsett kjøres med tre bildeveier, altså tre måter å få kamerabildet
+fram til sporingsarbeideren på:
+
+| Bildevei | Slik hentes bildet |
+|---|---|
+| `bitmap` | Hovedtråden lager et bildeobjekt (`createImageBitmap`) og overfører det |
+| `pixels` | Hovedtråden leser pikslene fra en liten 2D-flate og overfører dem |
+| `track` | Arbeideren leser kamerastrømmen selv (`MediaStreamTrackProcessor`) |
+
+For hver av de tolv kombinasjonene måles tid til henting, klargjøring og modell
+hver for seg, samlet forsinkelse, sporinger per sekund, bildeflyt på skjermen
+mens sporingen går, og hvor ofte kroppen ble funnet. Etterpå kan hver
+kombinasjon prøves fritt med «Prøv», og rapporten kan kopieres som tekst.
 
 Nyttige adresseparametre: `?dur=5` setter måletid per oppsett i sekunder
-(standard 12), og `?auto=1` starter testen uten klikk.
+(standard 8), og `?auto=1` starter testen uten klikk.
 
 ## Personvern
 

@@ -1,6 +1,6 @@
 // Fase 0: måler kroppssporing på enheten. Se README for bakgrunn.
 import TrackerWorker from './worker?worker';
-import { CONFIGS, type Config, type FromWorker, type ToWorker } from './types';
+import { CONFIGS, PATHS, type Config, type FromWorker, type PathId, type ToWorker } from './types';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const video = $<HTMLVideoElement>('video');
@@ -12,7 +12,7 @@ const startBtn = $<HTMLButtonElement>('start');
 const stopBtn = $<HTMLButtonElement>('stop');
 
 const params = new URLSearchParams(location.search);
-const MEASURE_MS = Math.max(1, Number(params.get('dur') ?? 12)) * 1000;
+const MEASURE_MS = Math.max(1, Number(params.get('dur') ?? 8)) * 1000;
 const BASELINE_MS = Math.min(4000, MEASURE_MS);
 const WARMUP_FRAMES = 5;
 const CAPTURE_W = 320;
@@ -61,8 +61,25 @@ class Tracker {
     return m;
   }
 
-  async detect(bitmap: ImageBitmap) {
-    const m = await this.send({ type: 'frame', id: this.nextId++, bitmap }, [bitmap], 20_000);
+  /** Gir arbeideren en kamerastrøm den leser selv. */
+  attachStream(readable: ReadableStream<VideoFrame>) {
+    this.worker.postMessage({ type: 'stream', readable } satisfies ToWorker, [readable]);
+  }
+
+  /** Uten bilde tolkes siste bilde fra kamerastrømmen. */
+  async detect(frame?: ImageBitmap | ImageData) {
+    const id = this.nextId++;
+    let msg: ToWorker = { type: 'frame', id };
+    let transfer: Transferable[] = [];
+    if (frame instanceof ImageData) {
+      const data = frame.data.buffer as ArrayBuffer;
+      msg = { type: 'frame', id, pixels: { data, width: frame.width, height: frame.height } };
+      transfer = [data];
+    } else if (frame) {
+      msg = { type: 'frame', id, bitmap: frame };
+      transfer = [frame];
+    }
+    const m = await this.send(msg, transfer, 20_000);
     if (m.type !== 'result') throw new Error('Uventet svar ved tolkning');
     return m;
   }
@@ -152,11 +169,14 @@ requestAnimationFrame(draw);
 
 interface Row {
   config: Config;
+  path: PathId;
   error?: string;
   loadMs?: number;
   detail?: string;
-  inferMedian?: number;
-  inferP90?: number;
+  captureMedian?: number; // hovedtråd: hente bildet fra kameraet
+  prepMedian?: number; // arbeider: klargjøre bildet
+  modelMedian?: number; // arbeider: modellen
+  modelP90?: number;
   latencyMedian?: number;
   trackHz?: number;
   fps?: number;
@@ -201,25 +221,43 @@ async function measureBaseline() {
   baseline = { fps: frameStats(deltas, refreshMs).fps, refreshMs };
 }
 
-async function runConfig(config: Config, durationMs: number): Promise<Row> {
-  const row: Row = { config };
+// Liten flate for å lese piksler på hovedtråden (bildeveien «Piksler»).
+const grab = document.createElement('canvas');
+grab.width = CAPTURE_W;
+grab.height = CAPTURE_H;
+const grabCtx = grab.getContext('2d', { willReadFrequently: true })!;
+
+type Processor = { readable: ReadableStream<VideoFrame> };
+const ProcessorCtor = (window as unknown as { MediaStreamTrackProcessor?: new (o: { track: MediaStreamTrack }) => Processor })
+  .MediaStreamTrackProcessor;
+
+async function runConfig(config: Config, path: PathId, durationMs: number): Promise<Row> {
+  const row: Row = { config, path };
+  const name = `${config.label} · ${PATHS.find((p) => p.id === path)!.label}`;
   const tracker = new Tracker();
+  let clone: MediaStreamTrack | null = null;
   try {
-    setStatus(`${config.label}: laster modellen …`);
+    if (path === 'track' && !ProcessorCtor) throw new Error('Nettleseren støtter ikke kamerastrøm i arbeider');
+    setStatus(`${name}: laster modellen …`);
     const loaded = await tracker.load(config);
     row.loadMs = loaded.ms;
     row.detail = loaded.detail;
 
-    const capture = () =>
-      createImageBitmap(video, { resizeWidth: CAPTURE_W, resizeHeight: CAPTURE_H, resizeQuality: 'low' });
+    if (path === 'track') {
+      // Egen kopi av kamerasporet, slik at forhåndsvisningen ikke forstyrres.
+      clone = (video.srcObject as MediaStream).getVideoTracks()[0].clone();
+      tracker.attachStream(new ProcessorCtor!({ track: clone }).readable);
+    }
 
     for (let i = 0; i < WARMUP_FRAMES; i++) {
-      await nextVideoFrame();
-      const r = await tracker.detect(await capture());
+      if (path !== 'track') await nextVideoFrame();
+      const r = await tracker.detect(path === 'track' ? undefined : await captureNow(path));
       pose = { keypoints: r.keypoints, model: config.model };
     }
 
-    const infer: number[] = [];
+    const captureMs: number[] = [];
+    const prep: number[] = [];
+    const model: number[] = [];
     const latency: number[] = [];
     let found = 0;
     let upper = 0;
@@ -229,19 +267,27 @@ async function runConfig(config: Config, durationMs: number): Promise<Row> {
     frameDeltas = [];
     const t0 = performance.now();
     const live = !isFinite(durationMs);
-    setStatus(live ? `${config.label}: kjører. Trykk Stopp for å avslutte.` : `${config.label}: måler …`);
+    setStatus(live ? `${name}: kjører. Trykk Stopp for å avslutte.` : `${name}: måler …`);
     while (!stopRequested && performance.now() - t0 < durationMs) {
-      await nextVideoFrame();
+      if (path !== 'track') await nextVideoFrame();
       const tCapture = performance.now();
-      const r = await tracker.detect(await capture());
-      latency.push(performance.now() - tCapture);
-      infer.push(r.inferMs);
+      const frame = path === 'track' ? undefined : await captureNow(path);
+      const tSent = performance.now();
+      const r = await tracker.detect(frame);
+      const now = performance.now();
+      captureMs.push(tSent - tCapture);
+      prep.push(r.prepMs);
+      model.push(r.modelMs);
+      // Forsinkelse: fra bildet er hentet til punktene er klare på hovedtråden.
+      // For kamerastrøm regnes ikke ventetiden på neste kamerabilde med.
+      const delivery = Math.max(0, performance.timeOrigin + now - r.doneAt);
+      latency.push(path === 'track' ? r.prepMs + r.modelMs + delivery : now - tCapture);
       if (has(r.keypoints, TORSO[config.model])) found++;
       if (has(r.keypoints, UPPER[config.model])) upper++;
       pose = { keypoints: r.keypoints, model: config.model };
-      if (live && infer.length % 15 === 0) {
-        const hz = (infer.length * 1000) / (performance.now() - t0);
-        setStatus(`${config.label}: ${hz.toFixed(0)} sporinger per sekund, ${quantile(latency.slice(-30), 0.5).toFixed(0)} ms forsinkelse. Trykk Stopp for å avslutte.`);
+      if (live && model.length % 15 === 0) {
+        const hz = (model.length * 1000) / (performance.now() - t0);
+        setStatus(`${name}: ${hz.toFixed(0)} sporinger per sekund, ${quantile(latency.slice(-30), 0.5).toFixed(0)} ms forsinkelse. Trykk Stopp for å avslutte.`);
       }
     }
     const elapsed = performance.now() - t0;
@@ -249,14 +295,16 @@ async function runConfig(config: Config, durationMs: number): Promise<Row> {
     frameDeltas = null;
 
     const fs = frameStats(deltas, baseline?.refreshMs ?? 16.7);
-    row.inferMedian = quantile(infer, 0.5);
-    row.inferP90 = quantile(infer, 0.9);
+    row.captureMedian = quantile(captureMs, 0.5);
+    row.prepMedian = quantile(prep, 0.5);
+    row.modelMedian = quantile(model, 0.5);
+    row.modelP90 = quantile(model, 0.9);
     row.latencyMedian = quantile(latency, 0.5);
-    row.trackHz = (infer.length * 1000) / elapsed;
+    row.trackHz = (model.length * 1000) / elapsed;
     row.fps = fs.fps;
     row.jankPct = fs.jankPct;
-    row.foundPct = infer.length ? (found / infer.length) * 100 : 0;
-    row.upperPct = infer.length ? (upper / infer.length) * 100 : 0;
+    row.foundPct = model.length ? (found / model.length) * 100 : 0;
+    row.upperPct = model.length ? (upper / model.length) * 100 : 0;
     const fpsOk = baseline ? row.fps >= baseline.fps * 0.85 : true;
     row.verdict = row.trackHz >= 15 && fpsOk ? 'good' : row.trackHz >= 8 ? 'ok' : 'bad';
   } catch (e) {
@@ -265,9 +313,18 @@ async function runConfig(config: Config, durationMs: number): Promise<Row> {
   } finally {
     frameDeltas = null;
     tracker.dispose();
+    clone?.stop();
     pose = null;
   }
   return row;
+}
+
+function captureNow(path: PathId): Promise<ImageBitmap> | ImageData {
+  if (path === 'bitmap') {
+    return createImageBitmap(video, { resizeWidth: CAPTURE_W, resizeHeight: CAPTURE_H, resizeQuality: 'low' });
+  }
+  grabCtx.drawImage(video, 0, 0, CAPTURE_W, CAPTURE_H);
+  return grabCtx.getImageData(0, 0, CAPTURE_W, CAPTURE_H);
 }
 
 // ---------- Visning ----------
@@ -277,25 +334,31 @@ const n = (v: number | undefined, d = 0) => (v === undefined || isNaN(v) ? '–'
 const setStatus = (text: string) => (statusEl.textContent = text);
 const results: Row[] = [];
 
+const rowId = (config: Config, path: PathId) => `row-${config.id}-${path}`;
+
 function renderRow(row: Row) {
-  let tr = document.getElementById(`row-${row.config.id}`);
+  const id = rowId(row.config, row.path);
+  let tr = document.getElementById(id);
   if (!tr) {
     tr = document.createElement('tr');
-    tr.id = `row-${row.config.id}`;
+    tr.id = id;
     rowsEl.appendChild(tr);
   }
   tr.textContent = '';
   const th = document.createElement('th');
   th.scope = 'row';
   th.textContent = row.config.label;
+  const sub = document.createElement('small');
+  sub.textContent = PATHS.find((p) => p.id === row.path)!.label;
+  th.appendChild(sub);
   tr.appendChild(th);
-  const cell = (text: string, sub?: string, cls?: string) => {
+  const cell = (text: string, small?: string, cls?: string) => {
     const td = document.createElement('td');
     td.textContent = text;
     if (cls) td.className = cls;
-    if (sub) {
+    if (small) {
       const s = document.createElement('small');
-      s.textContent = sub;
+      s.textContent = small;
       td.appendChild(s);
     }
     tr!.appendChild(td);
@@ -303,13 +366,14 @@ function renderRow(row: Row) {
   };
   if (row.error) {
     const td = cell('Virker ikke på denne enheten', row.error, 'bad');
-    td.colSpan = 8;
+    td.colSpan = 9;
   } else if (row.verdict === undefined) {
     const td = cell('Venter …');
-    td.colSpan = 8;
+    td.colSpan = 9;
   } else {
-    cell(`${n((row.loadMs ?? NaN) / 1000, 1)} s`);
-    cell(`${n(row.inferMedian)} ms`, `verste tidel ${n(row.inferP90)} ms`);
+    cell(`${n(row.captureMedian, 1)} ms`);
+    cell(`${n(row.prepMedian, 1)} ms`);
+    cell(`${n(row.modelMedian)} ms`, `verste tidel ${n(row.modelP90)} ms`);
     cell(`${n(row.latencyMedian)} ms`);
     cell(n(row.trackHz, 1));
     cell(`${n(row.fps)} bilder/s`);
@@ -321,8 +385,8 @@ function renderRow(row: Row) {
   if (!row.error && row.verdict !== undefined) {
     const btn = document.createElement('button');
     btn.textContent = 'Prøv';
-    btn.setAttribute('aria-label', `Prøv ${row.config.label}`);
-    btn.addEventListener('click', () => runLive(row.config));
+    btn.setAttribute('aria-label', `Prøv ${row.config.label}, ${sub.textContent}`);
+    btn.addEventListener('click', () => runLive(row.config, row.path));
     td.appendChild(btn);
   }
   tr.appendChild(td);
@@ -355,22 +419,25 @@ function buildReport(): string {
     '',
   ];
   for (const r of results) {
+    const id = `${r.config.id}/${r.path}`;
     lines.push(
       r.error
-        ? `${r.config.id}: FEIL – ${r.error}`
-        : `${r.config.id}: lasting ${n((r.loadMs ?? NaN) / 1000, 1)} s | tolkning ${n(r.inferMedian)} ms (p90 ${n(r.inferP90)}) | forsinkelse ${n(r.latencyMedian)} ms | sporing ${n(r.trackHz, 1)}/s | bildeflyt ${n(r.fps)}/s | hakk ${n(r.jankPct, 1)} % | kropp ${n(r.foundPct)} % | overkropp ${n(r.upperPct)} % | ${r.detail}`,
+        ? `${id}: FEIL – ${r.error}`
+        : `${id}: henting ${n(r.captureMedian, 1)} ms | klargjøring ${n(r.prepMedian, 1)} ms | modell ${n(r.modelMedian)} ms (p90 ${n(r.modelP90)}) | forsinkelse ${n(r.latencyMedian)} ms | sporing ${n(r.trackHz, 1)}/s | bildeflyt ${n(r.fps)}/s | hakk ${n(r.jankPct, 1)} % | kropp ${n(r.foundPct)} % | overkropp ${n(r.upperPct)} % | lasting ${n((r.loadMs ?? NaN) / 1000, 1)} s`,
     );
   }
   return lines.join('\n');
 }
 
 function renderSummary() {
-  const working = results.filter((r) => !r.error);
+  // Et oppsett som ikke finner kroppen er ikke nyttig, uansett hvor raskt det er.
+  const working = results.filter((r) => !r.error && (r.upperPct ?? 0) >= 50);
   const best = [...working].sort((a, b) => (b.trackHz ?? 0) - (a.trackHz ?? 0))[0];
   const summary = $('summary');
-  if (!best) summary.textContent = 'Ingen av oppsettene virket på denne enheten. Kopier rapporten under, så ser vi på feilen.';
-  else if (best.verdict === 'bad') summary.textContent = `Raskeste oppsett var ${best.config.label} med ${n(best.trackHz, 1)} sporinger per sekund. Det er for tregt for helkroppsspill på denne enheten.`;
-  else summary.textContent = `Raskeste oppsett var ${best.config.label} med ${n(best.trackHz, 1)} sporinger per sekund og ${n(best.latencyMedian)} ms forsinkelse. Trykk Prøv for å kjenne hvordan det føles.`;
+  const name = best && `${best.config.label} med bildeveien ${PATHS.find((p) => p.id === best.path)!.label.toLowerCase()}`;
+  if (!best) summary.textContent = 'Ingen av oppsettene fant kroppen på denne enheten. Kopier rapporten under, så ser vi på den.';
+  else if (best.verdict === 'bad') summary.textContent = `Raskeste oppsett var ${name}, med ${n(best.trackHz, 1)} sporinger per sekund. Det er for tregt for helkroppsspill på denne enheten.`;
+  else summary.textContent = `Raskeste oppsett var ${name}, med ${n(best.trackHz, 1)} sporinger per sekund og ${n(best.latencyMedian)} ms forsinkelse. Trykk Prøv for å kjenne hvordan det føles.`;
   $<HTMLTextAreaElement>('report').value = buildReport();
   $('reportSection').hidden = false;
 }
@@ -401,14 +468,15 @@ async function runAll() {
     await ensureCamera();
     results.length = 0;
     rowsEl.textContent = '';
-    for (const c of CONFIGS) renderRow({ config: c });
+    const runs = CONFIGS.flatMap((config) => PATHS.map((p) => ({ config, path: p.id })));
+    for (const r of runs) renderRow(r);
     await measureBaseline();
-    for (const config of CONFIGS) {
+    for (const { config, path } of runs) {
       if (stopRequested) break;
-      const row = await runConfig(config, MEASURE_MS);
+      const row = await runConfig(config, path, MEASURE_MS);
       results.push(row);
       renderRow(row);
-      await sleep(400);
+      await sleep(300);
     }
     renderSummary();
     setStatus(stopRequested ? 'Testen ble stoppet.' : 'Testen er ferdig.');
@@ -427,12 +495,12 @@ async function runAll() {
   }
 }
 
-async function runLive(config: Config) {
+async function runLive(config: Config, path: PathId) {
   stopRequested = false;
   setBusy(true);
   try {
     await ensureCamera();
-    const row = await runConfig(config, Infinity);
+    const row = await runConfig(config, path, Infinity);
     setStatus(row.error ? `Noe gikk galt: ${row.error}` : 'Stoppet.');
   } finally {
     setBusy(false);
