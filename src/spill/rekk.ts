@@ -4,7 +4,7 @@ import type { Oppgave } from './oppgaver';
 import type { Signaler } from './signaler';
 import {
   type Effekter, type Resultat, type Spill,
-  Konfetti, Toppkort, land, puls, rist, sprett, tallsprett, tegnBakgrunn, tegnHender, tegnHint, tegnLapp, tegnPille, tegnRing, tegnStartboble, tegnÅs, tilpassSkrift,
+  Konfetti, Toppkort, blunk, land, landingsfall, puls, rist, sprett, tallsprett, tegnBakgrunn, tegnHender, tegnHint, tegnLapp, tegnPille, tegnRing, tegnStartboble, tegnÅs, tilpassSkrift,
 } from './felles';
 import { FARGE, SKRIFT, papirsirkel, stjerne, tegnFigur } from './tegning';
 
@@ -14,7 +14,7 @@ const BOBLEFARGER = [FARGE.gul, FARGE.blaa, FARGE.gronn, FARGE.rosa];
 const RADIUS = 58;
 const TREFFSLAKK = 14;
 const HOLDETID = 0.5;
-const SLIPPTID = 0.14;
+const SLIPPTID = 0.18;
 const START_X = 748;
 const START_Y = 300;
 
@@ -164,7 +164,7 @@ export class Rekk implements Spill {
         const inne = this.iBoble(b.x, b.y, RADIUS);
         // En hånd som allerede ligger i sirkelen når spørsmålet kommer, teller ikke før den har vært ute.
         if (!b.armert) {
-          if (!inne && this.t > 0.3) b.armert = true;
+          if (!inne && this.t > 0.45) b.armert = true;
         } else {
           b.holdt = Math.max(0, Math.min(1, b.holdt + (inne ? dt / HOLDETID : -dt / SLIPPTID)));
           if (b.holdt >= 1) valgt = i;
@@ -172,11 +172,11 @@ export class Rekk implements Spill {
         }
         if (s.trykk.ny && Math.hypot(s.trykk.x - b.x, s.trykk.y - b.y) < RADIUS + TREFFSLAKK) valgt = i;
       }
-      if (valgt >= 0 && this.t > 0.3) this.velg(valgt);
+      if (valgt >= 0 && this.t > 0.45) this.velg(valgt);
       else this.settHolder(holder);
     } else if (this.fase === 'svar') {
       const riktig = this.bobler[this.oppgaver[this.nr].riktig].status === RIKTIG && this.rekke > 0;
-      if (this.t > (riktig ? 1.0 : 1.9)) this.neste(null);
+      if (this.t > (riktig ? 1.15 : 2.1)) this.neste(null);
     } else if (this.t > 0.5) {
       this.ferdig = true;
     }
@@ -223,17 +223,18 @@ export class Rekk implements Spill {
           let y = b.y;
           let farge = b.farge;
           if (this.fase === 'aktiv') {
-            // Sirklene lander én etter én, 50 ms mellom hver.
-            const inn = land(this.t - i * 0.05);
+            // Sirklene lander én etter én, 70 ms mellom hver.
+            const inn = land(this.t - i * 0.07);
             if (inn <= 0) continue;
-            y += (1 - inn) * 16;
+            y += landingsfall(inn);
             g.globalAlpha = Math.min(1, inn);
           } else if (b.status === RIKTIG) {
             // Etter feil svar pulserer det riktige, slik at spilleren ser hva som var rett.
-            r *= this.rekke > 0 ? sprett(this.t) : puls(this.t - 0.3);
+            r *= this.rekke > 0 ? sprett(this.t) : puls(this.t - 0.4);
           } else if (b.status === FEIL) {
             farge = FARGE.korallLys;
             x += rist(this.t, this.effekter.risting);
+            g.globalAlpha = blunk(this.t);
           } else if (b.status === DEMPET) {
             g.globalAlpha = 0.4;
           }

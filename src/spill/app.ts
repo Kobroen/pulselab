@@ -241,14 +241,14 @@ function visResultat() {
       if (runde !== resultatrunde || skjerm !== 'resultat') return;
       el.classList.add('stjerne-inn');
       if (i < r.stjerner) lyd.stjerne(i);
-    }, 300 + i * 180),
+    }, 400 + i * 260),
   );
   setTimeout(() => {
     if (runde !== resultatrunde || skjerm !== 'resultat') return;
     lyd.fanfare();
     const flate = stjerner.getBoundingClientRect();
     konfetti(flate.left + flate.width / 2, flate.top + flate.height / 2, 24);
-  }, 1000);
+  }, 1300);
   const fliser = $('fliser');
   fliser.textContent = '';
   for (const f of r.fliser) {

@@ -27,43 +27,58 @@ export interface Effekter {
 }
 
 // Bevegelsene under følger designets spesifikasjon. Alle tar tid i sekunder siden hendelsen.
+// Tempoet er satt litt lavt med vilje: saktere og tydeligere, men ikke kjedeligere.
+// Med rolig bevegelse byttes sprett mot et mykt pust, risting mot et blunk og landing mot toning.
 
-/** Riktig svar: sprett 1 → 1,18 → 0,96 → 1 på 320 ms. */
+const pust = (t: number) => (t > 0 && t < 0.52 ? 1 + 0.07 * Math.sin((t / 0.52) * Math.PI) : 1);
+
+/** Riktig svar: sprett 1 → 1,18 → 0,96 → 1 på 440 ms. */
 export function sprett(t: number): number {
-  if (ROLIG) return 1;
-  const p = t / 0.32;
+  if (ROLIG) return pust(t);
+  const p = t / 0.44;
   if (p >= 1 || p <= 0) return 1;
   if (p < 0.35) return 1 + 0.18 * (p / 0.35);
   if (p < 0.65) return 1.18 - 0.22 * ((p - 0.35) / 0.3);
   return 0.96 + 0.04 * ((p - 0.65) / 0.35);
 }
 
-/** Feil svar: risting ±8 px som avtar over 320 ms. */
+/** Feil svar: risting ±8 px som avtar over 420 ms. */
 export function rist(t: number, på: boolean): number {
-  if (!på || ROLIG || t >= 0.32) return 0;
-  return Math.sin((t / 0.32) * Math.PI * 4.5) * -8 * (1 - t / 0.32);
+  if (!på || ROLIG || t >= 0.42) return 0;
+  return Math.sin((t / 0.42) * Math.PI * 4.5) * -8 * (1 - t / 0.42);
 }
 
-/** Riktig svar pulserer to ganger (600 ms) etter at spilleren har svart feil. */
+/** Feil svar med rolig bevegelse: et blunk i gjennomsiktighet i stedet for risting. */
+export function blunk(t: number): number {
+  if (!ROLIG || t >= 0.52) return 1;
+  return 1 - 0.55 * Math.sin((t / 0.52) * Math.PI);
+}
+
+/** Riktig svar pulserer to ganger (800 ms) etter at spilleren har svart feil. */
 export function puls(t: number): number {
-  if (ROLIG || t <= 0 || t >= 0.6) return 1;
-  return 1 + 0.1 * Math.abs(Math.sin((t / 0.6) * Math.PI * 2));
+  if (ROLIG) return t < 0.52 ? pust(t) : pust(t - 0.52);
+  if (t <= 0 || t >= 0.8) return 1;
+  return 1 + 0.1 * Math.abs(Math.sin((t / 0.8) * Math.PI * 2));
 }
 
-/** Kombotallet spretter 1 → 1,3 → 1 på 180 ms. */
+/** Kombotallet spretter 1 → 1,3 → 1 på 260 ms. */
 export function tallsprett(t: number): number {
-  if (ROLIG || t >= 0.18) return 1;
-  return 1 + 0.3 * Math.sin((t / 0.18) * Math.PI);
+  if (ROLIG) return pust(t);
+  if (t >= 0.26) return 1;
+  return 1 + 0.3 * Math.sin((t / 0.26) * Math.PI);
 }
 
-/** Element som lander: 0 → 1 på 220 ms med lite oversving. */
+/** Element som lander: 0 → 1 på 300 ms med lite oversving. Med rolig bevegelse tones det inn på 360 ms. */
 export function land(t: number): number {
-  if (t >= 0.22) return 1;
   if (t <= 0) return 0;
-  if (ROLIG) return 1;
-  const p = t / 0.22 - 1;
+  if (ROLIG) return Math.min(1, t / 0.36);
+  if (t >= 0.3) return 1;
+  const p = t / 0.3 - 1;
   return 1 + 2.2 * p * p * p + 1.2 * p * p;
 }
+
+/** Hvor langt under plassen sin et landende element står. Ingen forflytning med rolig bevegelse. */
+export const landingsfall = (inn: number) => (ROLIG ? 0 : (1 - inn) * 16);
 
 const ÅS = new Path2D('M0 505Q240 465 480 500T960 485V540H0Z');
 
@@ -208,27 +223,43 @@ export class Konfetti {
   private neste = 0;
 
   kast(x: number, y: number, antall: number) {
-    if (ROLIG) return;
-    for (let n = 0; n < antall; n++) {
+    // Rolig bevegelse gir «dryss»: færre, runde biter som siger ut og toner bort.
+    const n = ROLIG ? Math.min(Math.ceil(antall / 2), 12) : antall;
+    for (let k = 0; k < n; k++) {
       const i = this.neste;
       this.neste = (this.neste + 1) % BITER;
       const a = Math.random() * Math.PI * 2;
-      const fart = 160 + Math.random() * 260;
       this.x[i] = x;
       this.y[i] = y;
-      this.vx[i] = Math.cos(a) * fart;
-      this.vy[i] = Math.sin(a) * fart - 160;
       this.rot[i] = a;
-      this.vr[i] = (Math.random() - 0.5) * 12;
-      this.liv[i] = 0.9 + Math.random() * 0.4;
+      if (ROLIG) {
+        // Farten bremses jevnt, slik at biten stanser 70 til 115 px ute.
+        const fart = (70 + Math.random() * 45) * 3;
+        this.vx[i] = Math.cos(a) * fart;
+        this.vy[i] = Math.sin(a) * fart;
+        this.vr[i] = 0;
+        this.liv[i] = 1.5;
+      } else {
+        const fart = 130 + Math.random() * 210;
+        this.vx[i] = Math.cos(a) * fart;
+        this.vy[i] = Math.sin(a) * fart - 150;
+        this.vr[i] = (Math.random() - 0.5) * 9;
+        this.liv[i] = 1 + Math.random() * 0.4;
+      }
     }
   }
 
   oppdater(dt: number) {
+    const brems = Math.exp(-3 * dt);
     for (let i = 0; i < BITER; i++) {
       if (this.liv[i] <= 0) continue;
       this.liv[i] -= dt;
-      this.vy[i] += 700 * dt;
+      if (ROLIG) {
+        this.vx[i] *= brems;
+        this.vy[i] *= brems;
+      } else {
+        this.vy[i] += 420 * dt;
+      }
       this.x[i] += this.vx[i] * dt;
       this.y[i] += this.vy[i] * dt;
       this.rot[i] += this.vr[i] * dt;
@@ -238,12 +269,20 @@ export class Konfetti {
   tegn(g: CanvasRenderingContext2D) {
     for (let i = 0; i < BITER; i++) {
       if (this.liv[i] <= 0) continue;
-      const c = Math.cos(this.rot[i]);
-      const s = Math.sin(this.rot[i]);
-      g.fillStyle = KONFETTIFARGER[i % 6];
-      // Et lite rektangel, rotert for hånd for å slippe save/restore per bit.
       const x = this.x[i];
       const y = this.y[i];
+      g.fillStyle = KONFETTIFARGER[i % 6];
+      if (ROLIG) {
+        g.globalAlpha = Math.min(1, this.liv[i] / 1.2);
+        g.beginPath();
+        g.arc(x, y, 5, 0, Math.PI * 2);
+        g.fill();
+        continue;
+      }
+      g.globalAlpha = Math.min(1, this.liv[i] / 0.3);
+      // Et lite rektangel, rotert for hånd for å slippe save/restore per bit.
+      const c = Math.cos(this.rot[i]);
+      const s = Math.sin(this.rot[i]);
       g.beginPath();
       g.moveTo(x - 6 * c + 4 * s, y - 6 * s - 4 * c);
       g.lineTo(x + 6 * c + 4 * s, y + 6 * s - 4 * c);
@@ -251,6 +290,7 @@ export class Konfetti {
       g.lineTo(x - 6 * c - 4 * s, y - 6 * s + 4 * c);
       g.fill();
     }
+    g.globalAlpha = 1;
   }
 }
 
