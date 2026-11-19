@@ -9,6 +9,7 @@ import {
   type Effekter, type Resultat, type Spill,
   Konfetti, sprett, tallsprett, tegnBakgrunn, tegnHender, tegnHint, tegnPille, tegnStartboble, tegnÅs, tilpassSkrift, Toppkort,
 } from './felles';
+import { tegnOvelse } from './ovelsesvisning';
 import { FARGE, SKRIFT, avrundet, papirkort, sirkel, tegnFigur } from './tegning';
 
 type Type = 'hopp' | 'sprell' | 'boy' | 'boks';
@@ -45,6 +46,7 @@ export class Intervall implements Spill {
   ferdig = false;
   private fase: Fase = 'start';
   private t = 0;
+  private klokke = 0;
   private nr = 0;
   private reps = 0;
   private totalt = 0;
@@ -117,6 +119,7 @@ export class Intervall implements Spill {
   oppdater(dt: number) {
     const s = this.signaler;
     this.t += dt;
+    this.klokke += dt;
     this.sidenRep += dt;
     this.konfetti.oppdater(dt);
     this.borteTid = s.kropp.synlig ? 0 : this.borteTid + dt;
@@ -261,6 +264,12 @@ export class Intervall implements Spill {
           sirkel(g, x, 244, 8, FARGE.hvit);
         }
       }
+
+      // Ruta som viser øvelsen.
+      g.fillStyle = FARGE.dempet;
+      g.font = `600 15px ${SKRIFT}`;
+      g.fillText('Slik gjør du', 62, 284);
+      tegnOvelse(g, 147, 392, o.type, this.klokke);
 
       // Telleren, øverst til høyre.
       g.save();
