@@ -242,6 +242,30 @@ console.log('Uten kamera:', (await side.locator('#kamerahjelp-tittel').innerText
 if (!(await side.locator('#uten-kamera').getAttribute('class')).includes('mork')) errors.push('Spill uten kamera ble ikke løftet fram da kameraet manglet');
 await side.click('#uten-kamera');
 await side.waitForFunction(() => window.__puls.tilstand().skjerm === 'spill');
+
+// Opplesing: med en norsk stemme på enheten leses spørsmålene for de yngste. Stemmer som bruker nettet velges aldri.
+await side.addInitScript(() => {
+  window.__lest = [];
+  const stemmer = [
+    { name: 'Nett', lang: 'nb-NO', localService: false },
+    { name: 'Lokal', lang: 'nb-NO', localService: true },
+  ];
+  window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
+  Object.defineProperty(window, 'speechSynthesis', {
+    value: { getVoices: () => stemmer, addEventListener() {}, cancel() {}, speak: (y) => window.__lest.push(`${y.voice.name}: ${y.text}`) },
+  });
+});
+await side.goto('http://localhost:4174/?fart=12');
+await side.click('#start-klasse');
+await side.click('#trinnvalg input[value="1-4"]', { force: true });
+await side.click('[data-forslag]');
+await side.waitForFunction(() => window.__puls.tilstand().spill?.fase === 'start');
+await side.keyboard.press('Space');
+await side.waitForSelector('#resultat:not([hidden])', { timeout: 60_000 });
+const lest = await side.evaluate(() => window.__lest);
+console.log(`Opplesing: ${lest.length} ytringer, for eksempel «${lest[2]}»`);
+if (lest.length < 12) errors.push(`Opplesingen leste for lite: ${lest.length} ytringer`);
+if (lest.some((l) => !l.startsWith('Lokal: '))) errors.push('Opplesingen brukte en stemme som ikke ligger på enheten');
 await uten.close();
 await server.close();
 if (errors.length) {

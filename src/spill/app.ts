@@ -4,6 +4,7 @@ import './stil.css';
 import { konfetti, spillAv, tellOpp } from './effekter';
 import { lagLenke, lesLenke, tolk } from './egne';
 import { type Effekter, type Spill, ytelse } from './felles';
+import { Tale } from './tale';
 import { figurSvg } from './figur';
 import { Intervall } from './intervall';
 import { Kamerakilde } from './kamerakilde';
@@ -89,6 +90,7 @@ function vis(ny: Skjerm) {
   $('pyntefigur').innerHTML = figurSvg(ny === 'resultat' ? 'hopp' : 'vink');
   if (ny === 'spill') tilpassScene();
   holdVåken(ny === 'spill');
+  if (ny !== 'spill') tale.stopp();
   window.scrollTo(0, 0);
   // Skjermleser og tastatur skal lande på den nye skjermen, og fanen skal si hvor en er.
   const mål = $(ny).querySelector<HTMLElement>('h1, canvas');
@@ -212,6 +214,8 @@ let treigeVinduer = 0;
 let vindustid = 0;
 let vindusbilder = 0;
 let sistKunngjort = '';
+let sistLest = '';
+const tale = new Tale();
 
 function tilpassScene() {
   const bar = 52;
@@ -287,6 +291,8 @@ async function startKlasse(valgt: Okt) {
   const inn = { les: t.les, svar: t.svar, fasit: t.fasit, antallSvar, niva };
   // Knappen som startet økta skal ikke sitte igjen med fokus, ellers går mellomrom til den.
   (document.activeElement as HTMLElement | null)?.blur?.();
+  sistLest = '';
+  sistKunngjort = '';
   spill = new Klasseokt(signaler, okt, oppgaver, lyd, effekter, inn, Number(params.get('fart')) || 1);
   vis('spill');
   $('skjermleser').textContent = `${okt.navn} for klassen. Trykk mellomrom for å starte og for å pause. Pil høyre hopper til neste steg.`;
@@ -405,6 +411,12 @@ function løkke(nå: number) {
     spill.oppdater(dt);
     g.setTransform(skala, 0, 0, skala, 0, 0);
     spill.tegn(g);
+    if (spill.opplesing !== undefined && spill.opplesing !== sistLest) {
+      sistLest = spill.opplesing;
+      // Lyd av gjelder også stemmen. Engelske sett leses ikke, for stemmen er norsk.
+      if (sistLest && !lyd.av && okt.sett?.fag !== 'engelsk') tale.si(sistLest);
+      else tale.stopp();
+    }
     if (spill.kunngjoring && spill.kunngjoring !== sistKunngjort) {
       sistKunngjort = spill.kunngjoring;
       $('skjermleser').textContent = sistKunngjort;
@@ -559,6 +571,7 @@ for (const t of INDEKS.trinn) {
       merk('niva', niva);
       merk('antallsvar', String(antallSvar));
       merk('tempo', tempo);
+      settOpplesing(niva === 'liten');
       visSett();
     }),
   );
@@ -580,6 +593,26 @@ for (const n of ['liten', 'mellom', 'voksen'] as Niva[]) {
     }),
   );
 }
+// Opplesing: på for de yngste, og ellers et valg. Brukes bare når enheten har en norsk stemme uten nett.
+const leseknapp = $('leseknapp');
+function settOpplesing(på: boolean, husk = true) {
+  tale.på = på;
+  if (husk) lagre('puls-opplesing', på ? 'på' : 'av');
+  if (!på) tale.stopp();
+  merk('opplesing', på ? 'på' : 'av');
+  leseknapp.hidden = !tale.tilgjengelig;
+  leseknapp.setAttribute('aria-pressed', String(på));
+  leseknapp.textContent = på ? 'Opplesing på' : 'Opplesing av';
+  $('lesevalg').hidden = !tale.tilgjengelig;
+  $('lesenote').hidden = tale.tilgjengelig;
+}
+for (const [verdi, navn] of [['på', 'På'], ['av', 'Av']]) {
+  $('lesevalg').appendChild(valgknapp('opplesing', verdi, navn, false, () => settOpplesing(verdi === 'på')));
+}
+leseknapp.addEventListener('click', () => settOpplesing(!tale.på));
+const lagretLes = lagret('puls-opplesing');
+settOpplesing(lagretLes ? lagretLes === 'på' : niva === 'liten', false);
+tale.vedEndring = () => settOpplesing(tale.på, false);
 for (const n of [2, 3, 4]) {
   $('svarvalg').appendChild(
     valgknapp('antallsvar', String(n), String(n), n === antallSvar, () => {

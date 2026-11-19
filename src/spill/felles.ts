@@ -21,6 +21,8 @@ export interface Spill {
   tilstand(): Record<string, unknown>;
   /** Det som skjer nå, i ord, til skjermleser. Endres bare når noe nytt skjer. */
   kunngjoring?: string;
+  /** Tekst som skal leses høyt når opplesing er på. Endres bare når noe nytt skal leses. */
+  opplesing?: string;
 }
 
 // Rolig bevegelse følger systeminnstillingen, også når den endres mens siden er åpen.
