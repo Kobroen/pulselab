@@ -96,6 +96,20 @@ button.pille:disabled { opacity: 0.4; cursor: default; }
   width: 100px; height: 100px; border-radius: 50%;
   background: var(--gul); box-shadow: 8px 8px 0 var(--skygge);
 }
+/* Skyer og sol rører seg så vidt, så skjermen lever. Bare transform. */
+.sky { position: absolute; height: 34px; border-radius: 999px; background: #fff; box-shadow: 6px 6px 0 var(--skygge); display: none; animation: sky 26s ease-in-out infinite alternate; }
+.sky-a { top: 7vh; left: 5vw; width: 130px; }
+.sky-b { top: 36vh; right: 6vw; width: 84px; height: 28px; animation-duration: 34s; animation-direction: alternate-reverse; }
+body[data-skjerm='start'] .sky, body[data-skjerm='resultat'] .sky { display: block; }
+body[data-skjerm='start'] .sol { animation: solpuls 2.8s ease-in-out infinite; }
+/* På velkomstskjermen står figuren ved siden av kortene. Er skjermen høyere enn den er bred, står den under dem. */
+body[data-skjerm='start'] .figur { height: min(40vh, 20vw); right: 1vw; }
+@media (max-aspect-ratio: 1/1) {
+  body[data-skjerm='start'] .figur { height: 19vh; right: 4vw; bottom: 2vh; }
+  .sky-b { display: none !important; }
+}
+@keyframes sky { from { translate: -3vw 0; } to { translate: 5vw 0; } }
+@keyframes solpuls { 0%, 100% { scale: 1; } 50% { scale: 1.07; } }
 .aaser { position: absolute; left: 0; bottom: 0; width: 100%; height: max(22vh, 110px); display: block; }
 .figur { position: absolute; right: max(4vw, 12px); bottom: 5vh; height: min(34vh, 300px); aspect-ratio: 280 / 400; }
 .figur svg { width: 100%; height: 100%; display: block; }
@@ -111,17 +125,41 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .knapper { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- Start ---------- */
-.logo { width: min(330px, 78vw); margin: 0; font-family: var(--skrift); font-weight: 400; }
-.logo svg { display: block; width: 100%; height: auto; overflow: visible; }
-.undertittel { margin: 14px 0 34px; font-size: 19px; color: var(--dempet); }
-.moduser { display: flex; flex-wrap: wrap; gap: 22px; }
-.moduskort {
-  width: 230px; min-height: 240px; padding: 22px 16px 20px;
-  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+/* Velkomstskjermen er en spillmeny: midtstilt, og den fyller skjermen. Størrelsene følger vinduet. */
+#start {
+  max-width: none; min-height: 100dvh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: clamp(18px, 4.5vh, 48px);
+  padding: clamp(16px, 4vh, 44px) max(20px, env(safe-area-inset-right)) max(21vh, 116px) max(20px, env(safe-area-inset-left));
+  text-align: center;
 }
-.moduskort p { font-size: 14px; color: var(--dempet); margin-top: 4px; }
+#start header { display: grid; justify-items: center; gap: clamp(8px, 1.6vh, 16px); }
+.logo { width: min(84vw, 105vh, max(560px, 42vw)); margin: 0; font-family: var(--skrift); font-weight: 400; }
+.logo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.undertittel { font-size: clamp(18px, 2.6vmin, 26px); color: var(--dempet); }
+.moduser { display: flex; justify-content: center; gap: clamp(16px, 2.6vw, 40px); width: 100%; }
+.moduskort {
+  position: relative;
+  width: clamp(190px, 21vw, 420px); min-height: clamp(230px, 40vh, 540px);
+  padding: clamp(18px, 3.2vh, 32px) 18px clamp(18px, 3vh, 28px);
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(8px, 1.6vh, 16px);
+  transition: translate var(--t-rask) var(--e-ut);
+}
+.moduskort h2 { font-size: clamp(22px, 2.4vw, 46px); }
+.moduskort p { font-size: clamp(14px, 1.2vw, 23px); color: var(--dempet); margin-top: 4px; }
 .moduskort .pille { margin-top: auto; }
+.moduskort button.pille { min-height: clamp(46px, 6.5vh, 76px); min-width: 62%; font-size: clamp(17px, 1.5vw, 28px); }
+/* Hele kortet er knappen. */
+.moduskort button.pille::after { content: ''; position: absolute; inset: 0; border-radius: 14px; }
+@media (hover: hover) {
+  .moduskort:has(button:hover) { translate: calc(var(--loft) * -2) calc(var(--loft) * -2); }
+  .moduskort button.pille:hover:not(:disabled) { translate: none; }
+}
+.moduskort:has(button:active) { translate: var(--trykk) var(--trykk); transition-duration: var(--t-straks); }
+.moduskort button.pille:active:not(:disabled) { translate: none; }
 .moduskort.kommer .pille { border-color: var(--linje); color: var(--dempet); cursor: default; font-size: 14px; }
+.moduskort .ikon { width: clamp(80px, 15vh, 190px); height: clamp(80px, 15vh, 190px); }
+.moduskort .ikon svg { width: 64%; height: 64%; }
 .ikon { width: 80px; height: 80px; border-radius: 50%; display: grid; place-items: center; flex: none; }
 .ikon svg { width: 52px; height: 52px; }
 .blaa { background: var(--blaa); }
@@ -129,7 +167,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .rosa { background: var(--rosa); }
 .gronn { background: var(--gronn); }
 .oransje { background: var(--oransje); }
-.fotnote { margin-top: 34px; font-size: 14px; color: var(--dempet); }
+.fotnote { position: absolute; left: 0; right: 0; bottom: 10px; font-size: 13px; color: var(--blekk); opacity: 0.7; }
 
 /* ---------- Velg spill ---------- */
 .tema { border: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 28px; }
@@ -208,18 +246,33 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
   .skjerm { padding-top: 24px; }
   .sol { width: 68px; height: 68px; top: auto; bottom: max(24vh, 120px); right: 28px; }
   .figur { height: 150px; bottom: 3vh; }
-  .moduser { flex-direction: column; gap: 18px; }
-  .moduskort { width: 100%; min-height: 0; flex-direction: row; text-align: left; padding: 16px; gap: 16px; }
+  body[data-skjerm='start'] .figur { height: min(150px, 19vh); }
+  .sky { display: none !important; }
+  .moduser { flex-direction: column; align-items: center; gap: 18px; }
+  .moduskort { width: min(100%, 460px); min-height: 0; flex-direction: row; text-align: left; padding: 16px; gap: 16px; }
   .moduskort .ikon { width: 64px; height: 64px; }
-  .moduskort .ikon svg { width: 42px; height: 42px; }
   .modustekst { flex: 1; min-width: 0; }
   .moduskort .pille { margin: 0; padding-inline: 16px; }
+  .moduskort button.pille { min-width: 0; min-height: 46px; font-size: 17px; padding-inline: 22px; }
   .moduskort.kommer .pille { padding-inline: 10px; font-size: 13px; min-height: 34px; }
-  .moduskort h2 { font-size: 20px; }
+  .moduskort h2 { font-size: 21px; }
   .klaroppsett { grid-template-columns: 1fr; }
   .klarspeil { grid-row: 1; }
   .ingress { margin-bottom: 16px; }
   .resultatkort { padding: 26px 22px 28px; }
+}
+
+/* ---------- Lave skjermer, som en mobil på tvers: kortene blir lave og brede ---------- */
+@media (max-height: 520px) and (min-width: 761px) {
+  #start { gap: 14px; padding-top: 12px; padding-bottom: 76px; }
+  .logo { width: min(340px, 70vh); }
+  .moduskort { min-height: 0; padding: 14px 14px 16px; gap: 8px; }
+  .moduskort .ikon { width: 56px; height: 56px; }
+  .moduskort h2 { font-size: 22px; }
+  .moduskort button.pille { min-height: 42px; font-size: 16px; margin-top: 6px; }
+  body[data-skjerm='start'] .figur, .sky { display: none !important; }
+  .aaser { height: 70px; }
+  .sol { width: 60px; height: 60px; top: 14px; }
 }
 
 /* ---------- Engangsanimasjoner ---------- */
@@ -247,7 +300,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
   .ark-inn, .ark-inn-tilbake, .lapp-inn { animation: ton-inn 360ms ease-out both; }
   .ark-inn .inn, .ark-inn-tilbake .inn { animation: ton-inn 360ms ease-out both; animation-delay: calc(var(--nr, 0) * 70ms); }
   .stjerne-inn { animation: stjerne-rolig 520ms ease-out both; }
-  .dunk { animation: none; }
+  .dunk, .sky, body[data-skjerm='start'] .sol { animation: none; }
 }
 @keyframes ton-inn { from { opacity: 0; scale: 0.97; } }
 @keyframes stjerne-rolig { from { opacity: 0; scale: 0.7; } }
