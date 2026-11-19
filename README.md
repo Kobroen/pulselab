@@ -16,6 +16,11 @@ Læremodus med to spill og to temaer (gangetabellen og ordklasser):
 | Rekk | Rolig | Strekk hånda inn i riktig svar og hold den der til ringen er full. Ti spørsmål. |
 | Sveip | Høyt | Svarene flyr forbi i buer. Slå til det riktige og la de gale passere. Ett minutt, og farten øker med komboen. |
 
+**Start med klassen** er lærerens vei inn: velg en ferdig økt (Powerbreak på 3 minutter, eller
+Gangetabellen og Ordklasser på 5 minutter) og vis den på storskjerm. Klassen gjør øvelsene
+figuren viser, og svarer på spørsmål med kroppen: hvert svar har sin bevegelse. Det trengs
+verken kamera eller innlogging. Mellomrom pauser, pil høyre hopper videre og Esc avslutter.
+
 I tillegg har **Powerbreak** spillet Intervall: fire korte øvelser på rad (hopp,
 sprellemann, knebøy og boksing i lufta). Bevegelsene telles, og sola vokser med
 energien. Uten kamera gjøres øvelsene med trykk, mellomrom og pekeren.

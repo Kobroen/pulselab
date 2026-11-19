@@ -41,5 +41,7 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
   `src/worker.ts` er målesiden fra fase 0.
 - Spillene (`rekk.ts`, `sveip.ts`) leser bare `Signaler` fra `signaler.ts`.
   Kildene er `kamerakilde.ts` og `pekerkilde.ts`.
+- Fellesmodus for klassen (`klasse.ts`) kjører ferdige økter fra `okter.ts` på storskjerm, uten kamera.
+  Nye økter er bare data. `?fart=12` spoler økta i røyktesten.
 - Skriften er Hurme Geometric Sans 3 (`src/spill/skrift/`). Learnlab har
   bruksrett. Filene er lisensiert og skal ikke gjenbrukes utenfor Learnlab.

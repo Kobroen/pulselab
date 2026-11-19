@@ -44,6 +44,7 @@ export class Pekerkilde implements Signalkilde {
     lytt(flate, 'pointercancel', () => (this.inne = false));
     lytt(window, 'keydown', (e: KeyboardEvent) => {
       if (e.key >= '1' && e.key <= '4') signaler.tast = Number(e.key) - 1;
+      else if (e.key === 'ArrowRight' && !e.repeat) signaler.tast = 8;
       else if (e.key === ' ' && !e.repeat && !(e.target as HTMLElement).closest?.('button')) {
         e.preventDefault();
         signaler.tast = 9;

@@ -129,20 +129,20 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 #start {
   max-width: none; min-height: 100dvh;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: clamp(18px, 4.5vh, 48px);
-  padding: clamp(16px, 4vh, 44px) max(20px, env(safe-area-inset-right)) max(21vh, 116px) max(20px, env(safe-area-inset-left));
+  gap: clamp(12px, 3vh, 40px);
+  padding: clamp(12px, 3vh, 40px) max(20px, env(safe-area-inset-right)) max(17vh, 100px) max(20px, env(safe-area-inset-left));
   text-align: center;
 }
 #start header { display: grid; justify-items: center; gap: clamp(8px, 1.6vh, 16px); }
-.logo { width: min(84vw, 105vh, max(560px, 42vw)); margin: 0; font-family: var(--skrift); font-weight: 400; }
+.logo { width: min(84vw, 85vh, max(520px, 40vw)); margin: 0; font-family: var(--skrift); font-weight: 400; }
 .logo svg { display: block; width: 100%; height: auto; overflow: visible; }
 .undertittel { font-size: clamp(18px, 2.6vmin, 26px); color: var(--dempet); }
 .moduser { display: flex; justify-content: center; gap: clamp(16px, 2.6vw, 40px); width: 100%; }
 .moduskort {
   position: relative;
-  width: clamp(190px, 21vw, 420px); min-height: clamp(230px, 40vh, 540px);
-  padding: clamp(18px, 3.2vh, 32px) 18px clamp(18px, 3vh, 28px);
-  display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(8px, 1.6vh, 16px);
+  width: clamp(190px, 21vw, 420px); min-height: clamp(200px, 31vh, 480px);
+  padding: clamp(14px, 2.4vh, 30px) 18px clamp(14px, 2.4vh, 28px);
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(6px, 1.2vh, 14px);
   transition: translate var(--t-rask) var(--e-ut);
 }
 .moduskort h2 { font-size: clamp(22px, 2.4vw, 46px); }
@@ -158,7 +158,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .moduskort:has(button:active) { translate: var(--trykk) var(--trykk); transition-duration: var(--t-straks); }
 .moduskort button.pille:active:not(:disabled) { translate: none; }
 .moduskort.kommer .pille { border-color: var(--linje); color: var(--dempet); cursor: default; font-size: 14px; }
-.moduskort .ikon { width: clamp(80px, 15vh, 190px); height: clamp(80px, 15vh, 190px); }
+.moduskort .ikon { width: clamp(64px, 11vh, 160px); height: clamp(64px, 11vh, 160px); }
 .moduskort .ikon svg { width: 64%; height: 64%; }
 .ikon { width: 80px; height: 80px; border-radius: 50%; display: grid; place-items: center; flex: none; }
 .ikon svg { width: 52px; height: 52px; }
@@ -168,6 +168,37 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .gronn { background: var(--gronn); }
 .oransje { background: var(--oransje); }
 .fotnote { position: absolute; left: 0; right: 0; bottom: 10px; font-size: 13px; color: var(--blekk); opacity: 0.7; }
+
+/* Lærerens vei inn: én stor knapp øverst. */
+.klasseknapp {
+  display: flex; align-items: center; gap: clamp(12px, 1.6vw, 24px);
+  width: min(100%, calc(3 * clamp(190px, 21vw, 420px) + 2 * clamp(16px, 2.6vw, 40px)));
+  padding: clamp(10px, 1.8vh, 20px) clamp(16px, 2vw, 32px);
+  border: 0; border-radius: 18px; background: var(--gul); box-shadow: 7px 7px 0 var(--skygge);
+  font: inherit; color: var(--blekk); text-align: left; cursor: pointer; rotate: -0.6deg;
+  transition: translate var(--t-rask) var(--e-ut); -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+}
+@media (hover: hover) { .klasseknapp:hover { translate: calc(var(--loft) * -2) calc(var(--loft) * -2); } }
+.klasseknapp:active { translate: var(--trykk) var(--trykk); transition-duration: var(--t-straks); }
+.klasseikon { width: clamp(48px, 8vh, 84px); height: clamp(48px, 8vh, 84px); border-radius: 50%; background: #fff; display: grid; place-items: center; flex: none; }
+.klasseikon svg { width: 66%; height: 66%; }
+.klassetekst { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.klassetekst b { font-weight: 600; font-size: clamp(22px, 2.6vw, 44px); line-height: 1.1; }
+.klassetekst small { font-size: clamp(13px, 1.2vw, 21px); }
+.klassepil { font-size: clamp(26px, 3vw, 48px); font-weight: 600; line-height: 1; }
+.skille { font-size: clamp(14px, 1.2vw, 20px); color: var(--dempet); margin: calc(clamp(12px, 3vh, 40px) * -0.5) 0; }
+
+/* ---------- Start med klassen ---------- */
+#klasse .ingress { max-width: 640px; font-size: 18px; }
+.okter { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 26px; }
+.oktkort { padding: 22px 24px 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.oktkort:nth-child(odd) { --rot: -1deg; }
+.oktkort:nth-child(even) { --rot: 1.2deg; }
+.oktkort p { color: var(--dempet); font-size: 16px; }
+.oktkort .okttid { color: var(--blekk); font-weight: 600; font-size: 18px; }
+.oktkort .pille { margin-top: auto; min-height: 50px; min-width: 60%; font-size: 19px; }
+.oktkort p:last-of-type { margin-bottom: 10px; }
+.fotnote-klasse { margin-top: 26px; font-size: 15px; color: var(--dempet); }
 
 /* ---------- Velg spill ---------- */
 .tema { border: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 28px; }
@@ -212,6 +243,8 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 /* ---------- Spill ---------- */
 .spillskjerm { height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 6px; }
 #scene { display: block; touch-action: none; border-radius: 10px; cursor: none; }
+/* I fellesmodus styrer læreren med musa, så pekeren må synes. */
+body[data-modus='klasse'] #scene { cursor: pointer; }
 .spillbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; max-width: 960px; }
 .spillbar .pille { min-height: 36px; padding: 4px 18px; font-size: 14px; }
 .brytere { display: flex; gap: 8px; }
@@ -222,7 +255,7 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 .resultatkort { --rot: -1deg; max-width: 540px; padding: 34px 38px 36px; border-radius: 18px; }
 .stjerner { display: flex; gap: 8px; margin: 14px 0 22px; }
 .stjerner svg { width: 44px; height: 44px; }
-.fliser { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.fliser { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 12px; }
 .fliser li { border-radius: 12px; padding: 18px 6px 14px; text-align: center; font-size: 14px; }
 .fliser li:nth-child(1) { background: var(--gronn-lys); }
 .fliser li:nth-child(2) { background: var(--rosa-lys); }
@@ -247,6 +280,8 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
   .sol { width: 68px; height: 68px; top: auto; bottom: max(24vh, 120px); right: 28px; }
   .figur { height: 150px; bottom: 3vh; }
   body[data-skjerm='start'] .figur { height: min(150px, 19vh); }
+  .fotnote { position: static; margin-top: 4px; }
+  .klasseknapp { width: min(100%, 460px); }
   .sky { display: none !important; }
   .moduser { flex-direction: column; align-items: center; gap: 18px; }
   .moduskort { width: min(100%, 460px); min-height: 0; flex-direction: row; text-align: left; padding: 16px; gap: 16px; }
@@ -264,12 +299,16 @@ body[data-skjerm='klar'] .sol, body[data-skjerm='klar'] .figur, body[data-skjerm
 
 /* ---------- Lave skjermer, som en mobil på tvers: kortene blir lave og brede ---------- */
 @media (max-height: 520px) and (min-width: 761px) {
-  #start { gap: 14px; padding-top: 12px; padding-bottom: 76px; }
+  #start { gap: 10px; padding-top: 10px; padding-bottom: 70px; }
+  .undertittel, .skille { display: none; }
+  .klasseknapp { padding-block: 6px; }
+  .klasseikon { width: 40px; height: 40px; }
   .logo { width: min(340px, 70vh); }
-  .moduskort { min-height: 0; padding: 14px 14px 16px; gap: 8px; }
-  .moduskort .ikon { width: 56px; height: 56px; }
+  .moduskort { min-height: 0; padding: 10px 14px 12px; gap: 4px; }
+  .moduskort .ikon { width: 40px; height: 40px; }
+  .moduskort p { margin: 0; }
   .moduskort h2 { font-size: 22px; }
-  .moduskort button.pille { min-height: 42px; font-size: 16px; margin-top: 6px; }
+  .moduskort button.pille { min-height: 38px; font-size: 16px; margin-top: 4px; }
   body[data-skjerm='start'] .figur, .sky { display: none !important; }
   .aaser { height: 70px; }
   .sol { width: 60px; height: 60px; top: 14px; }
