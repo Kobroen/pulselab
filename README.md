@@ -30,6 +30,10 @@ og hvert sett lastes først når økta starter. Etter økta teller tiden i beveg
 Holder ikke enheten bildeflyten, senkes oppløsningen på spillflaten automatisk i to trinn (`?kvalitet=lav`
 tvinger det fram). Mangler kameraet eller er det sperret, forklarer skjermen hvorfor og løfter fram «Spill uten kamera».
 
+For de yngste leses spørsmål, svar og fasit opp med nettleserens egen tale. Bare stemmer som ligger på
+enheten brukes, så teksten sendes aldri ut. Finnes ingen norsk stemme uten nett, er opplesing ikke tilgjengelig.
+Den kan skrus av under «Tilpass økta» og med knappen under spillflaten.
+
 Øvelsene trekkes fra ti ulike, så økta får ny blanding hver gang. Uttrykket følger trinnet:
 småskolen får tre svar, rolig tempo, stjerner for framdrift og ingen tall som teller ned, og voksne
 får et nøkternt uttrykk uten åser, konfetti og stjerner. Læreren kan velge et annet uttrykk under «Tilpass økta».

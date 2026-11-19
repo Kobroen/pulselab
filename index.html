@@ -78,6 +78,8 @@
         <fieldset class="tema" id="nivavalg"><legend>Uttrykk</legend></fieldset>
         <fieldset class="tema" id="tempovalg"><legend>Tempo</legend></fieldset>
         <fieldset class="tema" id="svarvalg"><legend>Svar per spørsmål</legend></fieldset>
+        <fieldset class="tema" id="lesevalg"><legend>Les opp spørsmålene</legend></fieldset>
+        <p class="lesenote" id="lesenote" hidden>Denne enheten har ingen norsk stemme som virker uten nett, så opplesing er ikke tilgjengelig her.</p>
       </details>
       <h2 class="mellomtittel" id="laeretittel">Læreøkter</h2>
       <fieldset class="tema" id="fagvalg"><legend class="skjult">Fag</legend></fieldset>
@@ -180,6 +182,7 @@
         <button class="pille lys" id="avslutt" type="button">Avslutt</button>
         <span class="snu">Snu skjermen for større spillflate</span>
         <span class="brytere">
+          <button class="pille lys" id="leseknapp" type="button" aria-pressed="false" hidden>Opplesing av</button>
           <button class="pille lys" id="fullknapp" type="button">Fullskjerm</button>
           <button class="pille lys" id="ristknapp" type="button" aria-pressed="true">Risting på</button>
           <button class="pille lys" id="lydknapp" type="button" aria-pressed="true">Lyd på</button>

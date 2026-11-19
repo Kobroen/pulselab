@@ -48,6 +48,7 @@ type Fase = 'start' | 'intro' | 'klar' | 'arbeid' | 'slutt';
 export class Klasseokt implements Spill {
   ferdig = false;
   kunngjoring = '';
+  opplesing = '';
   private steg: Steg[];
   private fase: Fase = 'start';
   private nr = 0;
@@ -124,6 +125,7 @@ export class Klasseokt implements Spill {
     if (s.ovelse) {
       this.ovelseNr++;
       this.pille = `${this.okt.navn} · øvelse ${this.ovelseNr} av ${this.antallOvelser}`;
+      this.opplesing = `${s.ovelse.navn}.`;
       this.kunngjoring = `Øvelse ${this.ovelseNr} av ${this.antallOvelser}: ${s.ovelse.navn}. ${s.ovelse.tekst.replace(/[.!]$/, '')}. ${s.sek} sekunder.`;
     } else {
       this.sporsmalNr++;
@@ -131,6 +133,8 @@ export class Klasseokt implements Spill {
       // Lange navn får ikke plass i lappen sammen med tellingen.
       this.pille = this.okt.navn.length > 16 ? hvor[0].toUpperCase() + hvor.slice(1) : `${this.okt.navn} · ${hvor}`;
       this.fasit = `Riktig svar: ${s.oppgave.svar[s.oppgave.riktig]}. Alle ${SVARVERB[s.oppgave.riktig]}!`;
+      // Spørsmålet leses først, så svarene med en liten pause mellom.
+      this.opplesing = `${s.oppgave.tekst} ${s.oppgave.svar.join('. ')}.`;
       this.kunngjoring = `Spørsmål ${this.sporsmalNr} av ${this.antallSporsmal}: ${s.oppgave.tekst} ${s.oppgave.svar.map((svar, i) => `${SVARNAVN[i]}: ${svar}.`).join(' ')}`;
     }
     const n = this.steg[nr + 1];
@@ -164,6 +168,7 @@ export class Klasseokt implements Spill {
           this.t = 0;
           this.klokke = 0;
           this.pille = `${this.okt.navn} · slik svarer dere`;
+          this.opplesing = 'Hvert svar har sin bevegelse. Gjør bevegelsen til svaret du tror er riktig.';
           this.kunngjoring = 'Slik svarer dere: hvert svar har sin bevegelse. Gjør bevegelsen til svaret du tror er riktig.';
         } else this.begynn(0);
       }
@@ -182,7 +187,10 @@ export class Klasseokt implements Spill {
     }
     if (trykk) {
       this.pause = !this.pause;
-      if (this.pause) this.kunngjoring = 'Pause. Trykk mellomrom for å fortsette.';
+      if (this.pause) {
+        this.kunngjoring = 'Pause. Trykk mellomrom for å fortsette.';
+        this.opplesing = '';
+      }
       this.lyd.bryter(!this.pause);
     }
     if (this.pause) {
@@ -228,6 +236,7 @@ export class Klasseokt implements Spill {
         if (under === 2) {
           this.sidenFasit = 0;
           this.kunngjoring = this.fasit;
+          this.opplesing = this.fasit;
           this.lyd.riktig(4);
           this.effekter.dunk();
           if (!this.voksen) this.konfetti.kast(this.kortX(steg.oppgave.riktig, steg.oppgave.svar.length) + KORT_B / 2, KORT_Y + 60, 16);
