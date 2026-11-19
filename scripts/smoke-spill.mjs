@@ -228,6 +228,21 @@ await page.setViewportSize({ width: 390, height: 780 });
 await shot('12-mobil-start');
 
 await browser.close();
+
+// Uten kamera: en nettleser som ikke har noe kamera skal få en forklaring og en tydelig vei videre.
+const uten = await chromium.launch();
+const side = await uten.newPage({ viewport: { width: 1280, height: 720 } });
+side.on('pageerror', (e) => errors.push(String(e)));
+await side.goto('http://localhost:4174/?antall=1');
+await side.click('#start-laere');
+await side.click('[data-spill="rekk"]');
+await side.click('#kamera-paa');
+await side.waitForSelector('#kamerahjelp:not([hidden])', { timeout: 20_000 });
+console.log('Uten kamera:', (await side.locator('#kamerahjelp-tittel').innerText()).trim());
+if (!(await side.locator('#uten-kamera').getAttribute('class')).includes('mork')) errors.push('Spill uten kamera ble ikke løftet fram da kameraet manglet');
+await side.click('#uten-kamera');
+await side.waitForFunction(() => window.__puls.tilstand().skjerm === 'spill');
+await uten.close();
 await server.close();
 if (errors.length) {
   console.error('Røyktesten feilet:\n' + errors.join('\n'));

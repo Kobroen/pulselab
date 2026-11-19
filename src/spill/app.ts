@@ -3,7 +3,7 @@
 import './stil.css';
 import { konfetti, spillAv, tellOpp } from './effekter';
 import { lagLenke, lesLenke, tolk } from './egne';
-import type { Effekter, Spill } from './felles';
+import { type Effekter, type Spill, ytelse } from './felles';
 import { figurSvg } from './figur';
 import { Intervall } from './intervall';
 import { Kamerakilde } from './kamerakilde';
@@ -90,7 +90,14 @@ function vis(ny: Skjerm) {
   if (ny === 'spill') tilpassScene();
   holdVåken(ny === 'spill');
   window.scrollTo(0, 0);
-  ($(ny).querySelector('h1, canvas') as HTMLElement | null)?.focus?.();
+  // Skjermleser og tastatur skal lande på den nye skjermen, og fanen skal si hvor en er.
+  const mål = $(ny).querySelector<HTMLElement>('h1, canvas');
+  if (mål) {
+    if (mål.tabIndex < 0) mål.tabIndex = -1;
+    mål.focus({ preventScroll: true });
+  }
+  const tittel = $(ny).querySelector('h1')?.textContent;
+  document.title = ny === 'start' || !tittel ? 'Learnlab Puls' : `${ny === 'spill' ? 'Spill' : tittel} – Learnlab Puls`;
 }
 
 function slåAvKamera() {
@@ -125,6 +132,9 @@ function åpneKlar() {
   for (const el of Object.values(sjekk)) el.classList.remove('ok');
   kameraPå.hidden = false;
   kameraPå.disabled = false;
+  kameraPå.textContent = 'Slå på kameraet';
+  $('kamerahjelp').hidden = true;
+  $('uten-kamera').className = 'pille lys';
   erKlar.disabled = true;
   gSpeil.clearRect(0, 0, speil.width, speil.height);
   vis('klar');
@@ -133,6 +143,7 @@ function åpneKlar() {
 async function startKamera() {
   lyd.vekk();
   kameraPå.disabled = true;
+  $('kamerahjelp').hidden = true;
   settHint('Starter kameraet …');
   signaler = nyeSignaler();
   const k = new Kamerakilde(signaler);
@@ -146,14 +157,24 @@ async function startKamera() {
     slåAvKamera();
     kameraPå.hidden = false;
     kameraPå.disabled = false;
+    // Uten kamera skal veien videre være tydelig: forklar hva som skjedde, og løft fram spill uten kamera.
     const navn = e instanceof DOMException ? e.name : '';
-    settHint(
+    const [tittel, tekst] =
       navn === 'NotAllowedError'
-        ? 'Kameraet er blokkert. Du kan spille uten.'
-        : navn === 'NotFoundError'
-          ? 'Fant ikke noe kamera. Du kan spille uten.'
-          : 'Sporingen startet ikke. Du kan spille uten.',
-    );
+        ? ['Kameraet er ikke tillatt', 'Trykk på hengelåsen eller kameraet i adressefeltet, velg «Tillat» for kamera, og prøv igjen. På skolemaskiner kan kameraet være sperret av skolen. Da spiller du like godt uten.']
+        : navn === 'NotFoundError' || navn === 'OverconstrainedError'
+          ? ['Fant ikke noe kamera', 'Denne enheten har ikke noe kamera vi kan bruke. Alle spillene virker like godt med mus, finger eller tastatur.']
+          : navn === 'NotReadableError'
+            ? ['Kameraet er opptatt', 'Et annet program bruker kameraet, for eksempel et videomøte. Lukk det og prøv igjen, eller spill uten kamera.']
+            : navn === 'NotSupportedError'
+              ? ['Nettleseren gir ikke tilgang til kameraet', 'Det er ingenting du har gjort feil. Alle spillene virker like godt med mus, finger eller tastatur.']
+              : ['Sporingen startet ikke', 'Enheten klarte ikke å laste sporingen. Prøv igjen, eller spill uten kamera.'];
+    $('kamerahjelp-tittel').textContent = tittel;
+    $('kamerahjelp-tekst').textContent = tekst;
+    $('kamerahjelp').hidden = false;
+    kameraPå.textContent = 'Prøv igjen';
+    $('uten-kamera').className = 'pille mork';
+    settHint('Du kan spille uten kamera');
   }
 }
 
@@ -184,6 +205,14 @@ function oppdaterKlar() {
 
 // ---------- Spill ----------
 
+// Tegnekvaliteten: 1 er full, og den senkes til 0,75 og 0,5 når bildeflyten faller.
+let kvalitet = params.get('kvalitet') === 'lav' ? 0.5 : 1;
+ytelse.lav = kvalitet < 1;
+let treigeVinduer = 0;
+let vindustid = 0;
+let vindusbilder = 0;
+let sistKunngjort = '';
+
 function tilpassScene() {
   const bar = 52;
   const b = Math.max(240, Math.min(window.innerWidth - 12, ((window.innerHeight - bar - 12) * SCENE_B) / SCENE_H));
@@ -191,7 +220,8 @@ function tilpassScene() {
   scene.style.width = `${b}px`;
   scene.style.height = `${h}px`;
   // Tegneflaten holdes moderat også på skarpe skjermer, av hensyn til svake maskiner.
-  const tetthet = Math.min(window.devicePixelRatio || 1, 2, 1600 / b);
+  // Holder ikke enheten bildeflyten, senkes oppløsningen i trinn. Se løkka.
+  const tetthet = Math.max(480 / b, Math.min(window.devicePixelRatio || 1, 2, 1600 / b) * kvalitet);
   scene.width = Math.round(b * tetthet);
   scene.height = Math.round(h * tetthet);
   skala = scene.width / SCENE_B;
@@ -375,6 +405,26 @@ function løkke(nå: number) {
     spill.oppdater(dt);
     g.setTransform(skala, 0, 0, skala, 0, 0);
     spill.tegn(g);
+    if (spill.kunngjoring && spill.kunngjoring !== sistKunngjort) {
+      sistKunngjort = spill.kunngjoring;
+      $('skjermleser').textContent = sistKunngjort;
+    }
+    // Måler bildeflyten i vinduer på to sekunder. To trege vinduer på rad senker kvaliteten ett trinn.
+    // Den heves ikke igjen i samme besøk, så bildet ikke hopper fram og tilbake.
+    vindustid += dt;
+    vindusbilder++;
+    if (vindustid >= 2) {
+      const flyt = vindusbilder / vindustid;
+      treigeVinduer = flyt < 40 && !document.hidden ? treigeVinduer + 1 : 0;
+      vindustid = 0;
+      vindusbilder = 0;
+      if (treigeVinduer >= 2 && kvalitet > 0.5) {
+        kvalitet = kvalitet > 0.75 ? 0.75 : 0.5;
+        ytelse.lav = true;
+        treigeVinduer = 0;
+        tilpassScene();
+      }
+    }
     if (spill.ferdig) visResultat();
   }
   if (visMål && nå - målTid >= 1000) {
@@ -382,7 +432,7 @@ function løkke(nå: number) {
     const spor = kamera ? kamera.sporinger - sporingerSist : 0;
     sporingerSist = kamera ? kamera.sporinger : 0;
     målEl.textContent =
-      `${(bilder / sek).toFixed(0)} bilder/s` +
+      `${(bilder / sek).toFixed(0)} bilder/s · kvalitet ${kvalitet}` +
       (kamera
         ? `\n${(spor / sek).toFixed(1)} sporinger/s\ntolkning ${kamera.tolkMs.toFixed(0)} ms\nforsinkelse ${kamera.forsinkelseMs.toFixed(0)} ms`
         : '\nuten kamera');

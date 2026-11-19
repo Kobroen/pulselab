@@ -106,6 +106,8 @@ export class Kamerakilde implements Signalkilde {
   }
 
   private async åpneKamera() {
+    // Uten sikker adresse eller i eldre nettlesere finnes ikke kameratilgangen i det hele tatt.
+    if (!navigator.mediaDevices?.getUserMedia) throw new DOMException('Ingen kameratilgang', 'NotSupportedError');
     const strøm = await navigator.mediaDevices.getUserMedia({
       audio: false,
       video: { width: { ideal: 320 }, height: { ideal: 240 }, frameRate: { ideal: 30 }, facingMode: 'user' },
