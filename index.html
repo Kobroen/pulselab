@@ -2,85 +2,143 @@
 <html lang="nb">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="noindex" />
-    <title>Learnlab Puls – sporingstest</title>
-    <link rel="stylesheet" href="./src/style.css" />
+    <meta name="theme-color" content="#f7f1ec" />
+    <title>Learnlab Puls</title>
   </head>
   <body>
-    <main>
+    <div class="landskap" aria-hidden="true">
+      <div class="sol"></div>
+      <svg class="aaser" viewBox="0 0 960 140" preserveAspectRatio="none">
+        <path d="M0 40Q240 -30 480 30T960 0V140H0Z" fill="#b2e8d3" />
+        <path d="M0 90Q300 30 600 90T960 70V140H0Z" fill="#66d3a8" />
+      </svg>
+      <div class="figur" id="pyntefigur"></div>
+    </div>
+
+    <main id="start" class="skjerm">
       <header>
-        <p class="eyebrow">Learnlab Puls · fase 0</p>
-        <h1>Sporingstest</h1>
-        <p class="lead">
-          Denne siden måler hvor godt enheten din klarer å følge kroppen din med kameraet.
-          Testen tar omtrent ett minutt. Stå eller sitt slik at overkroppen synes, og beveg armene litt underveis.
-        </p>
-        <p class="privacy">
-          Kamerabildet tolkes på denne enheten og kastes med en gang. Ingenting sendes eller lagres.
-        </p>
+        <h1 class="logo" id="logo"></h1>
+        <p class="undertittel">Hva har du lyst til?</p>
       </header>
-
-      <section class="stage">
-        <canvas id="scene" width="640" height="360" aria-label="Forhåndsvisning av sporingen"></canvas>
-        <video id="video" playsinline muted aria-hidden="true"></video>
-        <div id="status" class="status" role="status" aria-live="polite">Klar til å starte.</div>
-      </section>
-
-      <div class="actions">
-        <button id="start" class="primary">Start testen</button>
-        <button id="stop" hidden>Stopp</button>
-        <label class="toggle"><input type="checkbox" id="showVideo" /> Vis kamerabildet</label>
-      </div>
-
-      <section>
-        <h2>Resultater</h2>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Oppsett</th>
-                <th scope="col">Lasting</th>
-                <th scope="col">Tolkning per bilde</th>
-                <th scope="col">Forsinkelse</th>
-                <th scope="col">Sporing per sekund</th>
-                <th scope="col">Bildeflyt</th>
-                <th scope="col">Hakk</th>
-                <th scope="col">Kropp funnet</th>
-                <th scope="col">Vurdering</th>
-                <th scope="col"><span class="sr-only">Prøv</span></th>
-              </tr>
-            </thead>
-            <tbody id="rows"></tbody>
-          </table>
-        </div>
-        <p id="summary" class="summary"></p>
-      </section>
-
-      <section id="reportSection" hidden>
-        <h2>Send tallene videre</h2>
-        <p>Kopier rapporten og lim den inn i tråden. Den inneholder bare måletall og opplysninger om enheten.</p>
-        <button id="copy">Kopier rapporten</button>
-        <span id="copied" role="status" aria-live="polite"></span>
-        <textarea id="report" readonly rows="14" aria-label="Rapport"></textarea>
-      </section>
-
-      <details>
-        <summary>Hva betyr tallene?</summary>
-        <dl>
-          <dt>Tolkning per bilde</dt>
-          <dd>Tiden modellen bruker på ett kamerabilde. Vises som typisk verdi og verste tidel.</dd>
-          <dt>Forsinkelse</dt>
-          <dd>Tiden fra bildet hentes til punktene er klare til å tegnes. Kameraets egen forsinkelse kommer i tillegg.</dd>
-          <dt>Sporing per sekund</dt>
-          <dd>Hvor mange ganger i sekundet kroppen leses. Kameraet gir som regel høyst 30.</dd>
-          <dt>Bildeflyt og hakk</dt>
-          <dd>Hvor jevnt skjermen tegnes mens sporingen går. Hakk er andelen bilder som kom merkbart for sent.</dd>
-          <dt>Kropp funnet</dt>
-          <dd>Andelen bilder der modellen fant skuldre og hofter med rimelig sikkerhet.</dd>
-        </dl>
-      </details>
+      <ul class="moduser">
+        <li class="kort moduskort" style="--rot: -2deg">
+          <span class="ikon blaa">
+            <svg viewBox="-24 -24 48 48" aria-hidden="true"><path d="M-20 -13L0 -6L20 -13V12L0 19L-20 12Z" fill="#1e1e1e" /><path d="M0 -6V19" stroke="#8ab2ff" stroke-width="2.5" /></svg>
+          </span>
+          <div class="modustekst">
+            <h2>Læremodus</h2>
+            <p>Fag og tema · 3–8 min</p>
+          </div>
+          <button class="pille mork" id="start-laere" type="button">Start</button>
+        </li>
+        <li class="kort moduskort kommer" style="--rot: 1.5deg">
+          <span class="ikon gul">
+            <svg viewBox="-24 -24 48 48" aria-hidden="true"><polygon points="5,-22 -13,4 -1,4 -6,22 13,-5 1,-5" fill="#1e1e1e" /></svg>
+          </span>
+          <div class="modustekst">
+            <h2>Powerbreak</h2>
+            <p>Aktiv pause · 2–5 min</p>
+          </div>
+          <span class="pille lys">Kommer snart</span>
+        </li>
+        <li class="kort moduskort kommer" style="--rot: -1.5deg">
+          <span class="ikon rosa">
+            <svg viewBox="-24 -24 48 48" aria-hidden="true"><rect x="-16" y="-16" width="26" height="34" rx="4" fill="#1e1e1e" transform="rotate(-12)" opacity=".55" /><rect x="-8" y="-17" width="26" height="34" rx="4" fill="#1e1e1e" transform="rotate(8)" /></svg>
+          </span>
+          <div class="modustekst">
+            <h2>Pugg og prøv</h2>
+            <p>Dine egne spørsmål</p>
+          </div>
+          <span class="pille lys">Kommer snart</span>
+        </li>
+      </ul>
+      <p class="fotnote">Demo. <a href="./sporingstest.html">Sporingstest for enheten</a></p>
     </main>
-    <script type="module" src="./src/main.ts"></script>
+
+    <main id="velg" class="skjerm" hidden>
+      <button class="pille lys tilbake" type="button" data-til="start">← Tilbake</button>
+      <h1>Velg spill</h1>
+      <fieldset class="tema">
+        <legend>Tema</legend>
+        <label><input type="radio" name="tema" value="gange" checked /><span>Gangetabellen</span></label>
+        <label><input type="radio" name="tema" value="ordklasser" /><span>Ordklasser</span></label>
+      </fieldset>
+      <ul class="spillvalg">
+        <li class="kort spillkort" style="--rot: -1deg">
+          <span class="merke gronn">Rolig</span>
+          <h2>Rekk</h2>
+          <p>Strekk hånda inn i riktig svar og hold den der til ringen er full. Ti spørsmål.</p>
+          <button class="pille mork" type="button" data-spill="rekk">Spill Rekk</button>
+        </li>
+        <li class="kort spillkort" style="--rot: 1.2deg">
+          <span class="merke oransje">Høyt tempo</span>
+          <h2>Sveip</h2>
+          <p>Svarene flyr forbi. Slå til det riktige og la de gale passere. Ett minutt, og farten øker med komboen.</p>
+          <button class="pille mork" type="button" data-spill="sveip">Spill Sveip</button>
+        </li>
+      </ul>
+    </main>
+
+    <main id="klar" class="skjerm" hidden>
+      <button class="pille lys tilbake" type="button" data-til="velg">← Tilbake</button>
+      <div class="klaroppsett">
+        <div class="klartekst">
+          <h1>Finn plassen din</h1>
+          <p class="ingress">Gå bakover til hele overkroppen er inni ramma, og sjekk at du har plass til å strekke ut armene.</p>
+          <ul class="kort sjekkliste">
+            <li id="sjekk-kamera">Kamera på</li>
+            <li id="sjekk-sporing">Sporingen er klar</li>
+            <li id="sjekk-ramme">Stå i ramma</li>
+          </ul>
+          <p class="kort personvern">
+            <strong>Kameraet ser hvordan du beveger deg.</strong>
+            Ingen andre ser bildet, og det lagres ikke. Alt skjer på denne enheten.
+          </p>
+        </div>
+        <div class="klarspeil">
+          <p class="lapp" id="hint" role="status" aria-live="polite">Kameraet er av</p>
+          <div class="kort speil">
+            <canvas id="speil" width="320" height="332" aria-label="Figur som viser hvordan kameraet ser deg"></canvas>
+            <button class="pille mork" id="kamera-paa" type="button">Slå på kameraet</button>
+          </div>
+          <div class="knapper">
+            <button class="pille lys" id="uten-kamera" type="button">Spill uten kamera</button>
+            <button class="pille mork" id="er-klar" type="button" disabled>Jeg er klar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main id="spill" class="spillskjerm" hidden>
+      <canvas id="scene" aria-label="Spillflate"></canvas>
+      <div class="spillbar">
+        <button class="pille lys" id="avslutt" type="button">Avslutt</button>
+        <span class="snu">Snu skjermen for større spillflate</span>
+        <button class="pille lys" id="lydknapp" type="button" aria-pressed="true">Lyd på</button>
+      </div>
+      <p id="skjermleser" class="skjult" role="status" aria-live="polite"></p>
+    </main>
+
+    <main id="resultat" class="skjerm" hidden>
+      <div class="kort resultatkort">
+        <h1>Bra jobba!</h1>
+        <div class="stjerner" id="stjerner" role="img"></div>
+        <ul class="fliser" id="fliser"></ul>
+        <div id="ovmer">
+          <p>Øv mer på</p>
+          <ul id="ovliste"></ul>
+        </div>
+        <div class="knapper">
+          <button class="pille mork" id="igjen" type="button">Spill igjen</button>
+          <button class="pille lys" id="bytt" type="button">Bytt spill</button>
+          <button class="pille lys" id="ferdig" type="button">Ferdig</button>
+        </div>
+      </div>
+    </main>
+
+    <pre id="maal" class="maal" hidden></pre>
+    <script type="module" src="./src/spill/app.ts"></script>
   </body>
 </html>

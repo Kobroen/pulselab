@@ -4,14 +4,42 @@ Bevegelsesbasert læringsspill for Learnlab. Kroppen er kontrolleren: webkamerae
 leser bevegelsene dine på enheten, og du løser fagoppgaver ved å bevege deg.
 Engelsk navn: Learnlab Pulse.
 
-Prosjektet er i **fase 0**. Det eneste som finnes nå er en testside som måler
-hvor godt kroppssporing går på en gitt enhet, særlig billige skole-Chromebooks.
-
-## Testsiden
-
 Publiseres til GitHub Pages fra `main`: https://kobroen.github.io/pulselab/
 
-Siden kjører fire oppsett etter tur og viser tallene i en tabell:
+## Demoen
+
+Dette er en tidlig demo i den grafiske retningen «Papirklipp». Den har
+Læremodus med to spill og to temaer (gangetabellen og ordklasser):
+
+| Spill | Tempo | Slik spilles det |
+|---|---|---|
+| Rekk | Rolig | Strekk hånda inn i riktig svar og hold den der til ringen er full. Ti spørsmål. |
+| Sveip | Høyt | Svarene flyr forbi i buer. Slå til det riktige og la de gale passere. Ett minutt, og farten øker med komboen. |
+
+Begge kan spilles med kamera eller uten. Uten kamera styrer du med mus eller
+finger, og i Rekk også med tastene 1 til 4. Powerbreak og Pugg og prøv er ikke
+laget ennå.
+
+Nyttig under testing:
+
+- Tasten `M` (eller `?maal=1` i adressen) viser en måleskjerm med bilder per
+  sekund, sporinger per sekund og forsinkelse.
+- `?antall=3` gir kortere runder i Rekk, og `?varighet=20` kortere runder i Sveip.
+
+### Slik virker styringen
+
+Sporingen (MoveNet Lightning på prosessoren) kjører i en egen arbeidertråd.
+Kroppspunktene gjøres om til abstrakte signaler: hvor hendene er, og en
+kroppsfigur til tegning. Hendene måles i skulderbredder ut fra skuldrene, så
+det spiller liten rolle hvor langt unna kameraet du står. Står du så nær at
+utstrakte armer ikke får plass i bildet, brukes bildebredden som målestokk i
+stedet, slik at mindre bevegelser rekker like langt.
+
+## Sporingstesten
+
+Målesiden fra fase 0 ligger på https://kobroen.github.io/pulselab/sporingstest.html
+
+Den kjører fire oppsett etter tur og viser tallene i en tabell:
 
 | Oppsett | Modell | Kjøres på |
 |---|---|---|
@@ -32,29 +60,43 @@ Nyttige adresseparametre: `?dur=5` setter måletid per oppsett i sekunder
 
 - Kamerabildet tolkes i nettleseren, i en egen arbeidertråd, og kastes straks.
 - Ingenting sendes fra enheten. Siden har ingen tjenerside og ingen analyse.
-- Modeller og WebAssembly-filer serveres fra samme adresse som siden. Ingenting
-  hentes fra tredjepart når siden kjører.
-- Kameraet slås av når fanen skjules.
+- Modeller, WebAssembly-filer og skrift serveres fra samme adresse som siden.
+  Ingenting hentes fra tredjepart når siden kjører.
+- Kameraet slås av når fanen skjules, og når du går ut av spillet.
+- Kameraet er frivillig. Det slås først på når du trykker «Slå på kameraet».
 
 ## Utvikling
 
 ```bash
 npm install
-npm run dev       # utviklingstjener. Arbeideren er bare testet i bygget utgave
-npm run build     # typesjekk og bygging til dist/
-npm run preview   # serverer dist/ på port 4173
-npm run smoke     # røyktest i Chromium med falskt kamera, krever Playwright
+npm run dev            # utviklingstjener. Arbeiderne er bare testet i bygget utgave
+npm run build          # typesjekk og bygging til dist/
+npm run preview        # serverer dist/ på port 4173
+npm run smoke          # røyktest av spillet i Chromium med falskt kamera, krever Playwright
+npm run smoke:sporing  # røyktest av sporingstesten
 ```
 
-Røyktesten kan få en MJPEG-fil med en person som argument:
+Røyktesten av spillet kan lagre skjermbilder: `SHOTS=mappe npm run smoke`.
+Røyktesten av sporingstesten kan få en MJPEG-fil med en person som argument:
 `node scripts/smoke.mjs person.mjpeg`.
 
 ## Oppbygging
 
 ```
-src/main.ts     måleløp, tegning og visning (hovedtråd)
-src/worker.ts   sporingsarbeider: laster modell og tolker bilder
-src/types.ts    oppsett og meldinger mellom hovedtråd og arbeider
-public/models   modellfiler, se README der for kilde og lisens
-scripts/        kopiering av WebAssembly-filer og røyktest
+index.html                 spillet
+sporingstest.html          målesiden fra fase 0
+src/spill/app.ts           skjermene og spilløkka (hovedtråd)
+src/spill/signaler.ts      de abstrakte signalene spillene leser
+src/spill/kamerakilde.ts   kamera og kroppspunkter gjort om til signaler
+src/spill/pekerkilde.ts    mus, finger og tastatur gjort om til de samme signalene
+src/spill/sporing.worker.ts  sporingsarbeider: laster modellen og tolker bilder
+src/spill/rekk.ts, sveip.ts  de to spillene
+src/spill/felles.ts, tegning.ts  papirklipp-tegning, figur, konfetti
+src/spill/oppgaver.ts      regelbaserte oppgaver
+src/main.ts, worker.ts, types.ts  sporingstesten
+public/models              modellfiler, se README der for kilde og lisens
+scripts/                   kopiering av WebAssembly-filer og røyktester
 ```
+
+Skriften er Jost (SIL Open Font License). Learnlabs egen skrift, Hurme
+Geometric Sans, er lisensiert og ligger derfor ikke i dette åpne repoet.

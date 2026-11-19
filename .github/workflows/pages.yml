@@ -1,4 +1,4 @@
-name: Publiser testsiden
+name: Publiser til GitHub Pages
 
 on:
   push:

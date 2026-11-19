@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Learnlab Puls – sporingstest</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Learnlab Puls · fase 0</p>
+        <h1>Sporingstest</h1>
+        <p class="lead">
+          Denne siden måler hvor godt enheten din klarer å følge kroppen din med kameraet.
+          Testen tar omtrent ett minutt. Stå eller sitt slik at overkroppen synes, og beveg armene litt underveis.
+        </p>
+        <p class="privacy">
+          Kamerabildet tolkes på denne enheten og kastes med en gang. Ingenting sendes eller lagres.
+        </p>
+      </header>
+
+      <section class="stage">
+        <canvas id="scene" width="640" height="360" aria-label="Forhåndsvisning av sporingen"></canvas>
+        <video id="video" playsinline muted aria-hidden="true"></video>
+        <div id="status" class="status" role="status" aria-live="polite">Klar til å starte.</div>
+      </section>
+
+      <div class="actions">
+        <button id="start" class="primary">Start testen</button>
+        <button id="stop" hidden>Stopp</button>
+        <label class="toggle"><input type="checkbox" id="showVideo" /> Vis kamerabildet</label>
+      </div>
+
+      <section>
+        <h2>Resultater</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Oppsett</th>
+                <th scope="col">Lasting</th>
+                <th scope="col">Tolkning per bilde</th>
+                <th scope="col">Forsinkelse</th>
+                <th scope="col">Sporing per sekund</th>
+                <th scope="col">Bildeflyt</th>
+                <th scope="col">Hakk</th>
+                <th scope="col">Kropp funnet</th>
+                <th scope="col">Vurdering</th>
+                <th scope="col"><span class="sr-only">Prøv</span></th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p id="summary" class="summary"></p>
+      </section>
+
+      <section id="reportSection" hidden>
+        <h2>Send tallene videre</h2>
+        <p>Kopier rapporten og lim den inn i tråden. Den inneholder bare måletall og opplysninger om enheten.</p>
+        <button id="copy">Kopier rapporten</button>
+        <span id="copied" role="status" aria-live="polite"></span>
+        <textarea id="report" readonly rows="14" aria-label="Rapport"></textarea>
+      </section>
+
+      <details>
+        <summary>Hva betyr tallene?</summary>
+        <dl>
+          <dt>Tolkning per bilde</dt>
+          <dd>Tiden modellen bruker på ett kamerabilde. Vises som typisk verdi og verste tidel.</dd>
+          <dt>Forsinkelse</dt>
+          <dd>Tiden fra bildet hentes til punktene er klare til å tegnes. Kameraets egen forsinkelse kommer i tillegg.</dd>
+          <dt>Sporing per sekund</dt>
+          <dd>Hvor mange ganger i sekundet kroppen leses. Kameraet gir som regel høyst 30.</dd>
+          <dt>Bildeflyt og hakk</dt>
+          <dd>Hvor jevnt skjermen tegnes mens sporingen går. Hakk er andelen bilder som kom merkbart for sent.</dd>
+          <dt>Kropp funnet</dt>
+          <dd>Andelen bilder der modellen fant skuldre og hofter med rimelig sikkerhet.</dd>
+        </dl>
+      </details>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
