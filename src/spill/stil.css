@@ -1,3 +1,7 @@
+/* Hurme Geometric Sans 3, Learnlabs skrift. Serveres fra egen adresse. */
+@font-face { font-family: Hurme; font-weight: 400; font-display: swap; src: url('./skrift/hurme-400.woff2') format('woff2'); }
+@font-face { font-family: Hurme; font-weight: 600; font-display: swap; src: url('./skrift/hurme-600.woff2') format('woff2'); }
+
 /* Papirklipp: flate former i Learnlab-fargene med en forskjøvet skygge. Mørk tekst på pastell. */
 :root {
   --bakgrunn: #f7f1ec;
@@ -14,7 +18,7 @@
   --gronn-lys: #b2e8d3;
   --rosa-lys: #fccfed;
   --skygge: rgba(30, 30, 30, 0.13);
-  --skrift: Jost, 'Helvetica Neue', Arial, sans-serif;
+  --skrift: Hurme, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   /* Bevegelse: varigheter, kurver og avstander fra designets spesifikasjon. Bare transform og opacity animeres. */
   --t-straks: 100ms;
   --t-rask: 180ms;

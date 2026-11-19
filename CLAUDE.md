@@ -41,5 +41,5 @@ All tekst i grensesnitt, README og kodekommentarer er på norsk (bokmål).
   `src/worker.ts` er målesiden fra fase 0.
 - Spillene (`rekk.ts`, `sveip.ts`) leser bare `Signaler` fra `signaler.ts`.
   Kildene er `kamerakilde.ts` og `pekerkilde.ts`.
-- Skriften Hurme Geometric Sans er lisensiert og ligger ikke i dette åpne
-  repoet. Jost brukes som stedfortreder.
+- Skriften er Hurme Geometric Sans 3 (`src/spill/skrift/`). Learnlab har
+  bruksrett. Filene er lisensiert og skal ikke gjenbrukes utenfor Learnlab.
