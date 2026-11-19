@@ -1,0 +1,256 @@
+{
+  "id": "naturfag-1-4-dyr-og-natur",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "1-4",
+  "tittel": "Dyr og natur",
+  "beskrivelse": "Dyr, planter og årstider.",
+  "lk20": [
+    "NAT01-04, etter 2.–4. trinn: dyr og planter i nærmiljøet og årstidene"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvor mange bein har en edderkopp?",
+      "riktig": "8",
+      "gale": [
+        "6",
+        "4",
+        "10"
+      ],
+      "nokkel": "Hvor mange bein har en edderkopp? 8"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvor mange bein har et insekt?",
+      "riktig": "6",
+      "gale": [
+        "8",
+        "4",
+        "10"
+      ],
+      "nokkel": "Hvor mange bein har et insekt? 6"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket dyr er et pattedyr?",
+      "riktig": "hval",
+      "gale": [
+        "hai",
+        "ørn",
+        "frosk"
+      ],
+      "nokkel": "Hvilket dyr er et pattedyr? hval"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket dyr er en fugl?",
+      "riktig": "pingvin",
+      "gale": [
+        "flaggermus",
+        "bie",
+        "laks"
+      ],
+      "nokkel": "Hvilket dyr er en fugl? pingvin"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket dyr er en fisk?",
+      "riktig": "torsk",
+      "gale": [
+        "delfin",
+        "sel",
+        "krabbe"
+      ],
+      "nokkel": "Hvilket dyr er en fisk? torsk"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket dyr legger egg?",
+      "riktig": "høne",
+      "gale": [
+        "ku",
+        "hund",
+        "hest"
+      ],
+      "nokkel": "Hvilket dyr legger egg? høne"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva spiser en planteeter?",
+      "riktig": "planter",
+      "gale": [
+        "kjøtt",
+        "fisk",
+        "insekter"
+      ],
+      "nokkel": "Hva spiser en planteeter? planter"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva blir et rumpetroll til?",
+      "riktig": "frosk",
+      "gale": [
+        "fisk",
+        "øgle",
+        "snegle"
+      ],
+      "nokkel": "Hva blir et rumpetroll til? frosk"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilket dyr sover i hi om vinteren?",
+      "riktig": "bjørn",
+      "gale": [
+        "elg",
+        "rev",
+        "hare"
+      ],
+      "nokkel": "Hvilket dyr sover i hi om vinteren? bjørn"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva trenger grønne planter for å vokse?",
+      "riktig": "sollys",
+      "gale": [
+        "mørke",
+        "frost",
+        "røyk"
+      ],
+      "nokkel": "Hva trenger grønne planter for å vokse? sollys"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilken årstid kommer etter vinter?",
+      "riktig": "vår",
+      "gale": [
+        "høst",
+        "sommer",
+        "jul"
+      ],
+      "nokkel": "Hvilken årstid kommer etter vinter? vår"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilken årstid kommer etter sommer?",
+      "riktig": "høst",
+      "gale": [
+        "vår",
+        "vinter",
+        "påske"
+      ],
+      "nokkel": "Hvilken årstid kommer etter sommer? høst"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva heter ungen til en sau?",
+      "riktig": "lam",
+      "gale": [
+        "kalv",
+        "føll",
+        "kje"
+      ],
+      "nokkel": "Hva heter ungen til en sau? lam"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva heter ungen til en ku?",
+      "riktig": "kalv",
+      "gale": [
+        "lam",
+        "føll",
+        "valp"
+      ],
+      "nokkel": "Hva heter ungen til en ku? kalv"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter ungen til en hest?",
+      "riktig": "føll",
+      "gale": [
+        "kalv",
+        "lam",
+        "kje"
+      ],
+      "nokkel": "Hva heter ungen til en hest? føll"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter ungen til en hund?",
+      "riktig": "valp",
+      "gale": [
+        "kalv",
+        "føll",
+        "kylling"
+      ],
+      "nokkel": "Hva heter ungen til en hund? valp"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilket tre har nåler?",
+      "riktig": "gran",
+      "gale": [
+        "bjørk",
+        "eik",
+        "rogn"
+      ],
+      "nokkel": "Hvilket tre har nåler? gran"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilket tre har hvit stamme?",
+      "riktig": "bjørk",
+      "gale": [
+        "gran",
+        "furu",
+        "eik"
+      ],
+      "nokkel": "Hvilket tre har hvit stamme? bjørk"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva lager bier?",
+      "riktig": "honning",
+      "gale": [
+        "melk",
+        "silke",
+        "ull"
+      ],
+      "nokkel": "Hva lager bier? honning"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva puster fisker med?",
+      "riktig": "gjeller",
+      "gale": [
+        "lunger",
+        "nese",
+        "finner"
+      ],
+      "nokkel": "Hva puster fisker med? gjeller"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva er is laget av?",
+      "riktig": "vann",
+      "gale": [
+        "luft",
+        "salt",
+        "sand"
+      ],
+      "nokkel": "Hva er is laget av? vann"
+    },
+    {
+      "id": "22",
+      "tekst": "Hvor mange vinger har en fugl?",
+      "riktig": "2",
+      "gale": [
+        "4",
+        "6",
+        "8"
+      ],
+      "nokkel": "Hvor mange vinger har en fugl? 2"
+    }
+  ]
+}

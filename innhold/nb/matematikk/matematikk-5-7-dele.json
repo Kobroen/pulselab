@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-5-7-dele",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "5-7",
+  "tittel": "Divisjon i hodet",
+  "beskrivelse": "Delestykker som går opp.",
+  "lk20": [
+    "MAT01-05, 4.–5. trinn: divisjon og sammenhengen med multiplikasjon"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 54 : 9?",
+      "riktig": "6",
+      "gale": [
+        "7",
+        "8",
+        "9"
+      ],
+      "nokkel": "54 : 9"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 56 : 7?",
+      "riktig": "8",
+      "gale": [
+        "10",
+        "7",
+        "9"
+      ],
+      "nokkel": "56 : 7"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 54 : 6?",
+      "riktig": "9",
+      "gale": [
+        "6",
+        "10",
+        "8"
+      ],
+      "nokkel": "54 : 6"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 30 : 6?",
+      "riktig": "5",
+      "gale": [
+        "6",
+        "4",
+        "7"
+      ],
+      "nokkel": "30 : 6"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 27 : 3?",
+      "riktig": "9",
+      "gale": [
+        "8",
+        "10",
+        "11"
+      ],
+      "nokkel": "27 : 3"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 24 : 3?",
+      "riktig": "8",
+      "gale": [
+        "9",
+        "7",
+        "3"
+      ],
+      "nokkel": "24 : 3"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 63 : 7?",
+      "riktig": "9",
+      "gale": [
+        "11",
+        "10",
+        "8"
+      ],
+      "nokkel": "63 : 7"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 40 : 4?",
+      "riktig": "10",
+      "gale": [
+        "12",
+        "9",
+        "4"
+      ],
+      "nokkel": "40 : 4"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 81 : 9?",
+      "riktig": "9",
+      "gale": [
+        "12",
+        "11",
+        "10"
+      ],
+      "nokkel": "81 : 9"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 36 : 4?",
+      "riktig": "9",
+      "gale": [
+        "10",
+        "11",
+        "8"
+      ],
+      "nokkel": "36 : 4"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er 9 : 3?",
+      "riktig": "3",
+      "gale": [
+        "5",
+        "6",
+        "4"
+      ],
+      "nokkel": "9 : 3"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er 21 : 7?",
+      "riktig": "3",
+      "gale": [
+        "4",
+        "5",
+        "7"
+      ],
+      "nokkel": "21 : 7"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er 27 : 9?",
+      "riktig": "3",
+      "gale": [
+        "9",
+        "5",
+        "2"
+      ],
+      "nokkel": "27 : 9"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 15 : 5?",
+      "riktig": "3",
+      "gale": [
+        "5",
+        "4",
+        "2"
+      ],
+      "nokkel": "15 : 5"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 28 : 4?",
+      "riktig": "7",
+      "gale": [
+        "9",
+        "4",
+        "8"
+      ],
+      "nokkel": "28 : 4"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er 35 : 5?",
+      "riktig": "7",
+      "gale": [
+        "6",
+        "9",
+        "5"
+      ],
+      "nokkel": "35 : 5"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 20 : 4?",
+      "riktig": "5",
+      "gale": [
+        "4",
+        "6",
+        "7"
+      ],
+      "nokkel": "20 : 4"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 42 : 7?",
+      "riktig": "6",
+      "gale": [
+        "7",
+        "8",
+        "5"
+      ],
+      "nokkel": "42 : 7"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er 18 : 6?",
+      "riktig": "3",
+      "gale": [
+        "4",
+        "2",
+        "5"
+      ],
+      "nokkel": "18 : 6"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er 48 : 6?",
+      "riktig": "8",
+      "gale": [
+        "6",
+        "9",
+        "7"
+      ],
+      "nokkel": "48 : 6"
+    }
+  ]
+}

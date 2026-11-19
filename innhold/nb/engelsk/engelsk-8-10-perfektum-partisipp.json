@@ -1,0 +1,278 @@
+{
+  "id": "engelsk-8-10-perfektum-partisipp",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "8-10",
+  "tittel": "Irregular verbs: past participle",
+  "beskrivelse": "Tredje form av uregelrette verb.",
+  "lk20": [
+    "ENG01-04, etter 10. trinn: bruke kunnskap om ordklasser og setningsstruktur"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Past participle of «go»?",
+      "riktig": "gone",
+      "gale": [
+        "went",
+        "goed",
+        "goes"
+      ],
+      "nokkel": "go – gone"
+    },
+    {
+      "id": "02",
+      "tekst": "Past participle of «eat»?",
+      "riktig": "eaten",
+      "gale": [
+        "ate",
+        "eated",
+        "eats"
+      ],
+      "nokkel": "eat – eaten"
+    },
+    {
+      "id": "03",
+      "tekst": "Past participle of «see»?",
+      "riktig": "seen",
+      "gale": [
+        "saw",
+        "seed",
+        "sees"
+      ],
+      "nokkel": "see – seen"
+    },
+    {
+      "id": "04",
+      "tekst": "Past participle of «write»?",
+      "riktig": "written",
+      "gale": [
+        "wrote",
+        "writed",
+        "writen"
+      ],
+      "nokkel": "write – written"
+    },
+    {
+      "id": "05",
+      "tekst": "Past participle of «take»?",
+      "riktig": "taken",
+      "gale": [
+        "took",
+        "taked",
+        "tooken"
+      ],
+      "nokkel": "take – taken"
+    },
+    {
+      "id": "06",
+      "tekst": "Past participle of «break»?",
+      "riktig": "broken",
+      "gale": [
+        "broke",
+        "breaked",
+        "broked"
+      ],
+      "nokkel": "break – broken"
+    },
+    {
+      "id": "07",
+      "tekst": "Past participle of «speak»?",
+      "riktig": "spoken",
+      "gale": [
+        "spoke",
+        "speaked",
+        "spoked"
+      ],
+      "nokkel": "speak – spoken"
+    },
+    {
+      "id": "08",
+      "tekst": "Past participle of «do»?",
+      "riktig": "done",
+      "gale": [
+        "did",
+        "doed",
+        "does"
+      ],
+      "nokkel": "do – done"
+    },
+    {
+      "id": "09",
+      "tekst": "Past participle of «be»?",
+      "riktig": "been",
+      "gale": [
+        "was",
+        "were",
+        "beed"
+      ],
+      "nokkel": "be – been"
+    },
+    {
+      "id": "10",
+      "tekst": "Past participle of «give»?",
+      "riktig": "given",
+      "gale": [
+        "gave",
+        "gived",
+        "gaven"
+      ],
+      "nokkel": "give – given"
+    },
+    {
+      "id": "11",
+      "tekst": "Past participle of «know»?",
+      "riktig": "known",
+      "gale": [
+        "knew",
+        "knowed",
+        "knewn"
+      ],
+      "nokkel": "know – known"
+    },
+    {
+      "id": "12",
+      "tekst": "Past participle of «fly»?",
+      "riktig": "flown",
+      "gale": [
+        "flew",
+        "flyed",
+        "flied"
+      ],
+      "nokkel": "fly – flown"
+    },
+    {
+      "id": "13",
+      "tekst": "Past participle of «drive»?",
+      "riktig": "driven",
+      "gale": [
+        "drove",
+        "drived",
+        "droven"
+      ],
+      "nokkel": "drive – driven"
+    },
+    {
+      "id": "14",
+      "tekst": "Past participle of «choose»?",
+      "riktig": "chosen",
+      "gale": [
+        "chose",
+        "choosed",
+        "choosen"
+      ],
+      "nokkel": "choose – chosen"
+    },
+    {
+      "id": "15",
+      "tekst": "Past participle of «begin»?",
+      "riktig": "begun",
+      "gale": [
+        "began",
+        "beginned",
+        "begins"
+      ],
+      "nokkel": "begin – begun"
+    },
+    {
+      "id": "16",
+      "tekst": "Past participle of «drink»?",
+      "riktig": "drunk",
+      "gale": [
+        "drank",
+        "drinked",
+        "drinks"
+      ],
+      "nokkel": "drink – drunk"
+    },
+    {
+      "id": "17",
+      "tekst": "Past participle of «swim»?",
+      "riktig": "swum",
+      "gale": [
+        "swam",
+        "swimmed",
+        "swims"
+      ],
+      "nokkel": "swim – swum"
+    },
+    {
+      "id": "18",
+      "tekst": "Past participle of «sing»?",
+      "riktig": "sung",
+      "gale": [
+        "sang",
+        "singed",
+        "sings"
+      ],
+      "nokkel": "sing – sung"
+    },
+    {
+      "id": "19",
+      "tekst": "Past participle of «ride»?",
+      "riktig": "ridden",
+      "gale": [
+        "rode",
+        "rided",
+        "roden"
+      ],
+      "nokkel": "ride – ridden"
+    },
+    {
+      "id": "20",
+      "tekst": "Past participle of «fall»?",
+      "riktig": "fallen",
+      "gale": [
+        "fell",
+        "falled",
+        "fellen"
+      ],
+      "nokkel": "fall – fallen"
+    },
+    {
+      "id": "21",
+      "tekst": "Past participle of «steal»?",
+      "riktig": "stolen",
+      "gale": [
+        "stole",
+        "stealed",
+        "steals"
+      ],
+      "nokkel": "steal – stolen"
+    },
+    {
+      "id": "22",
+      "tekst": "Past participle of «wear»?",
+      "riktig": "worn",
+      "gale": [
+        "wore",
+        "weared",
+        "wears"
+      ],
+      "nokkel": "wear – worn"
+    },
+    {
+      "id": "23",
+      "tekst": "Past participle of «throw»?",
+      "riktig": "thrown",
+      "gale": [
+        "threw",
+        "throwed",
+        "throws"
+      ],
+      "nokkel": "throw – thrown"
+    },
+    {
+      "id": "24",
+      "tekst": "Past participle of «hide»?",
+      "riktig": "hidden",
+      "gale": [
+        "hid",
+        "hided",
+        "hides"
+      ],
+      "nokkel": "hide – hidden"
+    }
+  ]
+}

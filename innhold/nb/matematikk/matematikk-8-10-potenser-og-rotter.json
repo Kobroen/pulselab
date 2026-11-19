@@ -1,0 +1,256 @@
+{
+  "id": "matematikk-8-10-potenser-og-rotter",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "8-10",
+  "tittel": "Potenser og kvadratrøtter",
+  "beskrivelse": "Kvadrattall, potenser og røtter.",
+  "lk20": [
+    "MAT01-05, 8.–9. trinn: potenser og kvadratrøtter"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 15²?",
+      "riktig": "225",
+      "gale": [
+        "30",
+        "235",
+        "256"
+      ],
+      "nokkel": "15²"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 7²?",
+      "riktig": "49",
+      "gale": [
+        "56",
+        "14",
+        "64"
+      ],
+      "nokkel": "7²"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 6²?",
+      "riktig": "36",
+      "gale": [
+        "12",
+        "49",
+        "30"
+      ],
+      "nokkel": "6²"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 5²?",
+      "riktig": "25",
+      "gale": [
+        "36",
+        "35",
+        "20"
+      ],
+      "nokkel": "5²"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 13²?",
+      "riktig": "169",
+      "gale": [
+        "182",
+        "156",
+        "179"
+      ],
+      "nokkel": "13²"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 3²?",
+      "riktig": "9",
+      "gale": [
+        "6",
+        "16",
+        "19"
+      ],
+      "nokkel": "3²"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 8²?",
+      "riktig": "64",
+      "gale": [
+        "16",
+        "74",
+        "81"
+      ],
+      "nokkel": "8²"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 12²?",
+      "riktig": "144",
+      "gale": [
+        "156",
+        "24",
+        "154"
+      ],
+      "nokkel": "12²"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 4³?",
+      "riktig": "64",
+      "gale": [
+        "256",
+        "81",
+        "68"
+      ],
+      "nokkel": "4³"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 2⁵?",
+      "riktig": "32",
+      "gale": [
+        "34",
+        "25",
+        "64"
+      ],
+      "nokkel": "2⁵"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er 10³?",
+      "riktig": "1000",
+      "gale": [
+        "100",
+        "1010",
+        "10000"
+      ],
+      "nokkel": "10³"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er 3⁴?",
+      "riktig": "81",
+      "gale": [
+        "27",
+        "84",
+        "243"
+      ],
+      "nokkel": "3⁴"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er 5³?",
+      "riktig": "125",
+      "gale": [
+        "625",
+        "25",
+        "15"
+      ],
+      "nokkel": "5³"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 3³?",
+      "riktig": "27",
+      "gale": [
+        "9",
+        "81",
+        "24"
+      ],
+      "nokkel": "3³"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er √169?",
+      "riktig": "13",
+      "gale": [
+        "12",
+        "14",
+        "15"
+      ],
+      "nokkel": "√169"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er √49?",
+      "riktig": "7",
+      "gale": [
+        "8",
+        "6",
+        "25"
+      ],
+      "nokkel": "√49"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er √225?",
+      "riktig": "15",
+      "gale": [
+        "113",
+        "16",
+        "17"
+      ],
+      "nokkel": "√225"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er √400?",
+      "riktig": "20",
+      "gale": [
+        "22",
+        "200",
+        "21"
+      ],
+      "nokkel": "√400"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er √25?",
+      "riktig": "5",
+      "gale": [
+        "7",
+        "4",
+        "13"
+      ],
+      "nokkel": "√25"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er √121?",
+      "riktig": "11",
+      "gale": [
+        "13",
+        "61",
+        "12"
+      ],
+      "nokkel": "√121"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva er √64?",
+      "riktig": "8",
+      "gale": [
+        "32",
+        "10",
+        "9"
+      ],
+      "nokkel": "√64"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva er √100?",
+      "riktig": "10",
+      "gale": [
+        "12",
+        "9",
+        "50"
+      ],
+      "nokkel": "√100"
+    }
+  ]
+}

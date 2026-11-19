@@ -9,7 +9,8 @@
     "build": "npm run vendor && tsc --noEmit && vite build",
     "preview": "vite preview --port 4173",
     "smoke": "node scripts/smoke-spill.mjs",
-    "smoke:sporing": "node scripts/smoke.mjs"
+    "smoke:sporing": "node scripts/smoke.mjs",
+    "innhold:sjekk": "node scripts/sjekk-innhold.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "1.2.3",

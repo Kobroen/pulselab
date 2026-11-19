@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-8-10-likninger",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "8-10",
+  "tittel": "Likninger",
+  "beskrivelse": "Løs enkle likninger i hodet.",
+  "lk20": [
+    "MAT01-05, 8. trinn: løse likninger"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Løs: x + 8 = 12",
+      "riktig": "x = 4",
+      "gale": [
+        "x = 20",
+        "x = 8",
+        "x = 3"
+      ],
+      "nokkel": "x + 8 = 12"
+    },
+    {
+      "id": "02",
+      "tekst": "Løs: x + 9 = 17",
+      "riktig": "x = 8",
+      "gale": [
+        "x = 7",
+        "x = 9",
+        "x = 26"
+      ],
+      "nokkel": "x + 9 = 17"
+    },
+    {
+      "id": "03",
+      "tekst": "Løs: x + 2 = 13",
+      "riktig": "x = 11",
+      "gale": [
+        "x = 10",
+        "x = 2",
+        "x = 15"
+      ],
+      "nokkel": "x + 2 = 13"
+    },
+    {
+      "id": "04",
+      "tekst": "Løs: x + 12 = 14",
+      "riktig": "x = 2",
+      "gale": [
+        "x = 12",
+        "x = 26",
+        "x = 1"
+      ],
+      "nokkel": "x + 12 = 14"
+    },
+    {
+      "id": "05",
+      "tekst": "Løs: x + 9 = 21",
+      "riktig": "x = 12",
+      "gale": [
+        "x = 9",
+        "x = 30",
+        "x = 11"
+      ],
+      "nokkel": "x + 9 = 21"
+    },
+    {
+      "id": "06",
+      "tekst": "Løs: x − 3 = 8",
+      "riktig": "x = 11",
+      "gale": [
+        "x = 5",
+        "x = 10",
+        "x = 8"
+      ],
+      "nokkel": "x − 3 = 8"
+    },
+    {
+      "id": "07",
+      "tekst": "Løs: x − 5 = 4",
+      "riktig": "x = 9",
+      "gale": [
+        "x = 4",
+        "x = 8",
+        "x = −1"
+      ],
+      "nokkel": "x − 5 = 4"
+    },
+    {
+      "id": "08",
+      "tekst": "Løs: x − 3 = 2",
+      "riktig": "x = 5",
+      "gale": [
+        "x = 2",
+        "x = 4",
+        "x = −1"
+      ],
+      "nokkel": "x − 3 = 2"
+    },
+    {
+      "id": "09",
+      "tekst": "Løs: x − 7 = 12",
+      "riktig": "x = 19",
+      "gale": [
+        "x = 12",
+        "x = 18",
+        "x = 5"
+      ],
+      "nokkel": "x − 7 = 12"
+    },
+    {
+      "id": "10",
+      "tekst": "Løs: 6x = 54",
+      "riktig": "x = 9",
+      "gale": [
+        "x = 48",
+        "x = 54",
+        "x = 8"
+      ],
+      "nokkel": "6x = 54"
+    },
+    {
+      "id": "11",
+      "tekst": "Løs: 9x = 27",
+      "riktig": "x = 3",
+      "gale": [
+        "x = 27",
+        "x = 2",
+        "x = 18"
+      ],
+      "nokkel": "9x = 27"
+    },
+    {
+      "id": "12",
+      "tekst": "Løs: 3x = 9",
+      "riktig": "x = 3",
+      "gale": [
+        "x = 6",
+        "x = 2",
+        "x = 9"
+      ],
+      "nokkel": "3x = 9"
+    },
+    {
+      "id": "13",
+      "tekst": "Løs: 4x = 32",
+      "riktig": "x = 8",
+      "gale": [
+        "x = 28",
+        "x = 32",
+        "x = 7"
+      ],
+      "nokkel": "4x = 32"
+    },
+    {
+      "id": "14",
+      "tekst": "Løs: 9x = 72",
+      "riktig": "x = 8",
+      "gale": [
+        "x = 72",
+        "x = 7",
+        "x = 63"
+      ],
+      "nokkel": "9x = 72"
+    },
+    {
+      "id": "15",
+      "tekst": "Løs: 3x + 8 = 14",
+      "riktig": "x = 2",
+      "gale": [
+        "x = 1",
+        "x = 10",
+        "x = 6"
+      ],
+      "nokkel": "3x + 8 = 14"
+    },
+    {
+      "id": "16",
+      "tekst": "Løs: 4x + 4 = 24",
+      "riktig": "x = 5",
+      "gale": [
+        "x = 4",
+        "x = 20",
+        "x = 9"
+      ],
+      "nokkel": "4x + 4 = 24"
+    },
+    {
+      "id": "17",
+      "tekst": "Løs: 3x + 7 = 13",
+      "riktig": "x = 2",
+      "gale": [
+        "x = 9",
+        "x = 6",
+        "x = 1"
+      ],
+      "nokkel": "3x + 7 = 13"
+    },
+    {
+      "id": "18",
+      "tekst": "Løs: 4x + 2 = 30",
+      "riktig": "x = 7",
+      "gale": [
+        "x = 28",
+        "x = 6",
+        "x = 9"
+      ],
+      "nokkel": "4x + 2 = 30"
+    },
+    {
+      "id": "19",
+      "tekst": "Løs: 6x + 3 = 27",
+      "riktig": "x = 4",
+      "gale": [
+        "x = 24",
+        "x = 3",
+        "x = 7"
+      ],
+      "nokkel": "6x + 3 = 27"
+    },
+    {
+      "id": "20",
+      "tekst": "Løs: 5x + 9 = 24",
+      "riktig": "x = 3",
+      "gale": [
+        "x = 2",
+        "x = 12",
+        "x = 15"
+      ],
+      "nokkel": "5x + 9 = 24"
+    }
+  ]
+}

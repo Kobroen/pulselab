@@ -1,0 +1,190 @@
+{
+  "id": "norsk-5-7-og-eller-a",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "5-7",
+  "tittel": "Og eller å?",
+  "beskrivelse": "Velg riktig ord i setningen.",
+  "lk20": [
+    "NOR01-06, etter 7. trinn: mestre sentrale regler for rettskriving"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva mangler? «Jeg liker _ lese.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "på"
+      ],
+      "nokkel": "Jeg liker _ lese. – å"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva mangler? «Kari _ Ola er venner.»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "av"
+      ],
+      "nokkel": "Kari _ Ola er venner. – og"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva mangler? «Det er gøy _ svømme.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "av"
+      ],
+      "nokkel": "Det er gøy _ svømme. – å"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva mangler? «Vi spiser brød _ ost.»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "er"
+      ],
+      "nokkel": "Vi spiser brød _ ost. – og"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva mangler? «Hun prøver _ sove.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "på"
+      ],
+      "nokkel": "Hun prøver _ sove. – å"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva mangler? «Han løp _ løp.»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "av"
+      ],
+      "nokkel": "Han løp _ løp. – og"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva mangler? «Husk _ pusse tennene.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "av"
+      ],
+      "nokkel": "Husk _ pusse tennene. – å"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva mangler? «Jeg har en hund _ en katt.»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "er"
+      ],
+      "nokkel": "Jeg har en hund _ en katt. – og"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva mangler? «Det begynte _ regne.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "av"
+      ],
+      "nokkel": "Det begynte _ regne. – å"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva mangler? «De sang _ danset.»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "er"
+      ],
+      "nokkel": "De sang _ danset. – og"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva mangler? «Jeg glemte _ ringe.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "av"
+      ],
+      "nokkel": "Jeg glemte _ ringe. – å"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva mangler? «Vil du ha saft _ kake?»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "er"
+      ],
+      "nokkel": "Vil du ha saft _ kake? – og"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva mangler? «Det er lett _ lære.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "på"
+      ],
+      "nokkel": "Det er lett _ lære. – å"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva mangler? «Hun lo _ smilte.»",
+      "riktig": "og",
+      "gale": [
+        "å",
+        "at",
+        "av"
+      ],
+      "nokkel": "Hun lo _ smilte. – og"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva mangler? «Han lærte _ sykle.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "på"
+      ],
+      "nokkel": "Han lærte _ sykle. – å"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva mangler? «Jeg kom for _ hjelpe.»",
+      "riktig": "å",
+      "gale": [
+        "og",
+        "at",
+        "av"
+      ],
+      "nokkel": "Jeg kom for _ hjelpe. – å"
+    }
+  ]
+}

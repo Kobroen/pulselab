@@ -1,0 +1,278 @@
+{
+  "id": "engelsk-8-10-falske-venner",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "8-10",
+  "tittel": "False friends",
+  "beskrivelse": "Engelske ord som lett forveksles med norske.",
+  "lk20": [
+    "ENG01-04, etter 10. trinn: utforske likheter og forskjeller mellom engelsk og andre språk"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva betyr «eventually»?",
+      "riktig": "til slutt",
+      "gale": [
+        "eventuelt",
+        "kanskje",
+        "alltid"
+      ],
+      "nokkel": "eventually – til slutt"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva betyr «actual»?",
+      "riktig": "faktisk",
+      "gale": [
+        "aktuell",
+        "aktiv",
+        "snart"
+      ],
+      "nokkel": "actual – faktisk"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva betyr «gift»?",
+      "riktig": "gave",
+      "gale": [
+        "gift",
+        "giftig",
+        "ekteskap"
+      ],
+      "nokkel": "gift – gave"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva betyr «fabric»?",
+      "riktig": "stoff",
+      "gale": [
+        "fabrikk",
+        "fabel",
+        "arbeid"
+      ],
+      "nokkel": "fabric – stoff"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva betyr «chef»?",
+      "riktig": "kokk",
+      "gale": [
+        "sjef",
+        "kjøkken",
+        "leder"
+      ],
+      "nokkel": "chef – kokk"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva betyr «novel»?",
+      "riktig": "roman",
+      "gale": [
+        "novelle",
+        "nyhet",
+        "dikt"
+      ],
+      "nokkel": "novel – roman"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva betyr «barn»?",
+      "riktig": "låve",
+      "gale": [
+        "barn",
+        "bjørn",
+        "bær"
+      ],
+      "nokkel": "barn – låve"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva betyr «sensible»?",
+      "riktig": "fornuftig",
+      "gale": [
+        "følsom",
+        "synlig",
+        "sanselig"
+      ],
+      "nokkel": "sensible – fornuftig"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva betyr «genial»?",
+      "riktig": "vennlig",
+      "gale": [
+        "genial",
+        "generell",
+        "smart"
+      ],
+      "nokkel": "genial – vennlig"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva betyr «rent»?",
+      "riktig": "leie",
+      "gale": [
+        "rent",
+        "renne",
+        "rente"
+      ],
+      "nokkel": "rent – leie"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva betyr «map»?",
+      "riktig": "kart",
+      "gale": [
+        "mappe",
+        "matte",
+        "bord"
+      ],
+      "nokkel": "map – kart"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva betyr «travel»?",
+      "riktig": "reise",
+      "gale": [
+        "travel",
+        "trøbbel",
+        "trav"
+      ],
+      "nokkel": "travel – reise"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva betyr «angel»?",
+      "riktig": "engel",
+      "gale": [
+        "angel",
+        "vinkel",
+        "anker"
+      ],
+      "nokkel": "angel – engel"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva betyr «art»?",
+      "riktig": "kunst",
+      "gale": [
+        "art",
+        "type",
+        "dyr"
+      ],
+      "nokkel": "art – kunst"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva betyr «brave»?",
+      "riktig": "modig",
+      "gale": [
+        "bra",
+        "snill",
+        "flink"
+      ],
+      "nokkel": "brave – modig"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva betyr «offer»?",
+      "riktig": "tilbud",
+      "gale": [
+        "offer",
+        "ofte",
+        "krig"
+      ],
+      "nokkel": "offer – tilbud"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva betyr «sky»?",
+      "riktig": "himmel",
+      "gale": [
+        "sky",
+        "sjø",
+        "regn"
+      ],
+      "nokkel": "sky – himmel"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva betyr «tall»?",
+      "riktig": "høy",
+      "gale": [
+        "tall",
+        "tale",
+        "tynn"
+      ],
+      "nokkel": "tall – høy"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva betyr «stool»?",
+      "riktig": "krakk",
+      "gale": [
+        "stol",
+        "skole",
+        "bord"
+      ],
+      "nokkel": "stool – krakk"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva betyr «kind»?",
+      "riktig": "snill",
+      "gale": [
+        "barn",
+        "kinn",
+        "konge"
+      ],
+      "nokkel": "kind – snill"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva betyr «library»?",
+      "riktig": "bibliotek",
+      "gale": [
+        "bokhandel",
+        "leilighet",
+        "lærer"
+      ],
+      "nokkel": "library – bibliotek"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva betyr «pain»?",
+      "riktig": "smerte",
+      "gale": [
+        "brød",
+        "panne",
+        "penn"
+      ],
+      "nokkel": "pain – smerte"
+    },
+    {
+      "id": "23",
+      "tekst": "Hva betyr «mean»?",
+      "riktig": "slem",
+      "gale": [
+        "mening",
+        "mann",
+        "mindre"
+      ],
+      "nokkel": "mean – slem"
+    },
+    {
+      "id": "24",
+      "tekst": "Hva betyr «smoking»?",
+      "riktig": "røyking",
+      "gale": [
+        "smoking",
+        "dress",
+        "fest"
+      ],
+      "nokkel": "smoking – røyking"
+    }
+  ]
+}

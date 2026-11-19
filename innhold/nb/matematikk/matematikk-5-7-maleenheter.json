@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-5-7-maleenheter",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "5-7",
+  "tittel": "Måleenheter",
+  "beskrivelse": "Gjør om mellom enheter for lengde, masse, volum og tid.",
+  "lk20": [
+    "MAT01-05, 4.–6. trinn: måling og omgjøring mellom enheter"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvor mange cm er 1 m?",
+      "riktig": "100",
+      "gale": [
+        "10",
+        "1000",
+        "60"
+      ],
+      "nokkel": "Hvor mange cm er 1 m? 100"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvor mange m er 1 km?",
+      "riktig": "1000",
+      "gale": [
+        "100",
+        "10",
+        "10 000"
+      ],
+      "nokkel": "Hvor mange m er 1 km? 1000"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvor mange mm er 1 cm?",
+      "riktig": "10",
+      "gale": [
+        "100",
+        "1000",
+        "5"
+      ],
+      "nokkel": "Hvor mange mm er 1 cm? 10"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvor mange g er 1 kg?",
+      "riktig": "1000",
+      "gale": [
+        "100",
+        "10",
+        "500"
+      ],
+      "nokkel": "Hvor mange g er 1 kg? 1000"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvor mange dl er 1 l?",
+      "riktig": "10",
+      "gale": [
+        "100",
+        "1000",
+        "5"
+      ],
+      "nokkel": "Hvor mange dl er 1 l? 10"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvor mange ml er 1 l?",
+      "riktig": "1000",
+      "gale": [
+        "100",
+        "10",
+        "500"
+      ],
+      "nokkel": "Hvor mange ml er 1 l? 1000"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvor mange minutter er 1 time?",
+      "riktig": "60",
+      "gale": [
+        "100",
+        "30",
+        "24"
+      ],
+      "nokkel": "Hvor mange minutter er 1 time? 60"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvor mange sekunder er 1 minutt?",
+      "riktig": "60",
+      "gale": [
+        "100",
+        "30",
+        "10"
+      ],
+      "nokkel": "Hvor mange sekunder er 1 minutt? 60"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvor mange timer er 1 døgn?",
+      "riktig": "24",
+      "gale": [
+        "12",
+        "60",
+        "48"
+      ],
+      "nokkel": "Hvor mange timer er 1 døgn? 24"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvor mange cm er 2,5 m?",
+      "riktig": "250",
+      "gale": [
+        "25",
+        "2500",
+        "205"
+      ],
+      "nokkel": "Hvor mange cm er 2,5 m? 250"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvor mange m er 3,2 km?",
+      "riktig": "3200",
+      "gale": [
+        "320",
+        "32",
+        "32 000"
+      ],
+      "nokkel": "Hvor mange m er 3,2 km? 3200"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvor mange kg er 4500 g?",
+      "riktig": "4,5",
+      "gale": [
+        "45",
+        "0,45",
+        "450"
+      ],
+      "nokkel": "Hvor mange kg er 4500 g? 4,5"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvor mange minutter er 1,5 timer?",
+      "riktig": "90",
+      "gale": [
+        "150",
+        "105",
+        "60"
+      ],
+      "nokkel": "Hvor mange minutter er 1,5 timer? 90"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvor mange dl er 0,5 l?",
+      "riktig": "5",
+      "gale": [
+        "50",
+        "0,5",
+        "500"
+      ],
+      "nokkel": "Hvor mange dl er 0,5 l? 5"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvor mange kg er 1 tonn?",
+      "riktig": "1000",
+      "gale": [
+        "100",
+        "10 000",
+        "500"
+      ],
+      "nokkel": "Hvor mange kg er 1 tonn? 1000"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvor mange g er 0,5 kg?",
+      "riktig": "500",
+      "gale": [
+        "50",
+        "5",
+        "5000"
+      ],
+      "nokkel": "Hvor mange g er 0,5 kg? 500"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvor mange cm er 40 mm?",
+      "riktig": "4",
+      "gale": [
+        "400",
+        "0,4",
+        "40"
+      ],
+      "nokkel": "Hvor mange cm er 40 mm? 4"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvor mange sekunder er 1 time?",
+      "riktig": "3600",
+      "gale": [
+        "360",
+        "600",
+        "1000"
+      ],
+      "nokkel": "Hvor mange sekunder er 1 time? 3600"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvor mange dager har et skuddår?",
+      "riktig": "366",
+      "gale": [
+        "365",
+        "364",
+        "360"
+      ],
+      "nokkel": "Hvor mange dager har et skuddår? 366"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvor mange uker har et år, omtrent?",
+      "riktig": "52",
+      "gale": [
+        "48",
+        "12",
+        "365"
+      ],
+      "nokkel": "Hvor mange uker har et år, omtrent? 52"
+    }
+  ]
+}

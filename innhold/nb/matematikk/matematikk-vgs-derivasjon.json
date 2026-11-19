@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-vgs-derivasjon",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "vgs",
+  "tittel": "Derivasjon",
+  "beskrivelse": "Deriver enkle funksjoner.",
+  "lk20": [
+    "Matematikk vg1–vg2 (S og R): derivasjonsregler"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Deriver: f(x) = x²",
+      "riktig": "2x",
+      "gale": [
+        "x",
+        "2x²",
+        "2"
+      ],
+      "nokkel": "x² – 2x"
+    },
+    {
+      "id": "02",
+      "tekst": "Deriver: f(x) = x³",
+      "riktig": "3x²",
+      "gale": [
+        "3x",
+        "x²",
+        "3x³"
+      ],
+      "nokkel": "x³ – 3x²"
+    },
+    {
+      "id": "03",
+      "tekst": "Deriver: f(x) = 5x",
+      "riktig": "5",
+      "gale": [
+        "5x",
+        "x",
+        "0"
+      ],
+      "nokkel": "5x – 5"
+    },
+    {
+      "id": "04",
+      "tekst": "Deriver: f(x) = 7",
+      "riktig": "0",
+      "gale": [
+        "7",
+        "1",
+        "7x"
+      ],
+      "nokkel": "7 – 0"
+    },
+    {
+      "id": "05",
+      "tekst": "Deriver: f(x) = x",
+      "riktig": "1",
+      "gale": [
+        "0",
+        "x",
+        "2x"
+      ],
+      "nokkel": "x – 1"
+    },
+    {
+      "id": "06",
+      "tekst": "Deriver: f(x) = 3x²",
+      "riktig": "6x",
+      "gale": [
+        "3x",
+        "6x²",
+        "6"
+      ],
+      "nokkel": "3x² – 6x"
+    },
+    {
+      "id": "07",
+      "tekst": "Deriver: f(x) = x⁴",
+      "riktig": "4x³",
+      "gale": [
+        "4x",
+        "x³",
+        "4x⁴"
+      ],
+      "nokkel": "x⁴ – 4x³"
+    },
+    {
+      "id": "08",
+      "tekst": "Deriver: f(x) = 2x³",
+      "riktig": "6x²",
+      "gale": [
+        "6x",
+        "2x²",
+        "6x³"
+      ],
+      "nokkel": "2x³ – 6x²"
+    },
+    {
+      "id": "09",
+      "tekst": "Deriver: f(x) = x² + 3x",
+      "riktig": "2x + 3",
+      "gale": [
+        "2x",
+        "x + 3",
+        "2x + 3x"
+      ],
+      "nokkel": "x² + 3x – 2x + 3"
+    },
+    {
+      "id": "10",
+      "tekst": "Deriver: f(x) = x² − 5",
+      "riktig": "2x",
+      "gale": [
+        "2x − 5",
+        "x − 5",
+        "2"
+      ],
+      "nokkel": "x² − 5 – 2x"
+    },
+    {
+      "id": "11",
+      "tekst": "Deriver: f(x) = 4x + 1",
+      "riktig": "4",
+      "gale": [
+        "4x",
+        "5",
+        "1"
+      ],
+      "nokkel": "4x + 1 – 4"
+    },
+    {
+      "id": "12",
+      "tekst": "Deriver: f(x) = e^x",
+      "riktig": "e^x",
+      "gale": [
+        "x·e^x",
+        "e",
+        "0"
+      ],
+      "nokkel": "e^x – e^x"
+    },
+    {
+      "id": "13",
+      "tekst": "Deriver: f(x) = ln x",
+      "riktig": "1/x",
+      "gale": [
+        "x",
+        "ln x",
+        "e^x"
+      ],
+      "nokkel": "ln x – 1/x"
+    },
+    {
+      "id": "14",
+      "tekst": "Deriver: f(x) = 1/x",
+      "riktig": "−1/x²",
+      "gale": [
+        "1/x²",
+        "ln x",
+        "−1/x"
+      ],
+      "nokkel": "1/x – −1/x²"
+    },
+    {
+      "id": "15",
+      "tekst": "Deriver: f(x) = √x",
+      "riktig": "1/(2√x)",
+      "gale": [
+        "2√x",
+        "√x/2",
+        "1/√x"
+      ],
+      "nokkel": "√x – 1/(2√x)"
+    },
+    {
+      "id": "16",
+      "tekst": "Deriver: f(x) = sin x",
+      "riktig": "cos x",
+      "gale": [
+        "−cos x",
+        "sin x",
+        "−sin x"
+      ],
+      "nokkel": "sin x – cos x"
+    },
+    {
+      "id": "17",
+      "tekst": "Deriver: f(x) = cos x",
+      "riktig": "−sin x",
+      "gale": [
+        "sin x",
+        "cos x",
+        "−cos x"
+      ],
+      "nokkel": "cos x – −sin x"
+    },
+    {
+      "id": "18",
+      "tekst": "Deriver: f(x) = x⁵",
+      "riktig": "5x⁴",
+      "gale": [
+        "5x",
+        "x⁴",
+        "4x⁵"
+      ],
+      "nokkel": "x⁵ – 5x⁴"
+    },
+    {
+      "id": "19",
+      "tekst": "Deriver: f(x) = 10x²",
+      "riktig": "20x",
+      "gale": [
+        "10x",
+        "20x²",
+        "20"
+      ],
+      "nokkel": "10x² – 20x"
+    },
+    {
+      "id": "20",
+      "tekst": "Deriver: f(x) = x³ − x",
+      "riktig": "3x² − 1",
+      "gale": [
+        "3x²",
+        "3x − 1",
+        "x² − 1"
+      ],
+      "nokkel": "x³ − x – 3x² − 1"
+    }
+  ]
+}

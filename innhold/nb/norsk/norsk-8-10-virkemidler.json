@@ -1,0 +1,212 @@
+{
+  "id": "norsk-8-10-virkemidler",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "8-10",
+  "tittel": "Språklige virkemidler",
+  "beskrivelse": "Kjenn igjen virkemiddelet i eksempelet.",
+  "lk20": [
+    "NOR01-06, etter 10. trinn: kjenne igjen og bruke språklige virkemidler"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilket virkemiddel? «Sterk som en bjørn»",
+      "riktig": "sammenlikning",
+      "gale": [
+        "metafor",
+        "besjeling",
+        "enderim"
+      ],
+      "nokkel": "«Sterk som en bjørn» – sammenlikning"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilket virkemiddel? «Livet er en reise»",
+      "riktig": "metafor",
+      "gale": [
+        "sammenlikning",
+        "bokstavrim",
+        "ironi"
+      ],
+      "nokkel": "«Livet er en reise» – metafor"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket virkemiddel? «Vinden hvisket»",
+      "riktig": "besjeling",
+      "gale": [
+        "sammenlikning",
+        "overdrivelse",
+        "enderim"
+      ],
+      "nokkel": "«Vinden hvisket» – besjeling"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket virkemiddel? «Sola smilte til oss»",
+      "riktig": "besjeling",
+      "gale": [
+        "sammenlikning",
+        "ironi",
+        "gjentakelse"
+      ],
+      "nokkel": "«Sola smilte til oss» – besjeling"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket virkemiddel? «Jeg har sagt det tusen ganger»",
+      "riktig": "overdrivelse",
+      "gale": [
+        "metafor",
+        "besjeling",
+        "enderim"
+      ],
+      "nokkel": "«Jeg har sagt det tusen ganger» – overdrivelse"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket virkemiddel? «Ville vinder viste vei»",
+      "riktig": "bokstavrim",
+      "gale": [
+        "enderim",
+        "metafor",
+        "ironi"
+      ],
+      "nokkel": "«Ville vinder viste vei» – bokstavrim"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilket virkemiddel? «Katt og hatt»",
+      "riktig": "enderim",
+      "gale": [
+        "bokstavrim",
+        "metafor",
+        "besjeling"
+      ],
+      "nokkel": "«Katt og hatt» – enderim"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilket virkemiddel? «Aldri, aldri, aldri»",
+      "riktig": "gjentakelse",
+      "gale": [
+        "metafor",
+        "enderim",
+        "besjeling"
+      ],
+      "nokkel": "«Aldri, aldri, aldri» – gjentakelse"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilket virkemiddel? «Hjertet av byen»",
+      "riktig": "metafor",
+      "gale": [
+        "sammenlikning",
+        "gjentakelse",
+        "enderim"
+      ],
+      "nokkel": "«Hjertet av byen» – metafor"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilket virkemiddel? «Rask som lynet»",
+      "riktig": "sammenlikning",
+      "gale": [
+        "metafor",
+        "besjeling",
+        "bokstavrim"
+      ],
+      "nokkel": "«Rask som lynet» – sammenlikning"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilket virkemiddel? «Blomstene danset»",
+      "riktig": "besjeling",
+      "gale": [
+        "sammenlikning",
+        "overdrivelse",
+        "enderim"
+      ],
+      "nokkel": "«Blomstene danset» – besjeling"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilket virkemiddel? «Han er en rev»",
+      "riktig": "metafor",
+      "gale": [
+        "sammenlikning",
+        "besjeling",
+        "gjentakelse"
+      ],
+      "nokkel": "«Han er en rev» – metafor"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket virkemiddel? «Sulten som en ulv»",
+      "riktig": "sammenlikning",
+      "gale": [
+        "metafor",
+        "besjeling",
+        "ironi"
+      ],
+      "nokkel": "«Sulten som en ulv» – sammenlikning"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilket virkemiddel? «Jeg dør av latter»",
+      "riktig": "overdrivelse",
+      "gale": [
+        "sammenlikning",
+        "bokstavrim",
+        "enderim"
+      ],
+      "nokkel": "«Jeg dør av latter» – overdrivelse"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilket virkemiddel? «Store, stygge steiner»",
+      "riktig": "bokstavrim",
+      "gale": [
+        "enderim",
+        "besjeling",
+        "ironi"
+      ],
+      "nokkel": "«Store, stygge steiner» – bokstavrim"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilket virkemiddel? «Hus og mus»",
+      "riktig": "enderim",
+      "gale": [
+        "bokstavrim",
+        "metafor",
+        "overdrivelse"
+      ],
+      "nokkel": "«Hus og mus» – enderim"
+    },
+    {
+      "id": "17",
+      "tekst": "En hvit due som tegn på fred er et ...",
+      "riktig": "symbol",
+      "gale": [
+        "enderim",
+        "bokstavrim",
+        "ordspill"
+      ],
+      "nokkel": "En hvit due som tegn på fred er et ... symbol"
+    },
+    {
+      "id": "18",
+      "tekst": "«Så lurt!» sagt om noe dumt, er ...",
+      "riktig": "ironi",
+      "gale": [
+        "enderim",
+        "besjeling",
+        "symbol"
+      ],
+      "nokkel": "«Så lurt!» sagt om noe dumt, er ... ironi"
+    }
+  ]
+}

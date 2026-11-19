@@ -1,0 +1,278 @@
+{
+  "id": "engelsk-5-7-uregelrette-verb",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "5-7",
+  "tittel": "Irregular verbs: past tense",
+  "beskrivelse": "Fortidsformen av uregelrette verb.",
+  "lk20": [
+    "ENG01-04, etter 7. trinn: bruke kunnskap om ordklasser og setningsstruktur"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Past tense of «go»?",
+      "riktig": "went",
+      "gale": [
+        "goed",
+        "gone",
+        "goes"
+      ],
+      "nokkel": "go – went"
+    },
+    {
+      "id": "02",
+      "tekst": "Past tense of «eat»?",
+      "riktig": "ate",
+      "gale": [
+        "eated",
+        "eaten",
+        "eats"
+      ],
+      "nokkel": "eat – ate"
+    },
+    {
+      "id": "03",
+      "tekst": "Past tense of «see»?",
+      "riktig": "saw",
+      "gale": [
+        "seed",
+        "seen",
+        "sees"
+      ],
+      "nokkel": "see – saw"
+    },
+    {
+      "id": "04",
+      "tekst": "Past tense of «take»?",
+      "riktig": "took",
+      "gale": [
+        "taked",
+        "taken",
+        "takes"
+      ],
+      "nokkel": "take – took"
+    },
+    {
+      "id": "05",
+      "tekst": "Past tense of «write»?",
+      "riktig": "wrote",
+      "gale": [
+        "writed",
+        "written",
+        "writes"
+      ],
+      "nokkel": "write – wrote"
+    },
+    {
+      "id": "06",
+      "tekst": "Past tense of «run»?",
+      "riktig": "ran",
+      "gale": [
+        "runned",
+        "runs",
+        "rans"
+      ],
+      "nokkel": "run – ran"
+    },
+    {
+      "id": "07",
+      "tekst": "Past tense of «buy»?",
+      "riktig": "bought",
+      "gale": [
+        "buyed",
+        "buys",
+        "boughted"
+      ],
+      "nokkel": "buy – bought"
+    },
+    {
+      "id": "08",
+      "tekst": "Past tense of «think»?",
+      "riktig": "thought",
+      "gale": [
+        "thinked",
+        "thinks",
+        "thinkt"
+      ],
+      "nokkel": "think – thought"
+    },
+    {
+      "id": "09",
+      "tekst": "Past tense of «come»?",
+      "riktig": "came",
+      "gale": [
+        "comed",
+        "comes",
+        "camed"
+      ],
+      "nokkel": "come – came"
+    },
+    {
+      "id": "10",
+      "tekst": "Past tense of «give»?",
+      "riktig": "gave",
+      "gale": [
+        "gived",
+        "given",
+        "gives"
+      ],
+      "nokkel": "give – gave"
+    },
+    {
+      "id": "11",
+      "tekst": "Past tense of «know»?",
+      "riktig": "knew",
+      "gale": [
+        "knowed",
+        "known",
+        "knows"
+      ],
+      "nokkel": "know – knew"
+    },
+    {
+      "id": "12",
+      "tekst": "Past tense of «make»?",
+      "riktig": "made",
+      "gale": [
+        "maked",
+        "makes",
+        "maded"
+      ],
+      "nokkel": "make – made"
+    },
+    {
+      "id": "13",
+      "tekst": "Past tense of «say»?",
+      "riktig": "said",
+      "gale": [
+        "sayed",
+        "says",
+        "sayd"
+      ],
+      "nokkel": "say – said"
+    },
+    {
+      "id": "14",
+      "tekst": "Past tense of «find»?",
+      "riktig": "found",
+      "gale": [
+        "finded",
+        "finds",
+        "founded"
+      ],
+      "nokkel": "find – found"
+    },
+    {
+      "id": "15",
+      "tekst": "Past tense of «swim»?",
+      "riktig": "swam",
+      "gale": [
+        "swimmed",
+        "swum",
+        "swims"
+      ],
+      "nokkel": "swim – swam"
+    },
+    {
+      "id": "16",
+      "tekst": "Past tense of «drink»?",
+      "riktig": "drank",
+      "gale": [
+        "drinked",
+        "drunk",
+        "drinks"
+      ],
+      "nokkel": "drink – drank"
+    },
+    {
+      "id": "17",
+      "tekst": "Past tense of «sing»?",
+      "riktig": "sang",
+      "gale": [
+        "singed",
+        "sung",
+        "sings"
+      ],
+      "nokkel": "sing – sang"
+    },
+    {
+      "id": "18",
+      "tekst": "Past tense of «teach»?",
+      "riktig": "taught",
+      "gale": [
+        "teached",
+        "teaches",
+        "teacht"
+      ],
+      "nokkel": "teach – taught"
+    },
+    {
+      "id": "19",
+      "tekst": "Past tense of «catch»?",
+      "riktig": "caught",
+      "gale": [
+        "catched",
+        "catches",
+        "caughted"
+      ],
+      "nokkel": "catch – caught"
+    },
+    {
+      "id": "20",
+      "tekst": "Past tense of «bring»?",
+      "riktig": "brought",
+      "gale": [
+        "bringed",
+        "brang",
+        "brings"
+      ],
+      "nokkel": "bring – brought"
+    },
+    {
+      "id": "21",
+      "tekst": "Past tense of «speak»?",
+      "riktig": "spoke",
+      "gale": [
+        "speaked",
+        "spoken",
+        "speaks"
+      ],
+      "nokkel": "speak – spoke"
+    },
+    {
+      "id": "22",
+      "tekst": "Past tense of «fly»?",
+      "riktig": "flew",
+      "gale": [
+        "flyed",
+        "flown",
+        "flies"
+      ],
+      "nokkel": "fly – flew"
+    },
+    {
+      "id": "23",
+      "tekst": "Past tense of «break»?",
+      "riktig": "broke",
+      "gale": [
+        "breaked",
+        "broken",
+        "breaks"
+      ],
+      "nokkel": "break – broke"
+    },
+    {
+      "id": "24",
+      "tekst": "Past tense of «sleep»?",
+      "riktig": "slept",
+      "gale": [
+        "sleeped",
+        "sleeps",
+        "slepted"
+      ],
+      "nokkel": "sleep – slept"
+    }
+  ]
+}

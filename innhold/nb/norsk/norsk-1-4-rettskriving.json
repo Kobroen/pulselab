@@ -1,0 +1,267 @@
+{
+  "id": "norsk-1-4-rettskriving",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "1-4",
+  "tittel": "Rettskriving: vanlige ord",
+  "beskrivelse": "Finn ordet som er skrevet riktig.",
+  "lk20": [
+    "NOR01-06, etter 4. trinn: skrive med riktig rettskriving"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "katt",
+      "gale": [
+        "kat",
+        "katd",
+        "kaht"
+      ],
+      "nokkel": "katt"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "ball",
+      "gale": [
+        "bal",
+        "balll",
+        "baal"
+      ],
+      "nokkel": "ball"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "hoppe",
+      "gale": [
+        "hopppe",
+        "hobbe",
+        "håppe"
+      ],
+      "nokkel": "hoppe"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "sykkel",
+      "gale": [
+        "sykel",
+        "sykkell",
+        "sykkl"
+      ],
+      "nokkel": "sykkel"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "gutt",
+      "gale": [
+        "guttt",
+        "gudt",
+        "guht"
+      ],
+      "nokkel": "gutt"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "jente",
+      "gale": [
+        "gente",
+        "jænte",
+        "jennte"
+      ],
+      "nokkel": "jente"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "hjerte",
+      "gale": [
+        "jerte",
+        "hjærte",
+        "hjertte"
+      ],
+      "nokkel": "hjerte"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "skole",
+      "gale": [
+        "skolle",
+        "sgole",
+        "skoole"
+      ],
+      "nokkel": "skole"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "hvem",
+      "gale": [
+        "vem",
+        "hvæm",
+        "hvemm"
+      ],
+      "nokkel": "hvem"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "hjem",
+      "gale": [
+        "jem",
+        "hjæm",
+        "hjemm"
+      ],
+      "nokkel": "hjem"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "gjøre",
+      "gale": [
+        "jøre",
+        "gjørre",
+        "giøre"
+      ],
+      "nokkel": "gjøre"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "kjøre",
+      "gale": [
+        "kjørre",
+        "sjøre",
+        "kjøhre"
+      ],
+      "nokkel": "kjøre"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "også",
+      "gale": [
+        "åsså",
+        "ogso",
+        "ågså"
+      ],
+      "nokkel": "også"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "hvorfor",
+      "gale": [
+        "vorfor",
+        "hvorfår",
+        "hvårfor"
+      ],
+      "nokkel": "hvorfor"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "eple",
+      "gale": [
+        "epple",
+        "æple",
+        "eble"
+      ],
+      "nokkel": "eple"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "appelsin",
+      "gale": [
+        "apelsin",
+        "appelsinn",
+        "abbelsin"
+      ],
+      "nokkel": "appelsin"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "lærer",
+      "gale": [
+        "lerer",
+        "lærrer",
+        "lærær"
+      ],
+      "nokkel": "lærer"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "søster",
+      "gale": [
+        "søsster",
+        "søstær",
+        "søstr"
+      ],
+      "nokkel": "søster"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "fotball",
+      "gale": [
+        "fotbal",
+        "fottball",
+        "fodball"
+      ],
+      "nokkel": "fotball"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "bursdag",
+      "gale": [
+        "bursda",
+        "bursjdag",
+        "busdag"
+      ],
+      "nokkel": "bursdag"
+    },
+    {
+      "id": "21",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "sjokolade",
+      "gale": [
+        "sjokkolade",
+        "sjokolde",
+        "skokolade"
+      ],
+      "nokkel": "sjokolade"
+    },
+    {
+      "id": "22",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "elleve",
+      "gale": [
+        "eleve",
+        "ellve",
+        "ælleve"
+      ],
+      "nokkel": "elleve"
+    },
+    {
+      "id": "23",
+      "tekst": "Hvilket ord er skrevet riktig?",
+      "riktig": "tjue",
+      "gale": [
+        "kjue",
+        "tjuve",
+        "sjue"
+      ],
+      "nokkel": "tjue"
+    }
+  ]
+}

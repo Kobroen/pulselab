@@ -1,0 +1,644 @@
+{
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": [
+    {
+      "id": "matematikk",
+      "navn": "Matematikk"
+    },
+    {
+      "id": "norsk",
+      "navn": "Norsk"
+    },
+    {
+      "id": "engelsk",
+      "navn": "Engelsk"
+    },
+    {
+      "id": "naturfag",
+      "navn": "Naturfag"
+    },
+    {
+      "id": "samfunnsfag",
+      "navn": "Samfunnsfag"
+    },
+    {
+      "id": "krle",
+      "navn": "KRLE"
+    }
+  ],
+  "trinn": [
+    {
+      "id": "1-4",
+      "navn": "1.–4. trinn"
+    },
+    {
+      "id": "5-7",
+      "navn": "5.–7. trinn"
+    },
+    {
+      "id": "8-10",
+      "navn": "8.–10. trinn"
+    },
+    {
+      "id": "vgs",
+      "navn": "Vgs og voksne"
+    }
+  ],
+  "sett": [
+    {
+      "id": "matematikk-1-4-dobbelt-og-halvparten",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Dobbelt og halvparten",
+      "beskrivelse": "Doble og halvere tall.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-1-4-dobbelt-og-halvparten.json"
+    },
+    {
+      "id": "matematikk-1-4-former-tid-og-tall",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Former, tid og tall",
+      "beskrivelse": "Blandede oppgaver om former, klokke, penger og tallrekka.",
+      "antall": 27,
+      "fil": "matematikk/matematikk-1-4-former-tid-og-tall.json"
+    },
+    {
+      "id": "matematikk-1-4-gange-2-5-10",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Gangetabellen: 2, 5 og 10",
+      "beskrivelse": "2-, 5- og 10-gangen.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-1-4-gange-2-5-10.json"
+    },
+    {
+      "id": "matematikk-1-4-gange-3-4",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Gangetabellen: 3 og 4",
+      "beskrivelse": "3- og 4-gangen.",
+      "antall": 16,
+      "fil": "matematikk/matematikk-1-4-gange-3-4.json"
+    },
+    {
+      "id": "matematikk-1-4-minus-til-20",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Minus opp til 20",
+      "beskrivelse": "Subtraksjon med tall opp til 20.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-1-4-minus-til-20.json"
+    },
+    {
+      "id": "matematikk-1-4-pluss-minus-til-100",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Pluss og minus opp til 100",
+      "beskrivelse": "Hoderegning med tiere og tierovergang.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-1-4-pluss-minus-til-100.json"
+    },
+    {
+      "id": "matematikk-1-4-pluss-til-20",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Pluss opp til 20",
+      "beskrivelse": "Addisjon med svar opp til 20.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-1-4-pluss-til-20.json"
+    },
+    {
+      "id": "matematikk-1-4-tiervenner",
+      "fag": "matematikk",
+      "trinn": "1-4",
+      "tittel": "Tiervenner og tjuevenner",
+      "beskrivelse": "Finn tallet som mangler for å få 10 eller 20.",
+      "antall": 18,
+      "fil": "matematikk/matematikk-1-4-tiervenner.json"
+    },
+    {
+      "id": "norsk-1-4-alfabetet",
+      "fag": "norsk",
+      "trinn": "1-4",
+      "tittel": "Alfabetet og vokalene",
+      "beskrivelse": "Bokstavenes rekkefølge og hvilke som er vokaler.",
+      "antall": 20,
+      "fil": "norsk/norsk-1-4-alfabetet.json"
+    },
+    {
+      "id": "norsk-1-4-motsetninger",
+      "fag": "norsk",
+      "trinn": "1-4",
+      "tittel": "Motsetninger",
+      "beskrivelse": "Finn ordet som betyr det motsatte.",
+      "antall": 20,
+      "fil": "norsk/norsk-1-4-motsetninger.json"
+    },
+    {
+      "id": "norsk-1-4-ordklasser",
+      "fag": "norsk",
+      "trinn": "1-4",
+      "tittel": "Ordklasser: substantiv, verb og adjektiv",
+      "beskrivelse": "Finn ordet som hører til ordklassen.",
+      "antall": 24,
+      "fil": "norsk/norsk-1-4-ordklasser.json"
+    },
+    {
+      "id": "norsk-1-4-rettskriving",
+      "fag": "norsk",
+      "trinn": "1-4",
+      "tittel": "Rettskriving: vanlige ord",
+      "beskrivelse": "Finn ordet som er skrevet riktig.",
+      "antall": 23,
+      "fil": "norsk/norsk-1-4-rettskriving.json"
+    },
+    {
+      "id": "norsk-1-4-rimord",
+      "fag": "norsk",
+      "trinn": "1-4",
+      "tittel": "Rimord",
+      "beskrivelse": "Finn ordet som rimer.",
+      "antall": 22,
+      "fil": "norsk/norsk-1-4-rimord.json"
+    },
+    {
+      "id": "engelsk-1-4-dyr",
+      "fag": "engelsk",
+      "trinn": "1-4",
+      "tittel": "Animals",
+      "beskrivelse": "Dyr på engelsk.",
+      "antall": 22,
+      "fil": "engelsk/engelsk-1-4-dyr.json"
+    },
+    {
+      "id": "engelsk-1-4-farger-og-tall",
+      "fag": "engelsk",
+      "trinn": "1-4",
+      "tittel": "Colours and numbers",
+      "beskrivelse": "Farger og tall på engelsk.",
+      "antall": 20,
+      "fil": "engelsk/engelsk-1-4-farger-og-tall.json"
+    },
+    {
+      "id": "engelsk-1-4-hjemme-og-pa-skolen",
+      "fag": "engelsk",
+      "trinn": "1-4",
+      "tittel": "At home and at school",
+      "beskrivelse": "Hverdagsord fra hjem, mat og skole.",
+      "antall": 22,
+      "fil": "engelsk/engelsk-1-4-hjemme-og-pa-skolen.json"
+    },
+    {
+      "id": "engelsk-1-4-kropp-og-klaer",
+      "fag": "engelsk",
+      "trinn": "1-4",
+      "tittel": "Body and clothes",
+      "beskrivelse": "Kroppen og klær på engelsk.",
+      "antall": 20,
+      "fil": "engelsk/engelsk-1-4-kropp-og-klaer.json"
+    },
+    {
+      "id": "naturfag-1-4-dyr-og-natur",
+      "fag": "naturfag",
+      "trinn": "1-4",
+      "tittel": "Dyr og natur",
+      "beskrivelse": "Dyr, planter og årstider.",
+      "antall": 22,
+      "fil": "naturfag/naturfag-1-4-dyr-og-natur.json"
+    },
+    {
+      "id": "naturfag-1-4-kroppen-og-sansene",
+      "fag": "naturfag",
+      "trinn": "1-4",
+      "tittel": "Kroppen og sansene",
+      "beskrivelse": "Sansene, kroppsdeler og helse.",
+      "antall": 18,
+      "fil": "naturfag/naturfag-1-4-kroppen-og-sansene.json"
+    },
+    {
+      "id": "samfunnsfag-1-4-norge-og-verden",
+      "fag": "samfunnsfag",
+      "trinn": "1-4",
+      "tittel": "Norge og verden",
+      "beskrivelse": "Norge, kart, verdensdeler og samfunnet rundt oss.",
+      "antall": 22,
+      "fil": "samfunnsfag/samfunnsfag-1-4-norge-og-verden.json"
+    },
+    {
+      "id": "matematikk-5-7-avrunding",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Avrunding",
+      "beskrivelse": "Rund av til nærmeste tier, hundrer eller hele tall.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-5-7-avrunding.json"
+    },
+    {
+      "id": "matematikk-5-7-brok-desimal-prosent",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Brøk, desimaltall og prosent",
+      "beskrivelse": "Veksle mellom brøk, desimaltall og prosent.",
+      "antall": 23,
+      "fil": "matematikk/matematikk-5-7-brok-desimal-prosent.json"
+    },
+    {
+      "id": "matematikk-5-7-dele",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Divisjon i hodet",
+      "beskrivelse": "Delestykker som går opp.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-5-7-dele.json"
+    },
+    {
+      "id": "matematikk-5-7-gange-6-9",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Gangetabellen: 6 til 9",
+      "beskrivelse": "De vanskeligste gangestykkene.",
+      "antall": 24,
+      "fil": "matematikk/matematikk-5-7-gange-6-9.json"
+    },
+    {
+      "id": "matematikk-5-7-gange-dele-10-100",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Gange og dele med 10, 100 og 1000",
+      "beskrivelse": "Flytt plassverdiene. Desimaltall skrives med komma.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-5-7-gange-dele-10-100.json"
+    },
+    {
+      "id": "matematikk-5-7-maleenheter",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Måleenheter",
+      "beskrivelse": "Gjør om mellom enheter for lengde, masse, volum og tid.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-5-7-maleenheter.json"
+    },
+    {
+      "id": "matematikk-5-7-negative-tall",
+      "fag": "matematikk",
+      "trinn": "5-7",
+      "tittel": "Negative tall",
+      "beskrivelse": "Regn under null.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-5-7-negative-tall.json"
+    },
+    {
+      "id": "norsk-5-7-kj-skj-sj",
+      "fag": "norsk",
+      "trinn": "5-7",
+      "tittel": "Kj-, skj- og sj-lyd",
+      "beskrivelse": "Finn ordet som er skrevet riktig.",
+      "antall": 18,
+      "fil": "norsk/norsk-5-7-kj-skj-sj.json"
+    },
+    {
+      "id": "norsk-5-7-og-eller-a",
+      "fag": "norsk",
+      "trinn": "5-7",
+      "tittel": "Og eller å?",
+      "beskrivelse": "Velg riktig ord i setningen.",
+      "antall": 16,
+      "fil": "norsk/norsk-5-7-og-eller-a.json"
+    },
+    {
+      "id": "norsk-5-7-ordklasser-2",
+      "fag": "norsk",
+      "trinn": "5-7",
+      "tittel": "Ordklasser: pronomen, preposisjoner og flere",
+      "beskrivelse": "Finn ordet som hører til ordklassen.",
+      "antall": 21,
+      "fil": "norsk/norsk-5-7-ordklasser-2.json"
+    },
+    {
+      "id": "norsk-5-7-preteritum",
+      "fag": "norsk",
+      "trinn": "5-7",
+      "tittel": "Verb i fortid",
+      "beskrivelse": "Finn preteritum av sterke og uregelrette verb.",
+      "antall": 20,
+      "fil": "norsk/norsk-5-7-preteritum.json"
+    },
+    {
+      "id": "norsk-5-7-synonymer",
+      "fag": "norsk",
+      "trinn": "5-7",
+      "tittel": "Synonymer",
+      "beskrivelse": "Finn ordet som betyr omtrent det samme.",
+      "antall": 20,
+      "fil": "norsk/norsk-5-7-synonymer.json"
+    },
+    {
+      "id": "engelsk-5-7-flertall",
+      "fag": "engelsk",
+      "trinn": "5-7",
+      "tittel": "Plurals",
+      "beskrivelse": "Flertall av engelske substantiv.",
+      "antall": 20,
+      "fil": "engelsk/engelsk-5-7-flertall.json"
+    },
+    {
+      "id": "engelsk-5-7-hverdagsord",
+      "fag": "engelsk",
+      "trinn": "5-7",
+      "tittel": "Everyday words",
+      "beskrivelse": "Vanlige ord fra hverdag og reise.",
+      "antall": 24,
+      "fil": "engelsk/engelsk-5-7-hverdagsord.json"
+    },
+    {
+      "id": "engelsk-5-7-motsetninger",
+      "fag": "engelsk",
+      "trinn": "5-7",
+      "tittel": "Opposites",
+      "beskrivelse": "Finn det motsatte ordet på engelsk.",
+      "antall": 20,
+      "fil": "engelsk/engelsk-5-7-motsetninger.json"
+    },
+    {
+      "id": "engelsk-5-7-uregelrette-verb",
+      "fag": "engelsk",
+      "trinn": "5-7",
+      "tittel": "Irregular verbs: past tense",
+      "beskrivelse": "Fortidsformen av uregelrette verb.",
+      "antall": 24,
+      "fil": "engelsk/engelsk-5-7-uregelrette-verb.json"
+    },
+    {
+      "id": "naturfag-5-7-kroppen-og-helse",
+      "fag": "naturfag",
+      "trinn": "5-7",
+      "tittel": "Kroppen og helse",
+      "beskrivelse": "Organer, blodomløp, skjelett og næringsstoffer.",
+      "antall": 19,
+      "fil": "naturfag/naturfag-5-7-kroppen-og-helse.json"
+    },
+    {
+      "id": "naturfag-5-7-solsystemet",
+      "fag": "naturfag",
+      "trinn": "5-7",
+      "tittel": "Solsystemet",
+      "beskrivelse": "Planetene, sola, månen og verdensrommet.",
+      "antall": 19,
+      "fil": "naturfag/naturfag-5-7-solsystemet.json"
+    },
+    {
+      "id": "naturfag-5-7-stoffer-og-kretslop",
+      "fag": "naturfag",
+      "trinn": "5-7",
+      "tittel": "Stoffer, energi og kretsløp",
+      "beskrivelse": "Faseoverganger, fotosyntese, næringskjeder og energikilder.",
+      "antall": 20,
+      "fil": "naturfag/naturfag-5-7-stoffer-og-kretslop.json"
+    },
+    {
+      "id": "samfunnsfag-5-7-europas-hovedsteder",
+      "fag": "samfunnsfag",
+      "trinn": "5-7",
+      "tittel": "Europas hovedsteder",
+      "beskrivelse": "Koble land og hovedstad.",
+      "antall": 20,
+      "fil": "samfunnsfag/samfunnsfag-5-7-europas-hovedsteder.json"
+    },
+    {
+      "id": "samfunnsfag-5-7-norsk-historie",
+      "fag": "samfunnsfag",
+      "trinn": "5-7",
+      "tittel": "Norsk historie",
+      "beskrivelse": "Fra vikingtid til 1945.",
+      "antall": 19,
+      "fil": "samfunnsfag/samfunnsfag-5-7-norsk-historie.json"
+    },
+    {
+      "id": "krle-5-7-verdensreligioner",
+      "fag": "krle",
+      "trinn": "5-7",
+      "tittel": "Verdensreligioner",
+      "beskrivelse": "Hellige skrifter, gudshus og høytider.",
+      "antall": 21,
+      "fil": "krle/krle-5-7-verdensreligioner.json"
+    },
+    {
+      "id": "matematikk-8-10-algebra",
+      "fag": "matematikk",
+      "trinn": "8-10",
+      "tittel": "Algebra: forenkle og sette inn",
+      "beskrivelse": "Trekk sammen uttrykk og regn ut verdien når x er kjent.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-8-10-algebra.json"
+    },
+    {
+      "id": "matematikk-8-10-likninger",
+      "fag": "matematikk",
+      "trinn": "8-10",
+      "tittel": "Likninger",
+      "beskrivelse": "Løs enkle likninger i hodet.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-8-10-likninger.json"
+    },
+    {
+      "id": "matematikk-8-10-potenser-og-rotter",
+      "fag": "matematikk",
+      "trinn": "8-10",
+      "tittel": "Potenser og kvadratrøtter",
+      "beskrivelse": "Kvadrattall, potenser og røtter.",
+      "antall": 22,
+      "fil": "matematikk/matematikk-8-10-potenser-og-rotter.json"
+    },
+    {
+      "id": "matematikk-8-10-prosent",
+      "fag": "matematikk",
+      "trinn": "8-10",
+      "tittel": "Prosent av et tall",
+      "beskrivelse": "Finn prosentdelen i hodet.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-8-10-prosent.json"
+    },
+    {
+      "id": "matematikk-8-10-regnerekkefolge",
+      "fag": "matematikk",
+      "trinn": "8-10",
+      "tittel": "Regnerekkefølge",
+      "beskrivelse": "Gange og dele før pluss og minus. Parenteser først.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-8-10-regnerekkefolge.json"
+    },
+    {
+      "id": "norsk-8-10-nynorske-ord",
+      "fag": "norsk",
+      "trinn": "8-10",
+      "tittel": "Nynorske ord",
+      "beskrivelse": "Hva heter det nynorske ordet på bokmål?",
+      "antall": 24,
+      "fil": "norsk/norsk-8-10-nynorske-ord.json"
+    },
+    {
+      "id": "norsk-8-10-setningsledd",
+      "fag": "norsk",
+      "trinn": "8-10",
+      "tittel": "Setningsledd",
+      "beskrivelse": "Finn subjekt, verbal, objekt og adverbial.",
+      "antall": 18,
+      "fil": "norsk/norsk-8-10-setningsledd.json"
+    },
+    {
+      "id": "norsk-8-10-virkemidler",
+      "fag": "norsk",
+      "trinn": "8-10",
+      "tittel": "Språklige virkemidler",
+      "beskrivelse": "Kjenn igjen virkemiddelet i eksempelet.",
+      "antall": 18,
+      "fil": "norsk/norsk-8-10-virkemidler.json"
+    },
+    {
+      "id": "engelsk-8-10-falske-venner",
+      "fag": "engelsk",
+      "trinn": "8-10",
+      "tittel": "False friends",
+      "beskrivelse": "Engelske ord som lett forveksles med norske.",
+      "antall": 24,
+      "fil": "engelsk/engelsk-8-10-falske-venner.json"
+    },
+    {
+      "id": "engelsk-8-10-perfektum-partisipp",
+      "fag": "engelsk",
+      "trinn": "8-10",
+      "tittel": "Irregular verbs: past participle",
+      "beskrivelse": "Tredje form av uregelrette verb.",
+      "antall": 24,
+      "fil": "engelsk/engelsk-8-10-perfektum-partisipp.json"
+    },
+    {
+      "id": "engelsk-8-10-synonymer",
+      "fag": "engelsk",
+      "trinn": "8-10",
+      "tittel": "Synonyms",
+      "beskrivelse": "Finn ordet som betyr omtrent det samme.",
+      "antall": 19,
+      "fil": "engelsk/engelsk-8-10-synonymer.json"
+    },
+    {
+      "id": "naturfag-8-10-celler-og-arv",
+      "fag": "naturfag",
+      "trinn": "8-10",
+      "tittel": "Celler, arv og evolusjon",
+      "beskrivelse": "Cellens deler, DNA, arv og evolusjon.",
+      "antall": 18,
+      "fil": "naturfag/naturfag-8-10-celler-og-arv.json"
+    },
+    {
+      "id": "naturfag-8-10-energi-og-elektrisitet",
+      "fag": "naturfag",
+      "trinn": "8-10",
+      "tittel": "Energi, elektrisitet og enheter",
+      "beskrivelse": "Størrelser, enheter, partikler og pH.",
+      "antall": 20,
+      "fil": "naturfag/naturfag-8-10-energi-og-elektrisitet.json"
+    },
+    {
+      "id": "naturfag-8-10-grunnstoffer",
+      "fag": "naturfag",
+      "trinn": "8-10",
+      "tittel": "Grunnstoffer og symboler",
+      "beskrivelse": "Kjemiske symboler for vanlige grunnstoffer.",
+      "antall": 22,
+      "fil": "naturfag/naturfag-8-10-grunnstoffer.json"
+    },
+    {
+      "id": "samfunnsfag-8-10-demokrati",
+      "fag": "samfunnsfag",
+      "trinn": "8-10",
+      "tittel": "Demokrati og styresett",
+      "beskrivelse": "Storting, regjering, domstoler og internasjonalt samarbeid.",
+      "antall": 19,
+      "fil": "samfunnsfag/samfunnsfag-8-10-demokrati.json"
+    },
+    {
+      "id": "samfunnsfag-8-10-verdenshistorie",
+      "fag": "samfunnsfag",
+      "trinn": "8-10",
+      "tittel": "Verdenshistorie",
+      "beskrivelse": "Revolusjoner, verdenskriger og tiden etter.",
+      "antall": 20,
+      "fil": "samfunnsfag/samfunnsfag-8-10-verdenshistorie.json"
+    },
+    {
+      "id": "krle-8-10-filosofi-og-etikk",
+      "fag": "krle",
+      "trinn": "8-10",
+      "tittel": "Filosofi, etikk og religion",
+      "beskrivelse": "Filosofer, etiske modeller og religionskunnskap.",
+      "antall": 17,
+      "fil": "krle/krle-8-10-filosofi-og-etikk.json"
+    },
+    {
+      "id": "matematikk-vgs-derivasjon",
+      "fag": "matematikk",
+      "trinn": "vgs",
+      "tittel": "Derivasjon",
+      "beskrivelse": "Deriver enkle funksjoner.",
+      "antall": 20,
+      "fil": "matematikk/matematikk-vgs-derivasjon.json"
+    },
+    {
+      "id": "matematikk-vgs-potenser-og-vekst",
+      "fag": "matematikk",
+      "trinn": "vgs",
+      "tittel": "Potenser, logaritmer og vekstfaktor",
+      "beskrivelse": "Potensregler, standardform, logaritmer og vekstfaktor.",
+      "antall": 21,
+      "fil": "matematikk/matematikk-vgs-potenser-og-vekst.json"
+    },
+    {
+      "id": "norsk-vgs-forfattere",
+      "fag": "norsk",
+      "trinn": "vgs",
+      "tittel": "Norske forfattere og verk",
+      "beskrivelse": "Hvem skrev verket?",
+      "antall": 22,
+      "fil": "norsk/norsk-vgs-forfattere.json"
+    },
+    {
+      "id": "norsk-vgs-retorikk-og-epoker",
+      "fag": "norsk",
+      "trinn": "vgs",
+      "tittel": "Retorikk og litterære epoker",
+      "beskrivelse": "Appellformer og hovedlinjer i litteraturhistorien.",
+      "antall": 14,
+      "fil": "norsk/norsk-vgs-retorikk-og-epoker.json"
+    },
+    {
+      "id": "engelsk-vgs-akademiske-ord",
+      "fag": "engelsk",
+      "trinn": "vgs",
+      "tittel": "Academic vocabulary",
+      "beskrivelse": "Ord du trenger i fagtekster og drøfting.",
+      "antall": 26,
+      "fil": "engelsk/engelsk-vgs-akademiske-ord.json"
+    },
+    {
+      "id": "naturfag-vgs-straling-kjemi-biologi",
+      "fag": "naturfag",
+      "trinn": "vgs",
+      "tittel": "Naturfag vgs: stråling, kjemi og biologi",
+      "beskrivelse": "Blandede oppgaver fra naturfag og realfagene på vgs.",
+      "antall": 19,
+      "fil": "naturfag/naturfag-vgs-straling-kjemi-biologi.json"
+    },
+    {
+      "id": "samfunnsfag-vgs-samfunnskunnskap",
+      "fag": "samfunnsfag",
+      "trinn": "vgs",
+      "tittel": "Samfunnskunnskap: økonomi, politikk og sosiologi",
+      "beskrivelse": "Sentrale begreper fra samfunnskunnskap.",
+      "antall": 19,
+      "fil": "samfunnsfag/samfunnsfag-vgs-samfunnskunnskap.json"
+    }
+  ]
+}

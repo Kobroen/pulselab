@@ -1,0 +1,278 @@
+{
+  "id": "matematikk-5-7-gange-6-9",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "5-7",
+  "tittel": "Gangetabellen: 6 til 9",
+  "beskrivelse": "De vanskeligste gangestykkene.",
+  "lk20": [
+    "MAT01-05, 4.–5. trinn: automatisere multiplikasjon"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 5 × 7?",
+      "riktig": "35",
+      "gale": [
+        "28",
+        "30",
+        "40"
+      ],
+      "nokkel": "5 × 7"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 7 × 7?",
+      "riktig": "49",
+      "gale": [
+        "42",
+        "56",
+        "59"
+      ],
+      "nokkel": "7 × 7"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 9 × 3?",
+      "riktig": "27",
+      "gale": [
+        "30",
+        "24",
+        "18"
+      ],
+      "nokkel": "9 × 3"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 9 × 7?",
+      "riktig": "63",
+      "gale": [
+        "70",
+        "54",
+        "72"
+      ],
+      "nokkel": "9 × 7"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 6 × 9?",
+      "riktig": "54",
+      "gale": [
+        "63",
+        "48",
+        "45"
+      ],
+      "nokkel": "6 × 9"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 7 × 6?",
+      "riktig": "42",
+      "gale": [
+        "36",
+        "35",
+        "49"
+      ],
+      "nokkel": "7 × 6"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 9 × 8?",
+      "riktig": "72",
+      "gale": [
+        "80",
+        "63",
+        "64"
+      ],
+      "nokkel": "9 × 8"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 4 × 6?",
+      "riktig": "24",
+      "gale": [
+        "30",
+        "18",
+        "20"
+      ],
+      "nokkel": "4 × 6"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 6 × 8?",
+      "riktig": "48",
+      "gale": [
+        "56",
+        "42",
+        "40"
+      ],
+      "nokkel": "6 × 8"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 8 × 7?",
+      "riktig": "56",
+      "gale": [
+        "64",
+        "63",
+        "49"
+      ],
+      "nokkel": "8 × 7"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er 6 × 4?",
+      "riktig": "24",
+      "gale": [
+        "18",
+        "30",
+        "28"
+      ],
+      "nokkel": "6 × 4"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er 3 × 6?",
+      "riktig": "18",
+      "gale": [
+        "21",
+        "24",
+        "12"
+      ],
+      "nokkel": "3 × 6"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er 5 × 8?",
+      "riktig": "40",
+      "gale": [
+        "35",
+        "45",
+        "48"
+      ],
+      "nokkel": "5 × 8"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 6 × 7?",
+      "riktig": "42",
+      "gale": [
+        "36",
+        "49",
+        "35"
+      ],
+      "nokkel": "6 × 7"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 7 × 8?",
+      "riktig": "56",
+      "gale": [
+        "48",
+        "49",
+        "64"
+      ],
+      "nokkel": "7 × 8"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er 8 × 9?",
+      "riktig": "72",
+      "gale": [
+        "64",
+        "81",
+        "80"
+      ],
+      "nokkel": "8 × 9"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 9 × 5?",
+      "riktig": "45",
+      "gale": [
+        "40",
+        "50",
+        "36"
+      ],
+      "nokkel": "9 × 5"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 9 × 9?",
+      "riktig": "81",
+      "gale": [
+        "72",
+        "90",
+        "91"
+      ],
+      "nokkel": "9 × 9"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er 4 × 9?",
+      "riktig": "36",
+      "gale": [
+        "32",
+        "45",
+        "27"
+      ],
+      "nokkel": "4 × 9"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er 3 × 9?",
+      "riktig": "27",
+      "gale": [
+        "36",
+        "30",
+        "24"
+      ],
+      "nokkel": "3 × 9"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva er 9 × 6?",
+      "riktig": "54",
+      "gale": [
+        "45",
+        "48",
+        "60"
+      ],
+      "nokkel": "9 × 6"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva er 7 × 9?",
+      "riktig": "63",
+      "gale": [
+        "54",
+        "72",
+        "56"
+      ],
+      "nokkel": "7 × 9"
+    },
+    {
+      "id": "23",
+      "tekst": "Hva er 6 × 5?",
+      "riktig": "30",
+      "gale": [
+        "36",
+        "35",
+        "24"
+      ],
+      "nokkel": "6 × 5"
+    },
+    {
+      "id": "24",
+      "tekst": "Hva er 9 × 4?",
+      "riktig": "36",
+      "gale": [
+        "45",
+        "32",
+        "40"
+      ],
+      "nokkel": "9 × 4"
+    }
+  ]
+}

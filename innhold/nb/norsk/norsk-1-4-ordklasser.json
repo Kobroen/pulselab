@@ -1,0 +1,278 @@
+{
+  "id": "norsk-1-4-ordklasser",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "1-4",
+  "tittel": "Ordklasser: substantiv, verb og adjektiv",
+  "beskrivelse": "Finn ordet som hører til ordklassen.",
+  "lk20": [
+    "NOR01-06, etter 4. trinn: ordklasser og hvordan språket er bygd opp"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "løpe",
+      "gale": [
+        "blå",
+        "skole",
+        "stor"
+      ],
+      "nokkel": "løpe (verb)"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "hoppe",
+      "gale": [
+        "myk",
+        "stor",
+        "rask"
+      ],
+      "nokkel": "hoppe (verb)"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "lese",
+      "gale": [
+        "stor",
+        "eple",
+        "snill"
+      ],
+      "nokkel": "lese (verb)"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "synge",
+      "gale": [
+        "rask",
+        "kald",
+        "hus"
+      ],
+      "nokkel": "synge (verb)"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "spise",
+      "gale": [
+        "glad",
+        "kald",
+        "stol"
+      ],
+      "nokkel": "spise (verb)"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "sove",
+      "gale": [
+        "skole",
+        "myk",
+        "hus"
+      ],
+      "nokkel": "sove (verb)"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "skrive",
+      "gale": [
+        "stol",
+        "skole",
+        "vindu"
+      ],
+      "nokkel": "skrive (verb)"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilket ord er et verb?",
+      "riktig": "svømme",
+      "gale": [
+        "kald",
+        "stol",
+        "bok"
+      ],
+      "nokkel": "svømme (verb)"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "hus",
+      "gale": [
+        "synge",
+        "lese",
+        "morsom"
+      ],
+      "nokkel": "hus (substantiv)"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "bil",
+      "gale": [
+        "spise",
+        "løpe",
+        "snill"
+      ],
+      "nokkel": "bil (substantiv)"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "katt",
+      "gale": [
+        "synge",
+        "myk",
+        "kald"
+      ],
+      "nokkel": "katt (substantiv)"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "bok",
+      "gale": [
+        "spise",
+        "rask",
+        "sove"
+      ],
+      "nokkel": "bok (substantiv)"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "stol",
+      "gale": [
+        "hoppe",
+        "glad",
+        "lese"
+      ],
+      "nokkel": "stol (substantiv)"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "eple",
+      "gale": [
+        "glad",
+        "spise",
+        "skrive"
+      ],
+      "nokkel": "eple (substantiv)"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "skole",
+      "gale": [
+        "spise",
+        "blå",
+        "lese"
+      ],
+      "nokkel": "skole (substantiv)"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilket ord er et substantiv?",
+      "riktig": "vindu",
+      "gale": [
+        "sove",
+        "spise",
+        "svømme"
+      ],
+      "nokkel": "vindu (substantiv)"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "blå",
+      "gale": [
+        "skrive",
+        "lese",
+        "bok"
+      ],
+      "nokkel": "blå (adjektiv)"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "glad",
+      "gale": [
+        "katt",
+        "sove",
+        "bil"
+      ],
+      "nokkel": "glad (adjektiv)"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "stor",
+      "gale": [
+        "eple",
+        "svømme",
+        "bok"
+      ],
+      "nokkel": "stor (adjektiv)"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "rask",
+      "gale": [
+        "svømme",
+        "skole",
+        "hoppe"
+      ],
+      "nokkel": "rask (adjektiv)"
+    },
+    {
+      "id": "21",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "myk",
+      "gale": [
+        "sove",
+        "vindu",
+        "synge"
+      ],
+      "nokkel": "myk (adjektiv)"
+    },
+    {
+      "id": "22",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "kald",
+      "gale": [
+        "spise",
+        "stol",
+        "hus"
+      ],
+      "nokkel": "kald (adjektiv)"
+    },
+    {
+      "id": "23",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "snill",
+      "gale": [
+        "hus",
+        "svømme",
+        "sove"
+      ],
+      "nokkel": "snill (adjektiv)"
+    },
+    {
+      "id": "24",
+      "tekst": "Hvilket ord er et adjektiv?",
+      "riktig": "morsom",
+      "gale": [
+        "vindu",
+        "katt",
+        "bil"
+      ],
+      "nokkel": "morsom (adjektiv)"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "id": "naturfag-5-7-solsystemet",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "5-7",
+  "tittel": "Solsystemet",
+  "beskrivelse": "Planetene, sola, månen og verdensrommet.",
+  "lk20": [
+    "NAT01-04, etter 7. trinn: solsystemet, jordas bevegelser og verdensrommet"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilken planet er nærmest sola?",
+      "riktig": "Merkur",
+      "gale": [
+        "Venus",
+        "Mars",
+        "Jorda"
+      ],
+      "nokkel": "Hvilken planet er nærmest sola? Merkur"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilken planet er størst?",
+      "riktig": "Jupiter",
+      "gale": [
+        "Saturn",
+        "Jorda",
+        "Neptun"
+      ],
+      "nokkel": "Hvilken planet er størst? Jupiter"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilken planet kalles den røde?",
+      "riktig": "Mars",
+      "gale": [
+        "Venus",
+        "Jupiter",
+        "Merkur"
+      ],
+      "nokkel": "Hvilken planet kalles den røde? Mars"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilken planet har tydelige ringer?",
+      "riktig": "Saturn",
+      "gale": [
+        "Mars",
+        "Jorda",
+        "Merkur"
+      ],
+      "nokkel": "Hvilken planet har tydelige ringer? Saturn"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvor mange planeter har solsystemet?",
+      "riktig": "8",
+      "gale": [
+        "7",
+        "9",
+        "10"
+      ],
+      "nokkel": "Hvor mange planeter har solsystemet? 8"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er sola?",
+      "riktig": "en stjerne",
+      "gale": [
+        "en planet",
+        "en måne",
+        "en komet"
+      ],
+      "nokkel": "Hva er sola? en stjerne"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvor lang tid bruker jorda rundt sola?",
+      "riktig": "1 år",
+      "gale": [
+        "1 døgn",
+        "1 måned",
+        "1 uke"
+      ],
+      "nokkel": "Hvor lang tid bruker jorda rundt sola? 1 år"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvor lang tid bruker jorda rundt seg selv?",
+      "riktig": "1 døgn",
+      "gale": [
+        "1 år",
+        "1 uke",
+        "1 time"
+      ],
+      "nokkel": "Hvor lang tid bruker jorda rundt seg selv? 1 døgn"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva går i bane rundt jorda?",
+      "riktig": "månen",
+      "gale": [
+        "sola",
+        "Mars",
+        "Venus"
+      ],
+      "nokkel": "Hva går i bane rundt jorda? månen"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvilken planet er lengst fra sola?",
+      "riktig": "Neptun",
+      "gale": [
+        "Uranus",
+        "Saturn",
+        "Jupiter"
+      ],
+      "nokkel": "Hvilken planet er lengst fra sola? Neptun"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvilken planet er nummer tre fra sola?",
+      "riktig": "Jorda",
+      "gale": [
+        "Mars",
+        "Venus",
+        "Merkur"
+      ],
+      "nokkel": "Hvilken planet er nummer tre fra sola? Jorda"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er et stjerneskudd egentlig?",
+      "riktig": "meteor",
+      "gale": [
+        "komet",
+        "planet",
+        "stjerne"
+      ],
+      "nokkel": "Hva er et stjerneskudd egentlig? meteor"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva holder planetene i bane rundt sola?",
+      "riktig": "gravitasjon",
+      "gale": [
+        "magnetisme",
+        "vind",
+        "lys"
+      ],
+      "nokkel": "Hva holder planetene i bane rundt sola? gravitasjon"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken planet er varmest?",
+      "riktig": "Venus",
+      "gale": [
+        "Merkur",
+        "Mars",
+        "Jupiter"
+      ],
+      "nokkel": "Hvilken planet er varmest? Venus"
+    },
+    {
+      "id": "15",
+      "tekst": "Omtrent hvor lenge bruker månen rundt jorda?",
+      "riktig": "1 måned",
+      "gale": [
+        "1 døgn",
+        "1 uke",
+        "1 år"
+      ],
+      "nokkel": "Omtrent hvor lenge bruker månen rundt jorda? 1 måned"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter galaksen vår?",
+      "riktig": "Melkeveien",
+      "gale": [
+        "Andromeda",
+        "Karlsvogna",
+        "Orion"
+      ],
+      "nokkel": "Hva heter galaksen vår? Melkeveien"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvem var første menneske på månen?",
+      "riktig": "Armstrong",
+      "gale": [
+        "Gagarin",
+        "Aldrin",
+        "Amundsen"
+      ],
+      "nokkel": "Hvem var første menneske på månen? Armstrong"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvilket år landet mennesker på månen?",
+      "riktig": "1969",
+      "gale": [
+        "1959",
+        "1979",
+        "1989"
+      ],
+      "nokkel": "Hvilket år landet mennesker på månen? 1969"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvem var første menneske i verdensrommet?",
+      "riktig": "Gagarin",
+      "gale": [
+        "Armstrong",
+        "Aldrin",
+        "Glenn"
+      ],
+      "nokkel": "Hvem var første menneske i verdensrommet? Gagarin"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "id": "samfunnsfag-5-7-norsk-historie",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "samfunnsfag",
+  "trinn": "5-7",
+  "tittel": "Norsk historie",
+  "beskrivelse": "Fra vikingtid til 1945.",
+  "lk20": [
+    "SAF01-04, etter 7. trinn: sentrale hendelser og perioder i norsk historie"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvilket år var slaget på Stiklestad?",
+      "riktig": "1030",
+      "gale": [
+        "1066",
+        "872",
+        "1349"
+      ],
+      "nokkel": "Hvilket år var slaget på Stiklestad? 1030"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvilket år kom svartedauden til Norge?",
+      "riktig": "1349",
+      "gale": [
+        "1030",
+        "1537",
+        "1814"
+      ],
+      "nokkel": "Hvilket år kom svartedauden til Norge? 1349"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvilket år fikk Norge sin grunnlov?",
+      "riktig": "1814",
+      "gale": [
+        "1905",
+        "1945",
+        "1349"
+      ],
+      "nokkel": "Hvilket år fikk Norge sin grunnlov? 1814"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket år ble unionen med Sverige oppløst?",
+      "riktig": "1905",
+      "gale": [
+        "1814",
+        "1940",
+        "1945"
+      ],
+      "nokkel": "Hvilket år ble unionen med Sverige oppløst? 1905"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilket år ble Norge okkupert av Tyskland?",
+      "riktig": "1940",
+      "gale": [
+        "1939",
+        "1945",
+        "1914"
+      ],
+      "nokkel": "Hvilket år ble Norge okkupert av Tyskland? 1940"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilket år sluttet andre verdenskrig?",
+      "riktig": "1945",
+      "gale": [
+        "1940",
+        "1918",
+        "1950"
+      ],
+      "nokkel": "Hvilket år sluttet andre verdenskrig? 1945"
+    },
+    {
+      "id": "07",
+      "tekst": "Hvor ble Grunnloven skrevet?",
+      "riktig": "Eidsvoll",
+      "gale": [
+        "Oslo",
+        "Bergen",
+        "Trondheim"
+      ],
+      "nokkel": "Hvor ble Grunnloven skrevet? Eidsvoll"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva kalte vikingene krigsskipene sine?",
+      "riktig": "langskip",
+      "gale": [
+        "galeier",
+        "karaveller",
+        "kanoer"
+      ],
+      "nokkel": "Hva kalte vikingene krigsskipene sine? langskip"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvem regnes som første europeer i Amerika?",
+      "riktig": "Leiv Eiriksson",
+      "gale": [
+        "Columbus",
+        "Magellan",
+        "Marco Polo"
+      ],
+      "nokkel": "Hvem regnes som første europeer i Amerika? Leiv Eiriksson"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva het vikingenes skrifttegn?",
+      "riktig": "runer",
+      "gale": [
+        "hieroglyfer",
+        "kileskrift",
+        "piktogram"
+      ],
+      "nokkel": "Hva het vikingenes skrifttegn? runer"
+    },
+    {
+      "id": "11",
+      "tekst": "Hvem var tordenguden i norrøn mytologi?",
+      "riktig": "Tor",
+      "gale": [
+        "Odin",
+        "Loke",
+        "Balder"
+      ],
+      "nokkel": "Hvem var tordenguden i norrøn mytologi? Tor"
+    },
+    {
+      "id": "12",
+      "tekst": "Hvem var den øverste guden i norrøn mytologi?",
+      "riktig": "Odin",
+      "gale": [
+        "Tor",
+        "Frøy",
+        "Loke"
+      ],
+      "nokkel": "Hvem var den øverste guden i norrøn mytologi? Odin"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket land var Norge i union med til 1814?",
+      "riktig": "Danmark",
+      "gale": [
+        "Sverige",
+        "Finland",
+        "Island"
+      ],
+      "nokkel": "Hvilket land var Norge i union med til 1814? Danmark"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilket år fikk kvinner stemmerett i Norge?",
+      "riktig": "1913",
+      "gale": [
+        "1814",
+        "1905",
+        "1945"
+      ],
+      "nokkel": "Hvilket år fikk kvinner stemmerett i Norge? 1913"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter samenes folkevalgte forsamling?",
+      "riktig": "Sametinget",
+      "gale": [
+        "Stortinget",
+        "Lagtinget",
+        "Alltinget"
+      ],
+      "nokkel": "Hva heter samenes folkevalgte forsamling? Sametinget"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvem nådde Sydpolen først, i 1911?",
+      "riktig": "Amundsen",
+      "gale": [
+        "Nansen",
+        "Scott",
+        "Heyerdahl"
+      ],
+      "nokkel": "Hvem nådde Sydpolen først, i 1911? Amundsen"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvem krysset Stillehavet på Kon-Tiki?",
+      "riktig": "Heyerdahl",
+      "gale": [
+        "Amundsen",
+        "Nansen",
+        "Ingstad"
+      ],
+      "nokkel": "Hvem krysset Stillehavet på Kon-Tiki? Heyerdahl"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvem ble konge i Norge i 1905?",
+      "riktig": "Haakon 7.",
+      "gale": [
+        "Olav 5.",
+        "Harald 5.",
+        "Oscar 2."
+      ],
+      "nokkel": "Hvem ble konge i Norge i 1905? Haakon 7."
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilken religion kom til Norge rundt år 1000?",
+      "riktig": "kristendom",
+      "gale": [
+        "islam",
+        "åsatro",
+        "buddhisme"
+      ],
+      "nokkel": "Hvilken religion kom til Norge rundt år 1000? kristendom"
+    }
+  ]
+}

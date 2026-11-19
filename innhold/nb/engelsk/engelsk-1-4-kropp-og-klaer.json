@@ -1,0 +1,234 @@
+{
+  "id": "engelsk-1-4-kropp-og-klaer",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "1-4",
+  "tittel": "Body and clothes",
+  "beskrivelse": "Kroppen og klær på engelsk.",
+  "lk20": [
+    "ENG01-04, etter 2.–4. trinn: lytte til, lese og bruke vanlige ord og fraser"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva heter «hode» på engelsk?",
+      "riktig": "head",
+      "gale": [
+        "back",
+        "mouth",
+        "foot"
+      ],
+      "nokkel": "hode – head"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva heter «hånd» på engelsk?",
+      "riktig": "hand",
+      "gale": [
+        "nose",
+        "ear",
+        "back"
+      ],
+      "nokkel": "hånd – hand"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva heter «fot» på engelsk?",
+      "riktig": "foot",
+      "gale": [
+        "eye",
+        "nose",
+        "knee"
+      ],
+      "nokkel": "fot – foot"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva heter «øye» på engelsk?",
+      "riktig": "eye",
+      "gale": [
+        "head",
+        "ear",
+        "back"
+      ],
+      "nokkel": "øye – eye"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva heter «øre» på engelsk?",
+      "riktig": "ear",
+      "gale": [
+        "mouth",
+        "nose",
+        "head"
+      ],
+      "nokkel": "øre – ear"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva heter «nese» på engelsk?",
+      "riktig": "nose",
+      "gale": [
+        "hand",
+        "hair",
+        "back"
+      ],
+      "nokkel": "nese – nose"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva heter «munn» på engelsk?",
+      "riktig": "mouth",
+      "gale": [
+        "ear",
+        "back",
+        "tooth"
+      ],
+      "nokkel": "munn – mouth"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva heter «hår» på engelsk?",
+      "riktig": "hair",
+      "gale": [
+        "mouth",
+        "tooth",
+        "back"
+      ],
+      "nokkel": "hår – hair"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva heter «bein» på engelsk?",
+      "riktig": "leg",
+      "gale": [
+        "knee",
+        "hair",
+        "eye"
+      ],
+      "nokkel": "bein – leg"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva heter «tann» på engelsk?",
+      "riktig": "tooth",
+      "gale": [
+        "mouth",
+        "back",
+        "hair"
+      ],
+      "nokkel": "tann – tooth"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva heter «kne» på engelsk?",
+      "riktig": "knee",
+      "gale": [
+        "leg",
+        "hair",
+        "ear"
+      ],
+      "nokkel": "kne – knee"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva heter «rygg» på engelsk?",
+      "riktig": "back",
+      "gale": [
+        "eye",
+        "hand",
+        "head"
+      ],
+      "nokkel": "rygg – back"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva heter «genser» på engelsk?",
+      "riktig": "sweater",
+      "gale": [
+        "skirt",
+        "dress",
+        "shirt"
+      ],
+      "nokkel": "genser – sweater"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva heter «bukse» på engelsk?",
+      "riktig": "trousers",
+      "gale": [
+        "skirt",
+        "sweater",
+        "shirt"
+      ],
+      "nokkel": "bukse – trousers"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter «sko» på engelsk?",
+      "riktig": "shoe",
+      "gale": [
+        "trousers",
+        "jacket",
+        "shirt"
+      ],
+      "nokkel": "sko – shoe"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter «jakke» på engelsk?",
+      "riktig": "jacket",
+      "gale": [
+        "trousers",
+        "dress",
+        "shoe"
+      ],
+      "nokkel": "jakke – jacket"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva heter «skjørt» på engelsk?",
+      "riktig": "skirt",
+      "gale": [
+        "dress",
+        "trousers",
+        "sweater"
+      ],
+      "nokkel": "skjørt – skirt"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva heter «skjorte» på engelsk?",
+      "riktig": "shirt",
+      "gale": [
+        "sock",
+        "sweater",
+        "skirt"
+      ],
+      "nokkel": "skjorte – shirt"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva heter «sokk» på engelsk?",
+      "riktig": "sock",
+      "gale": [
+        "sweater",
+        "shoe",
+        "jacket"
+      ],
+      "nokkel": "sokk – sock"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva heter «kjole» på engelsk?",
+      "riktig": "dress",
+      "gale": [
+        "skirt",
+        "shirt",
+        "trousers"
+      ],
+      "nokkel": "kjole – dress"
+    }
+  ]
+}

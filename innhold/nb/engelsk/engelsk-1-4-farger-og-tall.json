@@ -1,0 +1,234 @@
+{
+  "id": "engelsk-1-4-farger-og-tall",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "1-4",
+  "tittel": "Colours and numbers",
+  "beskrivelse": "Farger og tall på engelsk.",
+  "lk20": [
+    "ENG01-04, etter 2.–4. trinn: lytte til, lese og bruke vanlige ord og fraser"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva heter «rød» på engelsk?",
+      "riktig": "red",
+      "gale": [
+        "green",
+        "white",
+        "yellow"
+      ],
+      "nokkel": "rød – red"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva heter «blå» på engelsk?",
+      "riktig": "blue",
+      "gale": [
+        "red",
+        "green",
+        "pink"
+      ],
+      "nokkel": "blå – blue"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva heter «grønn» på engelsk?",
+      "riktig": "green",
+      "gale": [
+        "black",
+        "red",
+        "brown"
+      ],
+      "nokkel": "grønn – green"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva heter «gul» på engelsk?",
+      "riktig": "yellow",
+      "gale": [
+        "red",
+        "brown",
+        "grey"
+      ],
+      "nokkel": "gul – yellow"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva heter «svart» på engelsk?",
+      "riktig": "black",
+      "gale": [
+        "yellow",
+        "white",
+        "grey"
+      ],
+      "nokkel": "svart – black"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva heter «hvit» på engelsk?",
+      "riktig": "white",
+      "gale": [
+        "green",
+        "brown",
+        "grey"
+      ],
+      "nokkel": "hvit – white"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva heter «rosa» på engelsk?",
+      "riktig": "pink",
+      "gale": [
+        "brown",
+        "purple",
+        "black"
+      ],
+      "nokkel": "rosa – pink"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva heter «lilla» på engelsk?",
+      "riktig": "purple",
+      "gale": [
+        "grey",
+        "yellow",
+        "white"
+      ],
+      "nokkel": "lilla – purple"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva heter «brun» på engelsk?",
+      "riktig": "brown",
+      "gale": [
+        "grey",
+        "blue",
+        "green"
+      ],
+      "nokkel": "brun – brown"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva heter «grå» på engelsk?",
+      "riktig": "grey",
+      "gale": [
+        "green",
+        "pink",
+        "purple"
+      ],
+      "nokkel": "grå – grey"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva heter «tre» på engelsk?",
+      "riktig": "three",
+      "gale": [
+        "four",
+        "seven",
+        "twenty"
+      ],
+      "nokkel": "tre – three"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva heter «fem» på engelsk?",
+      "riktig": "five",
+      "gale": [
+        "one",
+        "seven",
+        "three"
+      ],
+      "nokkel": "fem – five"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva heter «sju» på engelsk?",
+      "riktig": "seven",
+      "gale": [
+        "eleven",
+        "twelve",
+        "twenty"
+      ],
+      "nokkel": "sju – seven"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva heter «åtte» på engelsk?",
+      "riktig": "eight",
+      "gale": [
+        "one",
+        "ten",
+        "five"
+      ],
+      "nokkel": "åtte – eight"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter «ti» på engelsk?",
+      "riktig": "ten",
+      "gale": [
+        "four",
+        "eight",
+        "twenty"
+      ],
+      "nokkel": "ti – ten"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter «elleve» på engelsk?",
+      "riktig": "eleven",
+      "gale": [
+        "three",
+        "one",
+        "four"
+      ],
+      "nokkel": "elleve – eleven"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva heter «tolv» på engelsk?",
+      "riktig": "twelve",
+      "gale": [
+        "twenty",
+        "ten",
+        "three"
+      ],
+      "nokkel": "tolv – twelve"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva heter «tjue» på engelsk?",
+      "riktig": "twenty",
+      "gale": [
+        "one",
+        "five",
+        "eight"
+      ],
+      "nokkel": "tjue – twenty"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva heter «én» på engelsk?",
+      "riktig": "one",
+      "gale": [
+        "eleven",
+        "twenty",
+        "ten"
+      ],
+      "nokkel": "én – one"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva heter «fire» på engelsk?",
+      "riktig": "four",
+      "gale": [
+        "three",
+        "seven",
+        "eleven"
+      ],
+      "nokkel": "fire – four"
+    }
+  ]
+}

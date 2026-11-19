@@ -1,0 +1,234 @@
+{
+  "id": "norsk-5-7-preteritum",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "5-7",
+  "tittel": "Verb i fortid",
+  "beskrivelse": "Finn preteritum av sterke og uregelrette verb.",
+  "lk20": [
+    "NOR01-06, etter 7. trinn: bøyningsmønstre og rettskriving"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Preteritum av «å gå»?",
+      "riktig": "gikk",
+      "gale": [
+        "gådde",
+        "går",
+        "gått"
+      ],
+      "nokkel": "gå – gikk"
+    },
+    {
+      "id": "02",
+      "tekst": "Preteritum av «å se»?",
+      "riktig": "så",
+      "gale": [
+        "sedde",
+        "ser",
+        "sett"
+      ],
+      "nokkel": "se – så"
+    },
+    {
+      "id": "03",
+      "tekst": "Preteritum av «å være»?",
+      "riktig": "var",
+      "gale": [
+        "værte",
+        "er",
+        "vært"
+      ],
+      "nokkel": "være – var"
+    },
+    {
+      "id": "04",
+      "tekst": "Preteritum av «å få»?",
+      "riktig": "fikk",
+      "gale": [
+        "fådde",
+        "får",
+        "fått"
+      ],
+      "nokkel": "få – fikk"
+    },
+    {
+      "id": "05",
+      "tekst": "Preteritum av «å ta»?",
+      "riktig": "tok",
+      "gale": [
+        "tadde",
+        "tar",
+        "tatt"
+      ],
+      "nokkel": "ta – tok"
+    },
+    {
+      "id": "06",
+      "tekst": "Preteritum av «å gi»?",
+      "riktig": "ga",
+      "gale": [
+        "gidde",
+        "gir",
+        "gitt"
+      ],
+      "nokkel": "gi – ga"
+    },
+    {
+      "id": "07",
+      "tekst": "Preteritum av «å skrive»?",
+      "riktig": "skrev",
+      "gale": [
+        "skrivde",
+        "skriver",
+        "skrevet"
+      ],
+      "nokkel": "skrive – skrev"
+    },
+    {
+      "id": "08",
+      "tekst": "Preteritum av «å drikke»?",
+      "riktig": "drakk",
+      "gale": [
+        "drikket",
+        "drikker",
+        "drukket"
+      ],
+      "nokkel": "drikke – drakk"
+    },
+    {
+      "id": "09",
+      "tekst": "Preteritum av «å synge»?",
+      "riktig": "sang",
+      "gale": [
+        "synget",
+        "synger",
+        "sunget"
+      ],
+      "nokkel": "synge – sang"
+    },
+    {
+      "id": "10",
+      "tekst": "Preteritum av «å finne»?",
+      "riktig": "fant",
+      "gale": [
+        "finnet",
+        "finner",
+        "funnet"
+      ],
+      "nokkel": "finne – fant"
+    },
+    {
+      "id": "11",
+      "tekst": "Preteritum av «å sove»?",
+      "riktig": "sov",
+      "gale": [
+        "sovde",
+        "sover",
+        "sovet"
+      ],
+      "nokkel": "sove – sov"
+    },
+    {
+      "id": "12",
+      "tekst": "Preteritum av «å komme»?",
+      "riktig": "kom",
+      "gale": [
+        "kommet",
+        "kommer",
+        "komte"
+      ],
+      "nokkel": "komme – kom"
+    },
+    {
+      "id": "13",
+      "tekst": "Preteritum av «å si»?",
+      "riktig": "sa",
+      "gale": [
+        "sidde",
+        "sier",
+        "sagt"
+      ],
+      "nokkel": "si – sa"
+    },
+    {
+      "id": "14",
+      "tekst": "Preteritum av «å gjøre»?",
+      "riktig": "gjorde",
+      "gale": [
+        "gjørte",
+        "gjør",
+        "gjort"
+      ],
+      "nokkel": "gjøre – gjorde"
+    },
+    {
+      "id": "15",
+      "tekst": "Preteritum av «å vite»?",
+      "riktig": "visste",
+      "gale": [
+        "vitet",
+        "vet",
+        "visst"
+      ],
+      "nokkel": "vite – visste"
+    },
+    {
+      "id": "16",
+      "tekst": "Preteritum av «å ligge»?",
+      "riktig": "lå",
+      "gale": [
+        "ligget",
+        "ligger",
+        "ligde"
+      ],
+      "nokkel": "ligge – lå"
+    },
+    {
+      "id": "17",
+      "tekst": "Preteritum av «å sitte»?",
+      "riktig": "satt",
+      "gale": [
+        "sittet",
+        "sitter",
+        "sittde"
+      ],
+      "nokkel": "sitte – satt"
+    },
+    {
+      "id": "18",
+      "tekst": "Preteritum av «å stå»?",
+      "riktig": "sto",
+      "gale": [
+        "ståtte",
+        "står",
+        "stått"
+      ],
+      "nokkel": "stå – sto"
+    },
+    {
+      "id": "19",
+      "tekst": "Preteritum av «å bære»?",
+      "riktig": "bar",
+      "gale": [
+        "bærte",
+        "bærer",
+        "båret"
+      ],
+      "nokkel": "bære – bar"
+    },
+    {
+      "id": "20",
+      "tekst": "Preteritum av «å le»?",
+      "riktig": "lo",
+      "gale": [
+        "ledde",
+        "ler",
+        "ledd"
+      ],
+      "nokkel": "le – lo"
+    }
+  ]
+}

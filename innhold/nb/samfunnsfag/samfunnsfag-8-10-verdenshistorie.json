@@ -1,0 +1,234 @@
+{
+  "id": "samfunnsfag-8-10-verdenshistorie",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "samfunnsfag",
+  "trinn": "8-10",
+  "tittel": "Verdenshistorie",
+  "beskrivelse": "Revolusjoner, verdenskriger og tiden etter.",
+  "lk20": [
+    "SAF01-04, etter 10. trinn: revolusjoner, verdenskrigene og utviklingen etter 1945"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Når startet første verdenskrig?",
+      "riktig": "1914",
+      "gale": [
+        "1918",
+        "1939",
+        "1905"
+      ],
+      "nokkel": "Når startet første verdenskrig? 1914"
+    },
+    {
+      "id": "02",
+      "tekst": "Når sluttet første verdenskrig?",
+      "riktig": "1918",
+      "gale": [
+        "1914",
+        "1945",
+        "1920"
+      ],
+      "nokkel": "Når sluttet første verdenskrig? 1918"
+    },
+    {
+      "id": "03",
+      "tekst": "Når startet andre verdenskrig?",
+      "riktig": "1939",
+      "gale": [
+        "1940",
+        "1941",
+        "1914"
+      ],
+      "nokkel": "Når startet andre verdenskrig? 1939"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvilket land invaderte Tyskland 1. sept. 1939?",
+      "riktig": "Polen",
+      "gale": [
+        "Frankrike",
+        "Norge",
+        "Danmark"
+      ],
+      "nokkel": "Hvilket land invaderte Tyskland 1. sept. 1939? Polen"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvilken dato ble Norge angrepet i 1940?",
+      "riktig": "9. april",
+      "gale": [
+        "8. mai",
+        "17. mai",
+        "7. juni"
+      ],
+      "nokkel": "Hvilken dato ble Norge angrepet i 1940? 9. april"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvilken dato er frigjøringsdagen (1945)?",
+      "riktig": "8. mai",
+      "gale": [
+        "9. april",
+        "17. mai",
+        "7. juni"
+      ],
+      "nokkel": "Hvilken dato er frigjøringsdagen (1945)? 8. mai"
+    },
+    {
+      "id": "07",
+      "tekst": "USA mot Sovjet etter 1945 kalles ...",
+      "riktig": "kalde krigen",
+      "gale": [
+        "sjuårskrigen",
+        "vinterkrigen",
+        "borgerkrigen"
+      ],
+      "nokkel": "USA mot Sovjet etter 1945 kalles ... kalde krigen"
+    },
+    {
+      "id": "08",
+      "tekst": "Når falt Berlinmuren?",
+      "riktig": "1989",
+      "gale": [
+        "1961",
+        "1991",
+        "1979"
+      ],
+      "nokkel": "Når falt Berlinmuren? 1989"
+    },
+    {
+      "id": "09",
+      "tekst": "Når ble Sovjetunionen oppløst?",
+      "riktig": "1991",
+      "gale": [
+        "1989",
+        "1985",
+        "1999"
+      ],
+      "nokkel": "Når ble Sovjetunionen oppløst? 1991"
+    },
+    {
+      "id": "10",
+      "tekst": "Når startet den franske revolusjonen?",
+      "riktig": "1789",
+      "gale": [
+        "1776",
+        "1814",
+        "1848"
+      ],
+      "nokkel": "Når startet den franske revolusjonen? 1789"
+    },
+    {
+      "id": "11",
+      "tekst": "Når erklærte USA seg uavhengig?",
+      "riktig": "1776",
+      "gale": [
+        "1789",
+        "1492",
+        "1865"
+      ],
+      "nokkel": "Når erklærte USA seg uavhengig? 1776"
+    },
+    {
+      "id": "12",
+      "tekst": "Når kom Columbus til Amerika?",
+      "riktig": "1492",
+      "gale": [
+        "1392",
+        "1592",
+        "1776"
+      ],
+      "nokkel": "Når kom Columbus til Amerika? 1492"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvor startet den industrielle revolusjonen?",
+      "riktig": "Storbritannia",
+      "gale": [
+        "Tyskland",
+        "USA",
+        "Frankrike"
+      ],
+      "nokkel": "Hvor startet den industrielle revolusjonen? Storbritannia"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvem ledet Sovjetunionen under 2. verdenskrig?",
+      "riktig": "Stalin",
+      "gale": [
+        "Lenin",
+        "Trotskij",
+        "Gorbatsjov"
+      ],
+      "nokkel": "Hvem ledet Sovjetunionen under 2. verdenskrig? Stalin"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvem var britisk statsminister 1940–45?",
+      "riktig": "Churchill",
+      "gale": [
+        "Chamberlain",
+        "Thatcher",
+        "Attlee"
+      ],
+      "nokkel": "Hvem var britisk statsminister 1940–45? Churchill"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilken by ble atombombet først?",
+      "riktig": "Hiroshima",
+      "gale": [
+        "Nagasaki",
+        "Tokyo",
+        "Kyoto"
+      ],
+      "nokkel": "Hvilken by ble atombombet først? Hiroshima"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva het raseskillesystemet i Sør-Afrika?",
+      "riktig": "apartheid",
+      "gale": [
+        "føydalisme",
+        "kommunisme",
+        "imperialisme"
+      ],
+      "nokkel": "Hva het raseskillesystemet i Sør-Afrika? apartheid"
+    },
+    {
+      "id": "18",
+      "tekst": "Hvem ble Sør-Afrikas president i 1994?",
+      "riktig": "Mandela",
+      "gale": [
+        "Tutu",
+        "de Klerk",
+        "Gandhi"
+      ],
+      "nokkel": "Hvem ble Sør-Afrikas president i 1994? Mandela"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvem ledet Indias ikkevoldskamp for frihet?",
+      "riktig": "Gandhi",
+      "gale": [
+        "Nehru",
+        "Mandela",
+        "Mao"
+      ],
+      "nokkel": "Hvem ledet Indias ikkevoldskamp for frihet? Gandhi"
+    },
+    {
+      "id": "20",
+      "tekst": "Når ble slaveriet avskaffet i USA?",
+      "riktig": "1865",
+      "gale": [
+        "1776",
+        "1914",
+        "1789"
+      ],
+      "nokkel": "Når ble slaveriet avskaffet i USA? 1865"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "id": "naturfag-8-10-grunnstoffer",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "8-10",
+  "tittel": "Grunnstoffer og symboler",
+  "beskrivelse": "Kjemiske symboler for vanlige grunnstoffer.",
+  "lk20": [
+    "NAT01-04, etter 10. trinn: periodesystemet og grunnstoffenes egenskaper"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Kjemisk symbol for hydrogen?",
+      "riktig": "H",
+      "gale": [
+        "Hy",
+        "He",
+        "Hg"
+      ],
+      "nokkel": "hydrogen – H"
+    },
+    {
+      "id": "02",
+      "tekst": "Kjemisk symbol for helium?",
+      "riktig": "He",
+      "gale": [
+        "H",
+        "Hl",
+        "Hm"
+      ],
+      "nokkel": "helium – He"
+    },
+    {
+      "id": "03",
+      "tekst": "Kjemisk symbol for karbon?",
+      "riktig": "C",
+      "gale": [
+        "K",
+        "Ca",
+        "Kb"
+      ],
+      "nokkel": "karbon – C"
+    },
+    {
+      "id": "04",
+      "tekst": "Kjemisk symbol for nitrogen?",
+      "riktig": "N",
+      "gale": [
+        "Ni",
+        "Na",
+        "Nt"
+      ],
+      "nokkel": "nitrogen – N"
+    },
+    {
+      "id": "05",
+      "tekst": "Kjemisk symbol for oksygen?",
+      "riktig": "O",
+      "gale": [
+        "Ok",
+        "Os",
+        "Ox"
+      ],
+      "nokkel": "oksygen – O"
+    },
+    {
+      "id": "06",
+      "tekst": "Kjemisk symbol for natrium?",
+      "riktig": "Na",
+      "gale": [
+        "N",
+        "Nt",
+        "Ni"
+      ],
+      "nokkel": "natrium – Na"
+    },
+    {
+      "id": "07",
+      "tekst": "Kjemisk symbol for magnesium?",
+      "riktig": "Mg",
+      "gale": [
+        "Ma",
+        "Mn",
+        "M"
+      ],
+      "nokkel": "magnesium – Mg"
+    },
+    {
+      "id": "08",
+      "tekst": "Kjemisk symbol for aluminium?",
+      "riktig": "Al",
+      "gale": [
+        "A",
+        "Au",
+        "Am"
+      ],
+      "nokkel": "aluminium – Al"
+    },
+    {
+      "id": "09",
+      "tekst": "Kjemisk symbol for klor?",
+      "riktig": "Cl",
+      "gale": [
+        "K",
+        "Kl",
+        "C"
+      ],
+      "nokkel": "klor – Cl"
+    },
+    {
+      "id": "10",
+      "tekst": "Kjemisk symbol for kalium?",
+      "riktig": "K",
+      "gale": [
+        "Ka",
+        "Ca",
+        "Kl"
+      ],
+      "nokkel": "kalium – K"
+    },
+    {
+      "id": "11",
+      "tekst": "Kjemisk symbol for kalsium?",
+      "riktig": "Ca",
+      "gale": [
+        "K",
+        "Ka",
+        "C"
+      ],
+      "nokkel": "kalsium – Ca"
+    },
+    {
+      "id": "12",
+      "tekst": "Kjemisk symbol for jern?",
+      "riktig": "Fe",
+      "gale": [
+        "Je",
+        "J",
+        "Ir"
+      ],
+      "nokkel": "jern – Fe"
+    },
+    {
+      "id": "13",
+      "tekst": "Kjemisk symbol for kobber?",
+      "riktig": "Cu",
+      "gale": [
+        "Ko",
+        "K",
+        "Co"
+      ],
+      "nokkel": "kobber – Cu"
+    },
+    {
+      "id": "14",
+      "tekst": "Kjemisk symbol for sølv?",
+      "riktig": "Ag",
+      "gale": [
+        "Sø",
+        "S",
+        "Si"
+      ],
+      "nokkel": "sølv – Ag"
+    },
+    {
+      "id": "15",
+      "tekst": "Kjemisk symbol for gull?",
+      "riktig": "Au",
+      "gale": [
+        "Gu",
+        "G",
+        "Ag"
+      ],
+      "nokkel": "gull – Au"
+    },
+    {
+      "id": "16",
+      "tekst": "Kjemisk symbol for kvikksølv?",
+      "riktig": "Hg",
+      "gale": [
+        "Kv",
+        "K",
+        "Ks"
+      ],
+      "nokkel": "kvikksølv – Hg"
+    },
+    {
+      "id": "17",
+      "tekst": "Kjemisk symbol for bly?",
+      "riktig": "Pb",
+      "gale": [
+        "Bl",
+        "B",
+        "By"
+      ],
+      "nokkel": "bly – Pb"
+    },
+    {
+      "id": "18",
+      "tekst": "Kjemisk symbol for svovel?",
+      "riktig": "S",
+      "gale": [
+        "Sv",
+        "So",
+        "Si"
+      ],
+      "nokkel": "svovel – S"
+    },
+    {
+      "id": "19",
+      "tekst": "Kjemisk symbol for fosfor?",
+      "riktig": "P",
+      "gale": [
+        "F",
+        "Fo",
+        "Fs"
+      ],
+      "nokkel": "fosfor – P"
+    },
+    {
+      "id": "20",
+      "tekst": "Kjemisk symbol for sink?",
+      "riktig": "Zn",
+      "gale": [
+        "Si",
+        "S",
+        "Sk"
+      ],
+      "nokkel": "sink – Zn"
+    },
+    {
+      "id": "21",
+      "tekst": "Kjemisk symbol for silisium?",
+      "riktig": "Si",
+      "gale": [
+        "S",
+        "Sl",
+        "Sm"
+      ],
+      "nokkel": "silisium – Si"
+    },
+    {
+      "id": "22",
+      "tekst": "Kjemisk symbol for neon?",
+      "riktig": "Ne",
+      "gale": [
+        "N",
+        "No",
+        "Ni"
+      ],
+      "nokkel": "neon – Ne"
+    }
+  ]
+}

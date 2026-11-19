@@ -1,0 +1,223 @@
+{
+  "id": "samfunnsfag-8-10-demokrati",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "samfunnsfag",
+  "trinn": "8-10",
+  "tittel": "Demokrati og styresett",
+  "beskrivelse": "Storting, regjering, domstoler og internasjonalt samarbeid.",
+  "lk20": [
+    "SAF01-04, etter 10. trinn: det politiske systemet i Norge og internasjonalt samarbeid"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hvor mange representanter har Stortinget?",
+      "riktig": "169",
+      "gale": [
+        "150",
+        "179",
+        "199"
+      ],
+      "nokkel": "Hvor mange representanter har Stortinget? 169"
+    },
+    {
+      "id": "02",
+      "tekst": "Hvor ofte er det stortingsvalg?",
+      "riktig": "hvert 4. år",
+      "gale": [
+        "hvert 2. år",
+        "hvert 5. år",
+        "hvert år"
+      ],
+      "nokkel": "Hvor ofte er det stortingsvalg? hvert 4. år"
+    },
+    {
+      "id": "03",
+      "tekst": "Hvem leder regjeringen?",
+      "riktig": "statsminister",
+      "gale": [
+        "konge",
+        "ordfører",
+        "biskop"
+      ],
+      "nokkel": "Hvem leder regjeringen? statsminister"
+    },
+    {
+      "id": "04",
+      "tekst": "Hvem har den lovgivende makten?",
+      "riktig": "Stortinget",
+      "gale": [
+        "regjeringen",
+        "domstolene",
+        "kongen"
+      ],
+      "nokkel": "Hvem har den lovgivende makten? Stortinget"
+    },
+    {
+      "id": "05",
+      "tekst": "Hvem har den utøvende makten?",
+      "riktig": "regjeringen",
+      "gale": [
+        "Stortinget",
+        "domstolene",
+        "politiet"
+      ],
+      "nokkel": "Hvem har den utøvende makten? regjeringen"
+    },
+    {
+      "id": "06",
+      "tekst": "Hvem har den dømmende makten?",
+      "riktig": "domstolene",
+      "gale": [
+        "Stortinget",
+        "regjeringen",
+        "politiet"
+      ],
+      "nokkel": "Hvem har den dømmende makten? domstolene"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva heter Norges øverste domstol?",
+      "riktig": "Høyesterett",
+      "gale": [
+        "tingretten",
+        "Stortinget",
+        "Sametinget"
+      ],
+      "nokkel": "Hva heter Norges øverste domstol? Høyesterett"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvem utformet maktfordelingsprinsippet?",
+      "riktig": "Montesquieu",
+      "gale": [
+        "Rousseau",
+        "Voltaire",
+        "Marx"
+      ],
+      "nokkel": "Hvem utformet maktfordelingsprinsippet? Montesquieu"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er sperregrensen ved stortingsvalg?",
+      "riktig": "4 %",
+      "gale": [
+        "2 %",
+        "5 %",
+        "10 %"
+      ],
+      "nokkel": "Hva er sperregrensen ved stortingsvalg? 4 %"
+    },
+    {
+      "id": "10",
+      "tekst": "Hvem leder en kommune politisk?",
+      "riktig": "ordfører",
+      "gale": [
+        "statsminister",
+        "politimester",
+        "rektor"
+      ],
+      "nokkel": "Hvem leder en kommune politisk? ordfører"
+    },
+    {
+      "id": "11",
+      "tekst": "Norge er et ...",
+      "riktig": "monarki",
+      "gale": [
+        "republikk",
+        "diktatur",
+        "keiserrike"
+      ],
+      "nokkel": "Norge er et ... monarki"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva kalles et styre der folket bestemmer?",
+      "riktig": "demokrati",
+      "gale": [
+        "diktatur",
+        "enevelde",
+        "anarki"
+      ],
+      "nokkel": "Hva kalles et styre der folket bestemmer? demokrati"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilket år ble FN grunnlagt?",
+      "riktig": "1945",
+      "gale": [
+        "1918",
+        "1949",
+        "1960"
+      ],
+      "nokkel": "Hvilket år ble FN grunnlagt? 1945"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvor har FN hovedkvarter?",
+      "riktig": "New York",
+      "gale": [
+        "Genève",
+        "Brussel",
+        "Paris"
+      ],
+      "nokkel": "Hvor har FN hovedkvarter? New York"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilken avtale knytter Norge til EU?",
+      "riktig": "EØS",
+      "gale": [
+        "NATO",
+        "FN",
+        "OPEC"
+      ],
+      "nokkel": "Hvilken avtale knytter Norge til EU? EØS"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilken forsvarsallianse er Norge med i?",
+      "riktig": "NATO",
+      "gale": [
+        "EU",
+        "OPEC",
+        "WTO"
+      ],
+      "nokkel": "Hvilken forsvarsallianse er Norge med i? NATO"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva kalles retten til å si meningen sin?",
+      "riktig": "ytringsfrihet",
+      "gale": [
+        "stemmerett",
+        "eiendomsrett",
+        "allemannsrett"
+      ],
+      "nokkel": "Hva kalles retten til å si meningen sin? ytringsfrihet"
+    },
+    {
+      "id": "18",
+      "tekst": "FNs menneskerettighetserklæring kom i ...",
+      "riktig": "1948",
+      "gale": [
+        "1945",
+        "1814",
+        "1968"
+      ],
+      "nokkel": "FNs menneskerettighetserklæring kom i ... 1948"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er stemmerettsalderen i Norge?",
+      "riktig": "18 år",
+      "gale": [
+        "16 år",
+        "20 år",
+        "21 år"
+      ],
+      "nokkel": "Hva er stemmerettsalderen i Norge? 18 år"
+    }
+  ]
+}

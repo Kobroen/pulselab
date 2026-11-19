@@ -1,0 +1,234 @@
+{
+  "id": "naturfag-5-7-stoffer-og-kretslop",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "naturfag",
+  "trinn": "5-7",
+  "tittel": "Stoffer, energi og kretsløp",
+  "beskrivelse": "Faseoverganger, fotosyntese, næringskjeder og energikilder.",
+  "lk20": [
+    "NAT01-04, etter 7. trinn: faseoverganger, fotosyntese, næringskjeder og energikilder"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva kalles det når is blir til vann?",
+      "riktig": "smelting",
+      "gale": [
+        "frysing",
+        "fordamping",
+        "kondensering"
+      ],
+      "nokkel": "Hva kalles det når is blir til vann? smelting"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva kalles det når vann blir til damp?",
+      "riktig": "fordamping",
+      "gale": [
+        "smelting",
+        "frysing",
+        "kondensering"
+      ],
+      "nokkel": "Hva kalles det når vann blir til damp? fordamping"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva kalles det når damp blir til vann?",
+      "riktig": "kondensering",
+      "gale": [
+        "fordamping",
+        "smelting",
+        "frysing"
+      ],
+      "nokkel": "Hva kalles det når damp blir til vann? kondensering"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva kalles det når vann blir til is?",
+      "riktig": "frysing",
+      "gale": [
+        "smelting",
+        "fordamping",
+        "kondensering"
+      ],
+      "nokkel": "Hva kalles det når vann blir til is? frysing"
+    },
+    {
+      "id": "05",
+      "tekst": "Ved hvilken temperatur fryser vann?",
+      "riktig": "0 °C",
+      "gale": [
+        "100 °C",
+        "10 °C",
+        "−10 °C"
+      ],
+      "nokkel": "Ved hvilken temperatur fryser vann? 0 °C"
+    },
+    {
+      "id": "06",
+      "tekst": "Ved hvilken temperatur koker vann?",
+      "riktig": "100 °C",
+      "gale": [
+        "0 °C",
+        "50 °C",
+        "200 °C"
+      ],
+      "nokkel": "Ved hvilken temperatur koker vann? 100 °C"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er H₂O?",
+      "riktig": "vann",
+      "gale": [
+        "luft",
+        "salt",
+        "sukker"
+      ],
+      "nokkel": "Hva er H₂O? vann"
+    },
+    {
+      "id": "08",
+      "tekst": "Hvilken gass tar planter opp fra lufta?",
+      "riktig": "karbondioksid",
+      "gale": [
+        "oksygen",
+        "helium",
+        "hydrogen"
+      ],
+      "nokkel": "Hvilken gass tar planter opp fra lufta? karbondioksid"
+    },
+    {
+      "id": "09",
+      "tekst": "Hvilken gass slipper planter ut i fotosyntesen?",
+      "riktig": "oksygen",
+      "gale": [
+        "karbondioksid",
+        "nitrogen",
+        "helium"
+      ],
+      "nokkel": "Hvilken gass slipper planter ut i fotosyntesen? oksygen"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva kalles det når planter lager sukker av lys?",
+      "riktig": "fotosyntese",
+      "gale": [
+        "forbrenning",
+        "fordamping",
+        "celledeling"
+      ],
+      "nokkel": "Hva kalles det når planter lager sukker av lys? fotosyntese"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva står først i en næringskjede?",
+      "riktig": "planter",
+      "gale": [
+        "rovdyr",
+        "planteetere",
+        "sopp"
+      ],
+      "nokkel": "Hva står først i en næringskjede? planter"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva kalles dyr som spiser både planter og kjøtt?",
+      "riktig": "altetere",
+      "gale": [
+        "rovdyr",
+        "planteetere",
+        "nedbrytere"
+      ],
+      "nokkel": "Hva kalles dyr som spiser både planter og kjøtt? altetere"
+    },
+    {
+      "id": "13",
+      "tekst": "Hvilken av disse er en nedbryter?",
+      "riktig": "sopp",
+      "gale": [
+        "ulv",
+        "hare",
+        "gran"
+      ],
+      "nokkel": "Hvilken av disse er en nedbryter? sopp"
+    },
+    {
+      "id": "14",
+      "tekst": "Hvilken tilstand har vanndamp?",
+      "riktig": "gass",
+      "gale": [
+        "væske",
+        "fast stoff",
+        "plasma"
+      ],
+      "nokkel": "Hvilken tilstand har vanndamp? gass"
+    },
+    {
+      "id": "15",
+      "tekst": "Hvilken tilstand har is?",
+      "riktig": "fast stoff",
+      "gale": [
+        "væske",
+        "gass",
+        "plasma"
+      ],
+      "nokkel": "Hvilken tilstand har is? fast stoff"
+    },
+    {
+      "id": "16",
+      "tekst": "Hvilket stoff leder strøm best?",
+      "riktig": "kobber",
+      "gale": [
+        "plast",
+        "tre",
+        "glass"
+      ],
+      "nokkel": "Hvilket stoff leder strøm best? kobber"
+    },
+    {
+      "id": "17",
+      "tekst": "Hvilket stoff er magnetisk?",
+      "riktig": "jern",
+      "gale": [
+        "aluminium",
+        "gull",
+        "plast"
+      ],
+      "nokkel": "Hvilket stoff er magnetisk? jern"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva måler vi temperatur med?",
+      "riktig": "termometer",
+      "gale": [
+        "barometer",
+        "linjal",
+        "vekt"
+      ],
+      "nokkel": "Hva måler vi temperatur med? termometer"
+    },
+    {
+      "id": "19",
+      "tekst": "Hvilken energikilde er fornybar?",
+      "riktig": "vindkraft",
+      "gale": [
+        "kull",
+        "olje",
+        "naturgass"
+      ],
+      "nokkel": "Hvilken energikilde er fornybar? vindkraft"
+    },
+    {
+      "id": "20",
+      "tekst": "Hvilken energikilde er ikke fornybar?",
+      "riktig": "olje",
+      "gale": [
+        "sol",
+        "vind",
+        "vannkraft"
+      ],
+      "nokkel": "Hvilken energikilde er ikke fornybar? olje"
+    }
+  ]
+}

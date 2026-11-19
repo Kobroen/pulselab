@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-1-4-pluss-til-20",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "1-4",
+  "tittel": "Pluss opp til 20",
+  "beskrivelse": "Addisjon med svar opp til 20.",
+  "lk20": [
+    "MAT01-05, 1.–2. trinn: addisjon og subtraksjon opp til 20"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva er 6 + 7?",
+      "riktig": "13",
+      "gale": [
+        "11",
+        "12",
+        "14"
+      ],
+      "nokkel": "6 + 7"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva er 2 + 5?",
+      "riktig": "7",
+      "gale": [
+        "8",
+        "6",
+        "5"
+      ],
+      "nokkel": "2 + 5"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva er 8 + 4?",
+      "riktig": "12",
+      "gale": [
+        "10",
+        "13",
+        "11"
+      ],
+      "nokkel": "8 + 4"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva er 6 + 2?",
+      "riktig": "8",
+      "gale": [
+        "7",
+        "9",
+        "6"
+      ],
+      "nokkel": "6 + 2"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva er 4 + 5?",
+      "riktig": "9",
+      "gale": [
+        "7",
+        "8",
+        "10"
+      ],
+      "nokkel": "4 + 5"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva er 9 + 6?",
+      "riktig": "15",
+      "gale": [
+        "13",
+        "14",
+        "17"
+      ],
+      "nokkel": "9 + 6"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva er 6 + 4?",
+      "riktig": "10",
+      "gale": [
+        "11",
+        "12",
+        "9"
+      ],
+      "nokkel": "6 + 4"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva er 7 + 9?",
+      "riktig": "16",
+      "gale": [
+        "18",
+        "17",
+        "14"
+      ],
+      "nokkel": "7 + 9"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva er 5 + 5?",
+      "riktig": "10",
+      "gale": [
+        "12",
+        "11",
+        "9"
+      ],
+      "nokkel": "5 + 5"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva er 11 + 5?",
+      "riktig": "16",
+      "gale": [
+        "18",
+        "14",
+        "15"
+      ],
+      "nokkel": "11 + 5"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva er 10 + 3?",
+      "riktig": "13",
+      "gale": [
+        "14",
+        "11",
+        "15"
+      ],
+      "nokkel": "10 + 3"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva er 2 + 8?",
+      "riktig": "10",
+      "gale": [
+        "8",
+        "11",
+        "9"
+      ],
+      "nokkel": "2 + 8"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva er 10 + 9?",
+      "riktig": "19",
+      "gale": [
+        "18",
+        "17",
+        "20"
+      ],
+      "nokkel": "10 + 9"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva er 4 + 4?",
+      "riktig": "8",
+      "gale": [
+        "6",
+        "10",
+        "7"
+      ],
+      "nokkel": "4 + 4"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva er 10 + 8?",
+      "riktig": "18",
+      "gale": [
+        "19",
+        "17",
+        "16"
+      ],
+      "nokkel": "10 + 8"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva er 11 + 4?",
+      "riktig": "15",
+      "gale": [
+        "17",
+        "16",
+        "14"
+      ],
+      "nokkel": "11 + 4"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva er 2 + 4?",
+      "riktig": "6",
+      "gale": [
+        "5",
+        "7",
+        "4"
+      ],
+      "nokkel": "2 + 4"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva er 8 + 5?",
+      "riktig": "13",
+      "gale": [
+        "11",
+        "14",
+        "15"
+      ],
+      "nokkel": "8 + 5"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva er 4 + 7?",
+      "riktig": "11",
+      "gale": [
+        "12",
+        "9",
+        "13"
+      ],
+      "nokkel": "4 + 7"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva er 6 + 5?",
+      "riktig": "11",
+      "gale": [
+        "13",
+        "12",
+        "10"
+      ],
+      "nokkel": "6 + 5"
+    }
+  ]
+}

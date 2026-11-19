@@ -1,0 +1,234 @@
+{
+  "id": "norsk-5-7-synonymer",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "5-7",
+  "tittel": "Synonymer",
+  "beskrivelse": "Finn ordet som betyr omtrent det samme.",
+  "lk20": [
+    "NOR01-06, etter 7. trinn: ordforråd og variert språk"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Synonym til «glad»?",
+      "riktig": "lykkelig",
+      "gale": [
+        "sint",
+        "trøtt",
+        "redd"
+      ],
+      "nokkel": "glad – lykkelig"
+    },
+    {
+      "id": "02",
+      "tekst": "Synonym til «redd»?",
+      "riktig": "engstelig",
+      "gale": [
+        "modig",
+        "rolig",
+        "glad"
+      ],
+      "nokkel": "redd – engstelig"
+    },
+    {
+      "id": "03",
+      "tekst": "Synonym til «pen»?",
+      "riktig": "vakker",
+      "gale": [
+        "stygg",
+        "stor",
+        "rar"
+      ],
+      "nokkel": "pen – vakker"
+    },
+    {
+      "id": "04",
+      "tekst": "Synonym til «rask»?",
+      "riktig": "kjapp",
+      "gale": [
+        "treg",
+        "tung",
+        "sen"
+      ],
+      "nokkel": "rask – kjapp"
+    },
+    {
+      "id": "05",
+      "tekst": "Synonym til «begynne»?",
+      "riktig": "starte",
+      "gale": [
+        "slutte",
+        "vente",
+        "stoppe"
+      ],
+      "nokkel": "begynne – starte"
+    },
+    {
+      "id": "06",
+      "tekst": "Synonym til «snakke»?",
+      "riktig": "prate",
+      "gale": [
+        "tie",
+        "lytte",
+        "løpe"
+      ],
+      "nokkel": "snakke – prate"
+    },
+    {
+      "id": "07",
+      "tekst": "Synonym til «sint»?",
+      "riktig": "rasende",
+      "gale": [
+        "rolig",
+        "blid",
+        "trøtt"
+      ],
+      "nokkel": "sint – rasende"
+    },
+    {
+      "id": "08",
+      "tekst": "Synonym til «vanskelig»?",
+      "riktig": "krevende",
+      "gale": [
+        "enkel",
+        "lett",
+        "morsom"
+      ],
+      "nokkel": "vanskelig – krevende"
+    },
+    {
+      "id": "09",
+      "tekst": "Synonym til «morsom»?",
+      "riktig": "artig",
+      "gale": [
+        "kjedelig",
+        "trist",
+        "sur"
+      ],
+      "nokkel": "morsom – artig"
+    },
+    {
+      "id": "10",
+      "tekst": "Synonym til «flink»?",
+      "riktig": "dyktig",
+      "gale": [
+        "lat",
+        "svak",
+        "treg"
+      ],
+      "nokkel": "flink – dyktig"
+    },
+    {
+      "id": "11",
+      "tekst": "Synonym til «rope»?",
+      "riktig": "skrike",
+      "gale": [
+        "hviske",
+        "tie",
+        "synge"
+      ],
+      "nokkel": "rope – skrike"
+    },
+    {
+      "id": "12",
+      "tekst": "Synonym til «se»?",
+      "riktig": "titte",
+      "gale": [
+        "høre",
+        "lukte",
+        "smake"
+      ],
+      "nokkel": "se – titte"
+    },
+    {
+      "id": "13",
+      "tekst": "Synonym til «hus»?",
+      "riktig": "bolig",
+      "gale": [
+        "bil",
+        "hage",
+        "vei"
+      ],
+      "nokkel": "hus – bolig"
+    },
+    {
+      "id": "14",
+      "tekst": "Synonym til «gave»?",
+      "riktig": "presang",
+      "gale": [
+        "regning",
+        "brev",
+        "straff"
+      ],
+      "nokkel": "gave – presang"
+    },
+    {
+      "id": "15",
+      "tekst": "Synonym til «lukke»?",
+      "riktig": "stenge",
+      "gale": [
+        "åpne",
+        "løfte",
+        "dytte"
+      ],
+      "nokkel": "lukke – stenge"
+    },
+    {
+      "id": "16",
+      "tekst": "Synonym til «kaste»?",
+      "riktig": "slenge",
+      "gale": [
+        "fange",
+        "gripe",
+        "holde"
+      ],
+      "nokkel": "kaste – slenge"
+    },
+    {
+      "id": "17",
+      "tekst": "Synonym til «stille»?",
+      "riktig": "rolig",
+      "gale": [
+        "bråkete",
+        "høy",
+        "vill"
+      ],
+      "nokkel": "stille – rolig"
+    },
+    {
+      "id": "18",
+      "tekst": "Synonym til «kjempestor»?",
+      "riktig": "enorm",
+      "gale": [
+        "ørliten",
+        "smal",
+        "lav"
+      ],
+      "nokkel": "kjempestor – enorm"
+    },
+    {
+      "id": "19",
+      "tekst": "Synonym til «modig»?",
+      "riktig": "tapper",
+      "gale": [
+        "feig",
+        "redd",
+        "sjenert"
+      ],
+      "nokkel": "modig – tapper"
+    },
+    {
+      "id": "20",
+      "tekst": "Synonym til «fin»?",
+      "riktig": "flott",
+      "gale": [
+        "stygg",
+        "grå",
+        "sliten"
+      ],
+      "nokkel": "fin – flott"
+    }
+  ]
+}

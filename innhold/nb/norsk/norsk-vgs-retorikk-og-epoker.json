@@ -1,0 +1,168 @@
+{
+  "id": "norsk-vgs-retorikk-og-epoker",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "norsk",
+  "trinn": "vgs",
+  "tittel": "Retorikk og litterære epoker",
+  "beskrivelse": "Appellformer og hovedlinjer i litteraturhistorien.",
+  "lk20": [
+    "NOR01-06, vg1–vg3: retoriske appellformer og litteraturhistoriske perioder"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Appell til følelser kalles ...",
+      "riktig": "patos",
+      "gale": [
+        "etos",
+        "logos",
+        "kairos"
+      ],
+      "nokkel": "Appell til følelser kalles ... patos"
+    },
+    {
+      "id": "02",
+      "tekst": "Appell til fornuft kalles ...",
+      "riktig": "logos",
+      "gale": [
+        "patos",
+        "etos",
+        "kairos"
+      ],
+      "nokkel": "Appell til fornuft kalles ... logos"
+    },
+    {
+      "id": "03",
+      "tekst": "Talerens troverdighet kalles ...",
+      "riktig": "etos",
+      "gale": [
+        "patos",
+        "logos",
+        "kairos"
+      ],
+      "nokkel": "Talerens troverdighet kalles ... etos"
+    },
+    {
+      "id": "04",
+      "tekst": "Det rette øyeblikket kalles ...",
+      "riktig": "kairos",
+      "gale": [
+        "etos",
+        "patos",
+        "logos"
+      ],
+      "nokkel": "Det rette øyeblikket kalles ... kairos"
+    },
+    {
+      "id": "05",
+      "tekst": "«Et dukkehjem» hører til ...",
+      "riktig": "realismen",
+      "gale": [
+        "romantikken",
+        "barokken",
+        "modernismen"
+      ],
+      "nokkel": "«Et dukkehjem» hører til ... realismen"
+    },
+    {
+      "id": "06",
+      "tekst": "Amalie Skram hører til ...",
+      "riktig": "naturalismen",
+      "gale": [
+        "romantikken",
+        "barokken",
+        "modernismen"
+      ],
+      "nokkel": "Amalie Skram hører til ... naturalismen"
+    },
+    {
+      "id": "07",
+      "tekst": "Wergeland hører til ...",
+      "riktig": "romantikken",
+      "gale": [
+        "realismen",
+        "barokken",
+        "naturalismen"
+      ],
+      "nokkel": "Wergeland hører til ... romantikken"
+    },
+    {
+      "id": "08",
+      "tekst": "Petter Dass hører til ...",
+      "riktig": "barokken",
+      "gale": [
+        "romantikken",
+        "realismen",
+        "modernismen"
+      ],
+      "nokkel": "Petter Dass hører til ... barokken"
+    },
+    {
+      "id": "09",
+      "tekst": "«Haugtussa» (1895) hører til ...",
+      "riktig": "nyromantikken",
+      "gale": [
+        "realismen",
+        "barokken",
+        "naturalismen"
+      ],
+      "nokkel": "«Haugtussa» (1895) hører til ... nyromantikken"
+    },
+    {
+      "id": "10",
+      "tekst": "Holbergs komedier er fra ...",
+      "riktig": "1700-tallet",
+      "gale": [
+        "1500-tallet",
+        "1800-tallet",
+        "1900-tallet"
+      ],
+      "nokkel": "Holbergs komedier er fra ... 1700-tallet"
+    },
+    {
+      "id": "11",
+      "tekst": "Asbjørnsen og Moe samlet inn ...",
+      "riktig": "folkeeventyr",
+      "gale": [
+        "sagaer",
+        "salmer",
+        "skuespill"
+      ],
+      "nokkel": "Asbjørnsen og Moe samlet inn ... folkeeventyr"
+    },
+    {
+      "id": "12",
+      "tekst": "Snorre skrev om norske konger i ...",
+      "riktig": "Heimskringla",
+      "gale": [
+        "Edda",
+        "Håvamål",
+        "Draumkvedet"
+      ],
+      "nokkel": "Snorre skrev om norske konger i ... Heimskringla"
+    },
+    {
+      "id": "13",
+      "tekst": "Ivar Aasen la grunnlaget for ...",
+      "riktig": "nynorsk",
+      "gale": [
+        "bokmål",
+        "riksmål",
+        "samnorsk"
+      ],
+      "nokkel": "Ivar Aasen la grunnlaget for ... nynorsk"
+    },
+    {
+      "id": "14",
+      "tekst": "Knud Knudsen la grunnlaget for ...",
+      "riktig": "bokmål",
+      "gale": [
+        "nynorsk",
+        "høgnorsk",
+        "landsmål"
+      ],
+      "nokkel": "Knud Knudsen la grunnlaget for ... bokmål"
+    }
+  ]
+}

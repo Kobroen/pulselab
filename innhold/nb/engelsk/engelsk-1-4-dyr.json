@@ -1,0 +1,256 @@
+{
+  "id": "engelsk-1-4-dyr",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "engelsk",
+  "trinn": "1-4",
+  "tittel": "Animals",
+  "beskrivelse": "Dyr på engelsk.",
+  "lk20": [
+    "ENG01-04, etter 2.–4. trinn: lytte til, lese og bruke vanlige ord og fraser"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Hva heter «hund» på engelsk?",
+      "riktig": "dog",
+      "gale": [
+        "bird",
+        "pig",
+        "bear"
+      ],
+      "nokkel": "hund – dog"
+    },
+    {
+      "id": "02",
+      "tekst": "Hva heter «katt» på engelsk?",
+      "riktig": "cat",
+      "gale": [
+        "fox",
+        "goat",
+        "horse"
+      ],
+      "nokkel": "katt – cat"
+    },
+    {
+      "id": "03",
+      "tekst": "Hva heter «hest» på engelsk?",
+      "riktig": "horse",
+      "gale": [
+        "bird",
+        "spider",
+        "duck"
+      ],
+      "nokkel": "hest – horse"
+    },
+    {
+      "id": "04",
+      "tekst": "Hva heter «ku» på engelsk?",
+      "riktig": "cow",
+      "gale": [
+        "mouse",
+        "pig",
+        "fox"
+      ],
+      "nokkel": "ku – cow"
+    },
+    {
+      "id": "05",
+      "tekst": "Hva heter «gris» på engelsk?",
+      "riktig": "pig",
+      "gale": [
+        "cow",
+        "hen",
+        "horse"
+      ],
+      "nokkel": "gris – pig"
+    },
+    {
+      "id": "06",
+      "tekst": "Hva heter «sau» på engelsk?",
+      "riktig": "sheep",
+      "gale": [
+        "butterfly",
+        "cow",
+        "cat"
+      ],
+      "nokkel": "sau – sheep"
+    },
+    {
+      "id": "07",
+      "tekst": "Hva heter «fugl» på engelsk?",
+      "riktig": "bird",
+      "gale": [
+        "lion",
+        "mouse",
+        "sheep"
+      ],
+      "nokkel": "fugl – bird"
+    },
+    {
+      "id": "08",
+      "tekst": "Hva heter «fisk» på engelsk?",
+      "riktig": "fish",
+      "gale": [
+        "duck",
+        "goat",
+        "cat"
+      ],
+      "nokkel": "fisk – fish"
+    },
+    {
+      "id": "09",
+      "tekst": "Hva heter «mus» på engelsk?",
+      "riktig": "mouse",
+      "gale": [
+        "pig",
+        "monkey",
+        "lion"
+      ],
+      "nokkel": "mus – mouse"
+    },
+    {
+      "id": "10",
+      "tekst": "Hva heter «kanin» på engelsk?",
+      "riktig": "rabbit",
+      "gale": [
+        "bear",
+        "dog",
+        "cow"
+      ],
+      "nokkel": "kanin – rabbit"
+    },
+    {
+      "id": "11",
+      "tekst": "Hva heter «bjørn» på engelsk?",
+      "riktig": "bear",
+      "gale": [
+        "mouse",
+        "spider",
+        "bird"
+      ],
+      "nokkel": "bjørn – bear"
+    },
+    {
+      "id": "12",
+      "tekst": "Hva heter «and» på engelsk?",
+      "riktig": "duck",
+      "gale": [
+        "cow",
+        "rabbit",
+        "hen"
+      ],
+      "nokkel": "and – duck"
+    },
+    {
+      "id": "13",
+      "tekst": "Hva heter «høne» på engelsk?",
+      "riktig": "hen",
+      "gale": [
+        "bear",
+        "lion",
+        "goat"
+      ],
+      "nokkel": "høne – hen"
+    },
+    {
+      "id": "14",
+      "tekst": "Hva heter «frosk» på engelsk?",
+      "riktig": "frog",
+      "gale": [
+        "butterfly",
+        "mouse",
+        "cat"
+      ],
+      "nokkel": "frosk – frog"
+    },
+    {
+      "id": "15",
+      "tekst": "Hva heter «ape» på engelsk?",
+      "riktig": "monkey",
+      "gale": [
+        "goat",
+        "sheep",
+        "lion"
+      ],
+      "nokkel": "ape – monkey"
+    },
+    {
+      "id": "16",
+      "tekst": "Hva heter «løve» på engelsk?",
+      "riktig": "lion",
+      "gale": [
+        "pig",
+        "snake",
+        "mouse"
+      ],
+      "nokkel": "løve – lion"
+    },
+    {
+      "id": "17",
+      "tekst": "Hva heter «slange» på engelsk?",
+      "riktig": "snake",
+      "gale": [
+        "monkey",
+        "rabbit",
+        "hen"
+      ],
+      "nokkel": "slange – snake"
+    },
+    {
+      "id": "18",
+      "tekst": "Hva heter «edderkopp» på engelsk?",
+      "riktig": "spider",
+      "gale": [
+        "horse",
+        "mouse",
+        "monkey"
+      ],
+      "nokkel": "edderkopp – spider"
+    },
+    {
+      "id": "19",
+      "tekst": "Hva heter «sommerfugl» på engelsk?",
+      "riktig": "butterfly",
+      "gale": [
+        "bird",
+        "spider",
+        "mouse"
+      ],
+      "nokkel": "sommerfugl – butterfly"
+    },
+    {
+      "id": "20",
+      "tekst": "Hva heter «geit» på engelsk?",
+      "riktig": "goat",
+      "gale": [
+        "sheep",
+        "snake",
+        "monkey"
+      ],
+      "nokkel": "geit – goat"
+    },
+    {
+      "id": "21",
+      "tekst": "Hva heter «rev» på engelsk?",
+      "riktig": "fox",
+      "gale": [
+        "horse",
+        "duck",
+        "fish"
+      ],
+      "nokkel": "rev – fox"
+    },
+    {
+      "id": "22",
+      "tekst": "Hva heter «ulv» på engelsk?",
+      "riktig": "wolf",
+      "gale": [
+        "monkey",
+        "cow",
+        "sheep"
+      ],
+      "nokkel": "ulv – wolf"
+    }
+  ]
+}

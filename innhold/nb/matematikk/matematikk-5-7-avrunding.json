@@ -1,0 +1,234 @@
+{
+  "id": "matematikk-5-7-avrunding",
+  "versjon": 1,
+  "sprak": "nb",
+  "fag": "matematikk",
+  "trinn": "5-7",
+  "tittel": "Avrunding",
+  "beskrivelse": "Rund av til nærmeste tier, hundrer eller hele tall.",
+  "lk20": [
+    "MAT01-05, 5. trinn: overslag og avrunding"
+  ],
+  "oppgaver": [
+    {
+      "id": "01",
+      "tekst": "Rund av 761 til nærmeste tier",
+      "riktig": "760",
+      "gale": [
+        "770",
+        "800",
+        "860"
+      ],
+      "nokkel": "761 ≈ 760"
+    },
+    {
+      "id": "02",
+      "tekst": "Rund av 674 til nærmeste tier",
+      "riktig": "670",
+      "gale": [
+        "680",
+        "700",
+        "770"
+      ],
+      "nokkel": "674 ≈ 670"
+    },
+    {
+      "id": "03",
+      "tekst": "Rund av 934 til nærmeste tier",
+      "riktig": "930",
+      "gale": [
+        "940",
+        "900",
+        "1030"
+      ],
+      "nokkel": "934 ≈ 930"
+    },
+    {
+      "id": "04",
+      "tekst": "Rund av 287 til nærmeste tier",
+      "riktig": "290",
+      "gale": [
+        "280",
+        "300",
+        "390"
+      ],
+      "nokkel": "287 ≈ 290"
+    },
+    {
+      "id": "05",
+      "tekst": "Rund av 498 til nærmeste tier",
+      "riktig": "500",
+      "gale": [
+        "490",
+        "600",
+        "400"
+      ],
+      "nokkel": "498 ≈ 500"
+    },
+    {
+      "id": "06",
+      "tekst": "Rund av 209 til nærmeste tier",
+      "riktig": "210",
+      "gale": [
+        "200",
+        "310",
+        "110"
+      ],
+      "nokkel": "209 ≈ 210"
+    },
+    {
+      "id": "07",
+      "tekst": "Rund av 258 til nærmeste tier",
+      "riktig": "260",
+      "gale": [
+        "250",
+        "300",
+        "360"
+      ],
+      "nokkel": "258 ≈ 260"
+    },
+    {
+      "id": "08",
+      "tekst": "Rund av 3317 til nærmeste hundrer",
+      "riktig": "3300",
+      "gale": [
+        "3400",
+        "3320",
+        "3000"
+      ],
+      "nokkel": "3317 ≈ 3300"
+    },
+    {
+      "id": "09",
+      "tekst": "Rund av 1786 til nærmeste hundrer",
+      "riktig": "1800",
+      "gale": [
+        "1700",
+        "1790",
+        "2000"
+      ],
+      "nokkel": "1786 ≈ 1800"
+    },
+    {
+      "id": "10",
+      "tekst": "Rund av 4432 til nærmeste hundrer",
+      "riktig": "4400",
+      "gale": [
+        "4500",
+        "4430",
+        "4000"
+      ],
+      "nokkel": "4432 ≈ 4400"
+    },
+    {
+      "id": "11",
+      "tekst": "Rund av 2675 til nærmeste hundrer",
+      "riktig": "2700",
+      "gale": [
+        "2600",
+        "2680",
+        "3000"
+      ],
+      "nokkel": "2675 ≈ 2700"
+    },
+    {
+      "id": "12",
+      "tekst": "Rund av 9215 til nærmeste hundrer",
+      "riktig": "9200",
+      "gale": [
+        "9300",
+        "9220",
+        "9000"
+      ],
+      "nokkel": "9215 ≈ 9200"
+    },
+    {
+      "id": "13",
+      "tekst": "Rund av 1634 til nærmeste hundrer",
+      "riktig": "1600",
+      "gale": [
+        "1700",
+        "1630",
+        "2000"
+      ],
+      "nokkel": "1634 ≈ 1600"
+    },
+    {
+      "id": "14",
+      "tekst": "Rund av 5480 til nærmeste hundrer",
+      "riktig": "5500",
+      "gale": [
+        "5400",
+        "5480",
+        "5000"
+      ],
+      "nokkel": "5480 ≈ 5500"
+    },
+    {
+      "id": "15",
+      "tekst": "Rund av 48,7 til nærmeste hele tall",
+      "riktig": "49",
+      "gale": [
+        "48",
+        "51",
+        "47"
+      ],
+      "nokkel": "48,7 ≈ 49"
+    },
+    {
+      "id": "16",
+      "tekst": "Rund av 12,6 til nærmeste hele tall",
+      "riktig": "13",
+      "gale": [
+        "12",
+        "15",
+        "11"
+      ],
+      "nokkel": "12,6 ≈ 13"
+    },
+    {
+      "id": "17",
+      "tekst": "Rund av 33,7 til nærmeste hele tall",
+      "riktig": "34",
+      "gale": [
+        "33",
+        "36",
+        "32"
+      ],
+      "nokkel": "33,7 ≈ 34"
+    },
+    {
+      "id": "18",
+      "tekst": "Rund av 28,3 til nærmeste hele tall",
+      "riktig": "28",
+      "gale": [
+        "29",
+        "30",
+        "26"
+      ],
+      "nokkel": "28,3 ≈ 28"
+    },
+    {
+      "id": "19",
+      "tekst": "Rund av 47,4 til nærmeste hele tall",
+      "riktig": "47",
+      "gale": [
+        "48",
+        "49",
+        "45"
+      ],
+      "nokkel": "47,4 ≈ 47"
+    },
+    {
+      "id": "20",
+      "tekst": "Rund av 12,2 til nærmeste hele tall",
+      "riktig": "12",
+      "gale": [
+        "13",
+        "14",
+        "10"
+      ],
+      "nokkel": "12,2 ≈ 12"
+    }
+  ]
+}
