@@ -53,7 +53,7 @@
           </div>
           <button class="pille mork" id="start-power" type="button">Start</button>
         </li>
-        <li class="kort moduskort kommer inn" style="--rot: -1.5deg">
+        <li class="kort moduskort inn" style="--rot: -1.5deg">
           <span class="ikon rosa">
             <svg viewBox="-24 -24 48 48" aria-hidden="true"><rect x="-16" y="-16" width="26" height="34" rx="4" fill="#1e1e1e" transform="rotate(-12)" opacity=".55" /><rect x="-8" y="-17" width="26" height="34" rx="4" fill="#1e1e1e" transform="rotate(8)" /></svg>
           </span>
@@ -61,7 +61,7 @@
             <h2>Pugg og prøv</h2>
             <p>Dine egne spørsmål</p>
           </div>
-          <span class="pille lys">Kommer snart</span>
+          <button class="pille mork" id="start-pugg" type="button">Start</button>
         </li>
       </ul>
       <p class="fotnote">Demo. <a href="./sporingstest.html">Sporingstest for enheten</a></p>
@@ -82,6 +82,21 @@
       <fieldset class="tema" id="fagvalg"><legend class="skjult">Fag</legend></fieldset>
       <ul class="okter sett" id="settliste"></ul>
       <p class="fotnote-klasse">Mellomrom pauser økta. Pil høyre hopper til neste steg.</p>
+    </main>
+
+    <main id="pugg" class="skjerm" hidden>
+      <button class="pille lys tilbake" type="button" data-til="start">← Tilbake</button>
+      <h1>Pugg og prøv</h1>
+      <p class="ingress">Lim inn dine egne spørsmål, ett per linje, med semikolon mellom spørsmål og svar. Du kan også lime rett fra et regneark. De gale svarene lånes fra de andre linjene.</p>
+      <textarea id="egnetekst" class="kort" rows="9" spellcheck="false" aria-label="Egne spørsmål" placeholder="Hva heter hovedstaden i Norge?; Oslo&#10;Hva heter hovedstaden i Sverige?; Stockholm&#10;Hva heter hovedstaden i Danmark?; København&#10;Hva heter hovedstaden i Finland?; Helsingfors"></textarea>
+      <p class="lapp" id="egnestatus" role="status" aria-live="polite">Skriv minst to spørsmål</p>
+      <div class="knapper puggknapper">
+        <button class="pille mork" id="egne-klasse" type="button" disabled>Start med klassen</button>
+        <button class="pille lys" id="egne-rekk" type="button" disabled>Spill Rekk</button>
+        <button class="pille lys" id="egne-sveip" type="button" disabled>Spill Sveip</button>
+        <button class="pille lys" id="egne-lenke" type="button" disabled>Kopier lenke til elevene</button>
+      </div>
+      <p class="fotnote-klasse">Spørsmålene lagres bare på denne enheten. Lenka inneholder spørsmålene selv, så ingenting lastes opp.</p>
     </main>
 
     <main id="velg" class="skjerm" hidden>

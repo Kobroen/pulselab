@@ -1,6 +1,6 @@
 // Ferdige økter til fellesmodus. En økt er en liste med steg: en øvelse alle gjør
 // sammen, eller en bolk spørsmål som klassen svarer på med kroppen.
-import type { Fag, Settoppforing } from './bank';
+import type { BankOppgave, Fag, Settoppforing } from './bank';
 import type { Oppgave } from './oppgaver';
 import type { Ovelsestype } from './ovelsesvisning';
 
@@ -32,6 +32,8 @@ export interface Okt {
   farge: string;
   /** Settet i oppgavebanken som spørsmålene hentes fra. */
   sett?: Settoppforing;
+  /** Lærerens egne spørsmål fra Pugg og prøv. */
+  oppgaver?: BankOppgave[];
   steg: Stegmal[];
 }
 
@@ -89,6 +91,13 @@ export function laereokt(sett: Settoppforing, fagnavn: string): Okt {
     sett,
     steg: [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }],
   };
+}
+
+const LAERESTEG: Stegmal[] = [{ ovelse: 'lop', sek: 20 }, { sporsmal: 6 }, { ovelse: 'sprell', sek: 20 }, { sporsmal: 6 }, { ovelse: 'boks', sek: 20 }, { ovelse: 'strekk', sek: 20 }];
+
+/** En læreøkt med lærerens egne spørsmål. */
+export function egenokt(oppgaver: BankOppgave[]): Okt {
+  return { id: 'egne', navn: 'Egne spørsmål', minutter: 5, tekst: '', merke: 'Pugg og prøv', farge: 'rosa', oppgaver, steg: LAERESTEG };
 }
 
 /** Hvor mange spørsmål økta trenger. */
