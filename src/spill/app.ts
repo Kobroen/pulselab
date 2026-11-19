@@ -87,6 +87,7 @@ function vis(ny: Skjerm) {
   document.body.dataset.modus = spilltype;
   $('pyntefigur').innerHTML = figurSvg(ny === 'resultat' ? 'hopp' : 'vink');
   if (ny === 'spill') tilpassScene();
+  holdVåken(ny === 'spill');
   window.scrollTo(0, 0);
   ($(ny).querySelector('h1, canvas') as HTMLElement | null)?.focus?.();
 }
@@ -396,12 +397,12 @@ $('start-laere').addEventListener('click', () => {
 });
 $('start-klasse').addEventListener('click', () => vis('klasse'));
 // Øktene tegnes fra data: Powerbreak fra lista, og læreøktene fra oppgavebanken for valgt trinn og fag.
-function oktkort(o: Okt): HTMLLIElement {
+function oktkort(o: Okt, merketekst = o.merke, forslag = false): HTMLLIElement {
   const li = document.createElement('li');
   li.className = 'kort oktkort';
   const merke = document.createElement('span');
   merke.className = `merke ${o.farge}`;
-  merke.textContent = o.merke;
+  merke.textContent = merketekst;
   const tittel = document.createElement('h2');
   tittel.textContent = o.navn;
   const tid = document.createElement('p');
@@ -412,13 +413,37 @@ function oktkort(o: Okt): HTMLLIElement {
   const knapp = document.createElement('button');
   knapp.className = 'pille mork';
   knapp.type = 'button';
-  knapp.dataset.okt = o.id;
+  // Forslaget finnes også i lista under. Bare kortet i lista bærer øktas id.
+  if (forslag) knapp.dataset.forslag = o.id;
+  else knapp.dataset.okt = o.id;
   knapp.textContent = 'Start';
   knapp.addEventListener('click', () => startKlasse(o));
   li.append(merke, tittel, tid, tekst, knapp);
   return li;
 }
-for (const o of OKTER) $('okter').appendChild(oktkort(o));
+
+/** Kortet som sender læreren til Pugg og prøv. */
+function egnekort(): HTMLLIElement {
+  const li = document.createElement('li');
+  li.className = 'kort oktkort';
+  const merke = document.createElement('span');
+  merke.className = 'merke rosa';
+  merke.textContent = 'Pugg og prøv';
+  const tittel = document.createElement('h2');
+  tittel.textContent = 'Egne spørsmål';
+  const tid = document.createElement('p');
+  tid.className = 'okttid';
+  tid.textContent = '5 minutter';
+  const tekst = document.createElement('p');
+  tekst.textContent = 'Lim inn det klassen jobber med nå, og få en økt av det.';
+  const knapp = document.createElement('button');
+  knapp.className = 'pille lys';
+  knapp.type = 'button';
+  knapp.textContent = 'Skriv spørsmål';
+  knapp.addEventListener('click', () => vis('pugg'));
+  li.append(merke, tittel, tid, tekst, knapp);
+  return li;
+}
 
 function valgknapp(gruppe: string, verdi: string, navn: string, valgt: boolean, ved: () => void): HTMLLabelElement {
   const label = document.createElement('label');
@@ -446,7 +471,14 @@ function visSett() {
   for (const f of INDEKS.fag) {
     if (iTrinn.some((s) => s.fag === f.id)) fagvalg.appendChild(valgknapp('fag', f.id, f.navn, fag === f.id, () => ((fag = f.id), visSett())));
   }
-  $('laeretittel').textContent = `Læreøkter for ${INDEKS.trinn.find((t) => t.id === trinn)?.navn ?? ''}`;
+  $('laeretittel').textContent = `Alle læreøkter for ${INDEKS.trinn.find((t) => t.id === trinn)?.navn ?? ''}`;
+  // Øverst står tre veier inn, så en ny lærer slipper å lete i hele lista.
+  const først = $('okter');
+  først.textContent = '';
+  for (const o of OKTER) først.appendChild(oktkort(o, 'Start her'));
+  const forslag = iTrinn.find((s) => s.fag === 'matematikk') ?? iTrinn[0];
+  if (forslag) først.appendChild(oktkort(laereokt(forslag, ''), 'Med spørsmål', true));
+  først.appendChild(egnekort());
   const liste = $('settliste');
   liste.textContent = '';
   for (const s of iTrinn) {
@@ -595,6 +627,37 @@ $('bytt').addEventListener('click', () => {
   vis(spilltype === 'klasse' ? (okt.oppgaver ? 'pugg' : 'klasse') : egne ? 'pugg' : 'velg');
 });
 $('ferdig').addEventListener('click', tilStart);
+
+// Skjermen skal ikke slukke midt i en økt, selv om ingen rører maskinen.
+let vekkelås: (EventTarget & { release(): Promise<void> }) | null = null;
+async function holdVåken(på: boolean) {
+  try {
+    if (på && !vekkelås) {
+      vekkelås = await (navigator as any).wakeLock?.request('screen') ?? null;
+      vekkelås?.addEventListener('release', () => (vekkelås = null));
+    } else if (!på && vekkelås) {
+      const lås = vekkelås;
+      vekkelås = null;
+      await lås.release();
+    }
+  } catch {
+    // Nettleseren kan si nei, for eksempel i strømsparing. Da går økta som før.
+  }
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && skjerm === 'spill') holdVåken(true);
+});
+
+const fullknapp = $('fullknapp');
+fullknapp.hidden = !document.fullscreenEnabled;
+fullknapp.addEventListener('click', () => {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen().catch(() => {});
+});
+document.addEventListener('fullscreenchange', () => {
+  fullknapp.textContent = document.fullscreenElement ? 'Lukk fullskjerm' : 'Fullskjerm';
+  if (skjerm === 'spill') tilpassScene();
+});
 const lydknapp = $('lydknapp');
 const ristknapp = $('ristknapp');
 function visBrytere() {

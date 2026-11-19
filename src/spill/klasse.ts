@@ -13,6 +13,8 @@ import { FARGE, SKRIFT, avrundet, papirkort, papirsirkel, sirkel } from './tegni
 
 /** Sekunder til å gjøre seg klar før en øvelse. */
 const KLAR = 4;
+/** Sekunder med forklaring på hvordan klassen svarer, før en økt med spørsmål. */
+const INTRO = 9;
 const MELLOMROM = 9;
 const NESTE = 8;
 const START_X = 480;
@@ -31,7 +33,7 @@ const KORT_GAP = 20;
 const KLARTEKST = ['Reis dere opp', 'Skyv inn stolen', 'En armlengde plass'];
 const KLARFARGE = ['#c4d8ff', '#fccfed', '#b2e8d3'];
 
-type Fase = 'start' | 'klar' | 'arbeid' | 'slutt';
+type Fase = 'start' | 'intro' | 'klar' | 'arbeid' | 'slutt';
 
 export class Klasseokt implements Spill {
   ferdig = false;
@@ -62,6 +64,7 @@ export class Klasseokt implements Spill {
   private fasit = '';
   private sekTekst = '';
   private sekVist = -1;
+  private intro = 0;
 
   constructor(
     private signaler: Signaler,
@@ -79,6 +82,8 @@ export class Klasseokt implements Spill {
       else this.antallSporsmal++;
       this.total += s.sek + (s.ovelse ? KLAR : 0);
     }
+    if (this.antallSporsmal) this.intro = INTRO;
+    this.total += this.intro;
   }
 
   private begynn(nr: number) {
@@ -88,7 +93,7 @@ export class Klasseokt implements Spill {
       return;
     }
     // Hopper læreren over et steg, følger framdriften med.
-    let før = 0;
+    let før = this.intro;
     for (let i = 0; i < nr; i++) før += this.steg[i].sek + (this.steg[i].ovelse ? KLAR : 0);
     this.gått = før;
     this.nr = nr;
@@ -132,7 +137,14 @@ export class Klasseokt implements Spill {
     if (this.fase === 'start') {
       this.lyd.takt(0);
       this.klokke += dt;
-      if (trykk || hopp) this.begynn(0);
+      if (trykk || hopp) {
+        if (this.intro) {
+          this.fase = 'intro';
+          this.t = 0;
+          this.klokke = 0;
+          this.pille = `${this.okt.navn} · slik svarer dere`;
+        } else this.begynn(0);
+      }
       return;
     }
     if (this.fase === 'slutt') {
@@ -143,7 +155,7 @@ export class Klasseokt implements Spill {
     }
     if (hopp) {
       this.pause = false;
-      this.begynn(this.nr + 1);
+      this.begynn(this.fase === 'intro' ? 0 : this.nr + 1);
       return;
     }
     if (trykk) {
@@ -160,6 +172,12 @@ export class Klasseokt implements Spill {
     this.klokke += dt;
     this.gått += dt;
     this.sidenFasit += dt;
+    if (this.fase === 'intro') {
+      this.lyd.takt(0);
+      this.nedtelling(INTRO - this.t);
+      if (this.t >= INTRO) this.begynn(0);
+      return;
+    }
     const steg = this.steg[this.nr];
     if (this.fase === 'klar') {
       this.lyd.takt(0);
@@ -214,6 +232,7 @@ export class Klasseokt implements Spill {
   tegn(g: CanvasRenderingContext2D) {
     tegnBakgrunn(g);
     if (this.fase === 'start') this.tegnStart(g);
+    else if (this.fase === 'intro') this.tegnIntro(g);
     else if (this.steg[this.nr].ovelse) this.tegnOvelse(g);
     else this.tegnSporsmal(g);
     this.konfetti.tegn(g);
@@ -248,7 +267,7 @@ export class Klasseokt implements Spill {
     g.fillText(this.okt.navn, 0, -12);
     g.font = `400 19px ${SKRIFT}`;
     g.fillStyle = FARGE.dempet;
-    g.fillText(`Ca. ${this.okt.minutter} minutter · uten kamera`, 0, 30);
+    g.fillText(`Ca. ${this.okt.minutter} minutter · skru opp lyden`, 0, 30);
     g.restore();
     // Tre beskjeder til klassen før økta starter.
     for (let i = 0; i < 3; i++) {
@@ -272,6 +291,48 @@ export class Klasseokt implements Spill {
     g.fillText('Trykk her eller på mellomrom når alle står klare.', 480, 446);
     g.fillStyle = FARGE.dempet;
     g.fillText('Mellomrom pauser · pil høyre hopper videre · Esc avslutter', 480, 470);
+  }
+
+  /** Forklarer regelen før første spørsmål: hvert svar har sin bevegelse. */
+  private tegnIntro(g: CanvasRenderingContext2D) {
+    tegnÅs(g);
+    g.save();
+    g.translate(430, 104);
+    g.rotate(-0.012);
+    papirkort(g, -350, -46, 700, 92, 14, FARGE.gul);
+    g.fillStyle = FARGE.blekk;
+    g.font = `600 40px ${SKRIFT}`;
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    g.fillText('Slik svarer dere', 0, 3);
+    g.restore();
+    this.settSek(INTRO - this.t);
+    papirsirkel(g, 874, 104, 42, FARGE.hvit);
+    g.fillStyle = FARGE.blekk;
+    g.font = `600 40px ${SKRIFT}`;
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    g.fillText(this.sekTekst, 874, 107);
+    g.font = `600 22px ${SKRIFT}`;
+    g.fillText('Hvert svar har sin bevegelse. Gjør bevegelsen til svaret du tror er riktig.', 480, 170);
+    const antall = this.inn.antallSvar;
+    for (let i = 0; i < antall; i++) {
+      g.save();
+      g.translate(this.kortX(i, antall) + KORT_B / 2, KORT_Y + KORT_H / 2);
+      g.rotate(i % 2 ? 0.012 : -0.012);
+      papirkort(g, -KORT_B / 2, -KORT_H / 2, KORT_B, KORT_H, 14, FARGE.hvit);
+      g.fillStyle = FARGE.dempet;
+      g.font = `600 30px ${SKRIFT}`;
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+      g.fillText(`Svar ${i + 1}`, 0, -KORT_H / 2 + 40);
+      sirkel(g, 0, 22, 66, SVARFARGE[i]);
+      tegnOvelsesfigur(g, 0, 76, SVARBEVEGELSE[i], this.klokke, 0.95, FARGE.blekk);
+      g.fillStyle = FARGE.blekk;
+      g.font = `600 24px ${SKRIFT}`;
+      g.fillText(SVARNAVN[i], 0, KORT_H / 2 - 26);
+      g.restore();
+    }
   }
 
   private tegnOvelse(g: CanvasRenderingContext2D) {
