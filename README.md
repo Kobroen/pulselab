@@ -101,5 +101,5 @@ public/models              modellfiler, se README der for kilde og lisens
 scripts/                   kopiering av WebAssembly-filer og røyktester
 ```
 
-Skriften er Jost (SIL Open Font License). Learnlabs egen skrift, Hurme
-Geometric Sans, er lisensiert og ligger derfor ikke i dette åpne repoet.
+Skriften er Hurme Geometric Sans 3, som Learnlab har bruksrett på. Fontfilene
+i `src/spill/skrift/` er lisensiert og kan ikke gjenbrukes utenfor Learnlab.

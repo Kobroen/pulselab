@@ -1,7 +1,5 @@
 // Learnlab Puls, demoutgave. Styrer skjermene og spilløkka. Hovedtråden tegner
 // bare. All bildetolkning skjer i sporingsarbeideren.
-import '@fontsource/jost/latin-400.css';
-import '@fontsource/jost/latin-600.css';
 import './stil.css';
 import { konfetti, spillAv, tellOpp } from './effekter';
 import type { Effekter, Spill } from './felles';

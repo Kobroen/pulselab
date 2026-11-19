@@ -20,7 +20,7 @@ export const FARGE = {
   skygge: 'rgba(30,30,30,0.13)',
 } as const;
 
-export const SKRIFT = "Jost, 'Helvetica Neue', Arial, sans-serif";
+export const SKRIFT = "Hurme, 'Open Sans', 'Helvetica Neue', Arial, sans-serif";
 export const SKYGGE_FORSKYVNING = 7;
 const TAU = Math.PI * 2;
 
