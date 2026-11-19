@@ -50,7 +50,7 @@ await page.addInitScript(() => {
   };
 });
 
-await page.goto('http://localhost:4174/?antall=3&varighet=7&maal=1');
+await page.goto('http://localhost:4174/?antall=3&varighet=7&intervall=2&maal=1');
 await page.waitForSelector('#start:not([hidden])');
 await shot('1-start');
 await page.click('#start-laere');
@@ -136,6 +136,31 @@ const sveip = await page.locator('#fliser').innerText();
 console.log('Sveip:', sveip.replace(/\s+/g, ' '));
 if (!(parseInt(sveip, 10) >= 1)) errors.push(`Sveip ga ingen treff: ${sveip}`);
 
+// Powerbreak uten kamera: mellomrom og pekeren gjør øvelsene.
+await page.click('#ferdig');
+await page.click('#start-power');
+await page.click('#uten-kamera');
+await pek((await tilstand()).spill.bobler[0]);
+await vent(() => window.__puls.tilstand().spill?.fase !== 'start');
+let tattPower = false;
+for (let i = 0; ; i++) {
+  const t = await tilstand();
+  if (t.skjerm !== 'spill') break;
+  if (i % 4 === 0) await page.keyboard.press('Space');
+  await pek({ x: 620 + (i % 2) * 160, y: i % 6 < 3 ? 120 : 400 });
+  if (!tattPower && t.spill.fase === 'arbeid' && t.spill.reps >= 3) {
+    await shot('13-powerbreak');
+    tattPower = true;
+  }
+  await page.waitForTimeout(40);
+}
+await page.waitForSelector('#resultat:not([hidden])');
+await page.waitForTimeout(1700);
+await shot('14-resultat-powerbreak');
+const power = await page.locator('#fliser').innerText();
+console.log('Powerbreak:', power.replace(/\s+/g, ' '));
+if (!(parseInt(power, 10) >= 4)) errors.push(`Powerbreak telte for få bevegelser: ${power}`);
+
 // Smal skjerm.
 await page.click('#ferdig');
 await page.setViewportSize({ width: 390, height: 780 });
@@ -147,4 +172,4 @@ if (errors.length) {
   console.error('Røyktesten feilet:\n' + errors.join('\n'));
   process.exit(1);
 }
-console.log('\nRøyktesten er bestått: Rekk med kamera og Sveip uten kamera ble spilt gjennom.');
+console.log('\nRøyktesten er bestått: Rekk med kamera, og Sveip og Powerbreak uten kamera, ble spilt gjennom.');

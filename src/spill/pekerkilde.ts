@@ -6,11 +6,14 @@ import {
 
 const OVERARM = SKALA * 0.85;
 const UNDERARM = SKALA * 0.85;
+/** Figuren gjør et lite hopp når spilleren trykker. */
+const SPRETT = 0.3;
 
 export class Pekerkilde implements Signalkilde {
   private px = 0;
   private py = 0;
   private inne = false;
+  private sprett = 0;
   private lyttere: [EventTarget, string, EventListener][] = [];
 
   /**
@@ -28,6 +31,7 @@ export class Pekerkilde implements Signalkilde {
     lytt(flate, 'pointermove', (e: PointerEvent) => this.flytt(e));
     lytt(flate, 'pointerdown', (e: PointerEvent) => {
       this.flytt(e);
+      this.sprett = SPRETT;
       const t = signaler.trykk;
       t.x = this.px;
       t.y = this.py;
@@ -40,6 +44,11 @@ export class Pekerkilde implements Signalkilde {
     lytt(flate, 'pointercancel', () => (this.inne = false));
     lytt(window, 'keydown', (e: KeyboardEvent) => {
       if (e.key >= '1' && e.key <= '4') signaler.tast = Number(e.key) - 1;
+      else if (e.key === ' ' && !e.repeat && !(e.target as HTMLElement).closest?.('button')) {
+        e.preventDefault();
+        signaler.tast = 9;
+        this.sprett = SPRETT;
+      }
     });
 
     if (styrerHand) {
@@ -70,6 +79,10 @@ export class Pekerkilde implements Signalkilde {
     hand.y = this.py;
 
     const k = this.signaler.kropp;
+    this.sprett = Math.max(0, this.sprett - dt);
+    const løft = Math.sin((1 - this.sprett / SPRETT) * Math.PI) * 0.3;
+    this.signaler.løft = løft;
+    k.y[V_SKULDER] = k.y[H_SKULDER] = SKULDER_Y - løft * SKALA;
     const høyre = this.px >= SKULDER_X;
     const a = 1 - Math.exp(-dt * 18);
     for (let side = 0; side < 2; side++) {
