@@ -4,6 +4,7 @@ import './stil.css';
 import { konfetti, spillAv, tellOpp } from './effekter';
 import type { Effekter, Spill } from './felles';
 import { figurSvg } from './figur';
+import { Intervall } from './intervall';
 import { Kamerakilde } from './kamerakilde';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
@@ -15,7 +16,7 @@ import { Sveip } from './sveip';
 import { FARGE, SKRIFT, tegnFigur } from './tegning';
 
 type Skjerm = 'start' | 'velg' | 'klar' | 'spill' | 'resultat';
-type Spilltype = 'rekk' | 'sveip';
+type Spilltype = 'rekk' | 'sveip' | 'intervall';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const params = new URLSearchParams(location.search);
@@ -202,13 +203,17 @@ function startSpill(kameraMed: boolean) {
   peker = new Pekerkilde(scene, signaler, !kameraMed);
   const tema = (document.querySelector('input[name="tema"]:checked') as HTMLInputElement).value as Tema;
   spill =
-    spilltype === 'rekk'
+    spilltype === 'intervall'
+      ? new Intervall(signaler, lyd, kameraMed, effekter, Number(params.get('intervall')) || 15)
+      : spilltype === 'rekk'
       ? new Rekk(signaler, lagRunde(tema, Number(params.get('antall')) || 10), lyd, kameraMed, effekter)
       : new Sveip(signaler, lagRunde(tema, 30), lyd, kameraMed, effekter, Number(params.get('varighet')) || 60);
   vis('spill');
   $('skjermleser').textContent = kameraMed
     ? 'Spillet er i gang. Styr med hendene foran kameraet.'
-    : 'Spillet er i gang. Pek, trykk eller bruk tastene 1 til 4 for å velge svar.';
+    : spilltype === 'intervall'
+      ? 'Powerbreak er i gang. Trykk, bruk mellomrom eller flytt pekeren for å gjøre øvelsene.'
+      : 'Spillet er i gang. Pek, trykk eller bruk tastene 1 til 4 for å velge svar.';
 }
 
 const STJERNE = (fylt: boolean) =>
@@ -267,6 +272,7 @@ function visResultat() {
     li.textContent = t;
     liste.appendChild(li);
   }
+  $('bytt').hidden = spilltype === 'intervall';
   vis('resultat');
   $('igjen').focus();
 }
@@ -313,6 +319,10 @@ function løkke(nå: number) {
 // ---------- Knapper ----------
 
 $('start-laere').addEventListener('click', () => vis('velg'));
+$('start-power').addEventListener('click', () => {
+  spilltype = 'intervall';
+  åpneKlar();
+});
 for (const knapp of document.querySelectorAll<HTMLButtonElement>('[data-spill]')) {
   knapp.addEventListener('click', () => {
     spilltype = knapp.dataset.spill as Spilltype;
@@ -324,7 +334,8 @@ for (const knapp of document.querySelectorAll<HTMLButtonElement>('[data-spill]')
 for (const knapp of document.querySelectorAll<HTMLButtonElement>('[data-til]')) {
   knapp.addEventListener('click', () => {
     slåAvKamera();
-    vis(knapp.dataset.til as Skjerm);
+    // Powerbreak har ingen valgskjerm, så derfra går veien tilbake til forsiden.
+    vis(spilltype === 'intervall' ? 'start' : (knapp.dataset.til as Skjerm));
   });
 }
 kameraPå.addEventListener('click', startKamera);

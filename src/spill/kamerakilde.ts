@@ -15,6 +15,8 @@ const MIN_SIKKERHET_HAND = 0.2;
 const HAND_FORLENGELSE = 0.35;
 const GLATTING = 22;
 const GLATTING_KROPP = 6;
+/** Hvilestillingen i høyden følger sakte med, slik at hopp og knebøy synes på figuren. */
+const GLATTING_HØYDE = 1.2;
 const TÅLMODIGHET = 0.35;
 
 export type Kamerastatus = 'av' | 'starter' | 'klar' | 'feil';
@@ -243,7 +245,7 @@ export class Kamerakilde implements Signalkilde {
     if (this.settKropp < 9) this.settKropp += dt;
     const b = 1 - Math.exp(-dt * GLATTING_KROPP);
     this.midtX += (this.målMidtX - this.midtX) * b;
-    this.midtY += (this.målMidtY - this.midtY) * b;
+    this.midtY += (this.målMidtY - this.midtY) * (1 - Math.exp(-dt * GLATTING_HØYDE));
     this.bredde += (this.målBredde - this.bredde) * b;
 
     const synlig = this.settKropp < 0.6 && this.bredde > 0;
@@ -255,6 +257,9 @@ export class Kamerakilde implements Signalkilde {
         : this.bredde < 0.07
           ? 'for langt unna'
           : 'bra';
+
+    const skulderY = (this.gy[V_SKULDER] + this.gy[H_SKULDER]) / 2;
+    this.signaler.løft = synlig && this.bredde > 0 ? (this.midtY - skulderY) / this.bredde : 0;
 
     const k = this.signaler.kropp;
     k.synlig = synlig;

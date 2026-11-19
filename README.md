@@ -16,9 +16,12 @@ Læremodus med to spill og to temaer (gangetabellen og ordklasser):
 | Rekk | Rolig | Strekk hånda inn i riktig svar og hold den der til ringen er full. Ti spørsmål. |
 | Sveip | Høyt | Svarene flyr forbi i buer. Slå til det riktige og la de gale passere. Ett minutt, og farten øker med komboen. |
 
-Begge kan spilles med kamera eller uten. Uten kamera styrer du med mus eller
-finger, og i Rekk også med tastene 1 til 4. Powerbreak og Pugg og prøv er ikke
-laget ennå.
+I tillegg har **Powerbreak** spillet Intervall: fire korte øvelser på rad (hopp,
+sprellemann, knebøy og boksing i lufta). Bevegelsene telles, og sola vokser med
+energien. Uten kamera gjøres øvelsene med trykk, mellomrom og pekeren.
+
+Alle spillene kan spilles med kamera eller uten. Uten kamera styrer du med mus eller
+finger, og i Rekk også med tastene 1 til 4. Pugg og prøv er ikke laget ennå.
 
 Nyttig under testing:
 
@@ -26,7 +29,8 @@ Nyttig under testing:
   sekund, sporinger per sekund og forsinkelse.
 - Under spillet kan lyd og risting skrus av hver for seg. Rolig bevegelse følger
   innstillingen i operativsystemet.
-- `?antall=3` gir kortere runder i Rekk, og `?varighet=20` kortere runder i Sveip.
+- `?antall=3` gir kortere runder i Rekk, `?varighet=20` kortere runder i Sveip og
+  `?intervall=5` kortere øvelser i Powerbreak.
 
 ### Slik virker styringen
 
@@ -92,7 +96,7 @@ src/spill/signaler.ts      de abstrakte signalene spillene leser
 src/spill/kamerakilde.ts   kamera og kroppspunkter gjort om til signaler
 src/spill/pekerkilde.ts    mus, finger og tastatur gjort om til de samme signalene
 src/spill/sporing.worker.ts  sporingsarbeider: laster modellen og tolker bilder
-src/spill/rekk.ts, sveip.ts  de to spillene
+src/spill/rekk.ts, sveip.ts, intervall.ts  spillene
 src/spill/felles.ts, tegning.ts  papirklipp-tegning, figur, konfetti
 src/spill/lyd.ts, effekter.ts  lyd (Web Audio, ingen lydfiler) og småeffekter i menyene
 src/spill/oppgaver.ts      regelbaserte oppgaver

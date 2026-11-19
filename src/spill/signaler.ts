@@ -44,8 +44,13 @@ export interface Signaler {
   kropp: Kropp;
   /** Direkte trykk (museklikk eller finger). `ny` settes av kilden og nullstilles av spillet. */
   trykk: { x: number; y: number; ny: boolean };
-  /** Valg med talltast, 0–3. -1 betyr ingen. Nullstilles av spillet. */
+  /** Valg med talltast, 0–3, eller 9 for mellomrom. -1 betyr ingen. Nullstilles av spillet. */
   tast: number;
+  /**
+   * Hvor høyt kroppen står over hvilestillingen sin, målt i skulderbredder.
+   * Positiv i et hopp, negativ i en knebøy.
+   */
+  løft: number;
 }
 
 export interface Signalkilde {
@@ -72,5 +77,6 @@ export function nyeSignaler(): Signaler {
     kropp: nyKropp(),
     trykk: { x: 0, y: 0, ny: false },
     tast: -1,
+    løft: 0,
   };
 }

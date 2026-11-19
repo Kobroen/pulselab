@@ -124,6 +124,15 @@ export class Lyd {
     this.sus({ t: 0.27, d: 0.35, g: 0.03, f: 6000, type: 'highpass' });
   }
 
+  tikk() {
+    this.tone({ f: 880, d: 0.06, type: 'triangle', g: 0.1 });
+  }
+
+  /** Én myk tone per bevegelse i Powerbreak. Den klatrer gjennom skalaen og begynner på nytt. */
+  rep(nr: number) {
+    this.klang(semi(392, PENTA[nr % PENTA.length]), 0, 0.14, 0.1);
+  }
+
   start() {
     this.klang(1318.5, 0, 0.25, 0.14);
   }
