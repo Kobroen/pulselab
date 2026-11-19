@@ -223,6 +223,16 @@ body[data-skjerm='klasse'] .figur, body[data-skjerm='klasse'] .sol { display: no
 .fjell b { position: absolute; top: 0; bottom: 0; left: 74.6%; width: 3px; background: var(--blekk); }
 #fjelltekst { color: var(--dempet); }
 
+/* ---------- Pugg og prøv ---------- */
+#pugg .ingress { max-width: 660px; font-size: 18px; }
+#egnetekst {
+  display: block; width: 100%; max-width: 760px; padding: 18px 20px; border: 0; resize: vertical;
+  font: 400 17px/1.6 var(--skrift); color: var(--blekk); --rot: -0.4deg;
+}
+#egnetekst::placeholder { color: #a39c96; }
+#egnestatus { margin: 18px 0 16px; }
+.puggknapper .pille { min-height: 48px; }
+
 /* ---------- Velg spill ---------- */
 #velg .tema { margin-bottom: 12px; }
 .flere { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 28px; }

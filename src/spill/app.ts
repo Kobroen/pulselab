@@ -2,6 +2,7 @@
 // bare. All bildetolkning skjer i sporingsarbeideren.
 import './stil.css';
 import { konfetti, spillAv, tellOpp } from './effekter';
+import { lagLenke, lesLenke, tolk } from './egne';
 import type { Effekter, Spill } from './felles';
 import { figurSvg } from './figur';
 import { Intervall } from './intervall';
@@ -10,7 +11,7 @@ import { Klasseokt } from './klasse';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
 import { type BankOppgave, INDEKS, type Trinn, hentSett, trekk } from './bank';
-import { OKTER, type Okt, TEMPO, antallSporsmal, laereokt } from './okter';
+import { OKTER, type Okt, TEMPO, antallSporsmal, egenokt, laereokt } from './okter';
 import { type Tema, lagRunde } from './oppgaver';
 import { Pekerkilde } from './pekerkilde';
 import { Rekk } from './rekk';
@@ -18,7 +19,7 @@ import { type Signaler, SCENE_B, SCENE_H, nyeSignaler } from './signaler';
 import { Sveip } from './sveip';
 import { FARGE, SKRIFT, tegnFigur } from './tegning';
 
-type Skjerm = 'start' | 'klasse' | 'velg' | 'klar' | 'spill' | 'resultat';
+type Skjerm = 'start' | 'klasse' | 'pugg' | 'velg' | 'klar' | 'spill' | 'resultat';
 type Spilltype = 'rekk' | 'sveip' | 'intervall' | 'klasse';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -72,7 +73,7 @@ $('pyntefigur').innerHTML = figurSvg('vink');
 
 // ---------- Skjermbytte ----------
 
-const REKKEFØLGE: Skjerm[] = ['start', 'klasse', 'velg', 'klar', 'spill', 'resultat'];
+const REKKEFØLGE: Skjerm[] = ['start', 'klasse', 'pugg', 'velg', 'klar', 'spill', 'resultat'];
 let førsteVisning = true;
 
 function vis(ny: Skjerm) {
@@ -208,7 +209,8 @@ function startSpill(kameraMed: boolean) {
   peker = new Pekerkilde(scene, signaler, !kameraMed);
   // Temaet er enten et sett fra oppgavebanken eller en av de to regelbaserte rundene.
   const tema = ((document.querySelector('input[name="tema"]:checked') as HTMLInputElement | null)?.value ?? 'gange') as Tema;
-  const runde = (antall: number) => (bankoppgaver ? trekk(bankoppgaver, antall) : lagRunde(tema, antall));
+  const kilde = egne ?? bankoppgaver;
+  const runde = (antall: number) => (kilde ? trekk(kilde, antall) : lagRunde(tema, antall));
   spill =
     spilltype === 'intervall'
       ? new Intervall(signaler, lyd, kameraMed, effekter, Number(params.get('intervall')) || 15)
@@ -233,7 +235,8 @@ async function startKlasse(valgt: Okt) {
   lyd.vekk();
   const denne = ++starter;
   let oppgaver: ReturnType<typeof trekk> = [];
-  if (valgt.sett) {
+  if (valgt.oppgaver) oppgaver = trekk(valgt.oppgaver, antallSporsmal(valgt));
+  else if (valgt.sett) {
     try {
       oppgaver = trekk(await hentSett(valgt.sett), antallSporsmal(valgt));
     } catch {
@@ -250,6 +253,8 @@ async function startKlasse(valgt: Okt) {
   peker = new Pekerkilde(scene, signaler, false);
   const t = TEMPO[tempo] ?? TEMPO.vanlig;
   const inn = { les: t.les, svar: t.svar, fasit: t.fasit, antallSvar };
+  // Knappen som startet økta skal ikke sitte igjen med fokus, ellers går mellomrom til den.
+  (document.activeElement as HTMLElement | null)?.blur?.();
   spill = new Klasseokt(signaler, okt, oppgaver, lyd, effekter, inn, Number(params.get('fart')) || 1);
   vis('spill');
   $('skjermleser').textContent = `${okt.navn} for klassen. Trykk mellomrom for å starte og for å pause. Pil høyre hopper til neste steg.`;
@@ -385,7 +390,10 @@ function løkke(nå: number) {
 
 // ---------- Knapper ----------
 
-$('start-laere').addEventListener('click', () => vis('velg'));
+$('start-laere').addEventListener('click', () => {
+  egne = null;
+  vis('velg');
+});
 $('start-klasse').addEventListener('click', () => vis('klasse'));
 // Øktene tegnes fra data: Powerbreak fra lista, og læreøktene fra oppgavebanken for valgt trinn og fag.
 function oktkort(o: Okt): HTMLLIElement {
@@ -522,6 +530,42 @@ for (const inn of document.querySelectorAll<HTMLInputElement>('input[name="tema"
   });
 }
 fyllBanksett();
+// Pugg og prøv: lærerens egne spørsmål. Teksten lagres på enheten og kan deles som lenke.
+let egne: BankOppgave[] | null = null;
+const egnetekst = $<HTMLTextAreaElement>('egnetekst');
+const egneknapper = ['egne-klasse', 'egne-rekk', 'egne-sveip', 'egne-lenke'].map((id) => $<HTMLButtonElement>(id));
+function lesEgne() {
+  const antall = tolk(egnetekst.value).length;
+  $('egnestatus').textContent = antall >= 2 ? `${antall} spørsmål er klare` : 'Skriv minst to spørsmål';
+  for (const k of egneknapper) k.disabled = antall < 2;
+}
+egnetekst.value = lesLenke() ?? lagret('puls-egne') ?? '';
+egnetekst.addEventListener('input', () => {
+  lagre('puls-egne', egnetekst.value);
+  lesEgne();
+});
+lesEgne();
+$('start-pugg').addEventListener('click', () => vis('pugg'));
+$('egne-klasse').addEventListener('click', () => startKlasse(egenokt(tolk(egnetekst.value))));
+for (const type of ['rekk', 'sveip'] as const) {
+  $(`egne-${type}`).addEventListener('click', () => {
+    egne = tolk(egnetekst.value);
+    spilltype = type;
+    if (medKamera && kamera?.status === 'klar') startSpill(true);
+    else åpneKlar();
+  });
+}
+$('egne-lenke').addEventListener('click', async () => {
+  const lenke = lagLenke(egnetekst.value);
+  try {
+    await navigator.clipboard.writeText(lenke);
+    $('egnestatus').textContent = 'Lenka er kopiert';
+  } catch {
+    // Utklippstavla er ikke tilgjengelig. Da legges lenka i adressefeltet, så den kan kopieres derfra.
+    history.replaceState(null, '', lenke);
+    $('egnestatus').textContent = 'Lenka står i adressefeltet';
+  }
+});
 $('start-power').addEventListener('click', () => {
   spilltype = 'intervall';
   åpneKlar();
@@ -538,7 +582,7 @@ for (const knapp of document.querySelectorAll<HTMLButtonElement>('[data-til]')) 
   knapp.addEventListener('click', () => {
     slåAvKamera();
     // Powerbreak har ingen valgskjerm, så derfra går veien tilbake til forsiden.
-    vis(spilltype === 'intervall' ? 'start' : (knapp.dataset.til as Skjerm));
+    vis(spilltype === 'intervall' ? 'start' : knapp.dataset.til === 'velg' && egne ? 'pugg' : (knapp.dataset.til as Skjerm));
   });
 }
 kameraPå.addEventListener('click', startKamera);
@@ -548,7 +592,7 @@ $('avslutt').addEventListener('click', tilStart);
 $('igjen').addEventListener('click', () => (spilltype === 'klasse' ? startKlasse(okt) : startSpill(medKamera && kamera !== null)));
 $('bytt').addEventListener('click', () => {
   // Kameraet får stå på, slik at neste spill starter uten ny kalibrering.
-  vis(spilltype === 'klasse' ? 'klasse' : 'velg');
+  vis(spilltype === 'klasse' ? (okt.oppgaver ? 'pugg' : 'klasse') : egne ? 'pugg' : 'velg');
 });
 $('ferdig').addEventListener('click', tilStart);
 const lydknapp = $('lydknapp');
@@ -613,6 +657,6 @@ window.addEventListener('keydown', (e) => {
 Promise.all([document.fonts.load(`600 20px ${SKRIFT}`), document.fonts.load(`400 20px ${SKRIFT}`)])
   .catch(() => {})
   .then(() => {
-    vis('start');
+    vis(lesLenke() ? 'pugg' : 'start');
     requestAnimationFrame(løkke);
   });

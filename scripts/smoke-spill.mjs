@@ -205,6 +205,23 @@ for (const okt of ['powerbreak', 'matematikk-5-7-gange-6-9']) {
   if (okt === 'powerbreak') await page.click('#bytt');
 }
 
+// Pugg og prøv: læreren limer inn egne spørsmål og kjører dem med klassen.
+await page.click('#ferdig');
+await page.click('#start-pugg');
+await page.fill('#egnetekst', 'Hovedstaden i Norge?; Oslo\nHovedstaden i Sverige?; Stockholm\nHovedstaden i Danmark?; København\nHovedstaden i Finland?; Helsingfors\nHovedstaden i Island?; Reykjavik');
+await page.waitForTimeout(700);
+await shot('19-pugg');
+const status = await page.locator('#egnestatus').innerText();
+if (!status.startsWith('5 spørsmål')) errors.push(`Pugg og prøv tolket ikke linjene: ${status}`);
+await page.click('#egne-klasse');
+await vent(() => window.__puls.tilstand().spill?.fase === 'start');
+await page.keyboard.press('Space');
+await page.waitForSelector('#resultat:not([hidden])', { timeout: 60_000 });
+await page.waitForTimeout(1200);
+const egne = (await page.locator('#fliser').innerText()).replace(/\s+/g, ' ');
+console.log('Egne spørsmål:', egne);
+if (!/12 spørsmål/.test(egne)) errors.push(`Økta med egne spørsmål ga uventet resultat: ${egne}`);
+
 // Smal skjerm.
 await page.click('#ferdig');
 await page.setViewportSize({ width: 390, height: 780 });
@@ -216,4 +233,4 @@ if (errors.length) {
   console.error('Røyktesten feilet:\n' + errors.join('\n'));
   process.exit(1);
 }
-console.log('\nRøyktesten er bestått: Rekk med kamera, og Sveip og Powerbreak uten kamera, ble spilt gjennom, og to klasseøkter gikk fra start til resultat.');
+console.log('\nRøyktesten er bestått: Rekk med kamera, og Sveip og Powerbreak uten kamera, ble spilt gjennom, og tre klasseøkter gikk fra start til resultat, én av dem med egne spørsmål.');
