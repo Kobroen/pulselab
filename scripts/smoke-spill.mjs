@@ -161,6 +161,46 @@ const power = await page.locator('#fliser').innerText();
 console.log('Powerbreak:', power.replace(/\s+/g, ' '));
 if (!(parseInt(power, 10) >= 4)) errors.push(`Powerbreak telte for få bevegelser: ${power}`);
 
+// Fellesmodus: læreren velger en økt, og skjermen leder klassen uten kamera.
+await page.click('#ferdig');
+await page.goto('http://localhost:4174/?fart=12&maal=1');
+await page.click('#start-klasse');
+await page.waitForTimeout(900);
+await shot('15-klasse');
+for (const okt of ['powerbreak', 'gange']) {
+  await page.click(`[data-okt="${okt}"]`);
+  await vent(() => window.__puls.tilstand().spill?.fase === 'start');
+  await shot(`16-${okt}-start`);
+  await page.keyboard.press('Space');
+  await vent(() => window.__puls.tilstand().spill?.fase !== 'start');
+  // Pause skal stoppe økta, og mellomrom skal starte den igjen.
+  await page.keyboard.press('Space');
+  await page.waitForTimeout(200);
+  const før = (await tilstand()).spill;
+  await page.waitForTimeout(700);
+  const etter = (await tilstand()).spill;
+  if (!før.pause || etter.nr !== før.nr || etter.fase !== før.fase) errors.push(`Pause virket ikke i ${okt}`);
+  await page.keyboard.press('Space');
+  const sett = new Set();
+  for (;;) {
+    const t = await tilstand();
+    if (t.skjerm !== 'spill') break;
+    const merke = `${t.spill.nr}`;
+    if (!sett.has(merke) && t.spill.fase === 'arbeid') {
+      sett.add(merke);
+      if (sett.size <= 3) await shot(`17-${okt}-steg-${t.spill.nr}`);
+    }
+    await page.waitForTimeout(60);
+  }
+  await page.waitForSelector('#resultat:not([hidden])');
+  await page.waitForTimeout(1700);
+  await shot(`18-${okt}-resultat`);
+  const fliser = (await page.locator('#fliser').innerText()).replace(/\s+/g, ' ');
+  console.log(`Klasseøkt ${okt}:`, fliser);
+  if (!/øvelser/.test(fliser) || !/i bevegelse/.test(fliser)) errors.push(`Klasseøkta ${okt} ga ikke resultat: ${fliser}`);
+  if (okt === 'powerbreak') await page.click('#bytt');
+}
+
 // Smal skjerm.
 await page.click('#ferdig');
 await page.setViewportSize({ width: 390, height: 780 });
@@ -172,4 +212,4 @@ if (errors.length) {
   console.error('Røyktesten feilet:\n' + errors.join('\n'));
   process.exit(1);
 }
-console.log('\nRøyktesten er bestått: Rekk med kamera, og Sveip og Powerbreak uten kamera, ble spilt gjennom.');
+console.log('\nRøyktesten er bestått: Rekk med kamera, og Sveip og Powerbreak uten kamera, ble spilt gjennom, og to klasseøkter gikk fra start til resultat.');

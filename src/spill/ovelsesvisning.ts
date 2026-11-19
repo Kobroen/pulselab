@@ -3,7 +3,7 @@
 import { ROLIG } from './felles';
 import { FARGE, avrundet, papirkort, sirkel } from './tegning';
 
-export type Ovelsestype = 'hopp' | 'sprell' | 'boy' | 'boks';
+export type Ovelsestype = 'hopp' | 'sprell' | 'boy' | 'boks' | 'lop' | 'strekk';
 
 const B = 170;
 const H = 180;
@@ -19,6 +19,8 @@ const TAU = Math.PI * 2;
 let luft = 0;
 let senk = 0;
 let fot = 12;
+let løftV = 0;
+let løftH = 0;
 let vx = 0;
 let vy = 0;
 let hx = 0;
@@ -28,6 +30,8 @@ function stilling(type: Ovelsestype, t: number) {
   luft = 0;
   senk = 0;
   fot = 12;
+  løftV = 0;
+  løftH = 0;
   if (type === 'hopp') {
     const p = (t / 1.0) % 1;
     let bøy = 0;
@@ -62,6 +66,25 @@ function stilling(type: Ovelsestype, t: number) {
     hy = 35 - 33 * a;
     vx = -hx;
     vy = hy;
+  } else if (type === 'lop') {
+    // Løping på stedet: knærne løftes annenhver gang, og armene pendler imot.
+    const p = (t / 0.7) % 1;
+    const sving = Math.sin(p * TAU);
+    løftV = Math.max(0, sving) * 22;
+    løftH = Math.max(0, -sving) * 22;
+    luft = 3 * Math.abs(sving);
+    fot = 10;
+    vx = -7;
+    vy = 14 + 16 * sving;
+    hx = 7;
+    hy = 14 - 16 * sving;
+  } else if (type === 'strekk') {
+    // Strekk mot taket og lén rolig fra side til side.
+    const sving = Math.sin(((t / 3.2) % 1) * TAU);
+    vx = -5 + 13 * sving;
+    vy = -35;
+    hx = 5 + 13 * sving;
+    hy = -35;
   } else {
     const p = (t / 0.6) % 1;
     const venstre = p < 0.5 ? Math.sin((p / 0.5) * Math.PI) : 0;
@@ -108,8 +131,8 @@ function lag(g: CanvasRenderingContext2D, farge: string, dx: number, dy: number)
   g.lineTo(dx - HOFTE, hofteY);
   g.closePath();
   g.fill();
-  lem(g, dx - HOFTE, hofteY, dx - fot, fotY, BEIN, -1, 0);
-  lem(g, dx + HOFTE, hofteY, dx + fot, fotY, BEIN, 1, 0);
+  lem(g, dx - HOFTE, hofteY, dx - fot, fotY - løftV, BEIN, -1, 0);
+  lem(g, dx + HOFTE, hofteY, dx + fot, fotY - løftH, BEIN, 1, 0);
   lem(g, dx - SKULDER, skulderY, dx - SKULDER + vx, skulderY + vy, ARM, -1, 0.5);
   lem(g, dx + SKULDER, skulderY, dx + SKULDER + hx, skulderY + hy, ARM, 1, 0.5);
   g.stroke();
@@ -138,5 +161,27 @@ export function tegnOvelse(g: CanvasRenderingContext2D, x: number, y: number, ty
   lag(g, FARGE.skygge, 4, 4);
   lag(g, FARGE.blaa, 0, 0);
   g.restore();
+  g.restore();
+}
+
+/**
+ * Tegner bare figuren, uten rute. (x, y) er punktet på bakken midt under figuren.
+ * Brukes i fellesmodus, der figuren er stor.
+ */
+export function tegnOvelsesfigur(
+  g: CanvasRenderingContext2D, x: number, y: number, type: Ovelsestype, t: number, skala: number, farge: string,
+) {
+  stilling(type, ROLIG ? t * 0.6 : t);
+  g.save();
+  g.translate(x, y);
+  g.scale(skala, skala);
+  g.translate(0, -BAKKE);
+  const k = 1 - luft / 60;
+  g.fillStyle = FARGE.skygge;
+  g.beginPath();
+  g.ellipse(0, BAKKE + 4, (fot + 14) * k, 4 * k, 0, 0, TAU);
+  g.fill();
+  lag(g, FARGE.skygge, 3, 3);
+  lag(g, farge, 0, 0);
   g.restore();
 }

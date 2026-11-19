@@ -6,8 +6,10 @@ import type { Effekter, Spill } from './felles';
 import { figurSvg } from './figur';
 import { Intervall } from './intervall';
 import { Kamerakilde } from './kamerakilde';
+import { Klasseokt } from './klasse';
 import { logoSvg } from './logo';
 import { Lyd } from './lyd';
+import { OKTER, type Okt } from './okter';
 import { type Tema, lagRunde } from './oppgaver';
 import { Pekerkilde } from './pekerkilde';
 import { Rekk } from './rekk';
@@ -15,8 +17,8 @@ import { type Signaler, SCENE_B, SCENE_H, nyeSignaler } from './signaler';
 import { Sveip } from './sveip';
 import { FARGE, SKRIFT, tegnFigur } from './tegning';
 
-type Skjerm = 'start' | 'velg' | 'klar' | 'spill' | 'resultat';
-type Spilltype = 'rekk' | 'sveip' | 'intervall';
+type Skjerm = 'start' | 'klasse' | 'velg' | 'klar' | 'spill' | 'resultat';
+type Spilltype = 'rekk' | 'sveip' | 'intervall' | 'klasse';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const params = new URLSearchParams(location.search);
@@ -33,6 +35,7 @@ const målEl = $('maal');
 const lyd = new Lyd();
 let skjerm: Skjerm = 'start';
 let spilltype: Spilltype = 'rekk';
+let okt: Okt = OKTER[0];
 let medKamera = false;
 let signaler: Signaler = nyeSignaler();
 let kamera: Kamerakilde | null = null;
@@ -68,7 +71,7 @@ $('pyntefigur').innerHTML = figurSvg('vink');
 
 // ---------- Skjermbytte ----------
 
-const REKKEFØLGE: Skjerm[] = ['start', 'velg', 'klar', 'spill', 'resultat'];
+const REKKEFØLGE: Skjerm[] = ['start', 'klasse', 'velg', 'klar', 'spill', 'resultat'];
 let førsteVisning = true;
 
 function vis(ny: Skjerm) {
@@ -77,8 +80,9 @@ function vis(ny: Skjerm) {
   if (ny !== 'spill') spillAv($(ny), !førsteVisning && tilbake ? 'ark-inn-tilbake' : 'ark-inn');
   førsteVisning = false;
   skjerm = ny;
-  for (const id of ['start', 'velg', 'klar', 'spill', 'resultat']) $(id).hidden = id !== ny;
+  for (const id of REKKEFØLGE) $(id).hidden = id !== ny;
   document.body.dataset.skjerm = ny;
+  document.body.dataset.modus = spilltype;
   $('pyntefigur').innerHTML = figurSvg(ny === 'resultat' ? 'hopp' : 'vink');
   if (ny === 'spill') tilpassScene();
   window.scrollTo(0, 0);
@@ -216,6 +220,21 @@ function startSpill(kameraMed: boolean) {
       : 'Spillet er i gang. Pek, trykk eller bruk tastene 1 til 4 for å velge svar.';
 }
 
+/** Fellesmodus: ingen kamera og ingen kalibrering, rett til økta. */
+function startKlasse(valgt: Okt) {
+  lyd.vekk();
+  okt = valgt;
+  spilltype = 'klasse';
+  medKamera = false;
+  slåAvKamera();
+  signaler = nyeSignaler();
+  peker?.stopp();
+  peker = new Pekerkilde(scene, signaler, false);
+  spill = new Klasseokt(signaler, okt, lyd, effekter, Number(params.get('fart')) || 1);
+  vis('spill');
+  $('skjermleser').textContent = `${okt.navn} for klassen. Trykk mellomrom for å starte og for å pause. Pil høyre hopper til neste steg.`;
+}
+
 const STJERNE = (fylt: boolean) =>
   `<svg viewBox="-22 -22 44 44" aria-hidden="true"><polygon fill="${fylt ? FARGE.gul : FARGE.linje}" points="${Array.from(
     { length: 10 },
@@ -273,6 +292,7 @@ function visResultat() {
     liste.appendChild(li);
   }
   $('bytt').hidden = spilltype === 'intervall';
+  $('bytt').textContent = spilltype === 'klasse' ? 'Bytt økt' : 'Bytt spill';
   vis('resultat');
   $('igjen').focus();
 }
@@ -319,6 +339,30 @@ function løkke(nå: number) {
 // ---------- Knapper ----------
 
 $('start-laere').addEventListener('click', () => vis('velg'));
+$('start-klasse').addEventListener('click', () => vis('klasse'));
+// Øktene tegnes fra lista, så nye økter bare er data.
+for (const o of OKTER) {
+  const li = document.createElement('li');
+  li.className = 'kort oktkort inn';
+  const merke = document.createElement('span');
+  merke.className = `merke ${o.farge}`;
+  merke.textContent = o.merke;
+  const tittel = document.createElement('h2');
+  tittel.textContent = o.navn;
+  const tid = document.createElement('p');
+  tid.className = 'okttid';
+  tid.textContent = `${o.minutter} minutter`;
+  const tekst = document.createElement('p');
+  tekst.textContent = o.tekst;
+  const knapp = document.createElement('button');
+  knapp.className = 'pille mork';
+  knapp.type = 'button';
+  knapp.dataset.okt = o.id;
+  knapp.textContent = 'Start';
+  knapp.addEventListener('click', () => startKlasse(o));
+  li.append(merke, tittel, tid, tekst, knapp);
+  $('okter').appendChild(li);
+}
 $('start-power').addEventListener('click', () => {
   spilltype = 'intervall';
   åpneKlar();
@@ -342,10 +386,10 @@ kameraPå.addEventListener('click', startKamera);
 erKlar.addEventListener('click', () => startSpill(true));
 $('uten-kamera').addEventListener('click', () => startSpill(false));
 $('avslutt').addEventListener('click', tilStart);
-$('igjen').addEventListener('click', () => startSpill(medKamera && kamera !== null));
+$('igjen').addEventListener('click', () => (spilltype === 'klasse' ? startKlasse(okt) : startSpill(medKamera && kamera !== null)));
 $('bytt').addEventListener('click', () => {
   // Kameraet får stå på, slik at neste spill starter uten ny kalibrering.
-  vis('velg');
+  vis(spilltype === 'klasse' ? 'klasse' : 'velg');
 });
 $('ferdig').addEventListener('click', tilStart);
 const lydknapp = $('lydknapp');
@@ -377,6 +421,7 @@ document.addEventListener('pointerdown', (e) => {
   }
 });
 window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && skjerm === 'spill') tilStart();
   if (e.key === 'm' && !e.ctrlKey && !e.metaKey) {
     visMål = !visMål;
     målEl.hidden = !visMål;

@@ -24,6 +24,14 @@
         <h1 class="logo" id="logo"></h1>
         <p class="undertittel">Hva har du lyst til?</p>
       </header>
+      <button class="klasseknapp" id="start-klasse" type="button">
+        <span class="klasseikon" aria-hidden="true">
+          <svg viewBox="-24 -24 48 48"><circle cx="-12" cy="-8" r="6" fill="#1e1e1e" /><circle cx="12" cy="-8" r="6" fill="#1e1e1e" /><circle cx="0" cy="-12" r="7" fill="#1e1e1e" /><path d="M-22 16q0-12 10-12t10 12zM2 16q0-12 10-12t10 12z" fill="#1e1e1e" /><path d="M-12 18q0-16 12-16t12 16z" fill="#1e1e1e" stroke="#ffd466" stroke-width="2.5" /></svg>
+        </span>
+        <span class="klassetekst"><b>Start med klassen</b><small>For læreren · storskjerm · uten kamera og innlogging</small></span>
+        <span class="klassepil" aria-hidden="true">→</span>
+      </button>
+      <p class="skille">Eller spill alene</p>
       <ul class="moduser">
         <li class="kort moduskort inn" style="--rot: -2deg">
           <span class="ikon blaa">
@@ -57,6 +65,14 @@
         </li>
       </ul>
       <p class="fotnote">Demo. <a href="./sporingstest.html">Sporingstest for enheten</a></p>
+    </main>
+
+    <main id="klasse" class="skjerm" hidden>
+      <button class="pille lys tilbake" type="button" data-til="start">← Tilbake</button>
+      <h1>Start med klassen</h1>
+      <p class="ingress">Vis denne skjermen på storskjerm og velg en økt. Elevene står ved pulten og gjør det skjermen viser. Dere trenger verken kamera, innlogging eller utstyr.</p>
+      <ul class="okter" id="okter"></ul>
+      <p class="fotnote-klasse">Mellomrom pauser økta. Pil høyre hopper til neste steg.</p>
     </main>
 
     <main id="velg" class="skjerm" hidden>
